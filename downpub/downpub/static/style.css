@@ -1,0 +1,14 @@
+body            { font-family: sans-serif; background: #eee; width:100%;}
+a, h1, h2       { color: #377ba8; }
+h1, h2          { font-family: 'Georgia', serif; }
+
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }
+
+#header			{ height:90px; width:100%; background-color:#333; color:#ccc;} 
+#header h1		{ margin: 0 auto;}
+
+#footer			{ border-top: 1px black;
+				  height:90px; width:100%; 
+				  background-color:#333; color:#ccc;} 
