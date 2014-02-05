@@ -1,17 +1,15 @@
 DownPub
 ===========
 
-Projet de clone libre d'Editorially. Sera sûrement jamais fini par moi-même, utilise des librairies externes ([Epic Editor](http://www.epiceditor.com), [Flask](http://flask.pocoo.org/)[KNACSS](http://www.knacss.com), ..), mais le contenu que moi j'ai codé est en [What The Fuck Public Licence](http://www.wtfpl.net/about/)
+Projet de clone libre d'Editorially. Sera sûrement jamais fini par moi-même, utilise des librairies externes ([Epic Editor](http://www.epiceditor.com), [Flask](http://flask.pocoo.org/), [KNACSS](http://www.knacss.com), ..), mais le contenu que moi j'ai codé est en [What The Fuck Public Licence](http://www.wtfpl.net/about/)
 
 ##Installation
 
 Installez python, setuptools, (éventuellement virtualenv) puis (dans le virtualenv ou pas) :
 
-pip install Flask
-pip install Flask-Login
-pip install Flask-Principal
-pip install Flask-WTF
-pip install Flask-sqlalchemy
+1. pip install Flask
+2. pip install Flask-WTF
+3. pip install Flask-sqlalchemy
 
 Enfin, lancez le fichier run.py via python, et accédez via (http://localhost:5000). Pour plus d'infos sur la façon d'installer ça derrière un serveur web, je... ne sais pas pour l'instant, mais ça peut se faire avec nginx et uwsgi, par exemple. À vous de voir, j'suis encore un peu perdu dans tout ça.
 

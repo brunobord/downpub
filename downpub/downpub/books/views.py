@@ -110,7 +110,8 @@ def delete(book_id):
     """
 
     # We get the part to deleter
-    book = Book.query.filter_by(id=book_id).get()
+    book = Book.query.get(id=book_id)
+    db.session.delete(book)
     # commit
     db.session.commit()
 
@@ -127,7 +128,7 @@ def parts_list(book_id):
     """
     List the parts (ordered by order field) from the book with book_id
     """
-    parts = Part.query.filter_by(book_id=book_id).all()
+    parts = Part.query.get(book_id)
     book = Book.query.get(book_id)
     return render_template("books/parts_list.html",
         parts=parts, session=session, user=g.user, book=book)
@@ -165,8 +166,8 @@ def edit_part(book_id, part_id):
     Edit the part with part_id in the book with book_id
     """
     form = EditPartForm(request.form)
-    book = Book.query.filter_by(id=book_id).get()
-    part = Part.query.filter_by(id=part_id).get()
+    book = Book.query.get(book_id)
+    part = Part.query.get(part_id)
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -176,7 +177,7 @@ def edit_part(book_id, part_id):
 
     if form.validate_on_submit():
         # get an user instance not yet stored in the database
-        part = Part.query.filter_by(id=part_id).get()
+        part = Part.query.get(part_id)
 
         # set the new values
         part.title = form.title.data
