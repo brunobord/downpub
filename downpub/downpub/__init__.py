@@ -9,13 +9,15 @@ downpub.config.from_object('config')
 db = SQLAlchemy(downpub)
 babel = Babel(downpub)
 
+
 @downpub.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
 
+
 @downpub.route('/')
 def index():
-  return render_template("index.html")
+     return render_template("index.html")
 
 
 from downpub.users.views import mod as usersModule

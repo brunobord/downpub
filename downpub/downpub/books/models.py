@@ -3,12 +3,14 @@ from downpub.books import constants as BOOK
 from datetime import datetime
 
 class Part(db.Model):
+
+    __tablename__ = 'parts'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     content = db.Column(db.Text)
     order = db.Column(db.Integer)
 
-    book_id = db.Column(db.Integer, db.ForeignKey('book.id'))
+    book_id = db.Column(db.Integer, db.ForeignKey('books.id'))
     book = db.relationship('Book',
         backref=db.backref('part', lazy='dynamic'))
 
@@ -23,12 +25,12 @@ class Part(db.Model):
 
 
 class Book(db.Model):
+
+    __tablename__ = 'books'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
-    
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User',
-        backref=db.backref('book', lazy='dynamic'))
+
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     creation_date = db.Column(db.DateTime)
 

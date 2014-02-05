@@ -1,0 +1,63 @@
+/*
+    Style des éléments HTML de base
+*/
+
+html {
+    background: #222;
+}
+
+a {
+    color:orange;
+}
+
+a:hover {
+    font-weight:bold;
+}
+
+/*
+    Style des infos d'erreur
+*/
+
+.flash {
+    background: #cee5F5;
+    padding: 0.5em;
+    border: 1px solid #aacbe2;
+}
+.error {
+    background: #f0d6d6;
+    padding: 0.5em;
+}
+
+/*
+    Style du layout
+*/
+
+.aside {
+    background: #333;
+    color: white;
+    width:15%;
+}
+
+#navigation ul li
+{
+    list-style-type: none;
+}
+
+.content {
+    background: #777;
+    color: white;
+}
+
+#header {
+    background: #222;
+    color: white;
+}
+
+#header h1 {
+    text-align:center;
+}
+
+#footer {
+    background: #222;
+    color: white;
+}
