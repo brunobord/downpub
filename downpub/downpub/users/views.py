@@ -1,4 +1,5 @@
-from flask import Blueprint, request, render_template, flash, g, session, redirect, url_for
+from flask import Blueprint, request, render_template, \
+    flash, g, session, redirect, url_for
 from werkzeug import check_password_hash, generate_password_hash
 from flask.ext.babel import gettext, Babel
 
@@ -10,15 +11,6 @@ from downpub.users.decorators import requires_login
 mod = Blueprint('users', __name__, url_prefix='/users')
 
 
-@mod.route('/me/')
-@requires_login
-def home():
-    """
-    user's profile view page
-    """
-    return render_template("users/profile.html", user=g.user)
-
-
 @mod.before_request
 def before_request():
     """
@@ -27,6 +19,15 @@ def before_request():
     g.user = None
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
+
+
+@mod.route('/me/')
+@requires_login
+def home():
+    """
+    user's profile view page
+    """
+    return render_template("users/profile.html", user=g.user)
 
 
 @mod.route('/login/', methods=['GET', 'POST'])
@@ -43,10 +44,21 @@ def login():
             # the session can't be modified as it's signed,
             # it's a safe place to store the user id
             session['user_id'] = user.id
-            flash(_('Welcome %s') % user.name)
-            return redirect(url_for('users.home'))
-        flash(_('Wrong email or password'), 'error-message')
-    return render_template("users/login.html", form=form, user=user)
+            flash(gettext('Welcome %s' % user.name))
+            return redirect(request.args.get("next")
+                or url_for('users.home'))
+        flash(gettext('Wrong email or password'), 'error-message')
+    return render_template("users/login.html", form=form, user=g.user)
+
+
+@mod.route("/logout")
+@requires_login
+def logout():
+    session.clear()
+    g.user = None
+    user = None
+    flash(gettext("You've been logged out."))
+    return redirect(url_for('index'))
 
 
 @mod.route('/register/', methods=['GET', 'POST'])
@@ -67,7 +79,7 @@ def register():
         session['user_id'] = user.id
 
         # flash will display a message to the user
-        flash('Thanks for registering')
+        flash(gettext('Thanks for registering'))
         # redirect user to the 'home' method of the user module.
         return redirect(url_for('users.home'))
-    return render_template("users/register.html", form=form)
+    return render_template("users/register.html", form=form, user=g.user)

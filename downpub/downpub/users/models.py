@@ -1,3 +1,5 @@
+from hashlib import md5
+
 from downpub import db
 from downpub.users import constants as USER
 
@@ -24,3 +26,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % (self.name)
+
+    def avatar(self, size):
+        return 'http://www.gravatar.com/avatar/' + \
+            md5(self.email.encode('utf-8')).hexdigest() + '?d=mm&s=' + str(size)

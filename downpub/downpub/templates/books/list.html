@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+<h2>
+    {% trans %}Your Books, {% endtrans %}{{ user.name }} !
+</h2>
 <ul>
-  {% for book in books %}
-    <li>{{ message }}</li>
-  {% endfor %}
+    {% if books %}
+        {% for book in books %}
+            <li><a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a></li>
+        {% endfor %}
+    {% else %}
+        <p>
+            {% trans %}Oops ! Seems you haven't wrote anything yet.{% endtrans %}
+        </p>
+        <p>
+            <a href="{{ url_for('books.add') }}">
+                {% trans %}Create a book now !{% endtrans %}
+            </a>
+        </p>
+    {% endif %}
 </ul>
 
 {% endblock %}

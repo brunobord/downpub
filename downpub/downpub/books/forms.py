@@ -1,24 +1,31 @@
-from flask.ext.wtf import Form, RecaptchaField
-from wtforms import TextField, StringField, TextAreaField, FileField
-from wtforms.validators import Required, Length, EqualTo, Email
+from flask.ext.wtf import Form
+from wtforms import TextField, StringField, TextAreaField
+from wtforms.validators import Required, Length
 from flask_wtf.file import FileField, FileAllowed, FileRequired
+from flask.ext.babel import gettext
+
 
 class AddForm(Form):
-  title = StringField('Book title', [Required(), Length(max=80)])
-  cover = FileField('Image File', 
-    [FileRequired(), FileAllowed(['jpg', 'png'], 'Images only!')])
+    title = StringField(gettext('Book title'),
+        [Required(), Length(max=80)])
+    cover = FileField(gettext('Image File'),
+        [FileAllowed(['jpg', 'png'], gettext('Images only!'))])
+
 
 class EditForm(Form):
-  title = TextField('Book title', [Required(), Length(max=80)])
-  cover = FileField(u'Image File', 
-    [FileRequired(), FileAllowed(['jpg', 'png'], 'Images only!')])
+    title = TextField(gettext('Book title'),
+        [Required(), Length(max=80)])
+    cover = FileField(gettext('Image File'),
+        [FileAllowed(['jpg', 'png'], gettext('Images only!'))])
+
 
 class AddPartForm(Form):
-  title = TextField('Part title', [Required()])
-  content = TextAreaField('Content', [Required()])
-  order = TextField('Order', [Required()])
+    title = TextField(gettext('Part title'), [Required()])
+    content = TextAreaField(gettext('Content'), [Required()])
+    order = TextField(gettext('Order'), [Required()])
+
 
 class EditPartForm(Form):
-  title = TextField('Part title', [Required()])
-  content = TextAreaField('Content', [Required()])
-  order = TextField('Order', [Required()])
+    title = TextField(gettext('Part title'), [Required()])
+    content = TextAreaField(gettext('Content'), [Required()])
+    order = TextField(gettext('Order'), [Required()])

@@ -19,22 +19,8 @@
 </head>
 <body>
     {% include 'header.html' %}
-    <div id="main" role="main" class="row">
-        <div class="col w20 pam aside">
-            <nav id="navigation" role="navigation">
-                <ul class="pam">
-                    <li class="pam"><a class="icon icon-bracket2" href="#">Accueil</a></li>
-
-                    <li class="pam">
-                        <a class="icon icon-bracket2" href="#">Idenfication</a>
-                        ou <a href="#">Enregistrement</a>
-                    </li>
-                    <li class="pam"><a class="icon icon-bracket2" href="#">Téléchargez DownPub</a></li>
-                </ul>
-            </nav>
-            <p class="">Ceci est potentiellement un autre menu :D</p>
-        </div>
-        <div class="col w70 pam content">
+    <div id="main" role="main" class="line">
+        <div class="line pam content">
             {% include 'messages.html' %}
             {% block content %}{% endblock %}
         </div>

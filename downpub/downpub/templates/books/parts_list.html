@@ -6,7 +6,7 @@
 
 <ul>
   {% for part in parts %}
-    <li>{{ part.title }} - {{ part.content|truncate(30) }} - 
+    <li>{{ part.title }} - {{ part.content|truncate(30) }} -
     	<a href="{{ url_for('books.edit_part') }}">{% trans %}Edit{% endtrans %}</a>
     	<a href="{{ url_for('books.del_part') }}">{% trans %}Delete{% endtrans %}</a>
     </li>
@@ -14,9 +14,9 @@
 </ul>
 
 <p>{% trans %}Not enough parts ? R U Sad ? {% endtrans %}
-	<a href="{{ url_for('add_part') }}">
-		{% trans%}Then add a part !{% endtrans%}
-	</a>
+    <a href="{{ url_for('books.add_part', book_id=book.id) }}">
+        {% trans%}Then add a part !{% endtrans%}
+    </a>
 </p>
 
 {% endblock %}

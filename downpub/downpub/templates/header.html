@@ -1,3 +1,39 @@
-    <header id="header" role="banner" class="line pam">
-        <h1 class="center">Downpub - {{ title }}</h1>
+    <header id="header" role="banner" class="line pam txtcenter">
+        <h1>Downpub - {{ title }}</h1>
+        <nav id="navigation" role="navigation" class="txtcenter">
+            <ul class="pam">
+                <li class="pam"><a class="icon icon-bracket2" href="#">Accueil</a></li>
+                {% if not user.name %}
+                <li class="pam">
+                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">Idenfication</a>
+                    ou <a href="{{ url_for('users.register') }}">Enregistrement</a>
+                </li>
+                {% else %}
+                    <li class="pam">
+                        <span class="icon icon-bracket2">
+                            {% trans %}Hi, {% endtrans %}
+                            {{ user.name }}
+                        </span>
+                    </li>
+                    <li class="pam">
+                        <a class="icon icon-bracket2"
+                           href="{{ url_for('books.list') }}">
+                            {% trans %}Your books{% endtrans %}
+                        </a>
+                    </li>
+                    <li class="pam">
+                        <a class="icon icon-bracket2"
+                           href="{{ url_for('users.logout') }}">
+                            {% trans %}Log out.{% endtrans %}
+                        </a>
+                    </li>
+                {% endif %}
+                <li class="pam">
+                    <a class="icon icon-bracket2"
+                       href="#">
+                        Téléchargez DownPub
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>

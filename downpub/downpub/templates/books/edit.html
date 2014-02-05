@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   {% from "forms/macros.html" import render_field %}
-  <form method="POST" action="{{ url('books.edit') }}" class="form">
+  <form method="POST" action="{{ url_for('books.edit', book_id=book.id) }}" class="form">
     {{ form.hidden_tag() }}
     {{ render_field(form.title, class="input text") }}
     <input type="submit" value="{% trans %}Save{% endtrans %}" class="button green">
