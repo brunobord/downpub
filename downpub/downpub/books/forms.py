@@ -20,8 +20,8 @@ class EditForm(Form):
 
 
 class AddPartForm(Form):
-    title = TextField(gettext('Part title'), [Required()])
-    content = TextAreaField(gettext('Content'), [Required()])
+    title = TextField(gettext('Part title'), [Required(gettext('Title for that part is required.'))])
+    content = TextAreaField(gettext('Content'))
     order = TextField(gettext('Order'), [Required()])
 
 

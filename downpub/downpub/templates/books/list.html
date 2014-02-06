@@ -3,21 +3,25 @@
 <h2>
     {% trans %}Your Books, {% endtrans %}{{ user.name }} !
 </h2>
+{% if books %}
 <ul>
-    {% if books %}
-        {% for book in books %}
-            <li><a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a></li>
-        {% endfor %}
-    {% else %}
-        <p>
-            {% trans %}Oops ! Seems you haven't wrote anything yet.{% endtrans %}
-        </p>
-        <p>
-            <a href="{{ url_for('books.add') }}">
-                {% trans %}Create a book now !{% endtrans %}
-            </a>
-        </p>
-    {% endif %}
+    {% for book in books %}
+        <li>
+            <a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a> -
+            <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts list{% endtrans %}</a>  -
+            <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
+        </li>
+    {% endfor %}
 </ul>
+{% else %}
+    <p>
+        {% trans %}Oops ! Seems you haven't wrote anything yet !{% endtrans %}
+    </p>
+    <p>
+        <a href="{{ url_for('books.add') }}">
+            {% trans %}Create a book now !{% endtrans %}
+        </a>
+    </p>
+{% endif %}
 
 {% endblock %}

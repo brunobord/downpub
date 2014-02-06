@@ -2,21 +2,30 @@
 {% block content %}
 <h2>{{ book.title }}</h2>
 
-<h3>{% trans %}Parts list :{% endtrans %}</h3>
-
+{% if parts %}
+<h4>{% trans %}Parts list :{% endtrans %}</h4>
 <ul>
   {% for part in parts %}
     <li>{{ part.title }} - {{ part.content|truncate(30) }} -
-    	<a href="{{ url_for('books.edit_part') }}">{% trans %}Edit{% endtrans %}</a>
-    	<a href="{{ url_for('books.del_part') }}">{% trans %}Delete{% endtrans %}</a>
+        <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
+            {% trans %}Edit{% endtrans %}
+        </a> -
+        <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
     </li>
   {% endfor %}
 </ul>
-
-<p>{% trans %}Not enough parts ? R U Sad ? {% endtrans %}
+<h4>{% trans %}Not enough parts ? Are you sad ? {% endtrans %}</h4>
+<p class="bigger">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
-        {% trans%}Then add a part !{% endtrans%}
+        {% trans%}Then add some parts !{% endtrans%}
     </a>
 </p>
-
+{% else %}
+<h4>{% trans %}No parts ? Are you sad ? {% endtrans %}</h4>
+<p class="bigger">
+    <a href="{{ url_for('books.add_part', book_id=book.id) }}">
+        {% trans%}Then add somme parts !{% endtrans%}
+    </a>
+</p>
+{% endif %}
 {% endblock %}

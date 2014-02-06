@@ -16,11 +16,11 @@ class Part(db.Model):
     book = db.relationship('Book',
         backref=db.backref('parts', lazy='dynamic'))
 
-    def __init__(self, title, content, order, book):
+    def __init__(self, title, content, order, book_id):
         self.title = title
         self.content = content
         self.order = order
-        self.book = book
+        self.book_id = book_id
 
     def __repr__(self):
         return '<Post %r>' % self.title

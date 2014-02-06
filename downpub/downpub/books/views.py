@@ -102,7 +102,7 @@ def edit(book_id):
         form=form, book=book, user=g.user)
 
 
-@mod.route('/<book_id>/del/', methods=['GET', 'POST'])
+@mod.route('/<book_id>/delete/', methods=['GET', 'POST'])
 @requires_login
 def delete(book_id):
     """
@@ -110,13 +110,13 @@ def delete(book_id):
     """
 
     # We get the part to deleter
-    book = Book.query.get(id=book_id)
+    book = Book.query.get(book_id)
     db.session.delete(book)
     # commit
     db.session.commit()
 
     # flash will display a message to the user
-    flash(gettext('That part has been edited !'))
+    flash(gettext('That book has been deleted !'))
 
     # redirect user to the list of parts method of the user module.
     return redirect(url_for('books.parts_list', book_id=book_id))
@@ -128,7 +128,7 @@ def parts_list(book_id):
     """
     List the parts (ordered by order field) from the book with book_id
     """
-    parts = Part.query.get(book_id)
+    parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
     book = Book.query.get(book_id)
     return render_template("books/parts_list.html",
         parts=parts, session=session, user=g.user, book=book)
@@ -141,9 +141,11 @@ def add_part(book_id):
     Add a part to the book with book_id
     """
     form = AddPartForm(request.form)
+    book = Book.query.get(book_id)
+
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
-        part = Part(book_id=form.book_id.data, title=form.title.data,
+        part = Part(book_id=book_id, title=form.title.data,
         content=form.content.data, order=form.order.data)
         # Insert the record in our database and commit it
         db.session.add(part)
@@ -156,7 +158,7 @@ def add_part(book_id):
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/add_part.html",
-        form=form, session=session, user=g.user)
+        form=form, session=session, book=book, user=g.user)
 
 
 @mod.route('/<book_id>/edit_part/<part_id>/', methods=['GET', 'POST'])
@@ -194,22 +196,26 @@ def edit_part(book_id, part_id):
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/edit_part.html",
-        form=form, book=book, session=session, user=g.user)
+        form=form, part=part, book=book, session=session, user=g.user)
 
 
 @mod.route('/<book_id>/del_part/<part_id>/', methods=['GET', 'POST'])
 @requires_login
-def del_part(book_id, part_id):
+def del_part(book_id,part_id):
     """
     Delete the part with part_id in the book with book_id
     """
 
     # We get the part to delete
-    part = Part.query.filter_by(id=part_id).get()
+    part = Part.query.get(part_id)
+    db.session.delete(part)
+    db.session.commit()
 
     # flash will display a message to the user
-    flash(gettext('That part has been edited !'))
+    flash(gettext('That part has been deleted !'))
 
+    parts = Part.query.filter_by(book_id=book_id).all()
+    book = Book.query.get(book_id)
     # redirect user to the list of parts method of the user module.
     return redirect(url_for('books.parts_list',
-        book_id=book_id), session=session, user=g.user)
+        parts=parts, session=session, user=g.user, book=book))

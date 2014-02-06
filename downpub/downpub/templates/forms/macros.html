@@ -1,10 +1,14 @@
 {% macro render_field(field) %}
-    <div class="form_field">
-    {{ field.label(class="label") }}
+    <div class="form_field line">
+    {{ field.label(class="label w20") }}
     {% if field.errors %}
         {% set css_class = 'has_error ' + kwargs.pop('class', '') %}
         {{ field(class=css_class, **kwargs) }}
-        <ul class="errors">{% for error in field.errors %}<li>{{ error|e }}</li>{% endfor %}</ul>
+        <div class="errors" class="">
+            {% for error in field.errors %}
+                <p class="error">* {{ error|e }}</p>
+            {% endfor %}
+        </div>
     {% else %}
         {{ field(**kwargs) }}
     {% endif %}

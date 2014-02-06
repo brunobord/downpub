@@ -44,7 +44,7 @@ def login():
             # the session can't be modified as it's signed,
             # it's a safe place to store the user id
             session['user_id'] = user.id
-            flash(gettext('Welcome %s' % user.name))
+            flash(gettext('You\'re just logged %s' % user.name))
             return redirect(request.args.get("next")
                 or url_for('users.home'))
         flash(gettext('Wrong email or password'), 'error-message')

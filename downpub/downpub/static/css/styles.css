@@ -16,25 +16,42 @@ a:hover {
 
 h1,h2,h3,h4,h5,h6 {
     margin:0.5em;
+    color:orange;
 }
 
 /*
     Style des infos d'erreur
 */
 
-.flash {
-    background: #cee5F5;
-    padding: 0.5em;
-    border: 1px solid #aacbe2;
+.message {
+    display:block;
+    background: #999;
+    padding:0.7em;
+    border: 1px solid orange;
+    color: black:
 }
+
 .error {
-    background: #f0d6d6;
+    display:block;
+    background: #999;
+    padding:0.7em;
+    border: 1px solid orange;
+    color: black:
+}
+
+.no_error {
+    display:inline-block;
     padding: 0.5em;
 }
 
 /*
     Style du layout
 */
+
+#main {
+    min-height:600px;
+    background: #777;
+}
 
 .aside {
     background: #333;
@@ -77,3 +94,19 @@ h1,h2,h3,h4,h5,h6 {
     background: #222;
     color: white;
 }
+
+/*
+    Formulaires
+*/
+
+.invisible {
+    display:none;
+}
+
+.form {
+    background:#333;
+    border:1px solid darkgray;
+    padding:0.7em;
+}
+
+.form.label {}
