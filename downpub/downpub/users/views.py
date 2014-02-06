@@ -8,6 +8,11 @@ from downpub.users.forms import RegisterForm, LoginForm
 from downpub.users.models import User
 from downpub.users.decorators import requires_login
 
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())
+
+
 mod = Blueprint('users', __name__, url_prefix='/users')
 
 

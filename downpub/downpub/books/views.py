@@ -11,6 +11,10 @@ from downpub.users.models import User
 
 mod = Blueprint('books', __name__, url_prefix='/books')
 
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())
+
 
 @mod.before_request
 def before_request():
