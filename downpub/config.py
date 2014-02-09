@@ -21,6 +21,7 @@ EXPORT_DIR = os.path.join(_basedir, 'files')
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # Maximum size for each image
 MAX_CONTENT_LENGTH = 1 * 1024 * 1024
+UPLOADS_COVERS_DEST = os.path.join(_basedir, 'files/covers/')
 
 # Change this line to match your settings
 # For dev purposes, an example with sqlite, comes in handy :)

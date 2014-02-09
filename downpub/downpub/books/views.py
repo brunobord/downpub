@@ -7,9 +7,11 @@ import os
 from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
-    flash, g, session, redirect, url_for
+    flash, g, session, redirect, url_for, send_from_directory
 from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
+from flaskext.uploads import (UploadSet, configure_uploads, IMAGES,
+                              UploadNotAllowed, Upload)
 
 from downpub import db, babel
 from downpub.books.forms import AddForm, EditForm, AddPartForm, EditPartForm
@@ -17,9 +19,10 @@ from downpub.books.models import Book, Part
 from downpub.books.decorators import requires_login
 from downpub.users.models import User
 
-from config import EXPORT_DIR
+from config import EXPORT_DIR, ALLOWED_EXTENSIONS, UPLOADS_COVERS_DEST
 
 mod = Blueprint('books', __name__, url_prefix='/books')
+covers = UploadSet('covers', IMAGES)
 
 
 @mod.before_request
@@ -54,15 +57,11 @@ def add():
     if form.validate_on_submit():
 
         title = form.title.data
-        if form.cover.data:
-            cover = form.cover.data
-        else:
-            cover = None
 
         # create an user instance not yet stored in the database
         book = Book(title=title, user_id=session['user_id'],
-            cover=cover, creation_date=None, modified_at=None)
-        print(book)
+            cover=None, creation_date=None, modified_at=None)
+
         # Insert the record in our database and commit it
         db.session.add(book)
         db.session.commit()
@@ -128,6 +127,58 @@ def delete(book_id):
 
     # redirect user to the list of parts method of the user module.
     return redirect(url_for('books.list', book_id=book_id))
+
+
+@mod.route('/<book_id>/cover_add', methods=['GET', 'POST'])
+@requires_login
+def cover_add(book_id):
+    """
+    Add the book
+    """
+
+    form = AddCoverForm(request.form)
+    # we get the book
+    book = Book.query.get(book_id)
+
+    if form.validate_on_submit() and 'cover' in request.files:
+
+        cover = covers.save(request.files['cover'])
+        rec = Photo(filename=cover, user=g.user.id)
+        rec.store()
+
+        # Insert the record in our database and commit it
+        book.cover = None
+        db.session.commit()
+
+        # flash will display a message to the user
+        flash(gettext("That book's cover has been deleted !"))
+        # redirect user to the 'book' page
+        return redirect(url_for('books.parts-list'), book_id=book_id)
+
+    return render_template("books/parts_list.html",
+        form=form, book=book, user=g.user)
+
+
+@mod.route('/<book_id>/cover_delete', methods=['GET', 'POST'])
+@requires_login
+def cover_delete(book_id):
+    """
+    Delete the book's cover
+    """
+    # create an user instance not yet stored in the database
+    book = Book.query.get(book_id)
+
+    # Insert the record in our database and commit it
+    book.cover = None
+    db.session.commit()
+
+    upload = Upload.query.get_or_404(book_id)
+    delete(upload)
+
+    # flash will display a message to the user
+    flash(gettext("That book's cover has been deleted !"))
+    # redirect user to the 'book' page
+    return redirect(url_for('books.parts-list'), book_id=book_id)
 
 
 @mod.route('/<book_id>/export/<export_format>', methods=['GET', 'POST'])
@@ -307,10 +358,10 @@ def export_part(book_id, part_id, export_format):
 
     # Set up the echo command and direct the output to a pipe
     p1 = subprocess.Popen(['pandoc -S', EXPORT_DIR + "/" + book_id + "/export/" + book_id + '-part-' + part_id + '.md',
-                           '-o ', EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format,
-                           '-f markdown',
-                           '-t ', export_format,
-                           ], stdout=subprocess.PIPE)
+                         '-o ', EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format,
+                         '-f markdown',
+                         '-t ', export_format,
+                         ], stdout=subprocess.PIPE)
 
     # Run the pandoc command
     output = p1.communicate()[0]
@@ -329,21 +380,39 @@ def get_book(book_id, export_format):
     Get the chosen book in <export_format> format.
     """
 
-    book = Book.query.get(book_id)
+    if os.path.exists(EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + "." + export_format):
+        # we now send the correct file to the user
+        return send_from_directory(EXPORT_DIR + "/" + book_id + "/export/",
+                               "book-" + book_id + "." + export_format, as_attachment=True)
+    else:
+        flash(gettext("That book has not been exported in that format, we can't send it to you !"))
 
-    # we now send the correct file to the user
-    file_path = EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + "." + export_format
+        parts = Part.query.filter_by(book_id=book_id).all()
+        book = Book.query.get(book_id)
+        # redirect user to the list of parts method of the user module.
+        return redirect(url_for('books.parts_list',
+            parts=parts, session=session, user=g.user, book=book))
 
 
 @mod.route('/<book_id>/get_part/<part_id>/format/<export_format>', methods=['GET', 'POST'])
 @requires_login
 def get_part(part_id, book_id, export_format):
     """
-    Get the chosen book in <export_format> format.
+    Get the chosen part of the book with book_id in <export_format> format.
     """
 
-    # we now send the correct file to the user
-    file_path = EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format
+    if os.path.exists(EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format):
+        # we now send the correct file to the user
+        return send_from_directory(EXPORT_DIR + "/" + book_id + "/export/",
+                                   "book-" + book_id + '-part-' + part_id + "." + export_format, as_attachment=True)
+    else:
+        flash(gettext("That part of the book has not been exported in that format, we can't send it to you !"))
+
+        parts = Part.query.filter_by(book_id=book_id).all()
+        book = Book.query.get(book_id)
+        # redirect user to the list of parts method of the user module.
+        return redirect(url_for('books.parts_list',
+            parts=parts, session=session, user=g.user, book=book))
 
 
 def allowed_file(filename):

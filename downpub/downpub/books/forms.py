@@ -11,6 +11,8 @@ from flask.ext.babel import gettext
 class AddForm(Form):
     title = StringField(gettext('Book title'),
         [Required(), Length(max=80)])
+
+class AddCoverForm(Form):
     cover = FileField(gettext('Image File'),
         [FileAllowed(['jpg', 'png'], gettext('Images only!'))])
 
