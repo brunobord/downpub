@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+
 from downpub import db
 from downpub.users.models import User
 from downpub.books import constants as BOOK
@@ -36,8 +39,9 @@ class Book(db.Model):
     author = db.relationship('User',
         backref=db.backref('books', lazy='dynamic'))
     creation_date = db.Column(db.DateTime)
+    modified_at = db.Column(db.DateTime)
 
-    def __init__(self, title, user_id, cover, creation_date):
+    def __init__(self, title, user_id, cover, creation_date, modified_at):
         self.title = title
         self.user_id = user_id
 
@@ -48,6 +52,10 @@ class Book(db.Model):
         if creation_date is None:
             creation_date = datetime.utcnow()
         self.creation_date = creation_date
+
+        if modified_at is None:
+            modified_at = datetime.utcnow()
+        self.modified_at = modified_at
 
     def __repr__(self):
         return '<Book %r, written by %r - %r>' % \

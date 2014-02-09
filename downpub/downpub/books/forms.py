@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+
 from flask.ext.wtf import Form
 from wtforms import TextField, StringField, TextAreaField
 from wtforms.validators import Required, Length

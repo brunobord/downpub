@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+
 # User roles
 ADMIN = 0
 STAFF = 1

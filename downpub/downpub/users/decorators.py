@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+
 from functools import wraps
 from flask.ext.babel import gettext
 from flask import g, flash, redirect, url_for, request
