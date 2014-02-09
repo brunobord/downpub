@@ -7,20 +7,23 @@ Projet de clone libre d'Editorially. Sera sûrement jamais fini par moi-même, u
 
 Installez python, setuptools, (éventuellement virtualenv) puis (dans le virtualenv ou pas) :
 
-1. pip install Flask
-2. pip install Flask-WTF
-3. pip install Flask-sqlalchemy
-3. pip install Flask-Migrate
+``pip install Flask``
+
+``pip install Flask-WTF``
+
+``pip install Flask-sqlalchemy``
+
+``pip install Flask-Migrate``
 
 Ensuite, une fois dans le dossier où se trouve le script manage.py lancez :
 
-1. python manage.py db upgrade
+``python manage.py db upgrade``
 
 Cela initialise et crée la bdd.
 
 Enfin, lancez le fichier run.py via python
 
-1. python run.py
+``python run.py``
 
 Accédez alors à l'appli via (http://localhost:5000). Pour plus d'infos sur la façon d'installer ça derrière un serveur web, je... ne sais pas pour l'instant, mais ça peut se faire avec nginx et uwsgi, par exemple. À vous de voir, j'suis encore un peu perdu dans tout ça.
 
