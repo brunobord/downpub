@@ -1,3 +1,4 @@
 *.nja
 *__pycache__*
 *.pyc
+*.db

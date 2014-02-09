@@ -9,10 +9,17 @@
         <li>
             <a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a> -
             <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts list{% endtrans %}</a>  -
-            <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
+            <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a> -
+            {% trans %}Created the {% endtrans %}<em>{{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}</em> -
+            {% trans %}Last modified at {% endtrans %}<em>{{ book.modified_at.strftime(' %d/%m/%Y  %H:%M') }}</em>
         </li>
     {% endfor %}
 </ul>
+<p>
+    <a href="{{ url_for('books.add') }}">
+        {% trans %}Create another book ?{% endtrans %}
+    </a>
+</p>
 {% else %}
     <p>
         {% trans %}Oops ! Seems you haven't wrote anything yet !{% endtrans %}
