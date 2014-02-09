@@ -3,17 +3,13 @@ from flask import Blueprint, request, render_template, \
 from flask.ext.babel import gettext
 from flask.ext.babel import gettext, Babel
 
-from downpub import db
+from downpub import db, babel
 from downpub.books.forms import AddForm, EditForm, AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
 from downpub.books.decorators import requires_login
 from downpub.users.models import User
 
 mod = Blueprint('books', __name__, url_prefix='/books')
-
-@babel.localeselector
-def get_locale():
-    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 @mod.before_request

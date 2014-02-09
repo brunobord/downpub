@@ -3,9 +3,6 @@ _basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
-ADMINS = frozenset(['paindesegle@gmail.com'])
-SECRET_KEY = 'lacharogne'
-
 # available languages
 LANGUAGES = {
     'en': 'English',

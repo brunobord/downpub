@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g, session
+from flask import Flask, render_template, g, session, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.babel import Babel, gettext
 
@@ -6,8 +6,9 @@ downpub = Flask(__name__)
 downpub.config.from_object('config')
 
 db = SQLAlchemy(downpub)
-
 babel = Babel(downpub)
+
+
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(LANGUAGES.keys())

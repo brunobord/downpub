@@ -3,14 +3,10 @@ from flask import Blueprint, request, render_template, \
 from werkzeug import check_password_hash, generate_password_hash
 from flask.ext.babel import gettext, Babel
 
-from downpub import db
+from downpub import db, babel
 from downpub.users.forms import RegisterForm, LoginForm
 from downpub.users.models import User
 from downpub.users.decorators import requires_login
-
-@babel.localeselector
-def get_locale():
-    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 mod = Blueprint('users', __name__, url_prefix='/users')
