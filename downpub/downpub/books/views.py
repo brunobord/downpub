@@ -4,6 +4,7 @@
 # Import the subprocess module to launch/communicate with the pandoc tool used to generate export files
 import subprocess
 import os
+from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
     flash, g, session, redirect, url_for
@@ -37,7 +38,7 @@ def list():
     """
     List the books the actual user created
     """
-    books = Book.query.filter_by(user_id=session['user_id']).all()
+    books = Book.query.filter_by(user_id=session['user_id']).order_by(Book.modified_at.desc()).all()
     return render_template("books/list.html",
         books=books,
         user=g.user)
@@ -60,7 +61,7 @@ def add():
 
         # create an user instance not yet stored in the database
         book = Book(title=title, user_id=session['user_id'],
-            cover=cover, creation_date=None)
+            cover=cover, creation_date=None, modified_at=None)
         print(book)
         # Insert the record in our database and commit it
         db.session.add(book)
@@ -94,6 +95,7 @@ def edit(book_id):
 
         # set the new values
         book.title = form.title.data
+        book.modified_at = datetime.utcnow()
 
         # commit
         db.session.commit()
