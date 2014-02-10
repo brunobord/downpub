@@ -6,9 +6,17 @@
 {% if books %}
 <ul>
     {% for book in books %}
+        {% if book.cover %}
+            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" alt="{{ book.title }}" />
+        {% endif %}
         <li>
             <a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a> -
             <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts list{% endtrans %}</a>  -
+            {% if not book.cover %}
+                <a href="{{ url_for('books.cover_add', book_id=book.id) }}">{% trans %}Add a cover for this book{% endtrans %}</a>  -
+            {% else %}
+                <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>  -
+            {% endif %}
             <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a> -
             {% trans %}Created the {% endtrans %}<em>{{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}</em> -
             {% trans %}Last modified at {% endtrans %}<em>{{ book.modified_at.strftime(' %d/%m/%Y  %H:%M') }}</em>

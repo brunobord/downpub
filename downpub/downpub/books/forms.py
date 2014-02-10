@@ -14,7 +14,7 @@ class AddForm(Form):
 
 class AddCoverForm(Form):
     cover = FileField(gettext('Image File'),
-        [FileAllowed(['jpg', 'png'], gettext('Images only!'))])
+        [FileAllowed(['jpg', 'jpeg', 'gif', 'png'], gettext('Images only!'))])
 
 
 class EditForm(Form):

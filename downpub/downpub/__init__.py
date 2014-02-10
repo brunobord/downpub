@@ -4,13 +4,14 @@
 from flask import Flask, render_template, g, session, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.babel import Babel, gettext
-from config import LANGUAGES
+from config import *
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 
 
 downpub = Flask(__name__)
 downpub.config.from_object('config')
+downpub.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 db = SQLAlchemy(downpub)
 babel = Babel(downpub)
@@ -43,7 +44,18 @@ def before_request():
 
 @downpub.errorhandler(404)
 def not_found(error):
+    """
+    Handling 404 errors
+    """
     return render_template('404.html', user=g.user), 404
+
+
+@downpub.errorhandler(413)
+def not_found(error):
+    """
+    Handling 413 "file too big" errors
+    """
+    return render_template('413.html', user=g.user), 413
 
 
 @downpub.route('/')

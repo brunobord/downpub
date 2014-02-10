@@ -44,9 +44,6 @@ class Book(db.Model):
     def __init__(self, title, user_id, cover, creation_date, modified_at):
         self.title = title
         self.user_id = user_id
-
-        if cover is None:
-            cover = "default"
         self.cover = cover
 
         if creation_date is None:

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>{{ book.title }}</h2>
+{% if book.cover %}
+    <img src="{{ url_for('books.cover_get', book_id=book.id) }}" alt="{{ book.title }}" />
+{% endif %}
 
 {% if parts %}
 <h4>{% trans %}Parts list :{% endtrans %}</h4>

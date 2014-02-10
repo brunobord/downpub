@@ -7,22 +7,19 @@ import os
 from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
-    flash, g, session, redirect, url_for, send_from_directory
+    flash, g, session, redirect, url_for, send_from_directory, send_file
 from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
-from flaskext.uploads import (UploadSet, configure_uploads, IMAGES,
-                              UploadNotAllowed, Upload)
 
-from downpub import db, babel
-from downpub.books.forms import AddForm, EditForm, AddPartForm, EditPartForm
+from downpub import downpub, db, babel
+from downpub.books.forms import AddForm, AddCoverForm, EditForm, AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
 from downpub.books.decorators import requires_login
 from downpub.users.models import User
 
-from config import EXPORT_DIR, ALLOWED_EXTENSIONS, UPLOADS_COVERS_DEST
+from config import *
 
 mod = Blueprint('books', __name__, url_prefix='/books')
-covers = UploadSet('covers', IMAGES)
 
 
 @mod.before_request
@@ -133,30 +130,63 @@ def delete(book_id):
 @requires_login
 def cover_add(book_id):
     """
-    Add the book
+    Add a cover to the book
     """
 
     form = AddCoverForm(request.form)
+
     # we get the book
     book = Book.query.get(book_id)
 
     if form.validate_on_submit() and 'cover' in request.files:
 
-        cover = covers.save(request.files['cover'])
-        rec = Photo(filename=cover, user=g.user.id)
-        rec.store()
+        #we save the file, and get the name back
+        cover = request.files['cover']
+        if cover and allowed_file(cover.filename) and cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
 
-        # Insert the record in our database and commit it
-        book.cover = None
-        db.session.commit()
+            # We test the file extension to recreate a file with the same one
+            if "png" in cover.filename:
+                file_extension = "png"
+            if "jpg" in cover.filename:
+                file_extension = "jpg"
+            if "jpeg" in cover.filename:
+                file_extension = "jpeg"
+            if "gif" in cover.filename:
+                file_extension = "gif"
 
-        # flash will display a message to the user
-        flash(gettext("That book's cover has been deleted !"))
-        # redirect user to the 'book' page
-        return redirect(url_for('books.parts-list'), book_id=book_id)
+            # we save the file
+            cover.save(os.path.join(downpub.config['UPLOAD_FOLDER'], book_id + '.' + file_extension))
+            book.cover = os.path.join(downpub.config['UPLOAD_FOLDER'], book_id + '.' + file_extension)
 
-    return render_template("books/parts_list.html",
-        form=form, book=book, user=g.user)
+            # Insert the record in our database and commit it
+            db.session.commit()
+
+            # flash will display a message to the user
+            flash(gettext("That book's cover has been added !"))
+            # redirect user to the 'book' page
+            return redirect(url_for('books.parts_list', book_id=book_id))
+
+        elif cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
+            # flash will display a message to the user
+            flash(gettext("That picture is too big !"))
+            # redirect user to the 'book' page
+            return redirect(url_for('books.list', book_id=book_id))
+
+        elif not allowed_file(cover.filename):
+            # flash will display a message to the user
+            flash(gettext("That filetype is not allowed !"))
+            # redirect user to the 'book' page
+            return redirect(url_for('books.list', book_id=book_id))
+
+    else:
+        if book.cover is None:
+            return render_template("books/cover_add.html",
+                form=form, book=book, user=g.user)
+        else:
+            # flash will display a message to the user
+            flash(gettext("That book already has a cover, delete it first to upload a new one !"))
+            # redirect user to the 'book' page
+            return redirect(url_for('books.list', book_id=book_id))
 
 
 @mod.route('/<book_id>/cover_delete', methods=['GET', 'POST'])
@@ -168,17 +198,38 @@ def cover_delete(book_id):
     # create an user instance not yet stored in the database
     book = Book.query.get(book_id)
 
-    # Insert the record in our database and commit it
-    book.cover = None
-    db.session.commit()
+    if not book.cover is None:
 
-    upload = Upload.query.get_or_404(book_id)
-    delete(upload)
+        # we try to delete all kind of extension type
+        if os.path.exists(book.cover):
+            os.remove(book.cover)
 
-    # flash will display a message to the user
-    flash(gettext("That book's cover has been deleted !"))
-    # redirect user to the 'book' page
-    return redirect(url_for('books.parts-list'), book_id=book_id)
+        # Empty the record in our database and commit it
+        book.cover = None
+        db.session.commit()
+
+        # flash will display a message to the user
+        flash(gettext("That book's cover has been deleted !"))
+        # redirect user to the 'book' page
+        return redirect(url_for('books.parts_list', book_id=book_id))
+
+    else:
+        # flash will display a message to the user
+        flash(gettext("That book has no cover already !"))
+        # redirect user to the 'book' page
+        return redirect(url_for('books.list', book_id=book_id))
+
+
+@mod.route('/<book_id>/cover')
+def cover_get(book_id):
+    """
+    Return the cover uploaded for that book with book_id or nothing
+    """
+    book = Book.query.get(book_id)
+    if book.cover is None:
+        return None
+    else:
+        return send_file(book.cover)
 
 
 @mod.route('/<book_id>/export/<export_format>', methods=['GET', 'POST'])
