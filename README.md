@@ -7,13 +7,11 @@ Projet de clone libre d'Editorially. Sera sûrement jamais fini par moi-même, u
 
 Installez python, setuptools, (éventuellement virtualenv) puis (dans le virtualenv ou pas) :
 
-``pip install Flask``
+    pip install Flask Flask-WTF Flask-sqlalchemy Flask-Migrate
 
-``pip install Flask-WTF``
+ou bien utilisez le fichier ``requirements.pip`` inclus dans la distribution:
 
-``pip install Flask-sqlalchemy``
-
-``pip install Flask-Migrate``
+    pip install -r requirements.pip
 
 Ensuite, une fois dans le dossier où se trouve le script manage.py lancez :
 
