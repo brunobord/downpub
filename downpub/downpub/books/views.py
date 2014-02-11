@@ -442,7 +442,9 @@ def get_book(book_id, export_format):
 
     if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format):
         # we now send the correct file to the user
-        return send_from_directory(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format, as_attachment=True)
+        return send_from_directory(directory=EXPORT_DIR + "/" + book_id + "/",
+                                    filename="book-" + book_id + "." + export_format,
+                                    as_attachment=True)
     else:
         flash(gettext("That book has not been exported in that format, we can't send it to you !"))
 
@@ -460,10 +462,11 @@ def get_part(part_id, book_id, export_format):
     Get the chosen part of the book with book_id in <export_format> format.
     """
 
-    if os.path.exists(EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format):
+    if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format):
         # we now send the correct file to the user
-        return send_from_directory(EXPORT_DIR + "/" + book_id + "/export/",
-                                   "book-" + book_id + '-part-' + part_id + "." + export_format, as_attachment=True)
+        return send_from_directory(directory=EXPORT_DIR + "/" + book_id + "/",
+                                   filename="book-" + book_id + '-part-' + part_id + "." + export_format,
+                                   as_attachment=True)
     else:
         flash(gettext("That part of the book has not been exported in that format, we can't send it to you !"))
 
