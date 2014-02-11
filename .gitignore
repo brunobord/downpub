@@ -3,4 +3,5 @@
 *.pyc
 *.db
 downpub/downpub/files/covers/*
-downpub/downpub/files/exports/*
+*exports/*
+
