@@ -266,14 +266,16 @@ def export(book_id, export_format):
     args = [
         'pandoc', '-S',
         EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+        '--epub-cover-image', book.cover,
+        '-s', '--toc',
         '-f', 'markdown',
         '-t', export_format,
         '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
         ]
-    p1 = subprocess.check_call(args)
+    p1 = subprocess.call(args)
 
     # Get the return of the pandoc command
-    output = p1
+    output = str(p1) + ' - ' + ' '.join(args)
 
     # flash will display a message to the user
     flash(gettext('That book has been exported !'))
@@ -411,14 +413,16 @@ def export_part(book_id, part_id, export_format):
     # Set up the pandoc and run it
     args = [
         'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+        '--epub-cover-image', book.cover,
+        '-s', '--toc',
         '-f', 'markdown',
         '-t', export_format,
         '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
         ]
-    p1 = subprocess.check_call(args)
+    p1 = subprocess.call(args)
 
     # Get the return of the pandoc command
-    output = p1
+    output = str(p1) + ' - ' + ' '.join(args)
 
     # flash will display a message to the user
     flash(gettext('That book has been exported !'))
