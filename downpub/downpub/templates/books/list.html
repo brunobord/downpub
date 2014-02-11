@@ -4,12 +4,12 @@
     {% trans %}Your Books, {% endtrans %}{{ user.name }} !
 </h2>
 {% if books %}
-<ul>
+<ul class="booklist">
     {% for book in books %}
+        <li class="bookelement">
         {% if book.cover %}
-            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" alt="{{ book.title }}" />
+            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
         {% endif %}
-        <li>
             <a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a> -
             <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts list{% endtrans %}</a>  -
             {% if not book.cover %}
@@ -17,9 +17,11 @@
             {% else %}
                 <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>  -
             {% endif %}
+            <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a> -
             <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a> -
             {% trans %}Created the {% endtrans %}<em>{{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}</em> -
             {% trans %}Last modified at {% endtrans %}<em>{{ book.modified_at.strftime(' %d/%m/%Y  %H:%M') }}</em>
+
         </li>
     {% endfor %}
 </ul>

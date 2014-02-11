@@ -164,11 +164,12 @@ def cover_add(book_id):
             # flash will display a message to the user
             flash(gettext("That book's cover has been added !"))
             # redirect user to the 'book' page
-            return redirect(url_for('books.parts_list', book_id=book_id))
+            return redirect(url_for('books.list', book_id=book_id))
 
         elif cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
             # flash will display a message to the user
-            flash(gettext("That picture is too big !"))
+            flash(gettext("That picture's filesize is too big, max allowed size is : ") +
+                round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
             # redirect user to the 'book' page
             return redirect(url_for('books.list', book_id=book_id))
 
@@ -211,7 +212,7 @@ def cover_delete(book_id):
         # flash will display a message to the user
         flash(gettext("That book's cover has been deleted !"))
         # redirect user to the 'book' page
-        return redirect(url_for('books.parts_list', book_id=book_id))
+        return redirect(url_for('books.list', book_id=book_id))
 
     else:
         # flash will display a message to the user
@@ -242,41 +243,44 @@ def export(book_id, export_format):
     # We get all the data we have to pass to pandoc
     book = Book.query.get(book_id)
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
+    user = User.query.get(book.user_id)
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
-        subprocess.Popen(['mkdir -p', EXPORT_DIR + "/" + book_id])
-    if not os.path.isdir(EXPORT_DIR + "/" + book_id + "/export"):
-        subprocess.Popen(['mkdir -p', EXPORT_DIR + "/" + book_id + "/export"])
+        os.makedirs(EXPORT_DIR + "/" + book_id)
 
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
-    export_file = open(EXPORT_DIR + "/" + book_id + "/export/" + book_id + '.md', 'w')
+    export_file = open(EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md', 'w')
 
     export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + book.author + '\n')
+    export_file.write('% ' + user.name + '\n\n')
 
     for the_part in parts:
-        export_file.write(the_part.content + '\n')
+        export_file.write(the_part.content + '\n\n')
 
     # When we wrote everything, we close the file
     export_file.close()
 
-    # Set up the echo command and direct the output to a pipe
-    p1 = subprocess.Popen(['pandoc -S', EXPORT_DIR + "/" + book_id + "/export/" + book_id + '.md',
-                            '-o ', EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + ".epub",
-                            '-f markdown',
-                            '-t ', export_format,
-                            ], stdout=subprocess.PIPE)
+    # Set up the pandoc command and run it
+    args = [
+        'pandoc', '-S',
+        EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+        '-f', 'markdown',
+        '-t', export_format,
+        '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
+        ]
+    p1 = subprocess.check_call(args)
 
-    # Run the pandoc command
-    output = p1.communicate()[0]
+    # Get the return of the pandoc command
+    output = p1
 
     # flash will display a message to the user
     flash(gettext('That book has been exported !'))
 
     # redirect user to the result page with a link if the export was successful
-    return redirect(url_for('books.export', output=output, book=book))
+    return render_template('books/export.html', output=output, book=book,
+        user=g.user, export_format=export_format, export_done=1)
 
 
 @mod.route('/<book_id>/parts/', methods=['GET', 'POST'])
@@ -391,37 +395,38 @@ def export_part(book_id, part_id, export_format):
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
-        subprocess.Popen(['mkdir -p', EXPORT_DIR + "/" + book_id])
-    if not os.path.isdir(EXPORT_DIR + "/" + book_id + "/export"):
-        subprocess.Popen(['mkdir -p', EXPORT_DIR + "/" + book_id + "/export"])
-
+        subprocess.call(['mkdir -p ' + EXPORT_DIR + "/" + book_id])
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
-    export_file = open(EXPORT_DIR + "/" + book_id + "/export/" + book_id + '-part-' + part_id + '.md', 'w')
+    export_file = open(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md', 'w')
 
     export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + book.author + '\n')
+    export_file.write('% ' + book.author + '\n\n')
 
-    export_file.write(part.content + '\n')
+    export_file.write(part.content + '\n\n')
 
     # When we wrote everything, we close the file
     export_file.close()
 
-    # Set up the echo command and direct the output to a pipe
-    p1 = subprocess.Popen(['pandoc -S', EXPORT_DIR + "/" + book_id + "/export/" + book_id + '-part-' + part_id + '.md',
-                         '-o ', EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + '-part-' + part_id + "." + export_format,
-                         '-f markdown',
-                         '-t ', export_format,
-                         ], stdout=subprocess.PIPE)
+    # Set up the pandoc and run it
+    args = [
+        'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+        '-f', 'markdown',
+        '-t', export_format,
+        '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
+        ]
+    p1 = subprocess.check_call(args)
 
-    # Run the pandoc command
-    output = p1.communicate()[0]
+    # Get the return of the pandoc command
+    output = p1
 
     # flash will display a message to the user
     flash(gettext('That book has been exported !'))
 
     # redirect user to the result page with a link if the export was successful
-    return redirect(url_for('books.export_part', output=output, book=book, part=part))
+    # redirect user to the result page with a link if the export was successful
+    return render_template('books/export_part.html', output=output, book=book,
+        part=part, user=g.user, export_format=export_format, export_done=1)
 
 
 @mod.route('/<book_id>/get/<export_format>', methods=['GET', 'POST'])
@@ -431,10 +436,9 @@ def get_book(book_id, export_format):
     Get the chosen book in <export_format> format.
     """
 
-    if os.path.exists(EXPORT_DIR + "/" + book_id + "/export/book-" + book_id + "." + export_format):
+    if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format):
         # we now send the correct file to the user
-        return send_from_directory(EXPORT_DIR + "/" + book_id + "/export/",
-                               "book-" + book_id + "." + export_format, as_attachment=True)
+        return send_from_directory(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format, as_attachment=True)
     else:
         flash(gettext("That book has not been exported in that format, we can't send it to you !"))
 
@@ -472,3 +476,44 @@ def allowed_file(filename):
     """
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
+import struct
+import imghdr
+
+
+def get_image_size(fname):
+    '''
+    Determine the image type of fhandle and return its size.
+    '''
+    fhandle = open(fname, 'rb')
+    head = fhandle.read(24)
+    if len(head) != 24:
+        return
+    if imghdr.what(fname) == 'png':
+        check = struct.unpack('>i', head[4:8])[0]
+        if check != 0x0d0a1a0a:
+            return
+        width, height = struct.unpack('>ii', head[16:24])
+    elif imghdr.what(fname) == 'gif':
+        width, height = struct.unpack('<HH', head[6:10])
+    elif imghdr.what(fname) == 'jpeg':
+        try:
+            fhandle.seek(0)  # Read 0xff next
+            size = 2
+            ftype = 0
+            while not 0xc0 <= ftype <= 0xcf:
+                fhandle.seek(size, 1)
+                byte = fhandle.read(1)
+                while ord(byte) == 0xff:
+                    byte = fhandle.read(1)
+                ftype = ord(byte)
+                size = struct.unpack('>H', fhandle.read(2))[0] - 2
+            # We are at a SOFn block
+            fhandle.seek(1, 1)  # Skip `precision' byte.
+            height, width = struct.unpack('>HH', fhandle.read(4))
+        except Exception:  #IGNORE:W0703
+            return
+    else:
+        return
+    return width, height

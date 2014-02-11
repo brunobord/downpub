@@ -16,7 +16,7 @@ LANGUAGES = {
 }
 
 # books export directory
-EXPORT_DIR = os.path.join(_basedir, 'files')
+EXPORT_DIR = os.path.join(_basedir, 'downpub/files/exports')
 # Allowed cover image types
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # Maximum size for each image

@@ -15,13 +15,13 @@ ou bien utilisez le fichier ``requirements.pip`` inclus dans la distribution:
 
 Ensuite, une fois dans le dossier où se trouve le script manage.py lancez :
 
-``python manage.py db upgrade``
+    python manage.py db upgrade
 
 Cela initialise et crée la bdd.
 
 Enfin, lancez le fichier run.py via python
 
-``python run.py``
+    python run.py
 
 Accédez alors à l'appli via (http://localhost:5000). Pour plus d'infos sur la façon d'installer ça derrière un serveur web, je... ne sais pas pour l'instant, mais ça peut se faire avec nginx et uwsgi, par exemple. À vous de voir, j'suis encore un peu perdu dans tout ça.
 

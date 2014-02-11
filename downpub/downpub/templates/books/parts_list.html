@@ -2,7 +2,8 @@
 {% block content %}
 <h2>{{ book.title }}</h2>
 {% if book.cover %}
-    <img src="{{ url_for('books.cover_get', book_id=book.id) }}" alt="{{ book.title }}" />
+    <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
+    - <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>
 {% endif %}
 
 {% if parts %}
