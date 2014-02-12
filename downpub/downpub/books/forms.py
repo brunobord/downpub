@@ -26,7 +26,8 @@ class EditForm(Form):
 
 class AddPartForm(Form):
     title = TextField(gettext('Part title'), [Required(gettext('Title for that part is required.'))])
-    content = TextAreaField(gettext('Content'))
+    content = TextAreaField(gettext('Content'),
+        default=gettext("#This is a default part title\n\nHere is the awesome content of that book's part."))
     order = TextField(gettext('Order'), [Required()])
 
 

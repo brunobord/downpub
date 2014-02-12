@@ -40,7 +40,10 @@
                         toggleEdit: '{% trans %}Toggle Edit Mode{% endtrans %}',
                         toggleFullscreen: '{% trans %}Enter Fullscreen{% endtrans %}'
                     },
-                    autogrow: false
+                    autogrow: {
+                        minHeight: 350,
+
+                    }
                 }
                 var editor = new EpicEditor(opts).load();
             }

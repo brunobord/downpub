@@ -6,6 +6,10 @@ html {
     background: #222;
 }
 
+body {
+    background: #222;
+}
+
 a {
     color:orange;
 }
@@ -49,8 +53,8 @@ h1,h2,h3,h4,h5,h6 {
 */
 
 #main {
-    min-height:600px;
     background: #777;
+    min-height:550px;
 }
 
 .aside {
@@ -84,6 +88,7 @@ h1,h2,h3,h4,h5,h6 {
 #header {
     background: #222;
     color: white;
+    height:120px;
 }
 
 #header h1 {
@@ -93,6 +98,7 @@ h1,h2,h3,h4,h5,h6 {
 #footer {
     background: #222;
     color: white;
+    height:70px;
 }
 
 /*
