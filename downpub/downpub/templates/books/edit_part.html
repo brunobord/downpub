@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% include 'editor.html' %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
     <form method="POST" action="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}" class="form">

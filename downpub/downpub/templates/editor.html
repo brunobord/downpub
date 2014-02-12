@@ -5,8 +5,13 @@
                     container: 'epiceditor',
                     textarea: content,
                     basePath: '{{ url_for('static', filename='js/epiceditor') }}',
-                    clientSideStorage: true,
-                    localStorageName: 'epiceditor',
+                    {% if not part %}
+                        clientSideStorage: false,
+                        localStorageName: 'book-{{book.id}}-new',
+                    {% else %}
+                        clientSideStorage: true,
+                        localStorageName: 'book-{{book.id}}-part-{{part.id}}',
+                    {% endif %}
                     useNativeFullscreen: true,
                     parser: marked,
                     file: {

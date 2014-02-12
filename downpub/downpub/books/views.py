@@ -65,7 +65,7 @@ def add():
 
         # flash will display a message to the user
         flash(gettext('That book has been created !'))
-        # redirect user to the 'home' method of the user module.
+        # redirect user to the list of books
         return redirect(url_for('books.list'))
 
     return render_template("books/add.html",
@@ -99,7 +99,7 @@ def edit(book_id):
         # flash will display a message to the user
         flash(gettext('That book has been edited !'))
 
-        # redirect user to the 'home' method of the user module.
+        # redirect user to the list of books
         return redirect(url_for('books.list', book_id=book_id))
 
     return render_template("books/edit.html",
@@ -122,7 +122,7 @@ def delete(book_id):
     # flash will display a message to the user
     flash(gettext('That book has been deleted !'))
 
-    # redirect user to the list of parts method of the user module.
+    # redirect user to the list of books
     return redirect(url_for('books.list', book_id=book_id))
 
 
@@ -186,7 +186,7 @@ def cover_add(book_id):
         else:
             # flash will display a message to the user
             flash(gettext("That book already has a cover, delete it first to upload a new one !"))
-            # redirect user to the 'book' page
+            # redirect user to the list of books
             return redirect(url_for('books.list', book_id=book_id))
 
 
@@ -217,7 +217,7 @@ def cover_delete(book_id):
     else:
         # flash will display a message to the user
         flash(gettext("That book has no cover already !"))
-        # redirect user to the 'book' page
+        # redirect user to the list of books
         return redirect(url_for('books.list', book_id=book_id))
 
 
@@ -317,11 +317,11 @@ def add_part(book_id):
         # flash will display a message to the user
         flash(gettext('That part has been added !'))
 
-        # redirect user to the 'home' method of the user module.
+        # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/add_part.html",
-        form=form, session=session, book=book, user=g.user)
+        form=form, session=session, book=book, user=g.user, part=None)
 
 
 @mod.route('/<book_id>/edit_part/<part_id>/', methods=['GET', 'POST'])
@@ -355,7 +355,7 @@ def edit_part(book_id, part_id):
         # flash will display a message to the user
         flash(gettext('That part has been edited !'))
 
-        # redirect user to the 'home' method of the user module.
+        # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/edit_part.html",
@@ -379,7 +379,7 @@ def del_part(book_id, part_id):
 
     parts = Part.query.filter_by(book_id=book_id).all()
     book = Book.query.get(book_id)
-    # redirect user to the list of parts method of the user module.
+    # redirect user to the parts list of the book
     return redirect(url_for('books.parts_list',
         parts=parts, session=session, user=g.user, book=book))
 
@@ -428,7 +428,6 @@ def export_part(book_id, part_id, export_format):
     flash(gettext('That book has been exported !'))
 
     # redirect user to the result page with a link if the export was successful
-    # redirect user to the result page with a link if the export was successful
     return render_template('books/export_part.html', output=output, book=book,
         part=part, user=g.user, export_format=export_format, export_done=1)
 
@@ -450,7 +449,7 @@ def get_book(book_id, export_format):
 
         parts = Part.query.filter_by(book_id=book_id).all()
         book = Book.query.get(book_id)
-        # redirect user to the list of parts method of the user module.
+        # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list',
             parts=parts, session=session, user=g.user, book=book))
 
@@ -472,7 +471,8 @@ def get_part(part_id, book_id, export_format):
 
         parts = Part.query.filter_by(book_id=book_id).all()
         book = Book.query.get(book_id)
-        # redirect user to the list of parts method of the user module.
+
+        # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list',
             parts=parts, session=session, user=g.user, book=book))
 
