@@ -38,10 +38,12 @@ def list():
     """
     List the books the actual user created
     """
+
+    site_title = gettext('Your books')
+
     books = Book.query.filter_by(user_id=session['user_id']).order_by(Book.modified_at.desc()).all()
     return render_template("books/list.html",
-        books=books,
-        user=g.user)
+        books=books, user=g.user, site_title=site_title)
 
 
 @mod.route('/add/', methods=['GET', 'POST'])
@@ -50,6 +52,8 @@ def add():
     """
     Add the book
     """
+    site_title = gettext('Add a book')
+
     form = AddForm(request.form)
     if form.validate_on_submit():
 
@@ -69,7 +73,7 @@ def add():
         return redirect(url_for('books.list'))
 
     return render_template("books/add.html",
-        form=form, user=g.user)
+        form=form, user=g.user, site_title=site_title)
 
 
 @mod.route('/<book_id>/edit/', methods=['GET', 'POST'])
@@ -78,8 +82,11 @@ def edit(book_id):
     """
     Edit the book with book_id
     """
+
     form = EditForm(request.form)
     book = Book.query.get(book_id)
+
+    site_title = gettext('Edit the book "' + book.title + '"')
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -103,7 +110,7 @@ def edit(book_id):
         return redirect(url_for('books.list', book_id=book_id))
 
     return render_template("books/edit.html",
-        form=form, book=book, user=g.user)
+        form=form, book=book, user=g.user, site_title=site_title)
 
 
 @mod.route('/<book_id>/delete/', methods=['GET', 'POST'])
@@ -138,6 +145,9 @@ def cover_add(book_id):
     # we get the book
     book = Book.query.get(book_id)
 
+    # now we set the page's title
+    site_title = gettext('Add a cover to your book "' + book.title + '"')
+
     if form.validate_on_submit() and 'cover' in request.files:
 
         #we save the file, and get the name back
@@ -163,6 +173,7 @@ def cover_add(book_id):
 
             # flash will display a message to the user
             flash(gettext("That book's cover has been added !"))
+
             # redirect user to the 'book' page
             return redirect(url_for('books.list', book_id=book_id))
 
@@ -170,19 +181,21 @@ def cover_add(book_id):
             # flash will display a message to the user
             flash(gettext("That picture's filesize is too big, max allowed size is : ") +
                 round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
+
             # redirect user to the 'book' page
             return redirect(url_for('books.list', book_id=book_id))
 
         elif not allowed_file(cover.filename):
             # flash will display a message to the user
             flash(gettext("That filetype is not allowed !"))
+
             # redirect user to the 'book' page
             return redirect(url_for('books.list', book_id=book_id))
 
     else:
         if book.cover is None:
             return render_template("books/cover_add.html",
-                form=form, book=book, user=g.user)
+                form=form, book=book, user=g.user, site_title=site_title)
         else:
             # flash will display a message to the user
             flash(gettext("That book already has a cover, delete it first to upload a new one !"))
@@ -240,6 +253,8 @@ def export(book_id, export_format):
     Export the book with book_id
     """
 
+    site_title = gettext('Export a book')
+
     # We get all the data we have to pass to pandoc
     book = Book.query.get(book_id)
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
@@ -282,7 +297,7 @@ def export(book_id, export_format):
 
     # redirect user to the result page with a link if the export was successful
     return render_template('books/export.html', output=output, book=book,
-        user=g.user, export_format=export_format, export_done=1)
+        user=g.user, export_format=export_format, export_done=1, site_title=site_title)
 
 
 @mod.route('/<book_id>/parts/', methods=['GET', 'POST'])
@@ -291,10 +306,14 @@ def parts_list(book_id):
     """
     List the parts (ordered by order field) from the book with book_id
     """
+
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
     book = Book.query.get(book_id)
+
+    site_title = gettext('Parts of your book "' + book.title + '"')
+
     return render_template("books/parts_list.html",
-        parts=parts, session=session, user=g.user, book=book)
+        parts=parts, session=session, user=g.user, book=book, site_title=site_title)
 
 
 @mod.route('/<book_id>/add_part/', methods=['GET', 'POST'])
@@ -303,8 +322,11 @@ def add_part(book_id):
     """
     Add a part to the book with book_id
     """
+
     form = AddPartForm(request.form)
     book = Book.query.get(book_id)
+
+    site_title = gettext('Add a part to your book "' + book.title + '"')
 
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
@@ -315,13 +337,13 @@ def add_part(book_id):
         db.session.commit()
 
         # flash will display a message to the user
-        flash(gettext('That part has been added !'))
+        flash(gettext('The part "' + part.title + '" of your book "' + book.title + '" has been added !'))
 
         # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/add_part.html",
-        form=form, session=session, book=book, user=g.user, part=None)
+        form=form, session=session, book=book, user=g.user, part=None, site_title=site_title)
 
 
 @mod.route('/<book_id>/edit_part/<part_id>/', methods=['GET', 'POST'])
@@ -333,6 +355,8 @@ def edit_part(book_id, part_id):
     form = EditPartForm(request.form)
     book = Book.query.get(book_id)
     part = Part.query.get(part_id)
+
+    site_title = gettext('Edit the part "' + part.title + '" of your book "' + book.title + '"')
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -353,13 +377,13 @@ def edit_part(book_id, part_id):
         db.session.commit()
 
         # flash will display a message to the user
-        flash(gettext('That part has been edited !'))
+        flash(gettext('The part "' + part.title + '" of your book "' + book.title + '" has been edited !'))
 
         # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/edit_part.html",
-        form=form, part=part, book=book, session=session, user=g.user)
+        form=form, part=part, book=book, session=session, user=g.user, site_title=site_title)
 
 
 @mod.route('/<book_id>/del_part/<part_id>/', methods=['GET', 'POST'])
@@ -371,17 +395,20 @@ def del_part(book_id, part_id):
 
     # We get the part to delete
     part = Part.query.get(part_id)
+    book = Book.query.get(book_id)
+    part_title = part.title
+
+    # then we delete it
     db.session.delete(part)
     db.session.commit()
 
     # flash will display a message to the user
-    flash(gettext('That part has been deleted !'))
+    flash(gettext('The part "' + part_title + '" of your book "' + book.title + '" has been deleted !'))
 
-    parts = Part.query.filter_by(book_id=book_id).all()
-    book = Book.query.get(book_id)
+    # parts = Part.query.filter_by(book_id=book_id).all()
+    # book = Book.query.get(book_id)
     # redirect user to the parts list of the book
-    return redirect(url_for('books.parts_list',
-        parts=parts, session=session, user=g.user, book=book))
+    return redirect(url_for('books.parts_list', book_id=book_id))
 
 
 @mod.route('/<book_id>/export_part/<part_id>/format/<export_format>', methods=['GET', 'POST'])
@@ -394,6 +421,8 @@ def export_part(book_id, part_id, export_format):
     # We get all the data we have to pass to pandoc
     book = Book.query.get(book_id)
     part = Part.query.get(part_id)
+
+    site_title = gettext('Export of the part ' + part.name + ' of the book ' + book.title)
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
@@ -429,7 +458,7 @@ def export_part(book_id, part_id, export_format):
 
     # redirect user to the result page with a link if the export was successful
     return render_template('books/export_part.html', output=output, book=book,
-        part=part, user=g.user, export_format=export_format, export_done=1)
+        part=part, user=g.user, export_format=export_format, export_done=1, site_title=site_title)
 
 
 @mod.route('/<book_id>/get/<export_format>', methods=['GET', 'POST'])

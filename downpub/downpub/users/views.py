@@ -39,7 +39,10 @@ def login():
     """
     Login form
     """
+    site_title = gettext('Login page')
+
     form = LoginForm(request.form)
+
     # make sure data are valid, but doesn't validate password is right
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first_or_404()
@@ -52,7 +55,7 @@ def login():
             return redirect(request.args.get("next")
                 or url_for('users.home'))
         flash(gettext('Wrong email or password'), 'error-message')
-    return render_template("users/login.html", form=form, user=g.user)
+    return render_template("users/login.html", form=form, user=g.user, site_title=site_title)
 
 
 @mod.route("/logout")
@@ -70,7 +73,11 @@ def register():
     """
     Registration Form
     """
+
+    site_title = gettext('Login page')
+
     form = RegisterForm(request.form)
+
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
         user = User(name=form.name.data, email=form.email.data,
@@ -86,4 +93,4 @@ def register():
         flash(gettext('Thanks for registering'))
         # redirect user to the 'home' method of the user module.
         return redirect(url_for('users.home'))
-    return render_template("users/register.html", form=form, user=g.user)
+    return render_template("users/register.html", form=form, user=g.user, site_title=site_title)
