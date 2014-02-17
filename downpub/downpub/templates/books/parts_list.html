@@ -14,6 +14,7 @@
         <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
             {% trans %}Edit{% endtrans %}
         </a> -
+        <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a> -
         <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
     </li>
   {% endfor %}

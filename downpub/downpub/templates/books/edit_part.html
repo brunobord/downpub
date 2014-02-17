@@ -2,6 +2,26 @@
 {% include 'editor.html' %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
+    {% if parts %}
+        <h4>{% trans %}Parts list :{% endtrans %}</h4>
+        <ul>
+          {% for part in parts %}
+            <li>{{ part.title }} - {{ part.content|truncate(30) }} -
+                <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
+                    {% trans %}Edit{% endtrans %}
+                </a> -
+                <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a> -
+                <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <h4>{% trans %}Not enough parts ? Are you sad ? {% endtrans %}</h4>
+        <p class="bigger">
+            <a href="{{ url_for('books.add_part', book_id=book.id) }}">
+                {% trans%}Then add some parts !{% endtrans%}
+            </a>
+        </p>
+    {% endif %}
     <form method="POST" action="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}
         {{ render_field(form.title, class="input text") }}

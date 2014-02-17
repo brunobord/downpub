@@ -8,15 +8,17 @@
     {% for book in books %}
         <li class="bookelement">
         {% if book.cover %}
-            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
+            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" /> -
+            <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">
+                {% trans %}Delete the cover for you book{% endtrans %}
+            </a>  -
+        {% else %}
+            <a href="{{ url_for('books.cover_add', book_id=book.id) }}">{% trans %}Add a cover for your book{% endtrans %}</a>  -
         {% endif %}
-            <a href="{{ url_for('books.edit', book_id=book.id) }}">{{ book.title }}</a> -
-            <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts list{% endtrans %}</a>  -
-            {% if not book.cover %}
-                <a href="{{ url_for('books.cover_add', book_id=book.id) }}">{% trans %}Add a cover for this book{% endtrans %}</a>  -
-            {% else %}
-                <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>  -
-            {% endif %}
+            <a href="{{ url_for('books.edit', book_id=book.id) }}">
+                {% trans %}Edit your book{% endtrans %} "<em>{{ book.title }}</em>"
+            </a> -
+            <a href="{{ url_for('books.parts_list', book_id=book.id) }}">{% trans %}Parts of your book{% endtrans %}</a>  -
             <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a> -
             <a href="{{ url_for('books.delete', book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a> -
             {% trans %}Created the {% endtrans %}<em>{{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}</em> -

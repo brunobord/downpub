@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>
-    {% trans %}Export {{ export_format }} of the part "{{ part.name }}" of your book "{{ book.title }}"{% endtrans %}
+    {% trans %}Export {{ export_format }} of the part {% endtrans %}"{{ part.title }}"
+    {% trans %} of your book {% endtrans %}"{{ book.title }}"
 </h2>
 
 <blockquote>{{ output }}</blockquote>
 
 {% if export_done %}
     <p>{% trans %}Export done : {% endtrans %}
-        <a href="{{ url_for('books.get_part', export_format=export_format, part_id=part.id) }}">{% trans %}click here to get your part !{% endtrans %}</a>
+        <a href="{{ url_for('books.get_part', export_format=export_format, book_id=book.id, part_id=part.id) }}">{% trans %}click here to get your part !{% endtrans %}</a>
     <p>
 {% else %}
     <p>{% trans %}Oops ! Export failed : {% endtrans %}

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+
 """empty message
 
 Revision ID: 324d22dc6ed

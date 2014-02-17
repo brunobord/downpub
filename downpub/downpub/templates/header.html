@@ -2,7 +2,7 @@
         <h1>Downpub - {{ site_title }}</h1>
         <nav id="navigation" role="navigation" class="txtcenter">
             <ul class="pam">
-                <li class="pam"><a class="icon icon-bracket2" href="#">{% trans %}Home{% endtrans %}</a></li>
+                <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{% trans %}Home{% endtrans %}</a></li>
                 {% if user.name %}
                     <li class="pam">
                         <a class="icon icon-bracket2"
@@ -12,7 +12,7 @@
                 {% endif %}
                 <li class="pam">
                     <a class="icon icon-bracket2" target="_blank"
-                       href="http://github.com/segle/pythoneries/">{% trans %}DownLoad DownPub{% endtrans %}
+                       href="http://github.com/segle/downpub/">{% trans %}DownLoad DownPub{% endtrans %}
                     </a>
                 </li>
             </ul>

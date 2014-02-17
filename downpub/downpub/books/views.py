@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Import the subprocess module to launch/communicate with the pandoc tool used to generate export files
 import subprocess
@@ -26,10 +26,12 @@ mod = Blueprint('books', __name__, url_prefix='/books')
 def before_request():
     """
     pull user's profile from the database before every request are treated
+    pull book from book_id if it's set
     """
     g.user = None
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
+        g.user_id = session['user_id']
 
 
 @mod.route('/list/')
@@ -86,6 +88,10 @@ def edit(book_id):
     form = EditForm(request.form)
     book = Book.query.get(book_id)
 
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
     site_title = gettext('Edit the book "' + book.title + '"')
 
     if not form.validate_on_submit():
@@ -107,7 +113,7 @@ def edit(book_id):
         flash(gettext('That book has been edited !'))
 
         # redirect user to the list of books
-        return redirect(url_for('books.list', book_id=book_id))
+        return redirect(url_for('books.list'))
 
     return render_template("books/edit.html",
         form=form, book=book, user=g.user, site_title=site_title)
@@ -122,6 +128,12 @@ def delete(book_id):
 
     # We get the part to deleter
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
+    #else we delete the book
     db.session.delete(book)
     # commit
     db.session.commit()
@@ -130,7 +142,7 @@ def delete(book_id):
     flash(gettext('That book has been deleted !'))
 
     # redirect user to the list of books
-    return redirect(url_for('books.list', book_id=book_id))
+    return redirect(url_for('books.list'))
 
 
 @mod.route('/<book_id>/cover_add', methods=['GET', 'POST'])
@@ -144,6 +156,10 @@ def cover_add(book_id):
 
     # we get the book
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     # now we set the page's title
     site_title = gettext('Add a cover to your book "' + book.title + '"')
@@ -175,7 +191,7 @@ def cover_add(book_id):
             flash(gettext("That book's cover has been added !"))
 
             # redirect user to the 'book' page
-            return redirect(url_for('books.list', book_id=book_id))
+            return redirect(url_for('books.list'))
 
         elif cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
             # flash will display a message to the user
@@ -183,14 +199,14 @@ def cover_add(book_id):
                 round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
 
             # redirect user to the 'book' page
-            return redirect(url_for('books.list', book_id=book_id))
+            return redirect(url_for('books.list'))
 
         elif not allowed_file(cover.filename):
             # flash will display a message to the user
             flash(gettext("That filetype is not allowed !"))
 
             # redirect user to the 'book' page
-            return redirect(url_for('books.list', book_id=book_id))
+            return redirect(url_for('books.list'))
 
     else:
         if book.cover is None:
@@ -200,7 +216,7 @@ def cover_add(book_id):
             # flash will display a message to the user
             flash(gettext("That book already has a cover, delete it first to upload a new one !"))
             # redirect user to the list of books
-            return redirect(url_for('books.list', book_id=book_id))
+            return redirect(url_for('books.list'))
 
 
 @mod.route('/<book_id>/cover_delete', methods=['GET', 'POST'])
@@ -211,6 +227,10 @@ def cover_delete(book_id):
     """
     # create an user instance not yet stored in the database
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     if not book.cover is None:
 
@@ -225,13 +245,13 @@ def cover_delete(book_id):
         # flash will display a message to the user
         flash(gettext("That book's cover has been deleted !"))
         # redirect user to the 'book' page
-        return redirect(url_for('books.list', book_id=book_id))
+        return redirect(url_for('books.list'))
 
     else:
         # flash will display a message to the user
         flash(gettext("That book has no cover already !"))
         # redirect user to the list of books
-        return redirect(url_for('books.list', book_id=book_id))
+        return redirect(url_for('books.list'))
 
 
 @mod.route('/<book_id>/cover')
@@ -240,6 +260,11 @@ def cover_get(book_id):
     Return the cover uploaded for that book with book_id or nothing
     """
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
     if book.cover is None:
         return None
     else:
@@ -259,6 +284,10 @@ def export(book_id, export_format):
     book = Book.query.get(book_id)
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
     user = User.query.get(book.user_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
@@ -310,6 +339,10 @@ def parts_list(book_id):
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
     book = Book.query.get(book_id)
 
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
     site_title = gettext('Parts of your book "' + book.title + '"')
 
     return render_template("books/parts_list.html",
@@ -325,6 +358,10 @@ def add_part(book_id):
 
     form = AddPartForm(request.form)
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     site_title = gettext('Add a part to your book "' + book.title + '"')
 
@@ -355,6 +392,10 @@ def edit_part(book_id, part_id):
     form = EditPartForm(request.form)
     book = Book.query.get(book_id)
     part = Part.query.get(part_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     site_title = gettext('Edit the part "' + part.title + '" of your book "' + book.title + '"')
 
@@ -396,6 +437,11 @@ def del_part(book_id, part_id):
     # We get the part to delete
     part = Part.query.get(part_id)
     book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
     part_title = part.title
 
     # then we delete it
@@ -422,7 +468,12 @@ def export_part(book_id, part_id, export_format):
     book = Book.query.get(book_id)
     part = Part.query.get(part_id)
 
-    site_title = gettext('Export of the part ' + part.name + ' of the book ' + book.title)
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
+    user = User.query.get(book.user_id)
+    site_title = gettext('Export of the part ' + part.title + ' of the book ' + book.title)
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
@@ -432,7 +483,7 @@ def export_part(book_id, part_id, export_format):
     export_file = open(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md', 'w')
 
     export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + book.author + '\n\n')
+    export_file.write('% ' + user.name + '\n\n')
 
     export_file.write(part.content + '\n\n')
 
@@ -448,7 +499,10 @@ def export_part(book_id, part_id, export_format):
         '-t', export_format,
         '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
         ]
-    p1 = subprocess.call(args)
+    try:
+        p1 = subprocess.call(args)
+    except:
+        return redirect(url_for('500'))
 
     # Get the return of the pandoc command
     output = str(p1) + ' - ' + ' '.join(args)
@@ -468,6 +522,12 @@ def get_book(book_id, export_format):
     Get the chosen book in <export_format> format.
     """
 
+    book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
+
     if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format):
         # we now send the correct file to the user
         return send_from_directory(directory=EXPORT_DIR + "/" + book_id + "/",
@@ -475,12 +535,8 @@ def get_book(book_id, export_format):
                                     as_attachment=True)
     else:
         flash(gettext("That book has not been exported in that format, we can't send it to you !"))
-
-        parts = Part.query.filter_by(book_id=book_id).all()
-        book = Book.query.get(book_id)
         # redirect user to the parts list of the book
-        return redirect(url_for('books.parts_list',
-            parts=parts, session=session, user=g.user, book=book))
+        return redirect(url_for('books.list'))
 
 
 @mod.route('/<book_id>/get_part/<part_id>/format/<export_format>', methods=['GET', 'POST'])
@@ -489,6 +545,12 @@ def get_part(part_id, book_id, export_format):
     """
     Get the chosen part of the book with book_id in <export_format> format.
     """
+
+    book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        return redirect(url_for('index'))
 
     if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format):
         # we now send the correct file to the user
@@ -512,4 +574,3 @@ def allowed_file(filename):
     """
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
-
