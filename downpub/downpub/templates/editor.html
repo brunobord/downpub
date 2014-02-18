@@ -3,7 +3,7 @@
             {
                 var opts = {
                     container: 'epiceditor',
-                    textarea: content,
+                    textarea: 'content',
                     basePath: '{{ url_for('static', filename='js/epiceditor') }}',
                     {% if not part %}
                         clientSideStorage: false,
@@ -43,39 +43,10 @@
 
                 var previewer;
                 var editor = new EpicEditor(opts);
-                editor.load(
-                    function () {
-                        previewer = this.getElement('previewer');
-
-                        // Prettify JS
-                        var scriptTag = previewer.createElement('script');
-                        scriptTag.src = '{{ url_for('static', filename='js/prettify') }}/prettify.js';
-
-                        // Prettify CSS
-                        var cssTag = previewer.createElement('link');
-                        cssTag.rel = 'stylesheet';
-                        cssTag.type = 'text/css';
-                        cssTag.href = '{{ url_for('static', filename='js/prettify') }}/prettify.css';
-
-                        // Add JS / CSS
-                        previewer.body.appendChild(scriptTag);
-                        previewer.head.appendChild(cssTag);
-                    }
-                );
-
-                editor.on('preview', function() {
-                    // Add necessary classes to <code> elements
-                    var previewerBody = previewer.body;
-                    var div_epiceditor = document.getElementById('epiceditor-editor-frame');
-                    body_prettify = div_epiceditor.contentDocument.getElementsByTagName('body')[0];
-                    body_prettify.className = "prettyprint"
-
-                    prettyPrint(null, previewerBody);
-                });
+                editor.load();
 
                 editor.on('update', function () {
                     document.querySelector('#epiceditor-preview').innerHTML = this.exportFile(null, 'html');
-                    document.getElementById('content').value = editor.exportFile();
                 }).emit('update');
 
             }
