@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>{{ book.title }}</h2>
-{% if book.cover %}
-    <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
-    - <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>
-{% endif %}
+<div>
+    <h2>{{ book.title }}</h2>
+    {% if book.cover %}
+        <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
+        - <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>
+    {% endif %}
+    <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a>
+</div>
 
 {% if parts %}
 <h4>{% trans %}Parts list :{% endtrans %}</h4>

@@ -1,5 +1,5 @@
 {% macro render_field(field) %}
-    <div class="form_field line">
+    <div class="form_field row">
     {{ field.label(class="label w20") }}
     {% if field.errors %}
         {% set css_class = 'has_error ' + kwargs.pop('class', '') %}

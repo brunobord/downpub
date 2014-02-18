@@ -8,14 +8,19 @@
 
 {% if export_done %}
     <p>{% trans %}Export done : {% endtrans %}
-        <a href="{{ url_for('books.get_book', export_format=export_format, book_id=book.id) }}">{% trans %}click here to get your book !{% endtrans %}</a>
+        <a href="{{ url_for('books.get_book', export_format=export_format, book_id=book.id) }}">
+            {% trans %}click here to get your book !{% endtrans %}
+        </a>
+        {% trans %}or {% endtrans %}
+        <a href="{{ url_for('books.list') }}">
+            {% trans %}click here to get back to your books !{% endtrans %}
+        </a>
     </p>
 {% else %}
     <p>{% trans %}Oops ! Export failed : {% endtrans %}
-        <a href="{{ url_for('books.list', book_id=book.id) }}">{% trans %}click here to get back to your book's page !{% endtrans %}</a>
+        <a href="{{ url_for('books.list', book_id=book.id) }}">
+            {% trans %}click here to get back to your book's page !{% endtrans %}
+        </a>
     </p>
 {% endif %}
-
-
-
 {% endblock %}

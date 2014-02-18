@@ -116,3 +116,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .form.label {}
+
+/*
+    EpicEditor
+*/
+#epiceditor-container {
+    margin:1em;
+}
+
+#epiceditor-apercu {
+    max-height:450px;
+    overflow:auto;
+}
