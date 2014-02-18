@@ -2,10 +2,10 @@
 {% include 'editor.html' %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
-    <form method="POST" action="{{ url_for('books.add_part', book_id=book.id) }}" class="form row">
+    <form method="POST" action="{{ url_for('books.add_part', book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}
-        {{ render_field(form.title, class="input text") }}
-        {{ render_field(form.order, class="input text") }}
+        {{ render_field(form.title, class="input text line") }}
+        {{ render_field(form.order, class="input text line") }}
         {{ render_field(form.content, class="input text invisible") }}
         <div id="epiceditor-container" class="autogrid2">
             <div id="epiceditor"></div>
