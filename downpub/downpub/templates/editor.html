@@ -83,7 +83,7 @@
                 });
 
                 editor.on('update', function () {
-                    document.querySelector('#epiceditor-apercu').innerHTML = this.exportFile(null, 'html');
+                    document.querySelector('#epiceditor-preview').innerHTML = this.exportFile(null, 'html');
                 }).emit('update');
 
             }

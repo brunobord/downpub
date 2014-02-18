@@ -5,7 +5,8 @@ Free and opensource clone of Editorially, who will soon be deceased. It uses a l
 
 ##Installation
 
-Install python3, Downpub will not work well on python2. You must install setuptools too, then - it's optional - virtualenv. Then, in the virtualenv (or not), enter this :
+You must install python3, because Downpub will not work well on python2. You must install setuptools too, then - it's optional -
+virtualenv. Then, in the virtualenv (or not), enter this :
 
     pip install Flask Flask-WTF Flask-sqlalchemy Flask-Migrate Flask-Babel
 

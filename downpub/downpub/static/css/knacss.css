@@ -455,6 +455,10 @@ img.right {
 
 /* blocks widths (percentage and pixels) */
 
+.w5 {
+  width: 5%;
+}
+
 .w10 {
   width: 10%;
 }
