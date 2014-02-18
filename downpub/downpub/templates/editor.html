@@ -29,30 +29,21 @@
                         editor: '/themes/editor/epic-dark.css'
                     },
                     button: {
-                        preview: true,
-                        fullscreen: true,
+                        preview: false,
+                        fullscreen: false,
                         bar: "auto"
                     },
                     focusOnLoad: false,
-                    shortcut: {
-                        modifier: 18,
-                        fullscreen: 70,
-                        preview: 80
-                    },
-                    string: {
-                        togglePreview: '{% trans %}Toggle Preview Mode{% endtrans %}',
-                        toggleEdit: '{% trans %}Toggle Edit Mode{% endtrans %}',
-                        toggleFullscreen: '{% trans %}Enter Fullscreen{% endtrans %}'
-                    },
                     autogrow: {
-                        minHeight: 450,
+                        minHeight: 150,
                         maxHeight: 450,
                     }
                 }
 
 
                 var previewer;
-                var editor = new EpicEditor(opts).load(
+                var editor = new EpicEditor(opts);
+                editor.load(
                     function () {
                         previewer = this.getElement('previewer');
 
@@ -84,15 +75,8 @@
 
                 editor.on('update', function () {
                     document.querySelector('#epiceditor-preview').innerHTML = this.exportFile(null, 'html');
+                    document.getElementById('content').value = editor.exportFile();
                 }).emit('update');
 
-            }
-
-            function update_textarea()
-            {
-                if (editor!==undefined)
-                {
-                    document.getElementById('content').value = editor.exportFile();
-                }
             }
         </script>
