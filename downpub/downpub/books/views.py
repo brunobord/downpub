@@ -4,6 +4,7 @@
 # Import the subprocess module to launch/communicate with the pandoc tool used to generate export files
 import subprocess
 import os
+import sys
 from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
@@ -306,16 +307,27 @@ def export(book_id, export_format):
     # When we wrote everything, we close the file
     export_file.close()
 
-    # Set up the pandoc command and run it
-    args = [
-        'pandoc', '-S',
-        EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
-        '--epub-cover-image', book.cover,
-        '-s', '--toc',
-        '-f', 'markdown',
-        '-t', export_format,
-        '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
-        ]
+    if book.cover is None:
+        # Set up the pandoc command and run it
+        args = [
+            'pandoc', '-S',
+            EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+            '-s', '--toc',
+            '-f', 'markdown',
+            '-t', export_format,
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
+            ]
+    else:
+        # Set up the pandoc command and run it
+        args = [
+            'pandoc', '-S',
+            EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+            '--epub-cover-image', book.cover,
+            '-s', '--toc',
+            '-f', 'markdown',
+            '-t', export_format,
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
+            ]
     p1 = subprocess.call(args)
 
     # Get the return of the pandoc command
@@ -490,15 +502,26 @@ def export_part(book_id, part_id, export_format):
     # When we wrote everything, we close the file
     export_file.close()
 
-    # Set up the pandoc and run it
-    args = [
-        'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
-        '--epub-cover-image', book.cover,
-        '-s', '--toc',
-        '-f', 'markdown',
-        '-t', export_format,
-        '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
-        ]
+    if book.cover is None:
+        # Set up the pandoc and run it
+        args = [
+            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+            '-s', '--toc',
+            '-f', 'markdown',
+            '-t', export_format,
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
+            ]
+    else:
+        # Set up the pandoc and run it
+        args = [
+            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+            '--epub-cover-image', book.cover,
+            '-s', '--toc',
+            '-f', 'markdown',
+            '-t', export_format,
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
+            ]
+
     try:
         p1 = subprocess.call(args)
     except:
