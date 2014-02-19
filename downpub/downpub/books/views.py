@@ -92,9 +92,8 @@ def edit(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
-    else:
-        print(book.user_id + " - " + g.user_id)
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     site_title = gettext('Edit the book "' + book.title + '"')
 
@@ -135,7 +134,8 @@ def delete(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     #else we delete the book
     db.session.delete(book)
@@ -163,7 +163,8 @@ def cover_add(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     # now we set the page's title
     site_title = gettext('Add a cover to your book "' + book.title + '"')
@@ -234,7 +235,8 @@ def cover_delete(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     if not book.cover is None:
 
@@ -267,7 +269,8 @@ def cover_get(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     if book.cover is None:
         return None
@@ -291,7 +294,8 @@ def export(book_id, export_format):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     # Now we check if all needed directories exists, and if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
@@ -356,7 +360,8 @@ def parts_list(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     site_title = gettext('Parts of your book "' + book.title + '"')
 
@@ -376,7 +381,8 @@ def add_part(book_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     site_title = gettext('Add a part to your book "' + book.title + '"')
 
@@ -410,7 +416,8 @@ def edit_part(book_id, part_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     site_title = gettext('Edit the part "' + part.title + '" of your book "' + book.title + '"')
 
@@ -455,7 +462,8 @@ def del_part(book_id, part_id):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     part_title = part.title
 
@@ -485,7 +493,8 @@ def export_part(book_id, part_id, export_format):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     user = User.query.get(book.user_id)
     site_title = gettext('Export of the part ' + part.title + ' of the book ' + book.title)
@@ -552,7 +561,8 @@ def get_book(book_id, export_format):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format):
         # we now send the correct file to the user
@@ -576,7 +586,8 @@ def get_part(part_id, book_id, export_format):
 
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
-        return redirect(url_for('index'))
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
 
     if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format):
         # we now send the correct file to the user
