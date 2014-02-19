@@ -3,8 +3,21 @@
 
 from flask.ext.wtf import Form, RecaptchaField
 from wtforms import TextField, PasswordField, BooleanField
-from wtforms.validators import Required, EqualTo, Email
+from wtforms.validators import Required, EqualTo, Email, ValidationError
 from flask.ext.babel import gettext, Babel
+
+from downpub import db
+from downpub.users.models import User
+
+
+def unique_email_check(form, field):
+    """
+    Custom validator that checks if an given email is already used by someone
+    """
+    existing_email = User.query.filter_by(email=field.data).all()
+
+    if existing_email:
+        raise ValidationError(gettext('Someone already uses this email adress.'))
 
 
 class LoginForm(Form):
@@ -16,7 +29,8 @@ class LoginForm(Form):
 class RegisterForm(Form):
     name = TextField(gettext('NickName'), [Required(gettext('Enter a nickname.'))])
     email = TextField(gettext('Email address'), [Required(gettext('An email is required.')),
-        Email(gettext("It's not a proper email adress."))])
+        Email(gettext("It's not a proper email adress.")),
+        unique_email_check])
     password = PasswordField(gettext('Password'), [Required(gettext('Enter a password.'))])
     confirm = PasswordField(gettext('Repeat Password)'),
     [
@@ -26,3 +40,4 @@ class RegisterForm(Form):
     accept_tos = BooleanField(gettext('I promise to behave.'),
         [Required(gettext("Well, I can't accept your registration if you don't check this one."))])
     recaptcha = RecaptchaField()
+
