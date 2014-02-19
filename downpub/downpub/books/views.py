@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 
-# Import the subprocess module to launch/communicate with the pandoc tool used to generate export files
+# Import the subprocess module to launch/communicate with the pandoc tool
 import subprocess
 import os
 import sys
@@ -231,7 +231,8 @@ def cover_add(book_id):
         else:
             # flash will display a message to the user
             flash(gettext(
-                "That book already has a cover, delete it first to upload a new one !"
+                "That book already has a cover, "
+                "delete it first to upload a new one !"
             ))
             # redirect user to the list of books
             return redirect(url_for('books.list'))
@@ -317,6 +318,7 @@ def export(book_id, export_format):
 
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
+    # we use io to explicitly fix the encoding to utf8
     export_file = io.open(
         EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
         'w', encoding="utf-8"
@@ -539,8 +541,10 @@ def export_part(book_id, part_id, export_format):
     # if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
         subprocess.call(['mkdir -p ' + EXPORT_DIR + "/" + book_id])
+
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
+    # we use io to explicitly fix the encoding to utf8
     export_file = io.open(
         EXPORT_DIR + "/" + book_id + "/book-"
         + book_id + '-part-' + part_id + '.md',
@@ -555,6 +559,7 @@ def export_part(book_id, part_id, export_format):
     # When we wrote everything, we close the file
     export_file.close()
 
+    # If there isn't a cover
     if book.cover is None:
         # Set up the pandoc and run it
         args = [
@@ -566,6 +571,7 @@ def export_part(book_id, part_id, export_format):
             '-o', EXPORT_DIR + "/" + book_id + "/book-"
                 + book_id + '-part-' + part_id + "." + export_format
             ]
+    # If there is one, we add it to the pandoc call
     else:
         # Set up the pandoc and run it
         args = [
