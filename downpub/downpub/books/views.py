@@ -30,6 +30,7 @@ def before_request():
     pull book from book_id if it's set
     """
     g.user = None
+    g.user_id = None
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
         g.user_id = session['user_id']
@@ -92,6 +93,8 @@ def edit(book_id):
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
         return redirect(url_for('index'))
+    else:
+        print(book.user_id + " - " + g.user_id)
 
     site_title = gettext('Edit the book "' + book.title + '"')
 
