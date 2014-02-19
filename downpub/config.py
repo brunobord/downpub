@@ -16,13 +16,13 @@ LANGUAGES = {
 }
 
 # books export directory
-EXPORT_DIR = os.path.join(_basedir, 'downpub/files/exports')
+EXPORT_DIR = os.path.join(_basedir, 'downpub', 'files', 'exports')
 # Allowed cover image types
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # Maximum size for each image
-MAX_CONTENT_LENGTH = 0.3 * 1024 * 1024
+MAX_CONTENT_LENGTH = 0.5 * 1024 * 1024
 # Upload folder for covers
-UPLOAD_FOLDER = os.path.join(_basedir, 'downpub/files/covers')
+UPLOAD_FOLDER = os.path.join(_basedir, 'downpub', 'files', 'covers')
 
 # Change this line to match your settings
 # For dev purposes, an example with sqlite, comes in handy :)
