@@ -5,6 +5,7 @@
 import subprocess
 import os
 import sys
+import io
 from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
@@ -13,7 +14,8 @@ from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
 
 from downpub import downpub, db, babel
-from downpub.books.forms import AddForm, AddCoverForm, EditForm, AddPartForm, EditPartForm
+from downpub.books.forms import AddForm, AddCoverForm, EditForm, \
+    AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
 from downpub.books.decorators import requires_login
 from downpub.users.models import User
@@ -45,7 +47,8 @@ def list():
 
     site_title = gettext('Your books')
 
-    books = Book.query.filter_by(user_id=session['user_id']).order_by(Book.modified_at.desc()).all()
+    books = Book.query.filter_by(user_id=session['user_id'])\
+            .order_by(Book.modified_at.desc()).all()
     return render_template("books/list.html",
         books=books, user=g.user, site_title=site_title)
 
@@ -173,7 +176,8 @@ def cover_add(book_id):
 
         #we save the file, and get the name back
         cover = request.files['cover']
-        if cover and allowed_file(cover.filename) and cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
+        if cover and allowed_file(cover.filename) \
+            and cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
 
             # We test the file extension to recreate a file with the same one
             if "png" in cover.filename:
@@ -186,8 +190,13 @@ def cover_add(book_id):
                 file_extension = "gif"
 
             # we save the file
-            cover.save(os.path.join(downpub.config['UPLOAD_FOLDER'], book_id + '.' + file_extension))
-            book.cover = os.path.join(downpub.config['UPLOAD_FOLDER'], book_id + '.' + file_extension)
+            cover.save(os.path.join(
+                downpub.config['UPLOAD_FOLDER'],
+                book_id + '.' + file_extension)
+            )
+            book.cover = os.path.join(
+                downpub.config['UPLOAD_FOLDER'], book_id + '.' + file_extension
+            )
 
             # Insert the record in our database and commit it
             db.session.commit()
@@ -200,8 +209,10 @@ def cover_add(book_id):
 
         elif cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
             # flash will display a message to the user
-            flash(gettext("That picture's filesize is too big, max allowed size is : ") +
-                round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
+            flash(gettext(
+                "That picture's filesize is too big, max allowed size is : "
+                )
+                + round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
 
             # redirect user to the 'book' page
             return redirect(url_for('books.list'))
@@ -219,7 +230,9 @@ def cover_add(book_id):
                 form=form, book=book, user=g.user, site_title=site_title)
         else:
             # flash will display a message to the user
-            flash(gettext("That book already has a cover, delete it first to upload a new one !"))
+            flash(gettext(
+                "That book already has a cover, delete it first to upload a new one !"
+            ))
             # redirect user to the list of books
             return redirect(url_for('books.list'))
 
@@ -297,13 +310,17 @@ def export(book_id, export_format):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    # Now we check if all needed directories exists, and if it doesn't we create them
+    # Now we check if all needed directories exists
+    # If it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
         os.makedirs(EXPORT_DIR + "/" + book_id)
 
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
-    export_file = open(EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md', 'w')
+    export_file = io.open(
+        EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+        'w', encoding="utf-8"
+    )
 
     export_file.write('% ' + book.title + '\n')
     export_file.write('% ' + user.name + '\n\n')
@@ -345,7 +362,8 @@ def export(book_id, export_format):
 
     # redirect user to the result page with a link if the export was successful
     return render_template('books/export.html', output=output, book=book,
-        user=g.user, export_format=export_format, export_done=1, site_title=site_title)
+        user=g.user, export_format=export_format, export_done=1,
+        site_title=site_title)
 
 
 @mod.route('/<book_id>/parts/', methods=['GET', 'POST'])
@@ -366,7 +384,8 @@ def parts_list(book_id):
     site_title = gettext('Parts of your book "' + book.title + '"')
 
     return render_template("books/parts_list.html",
-        parts=parts, session=session, user=g.user, book=book, site_title=site_title)
+        parts=parts, session=session, user=g.user,
+        book=book, site_title=site_title)
 
 
 @mod.route('/<book_id>/add_part/', methods=['GET', 'POST'])
@@ -395,13 +414,18 @@ def add_part(book_id):
         db.session.commit()
 
         # flash will display a message to the user
-        flash(gettext('The part "' + part.title + '" of your book "' + book.title + '" has been added !'))
+        flash(gettext(
+            'The part "' + part.title
+            + '" of your book "' + book.title
+            + '" has been added !'
+        ))
 
         # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/add_part.html",
-        form=form, session=session, book=book, user=g.user, part=None, site_title=site_title)
+        form=form, session=session, book=book, user=g.user,
+        part=None, site_title=site_title)
 
 
 @mod.route('/<book_id>/edit_part/<part_id>/', methods=['GET', 'POST'])
@@ -419,7 +443,9 @@ def edit_part(book_id, part_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Edit the part "' + part.title + '" of your book "' + book.title + '"')
+    site_title = gettext(
+        'Edit the part "' + part.title + '" of your book "' + book.title + '"'
+    )
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -440,13 +466,17 @@ def edit_part(book_id, part_id):
         db.session.commit()
 
         # flash will display a message to the user
-        flash(gettext('The part "' + part.title + '" of your book "' + book.title + '" has been edited !'))
+        flash(gettext(
+            'The part "' + part.title + '" of your book "'
+            + book.title + '" has been edited !'
+            ))
 
         # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
 
     return render_template("books/edit_part.html",
-        form=form, part=part, book=book, session=session, user=g.user, site_title=site_title)
+        form=form, part=part, book=book, session=session,
+        user=g.user, site_title=site_title)
 
 
 @mod.route('/<book_id>/del_part/<part_id>/', methods=['GET', 'POST'])
@@ -472,7 +502,10 @@ def del_part(book_id, part_id):
     db.session.commit()
 
     # flash will display a message to the user
-    flash(gettext('The part "' + part_title + '" of your book "' + book.title + '" has been deleted !'))
+    flash(gettext(
+        'The part "' + part_title + '" of your book "'
+        + book.title + '" has been deleted !'
+    ))
 
     # parts = Part.query.filter_by(book_id=book_id).all()
     # book = Book.query.get(book_id)
@@ -480,7 +513,8 @@ def del_part(book_id, part_id):
     return redirect(url_for('books.parts_list', book_id=book_id))
 
 
-@mod.route('/<book_id>/export_part/<part_id>/format/<export_format>', methods=['GET', 'POST'])
+@mod.route('/<book_id>/export_part/<part_id>/format/<export_format>',
+    methods=['GET', 'POST'])
 @requires_login
 def export_part(book_id, part_id, export_format):
     """
@@ -497,14 +531,21 @@ def export_part(book_id, part_id, export_format):
         return redirect(url_for('books.list'))
 
     user = User.query.get(book.user_id)
-    site_title = gettext('Export of the part ' + part.title + ' of the book ' + book.title)
+    site_title = gettext(
+        'Export of the part ' + part.title + ' of the book ' + book.title
+    )
 
-    # Now we check if all needed directories exists, and if it doesn't we create them
+    # Now we check if all needed directories exists
+    # if it doesn't we create them
     if not os.path.isdir(EXPORT_DIR + "/" + book_id):
         subprocess.call(['mkdir -p ' + EXPORT_DIR + "/" + book_id])
     # we generate the files we'll pass to pandoc, starting with the book
     # composed of the title, the author, then each part in the right order
-    export_file = open(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md', 'w')
+    export_file = io.open(
+        EXPORT_DIR + "/" + book_id + "/book-"
+        + book_id + '-part-' + part_id + '.md',
+        'w', encoding="utf-8"
+    )
 
     export_file.write('% ' + book.title + '\n')
     export_file.write('% ' + user.name + '\n\n')
@@ -517,21 +558,25 @@ def export_part(book_id, part_id, export_format):
     if book.cover is None:
         # Set up the pandoc and run it
         args = [
-            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '-part-' + part_id + '.md',
             '-s', '--toc',
             '-f', 'markdown',
             '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
+            '-o', EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '-part-' + part_id + "." + export_format
             ]
     else:
         # Set up the pandoc and run it
         args = [
-            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + '.md',
+            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '-part-' + part_id + '.md',
             '--epub-cover-image', book.cover,
             '-s', '--toc',
             '-f', 'markdown',
             '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format
+            '-o', EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '-part-' + part_id + "." + export_format
             ]
 
     try:
@@ -547,7 +592,8 @@ def export_part(book_id, part_id, export_format):
 
     # redirect user to the result page with a link if the export was successful
     return render_template('books/export_part.html', output=output, book=book,
-        part=part, user=g.user, export_format=export_format, export_done=1, site_title=site_title)
+        part=part, user=g.user, export_format=export_format,
+        export_done=1, site_title=site_title)
 
 
 @mod.route('/<book_id>/get/<export_format>', methods=['GET', 'POST'])
@@ -564,18 +610,25 @@ def get_book(book_id, export_format):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format):
+    if os.path.exists(
+        EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format
+        ):
         # we now send the correct file to the user
-        return send_from_directory(directory=EXPORT_DIR + "/" + book_id + "/",
-                                    filename="book-" + book_id + "." + export_format,
-                                    as_attachment=True)
+        return send_from_directory(
+            directory=EXPORT_DIR + "/" + book_id + "/",
+            filename="book-" + book_id + "." + export_format,
+            as_attachment=True)
     else:
-        flash(gettext("That book has not been exported in that format, we can't send it to you !"))
+        flash(gettext(
+            "That book has not been exported in that format, "
+            "we can't send it to you !"
+        ))
         # redirect user to the parts list of the book
         return redirect(url_for('books.list'))
 
 
-@mod.route('/<book_id>/get_part/<part_id>/format/<export_format>', methods=['GET', 'POST'])
+@mod.route('/<book_id>/get_part/<part_id>/format/<export_format>',
+    methods=['GET', 'POST'])
 @requires_login
 def get_part(part_id, book_id, export_format):
     """
@@ -589,13 +642,20 @@ def get_part(part_id, book_id, export_format):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    if os.path.exists(EXPORT_DIR + "/" + book_id + "/book-" + book_id + '-part-' + part_id + "." + export_format):
+    if os.path.exists(
+        EXPORT_DIR + "/" + book_id + "/book-" + book_id
+        + '-part-' + part_id + "." + export_format):
         # we now send the correct file to the user
-        return send_from_directory(directory=EXPORT_DIR + "/" + book_id + "/",
-                                   filename="book-" + book_id + '-part-' + part_id + "." + export_format,
-                                   as_attachment=True)
+        return send_from_directory(
+            directory=EXPORT_DIR + "/" + book_id + "/",
+            filename="book-" + book_id + '-part-'
+                + part_id + "." + export_format,
+            as_attachment=True)
     else:
-        flash(gettext("That part of the book has not been exported in that format, we can't send it to you !"))
+        flash(gettext(
+            "That part of the book has not been exported in that format"
+            ", we can't send it to you !"
+        ))
 
         parts = Part.query.filter_by(book_id=book_id).all()
         book = Book.query.get(book_id)
@@ -607,7 +667,7 @@ def get_part(part_id, book_id, export_format):
 
 def allowed_file(filename):
     """
-    Check if the uploaded fiel has the right extension
+    Check if the uploaded file has the right extension
     """
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
