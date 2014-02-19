@@ -83,33 +83,20 @@ def register():
     form = RegisterForm(request.form)
 
     if form.validate_on_submit():
-        if check_unique_email(form.email.data):
-            # create an user instance not yet stored in the database
-            user = User(name=form.name.data, email=form.email.data,
-            password=generate_password_hash(form.password.data))
-            # Insert the record in our database and commit it
-            db.session.add(user)
-            db.session.commit()
-            # Log the user in, as he now has an id
-            session['user_id'] = user.id
-            # flash will display a message to the user
-            flash(gettext('Thanks for registering'))
-            # redirect user to the 'home' method of the user module.
-            return redirect(url_for('users.home'))
-        else:
-            flash(gettext('Someone is already using that email adress.'))
+        # create an user instance not yet stored in the database
+        user = User(name=form.name.data, email=form.email.data,
+        password=generate_password_hash(form.password.data))
+
+        # Insert the record in our database and commit it
+        db.session.add(user)
+        db.session.commit()
+
+        # Log the user in, as he now has an id
+        session['user_id'] = user.id
+
+        # flash will display a message to the user
+        flash(gettext('Thanks for registering'))
+        # redirect user to the 'home' method of the user module.
+        return redirect(url_for('users.home'))
 
     return render_template("users/register.html", form=form, user=g.user, site_title=site_title)
-
-
-def check_unique_email(email):
-    """
-    Checks if an email already
-    """
-
-    existing_email = User.query.filter_by(email=email).all()
-
-    if existing_email is None:
-        return True
-    else:
-        return False
