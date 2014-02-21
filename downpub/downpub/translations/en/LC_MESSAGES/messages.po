@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-02-06 14:56+0100\n"
-"PO-Revision-Date: 2014-02-06 14:56+0100\n"
+"POT-Creation-Date: 2014-02-21 01:40+0100\n"
+"PO-Revision-Date: 2014-02-21 01:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -18,114 +18,316 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: downpub/books/decorators.py:10 downpub/users/decorators.py:10
+#: downpub/__init__.py:88
+msgid "Home"
+msgstr ""
+
+#: downpub/books/decorators.py:13 downpub/users/decorators.py:13
 msgid "You need to be signed in for this page."
 msgstr ""
 
-#: downpub/books/forms.py:9 downpub/books/forms.py:16
+#: downpub/books/forms.py:12 downpub/books/forms.py:21
 msgid "Book title"
 msgstr ""
 
-#: downpub/books/forms.py:11 downpub/books/forms.py:18
+#: downpub/books/forms.py:16 downpub/books/forms.py:23
 msgid "Image File"
 msgstr ""
 
-#: downpub/books/forms.py:12 downpub/books/forms.py:19
+#: downpub/books/forms.py:17 downpub/books/forms.py:24
 msgid "Images only!"
 msgstr ""
 
-#: downpub/books/forms.py:23 downpub/books/forms.py:29
+#: downpub/books/forms.py:28 downpub/books/forms.py:35
 msgid "Part title"
 msgstr ""
 
-#: downpub/books/forms.py:23
+#: downpub/books/forms.py:28
 msgid "Title for that part is required."
 msgstr ""
 
-#: downpub/books/forms.py:24 downpub/books/forms.py:30
+#: downpub/books/forms.py:29 downpub/books/forms.py:36
 msgid "Content"
 msgstr ""
 
-#: downpub/books/forms.py:25 downpub/books/forms.py:31
+#: downpub/books/forms.py:30
+msgid ""
+"#This is a default part title\n"
+"\n"
+"Here is the awesome content of that book's part."
+msgstr ""
+
+#: downpub/books/forms.py:31 downpub/books/forms.py:37
 msgid "Order"
 msgstr ""
 
-#: downpub/books/views.py:65
+#: downpub/books/views.py:48
+msgid "Your books"
+msgstr ""
+
+#: downpub/books/views.py:62
+msgid "Add a book"
+msgstr ""
+
+#: downpub/books/views.py:78
 msgid "That book has been created !"
 msgstr ""
 
-#: downpub/books/views.py:70
-msgid "The form doesn't validate..."
+#: downpub/books/views.py:98 downpub/books/views.py:140
+#: downpub/books/views.py:169 downpub/books/views.py:252
+#: downpub/books/views.py:286 downpub/books/views.py:311
+#: downpub/books/views.py:383 downpub/books/views.py:405
+#: downpub/books/views.py:444 downpub/books/views.py:497
+#: downpub/books/views.py:532 downpub/books/views.py:617
+#: downpub/books/views.py:649
+msgid "This isn't yours !"
 msgstr ""
 
-#: downpub/books/views.py:100
+#: downpub/books/views.py:101
+#, python-format
+msgid "Edit the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:119
 msgid "That book has been edited !"
 msgstr ""
 
-#: downpub/books/views.py:123
+#: downpub/books/views.py:149
 msgid "That book has been deleted !"
 msgstr ""
 
-#: downpub/books/views.py:159
-msgid "That part has been added !"
+#: downpub/books/views.py:173
+#, python-format
+msgid "Add a cover to your book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:197
-msgid "That part has been edited !"
+#: downpub/books/views.py:205
+msgid "That book's cover has been added !"
 msgstr ""
 
-#: downpub/books/views.py:219
-msgid "That part has been deleted !"
+#: downpub/books/views.py:214
+#, python-format
+msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
 msgstr ""
 
-#: downpub/templates/books/add.html:8 downpub/templates/books/add_part.html:10
+#: downpub/books/views.py:222
+msgid "That filetype is not allowed !"
+msgstr ""
+
+#: downpub/books/views.py:233
+msgid "That book already has a cover, delete it first to upload a new one !"
+msgstr ""
+
+#: downpub/books/views.py:266
+msgid "That book's cover has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:272
+msgid "That book has no cover already !"
+msgstr ""
+
+#: downpub/books/views.py:302
+msgid "Export a book"
+msgstr ""
+
+#: downpub/books/views.py:363 downpub/books/views.py:598
+msgid "That book has been exported !"
+msgstr ""
+
+#: downpub/books/views.py:386
+#, python-format
+msgid "Parts of your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:408
+#, python-format
+msgid "Add a part to your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:419
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been added !"
+msgstr ""
+
+#: downpub/books/views.py:447
+#, python-format
+msgid "Edit the part %(part_title)s of your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:471
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
+msgstr ""
+
+#: downpub/books/views.py:507
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:536
+#, python-format
+msgid "Export of the part %(part_title)s of the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:629
+msgid "That book has not been exported in that format, we can't send it to you !"
+msgstr ""
+
+#: downpub/books/views.py:662
+msgid ""
+"That part of the book has not been exported in that format, we can't send"
+" it to you !"
+msgstr ""
+
+#: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:14
 #: downpub/templates/books/edit.html:7
-#: downpub/templates/books/edit_part.html:10
+#: downpub/templates/books/edit_part.html:34
 msgid "Save"
+msgstr ""
+
+#: downpub/templates/books/cover_add.html:4
+msgid "Upload a cover for the book "
+msgstr ""
+
+#: downpub/templates/books/cover_add.html:10
+msgid "Upload the cover"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:6
+#: downpub/templates/books/parts_list.html:13
+msgid "Parts list :"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:11
+#: downpub/templates/books/parts_list.html:18
+msgid "Edit"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:13
+#: downpub/templates/books/list.html:22
+#: downpub/templates/books/parts_list.html:9
+#: downpub/templates/books/parts_list.html:20
+msgid "Export Epub"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:14
+#: downpub/templates/books/list.html:23
+#: downpub/templates/books/parts_list.html:21
+msgid "Delete"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:18
+#: downpub/templates/books/parts_list.html:25
+msgid "Not enough parts ? Are you sad ? "
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:21
+#: downpub/templates/books/parts_list.html:28
+msgid "Then add some parts !"
+msgstr ""
+
+#: downpub/templates/books/export.html:4
+#, python-format
+msgid "Export %(export_format)s of your book "
+msgstr ""
+
+#: downpub/templates/books/export.html:10
+#: downpub/templates/books/export_part.html:11
+msgid "Export done : "
+msgstr ""
+
+#: downpub/templates/books/export.html:12
+msgid "click here to get your book !"
+msgstr ""
+
+#: downpub/templates/books/export.html:14
+#: downpub/templates/books/export_part.html:15
+msgid "or "
+msgstr ""
+
+#: downpub/templates/books/export.html:16
+msgid "click here to get back to your books !"
+msgstr ""
+
+#: downpub/templates/books/export.html:20
+#: downpub/templates/books/export_part.html:21
+msgid "Oops ! Export failed : "
+msgstr ""
+
+#: downpub/templates/books/export.html:22
+msgid "click here to get back to your book's page !"
+msgstr ""
+
+#: downpub/templates/books/export_part.html:4
+#, python-format
+msgid "Export %(export_format)s of the part "
+msgstr ""
+
+#: downpub/templates/books/export_part.html:5
+msgid " of your book "
+msgstr ""
+
+#: downpub/templates/books/export_part.html:13
+msgid "click here to get your part !"
+msgstr ""
+
+#: downpub/templates/books/export_part.html:17
+msgid "click here to get back to the parts of your book  !"
+msgstr ""
+
+#: downpub/templates/books/export_part.html:22
+msgid "click here to get back to your parts' page !"
 msgstr ""
 
 #: downpub/templates/books/list.html:4
 msgid "Your Books, "
 msgstr ""
 
-#: downpub/templates/books/list.html:11
-msgid "Parts list"
+#: downpub/templates/books/list.html:13
+msgid "Delete the cover for you book"
 msgstr ""
 
-#: downpub/templates/books/list.html:12
-#: downpub/templates/books/parts_list.html:13
-msgid "Delete"
+#: downpub/templates/books/list.html:16
+msgid "Add a cover for your book"
 msgstr ""
 
-#: downpub/templates/books/list.html:18
+#: downpub/templates/books/list.html:19
+msgid "Edit your book"
+msgstr ""
+
+#: downpub/templates/books/list.html:21
+msgid "Parts of your book"
+msgstr ""
+
+#: downpub/templates/books/list.html:24
+msgid "Created the "
+msgstr ""
+
+#: downpub/templates/books/list.html:25
+msgid "Last modified at "
+msgstr ""
+
+#: downpub/templates/books/list.html:32
+msgid "Create another book ?"
+msgstr ""
+
+#: downpub/templates/books/list.html:37
 msgid "Oops ! Seems you haven't wrote anything yet !"
 msgstr ""
 
-#: downpub/templates/books/list.html:22
+#: downpub/templates/books/list.html:41
 msgid "Create a book now !"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:6
-msgid "Parts list :"
+#: downpub/templates/books/parts_list.html:7
+msgid "Delete the cover for this book"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:11
-msgid "Edit"
-msgstr ""
-
-#: downpub/templates/books/parts_list.html:17
-msgid "Not enough parts ? Are you sad ? "
-msgstr ""
-
-#: downpub/templates/books/parts_list.html:20
-msgid "Then add some parts !"
-msgstr ""
-
-#: downpub/templates/books/parts_list.html:24
+#: downpub/templates/books/parts_list.html:32
 msgid "No parts ? Are you sad ? "
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:27
+#: downpub/templates/books/parts_list.html:35
 msgid "Then add somme parts !"
 msgstr ""
 
@@ -145,6 +347,10 @@ msgstr ""
 msgid "Hi"
 msgstr ""
 
+#: downpub/templates/users/profile.html:6
+msgid "If you want to change the language used in Downpub, here you go :"
+msgstr ""
+
 #: downpub/templates/users/register.html:3
 msgid "Register a new account"
 msgstr ""
@@ -157,68 +363,94 @@ msgstr ""
 msgid "Then click here to login !"
 msgstr ""
 
-#: downpub/users/forms.py:8 downpub/users/forms.py:15
+#: downpub/users/forms.py:21
+msgid "Someone already uses this email adress."
+msgstr ""
+
+#: downpub/users/forms.py:29
+msgid "Select your new default locale !"
+msgstr ""
+
+#: downpub/users/forms.py:38 downpub/users/forms.py:48
 msgid "Email address"
 msgstr ""
 
-#: downpub/users/forms.py:8 downpub/users/forms.py:15
+#: downpub/users/forms.py:38 downpub/users/forms.py:48
 msgid "An email is required."
 msgstr ""
 
-#: downpub/users/forms.py:9 downpub/users/forms.py:16
+#: downpub/users/forms.py:39 downpub/users/forms.py:49
 msgid "It's not a proper email adress."
 msgstr ""
 
-#: downpub/users/forms.py:10 downpub/users/forms.py:17
+#: downpub/users/forms.py:40 downpub/users/forms.py:51
 msgid "Password"
 msgstr ""
 
-#: downpub/users/forms.py:10 downpub/users/forms.py:17
+#: downpub/users/forms.py:40 downpub/users/forms.py:51
 msgid "Enter a password."
 msgstr ""
 
-#: downpub/users/forms.py:14
+#: downpub/users/forms.py:47
 msgid "NickName"
 msgstr ""
 
-#: downpub/users/forms.py:14
+#: downpub/users/forms.py:47
 msgid "Enter a nickname."
 msgstr ""
 
-#: downpub/users/forms.py:18
-msgid "Repeat Password)"
+#: downpub/users/forms.py:52
+msgid "Repeat Password"
 msgstr ""
 
-#: downpub/users/forms.py:20
+#: downpub/users/forms.py:54
 msgid "Enter the same password."
 msgstr ""
 
-#: downpub/users/forms.py:21
+#: downpub/users/forms.py:55
 msgid "Passwords must match"
 msgstr ""
 
-#: downpub/users/forms.py:23
+#: downpub/users/forms.py:57
 msgid "I promise to behave."
 msgstr ""
 
-#: downpub/users/forms.py:24
+#: downpub/users/forms.py:58
 msgid "Well, I can't accept your registration if you don't check this one."
 msgstr ""
 
-#: downpub/users/views.py:52
+#: downpub/users/views.py:51
 #, python-format
-msgid "You're just logged %s"
+msgid "Locale's been changed to %(locale)s"
 msgstr ""
 
-#: downpub/users/views.py:55
-msgid "Wrong email or password"
+#: downpub/users/views.py:64
+msgid "Login page"
 msgstr ""
 
-#: downpub/users/views.py:65
+#: downpub/users/views.py:73
+msgid "Unknown user !"
+msgstr ""
+
+#: downpub/users/views.py:80
+#, python-format
+msgid "You're logged in, %(name)s"
+msgstr ""
+
+#: downpub/users/views.py:85
+msgid "Wrong password"
+msgstr ""
+
+#: downpub/users/views.py:99
 msgid "You've been logged out."
 msgstr ""
 
-#: downpub/users/views.py:87
-msgid "Thanks for registering"
+#: downpub/users/views.py:109
+msgid "Register page"
+msgstr ""
+
+#: downpub/users/views.py:126
+#, python-format
+msgid "Thanks for registering %(name)s"
 msgstr ""
 
