@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>{% trans %}The file you tried to upload is too big !{% endtrans %}<p>
-    <p>{% trans %}Maybe you should return at the book's page and try again with a smaller file ?{% endtrans %}<p>
-    <p><a href="{{ url_for('books.list') }}">{% trans %}Your books{% endtrans %}</a>
+    <p>{{ _("The file you tried to upload is too big !") }}<p>
+    <p>{{ _("Maybe you should return at the book's page and try again with a smaller file ?") }}<p>
+    <p><a href="{{ url_for('books.list') }}">{{ _("Your books") }}</a>
 {% endblock %}

@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>{% trans %}Bienvenue sur Downpub !{% endtrans %}</h2>
+    <h2>{{ _("Welcome on Downpub !") }}</h2>
 
-  <p>{% trans %}Le principe est simple, c'est un outil où vous écrirez vos livres, en une ou plusieurs parties.
+    <h3>{{ _("The purpose of Downpub is simple :") }}</h3>
+    <ul>
+        <li>{{ _("You write stuff in Markdown.") }}</li>
+        <li>{{ _("You choose to write it in one part or many. ") }}</li>
+        <li>{{ _("Splitting your work in one file per chapter allows you to edit one chapter at a time, for example.") }}</li>
+        <li>{{ _("Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word.") }}</li>
+    </ul>
 
-  Une fois que vous avez tous vos fichiers, vous pouvez exporter chaque partie en epub, markdown, HTML ou Word pour la relire ailleurs (et la récupérer chez vous).{% endtrans %}</p>
+    <h3>{{ _("Why would you choose DownPub ?") }} </h3>
 
-  <p>{% trans %}Pourquoi utiliser DownPub ? Car il est libre : et si je fournis ce service, vous pouvez très bien récupérer les sources (en langage python) et installer une copie où vous le souhaitez.{% endtrans %}</p>
+    {% autoescape false %}
+    <p>{{ _("Downpub is under the %(wtfpl_link)s licence so you can download it, share it, even sell it, whatever...",
+    wtfpl_link='<a href="http://www.wtfpl.net/about/">WTFPL</a>') }}</p>
+    {% endautoescape %}
 
-  <p>{% trans %}Ainsi, vous ne dépendez pas de mon service, si un jour j'arrête cet hébergement ici vous pourrez très bien installer cette appli web sur votre ordinateur (par défaut).{% endtrans %}</p>
+    <p>{{ _("only your conscience will fix the limits. You can install it on any computer, even if the installation process "
+    "is a little raw for now.") }}</p>
 
-  <p>{% trans %}Plutôt chouette non ?{% endtrans %}</p>
+    <p>{{ _("That's the beauty of it : do what the fuck you want with it.") }}</p>
+
+    <p>{{ _("Kinda nice, isn't it ?") }}</p>
 {% endblock %}

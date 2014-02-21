@@ -20,13 +20,19 @@ class Part(db.Model):
         backref=db.backref('parts', lazy='dynamic'))
 
     def __init__(self, title, content, order, book_id):
+        """
+        Init function of the Part model
+        """
         self.title = title
         self.content = content
         self.order = order
         self.book_id = book_id
 
     def __repr__(self):
-        return '<Post %r>' % self.title
+        """
+        Prints the part
+        """
+        return '<Part %r>' % self.title
 
 
 class Book(db.Model):
@@ -42,6 +48,9 @@ class Book(db.Model):
     modified_at = db.Column(db.DateTime)
 
     def __init__(self, title, user_id, cover, creation_date, modified_at):
+        """
+        Init function of the Book model
+        """
         self.title = title
         self.user_id = user_id
         self.cover = cover
@@ -55,5 +64,8 @@ class Book(db.Model):
         self.modified_at = modified_at
 
     def __repr__(self):
+        """
+        Prints the book
+        """
         return '<Book %r, written by %r - %r>' % \
             (self.title, User.query.get(self.user_id).name, self.creation_date)

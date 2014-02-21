@@ -13,7 +13,7 @@ from flask import Blueprint, request, render_template, \
 from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
 
-from downpub import downpub, db, babel
+from downpub import downpub, db
 from downpub.books.forms import AddForm, AddCoverForm, EditForm, \
     AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
@@ -23,6 +23,30 @@ from downpub.users.models import User
 from config import *
 
 mod = Blueprint('books', __name__, url_prefix='/books')
+babel = Babel(downpub)
+
+
+@babel.localeselector
+def get_locale():
+    """
+    Returns user's locale or the best match based on your browser's settings
+    """
+    # if a user is logged in, use the locale from the user settings
+    user = getattr(g, 'user', None)
+    if user is not None:
+        return user.locale
+
+    return request.accept_languages.best_match(list(LANGUAGES.keys()))
+
+
+@babel.timezoneselector
+def get_timezone():
+    """
+    Returns user timezone or None
+    """
+    user = getattr(g, 'user', None)
+    if user is not None:
+        return user.timezone
 
 
 @mod.before_request
@@ -36,6 +60,7 @@ def before_request():
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
         g.user_id = session['user_id']
+        g.locale = g.user.locale
 
 
 @mod.route('/list/')
@@ -98,7 +123,7 @@ def edit(book_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Edit the book "' + book.title + '"')
+    site_title = gettext('Edit the book %(book_title)s', book_title=book.title)
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -170,7 +195,7 @@ def cover_add(book_id):
         return redirect(url_for('books.list'))
 
     # now we set the page's title
-    site_title = gettext('Add a cover to your book "' + book.title + '"')
+    site_title = gettext('Add a cover to your book %(book_title)s', book_title=book.title)
 
     if form.validate_on_submit() and 'cover' in request.files:
 
@@ -210,9 +235,9 @@ def cover_add(book_id):
         elif cover.content_length < downpub.config['MAX_CONTENT_LENGTH']:
             # flash will display a message to the user
             flash(gettext(
-                "That picture's filesize is too big, max allowed size is : "
-                )
-                + round(downpub.config['MAX_CONTENT_LENGTH'], 1) + 'MB')
+                "That picture's filesize is too big, max allowed size is %(size)s MB",
+                size=round(downpub.config['MAX_CONTENT_LENGTH'], 1)
+            ))
 
             # redirect user to the 'book' page
             return redirect(url_for('books.list'))
@@ -383,7 +408,7 @@ def parts_list(book_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Parts of your book "' + book.title + '"')
+    site_title = gettext('Parts of your book %(book_title)s', book_title=book.title)
 
     return render_template("books/parts_list.html",
         parts=parts, session=session, user=g.user,
@@ -405,7 +430,7 @@ def add_part(book_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Add a part to your book "' + book.title + '"')
+    site_title = gettext('Add a part to your book %(book_title)s', book_title=book.title)
 
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
@@ -417,9 +442,8 @@ def add_part(book_id):
 
         # flash will display a message to the user
         flash(gettext(
-            'The part "' + part.title
-            + '" of your book "' + book.title
-            + '" has been added !'
+            'The part %(part_title)s of your book %(book_title)s has been added !',
+            part_title=part.title, book_title=book.title
         ))
 
         # redirect user to the parts list of the book
@@ -446,7 +470,8 @@ def edit_part(book_id, part_id):
         return redirect(url_for('books.list'))
 
     site_title = gettext(
-        'Edit the part "' + part.title + '" of your book "' + book.title + '"'
+        'Edit the part %(part_title)s of your book %(book_title)s',
+        part_title=part.title, book_title=book.title
     )
 
     if not form.validate_on_submit():
@@ -469,9 +494,9 @@ def edit_part(book_id, part_id):
 
         # flash will display a message to the user
         flash(gettext(
-            'The part "' + part.title + '" of your book "'
-            + book.title + '" has been edited !'
-            ))
+            'The part %(part_title)s of your book %(book_title)s has been edited !',
+            part_title=part.title, book_title=book.title
+        ))
 
         # redirect user to the parts list of the book
         return redirect(url_for('books.parts_list', book_id=book_id))
@@ -505,8 +530,8 @@ def del_part(book_id, part_id):
 
     # flash will display a message to the user
     flash(gettext(
-        'The part "' + part_title + '" of your book "'
-        + book.title + '" has been deleted !'
+        'The part %(part_title)s of your book %(book_title)s has been deleted !',
+        part_title=part_title, book_title=book.title
     ))
 
     # parts = Part.query.filter_by(book_id=book_id).all()
@@ -534,7 +559,8 @@ def export_part(book_id, part_id, export_format):
 
     user = User.query.get(book.user_id)
     site_title = gettext(
-        'Export of the part ' + part.title + ' of the book ' + book.title
+        'Export of the part %(part_title)s of the book %(book_title)s',
+        part_title=part.title, book_title=book.title
     )
 
     # Now we check if all needed directories exists

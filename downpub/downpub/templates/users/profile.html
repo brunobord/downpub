@@ -2,4 +2,17 @@
 {% block content %}
     <h2><img src="{{user.avatar(64)}}"></h2>
     <h3>{% trans %}Hi{% endtrans %} {{ user.name }} !</h3>
+
+    <p>{{ _("If you want to change the language used in Downpub, here you go :") }}</p>
+
+    {% from "forms/macros.html" import render_field %}
+    <form method="POST" action="." class="form center w60">
+        {{ form.csrf_token }}
+        <fieldset>
+            {{ render_field(form.locale, class="input text") }}
+        </fieldset>
+        <fieldset class="txtcenter center">
+            <input type="submit" value="Save your new default language" class="button center txtcenter green">
+        </fieldset>
+    </form>
 {% endblock %}

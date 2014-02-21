@@ -7,4 +7,4 @@ if sys.platform == 'win32':
     pybabel = 'flask\\Scripts\\pybabel'
 else:
     pybabel = 'pybabel'
-os.system(pybabel + ' compile -d downpub/locales')
+os.system(pybabel + ' compile -f -d downpub/translations')

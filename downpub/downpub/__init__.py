@@ -25,9 +25,24 @@ manager.add_command('db', MigrateCommand)
 @babel.localeselector
 def get_locale():
     """
-    Initialize locales
+    Returns user's locale or the best match based on your browser's settings
     """
+    # if a user is logged in, use the locale from the user settings
+    user = getattr(g, 'user', None)
+    if user is not None:
+        return user.locale
+
     return request.accept_languages.best_match(list(LANGUAGES.keys()))
+
+
+@babel.timezoneselector
+def get_timezone():
+    """
+    Returns user timezone or None
+    """
+    user = getattr(g, 'user', None)
+    if user is not None:
+        return user.timezone
 
 from downpub.users.models import User
 
@@ -40,6 +55,8 @@ def before_request():
     g.user = None
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
+        g.user_id = session['user_id']
+        g.locale = get_locale()
 
 
 @downpub.errorhandler(404)

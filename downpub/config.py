@@ -14,6 +14,9 @@ LANGUAGES = {
     'fr': 'Français',
     'es': 'Español'
 }
+# Default locale and timezone
+BABEL_DEFAULT_LOCALE = 'fr'
+BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 # books export directory
 EXPORT_DIR = os.path.join(_basedir, 'downpub', 'files', 'exports')
