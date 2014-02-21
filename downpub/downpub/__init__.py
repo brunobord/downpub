@@ -56,7 +56,7 @@ def before_request():
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
         g.user_id = session['user_id']
-        g.locale = get_locale()
+        g.locale = g.user.locale
 
 
 @downpub.errorhandler(404)

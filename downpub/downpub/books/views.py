@@ -13,7 +13,7 @@ from flask import Blueprint, request, render_template, \
 from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
 
-from downpub import downpub, db
+from downpub import downpub, db, babel
 from downpub.books.forms import AddForm, AddCoverForm, EditForm, \
     AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
@@ -23,30 +23,6 @@ from downpub.users.models import User
 from config import *
 
 mod = Blueprint('books', __name__, url_prefix='/books')
-babel = Babel(downpub)
-
-
-@babel.localeselector
-def get_locale():
-    """
-    Returns user's locale or the best match based on your browser's settings
-    """
-    # if a user is logged in, use the locale from the user settings
-    user = getattr(g, 'user', None)
-    if user is not None:
-        return user.locale
-
-    return request.accept_languages.best_match(list(LANGUAGES.keys()))
-
-
-@babel.timezoneselector
-def get_timezone():
-    """
-    Returns user timezone or None
-    """
-    user = getattr(g, 'user', None)
-    if user is not None:
-        return user.timezone
 
 
 @mod.before_request

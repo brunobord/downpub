@@ -6,37 +6,13 @@ from flask import Blueprint, request, render_template, \
 from werkzeug import check_password_hash, generate_password_hash
 from flask.ext.babel import gettext, Babel
 
-from downpub import downpub, db
+from downpub import downpub, db, babel
 from downpub.users.forms import RegisterForm, LoginForm, LocaleForm
 from downpub.users.models import User
 from downpub.users.decorators import requires_login
 from config import LANGUAGES
 
 mod = Blueprint('users', __name__, url_prefix='/users')
-babel = Babel(downpub)
-
-
-@babel.localeselector
-def get_locale():
-    """
-    Returns user's locale or the best match based on your browser's settings
-    """
-    # if a user is logged in, use the locale from the user settings
-    user = getattr(g, 'user', None)
-    if user is not None:
-        return user.locale
-
-    return request.accept_languages.best_match(list(LANGUAGES.keys()))
-
-
-@babel.timezoneselector
-def get_timezone():
-    """
-    Returns user timezone or None
-    """
-    user = getattr(g, 'user', None)
-    if user is not None:
-        return user.timezone
 
 
 @mod.before_request
