@@ -21,7 +21,7 @@
                 {% if not user.name %}
                 <li class="pam">
                     <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{% trans %}Sign in{% endtrans %}</a>
-                    {% trans %}ou{% endtrans %} <a href="{{ url_for('users.register') }}">{% trans %}Sign up{% endtrans %}</a>
+                    {% trans %}or{% endtrans %} <a href="{{ url_for('users.register') }}">{% trans %}Sign up{% endtrans %}</a>
                 </li>
                 {% else %}
                     <li class="pam">

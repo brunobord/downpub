@@ -58,6 +58,7 @@ def home():
     user's profile view page
     """
 
+    site_title = gettext('Profile page')
     form = LocaleForm(request.form)
 
     # form shows the current locale of the user
@@ -76,9 +77,11 @@ def home():
         flash(gettext(
             "Locale's been changed to %(locale)s", locale=user.locale
         ))
-        return render_template("users/profile.html", form=form, user=g.user)
+        return render_template("users/profile.html",
+            form=form, user=g.user, site_title=site_title)
 
-    return render_template("users/profile.html", form=form, user=g.user)
+    return render_template("users/profile.html",
+        form=form, user=g.user, site_title=site_title)
 
 
 @mod.route('/login/', methods=['GET', 'POST'])
