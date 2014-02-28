@@ -32,7 +32,7 @@ That's normal. Someone told me one day "Release early, release often".
 
 So be it. Besides, even if it's wrong, i'm using git like a sync tool between my home computer and the office one, without any use of branches. Boooh, it's bad, make me bad. Or not.
 
-Just give me some time : I'm learning Python, I'm learning Flask, and I'm learning git. One day it will work. I promise.nne sans fioritures. J'espère.
+Just give me some time : I'm learning Python, I'm learning Flask, and I'm learning git. One day it will work. I promise.
 
 ## The End
 
