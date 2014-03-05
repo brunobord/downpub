@@ -2,7 +2,7 @@
         <nav id="navigation" role="navigation" class="txtcenter">
 
             <ul class="pam">
-                <li><h1>Downpub - {{ site_title }}</h1></li>
+                <li><h1>Downpub - {{ site_title|truncate(35) }}</h1></li>
                 <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{% trans %}Home{% endtrans %}</a></li>
                 {% if user.name %}
                     <li class="pam">
