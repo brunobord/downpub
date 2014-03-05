@@ -1,45 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>
-    {% trans %}Your Books, {% endtrans %}{{ user.name }} !
+<h2 class="txtcenter">
+    {{ _("Your Books, %(user_name)s !", user_name = user.name) }}
 </h2>
 {% if books %}
     {% for book in books %}
     <div class="row bookelement">
-        <h4 class="col w20">{{ book.title }}</h4>
-        <div class="col w20 txtcenter cover">
+        <h4 class="col w10">{{ book.title }}</h4>
+        <div class="col w30 txtcenter cover">
             {% if book.cover %}
                 <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
                 <br />
                 <a class="icon icon-bracket2" href="{{ url_for('books.cover_delete', book_id=book.id) }}"
-                >{% trans %}Delete the cover for you book{% endtrans %}
+                >{{ _("Delete the cover for you book") }}
                 </a>
             {% else %}
-                <a class="icon icon-bracket2" href="{{ url_for('books.cover_add', book_id=book.id) }}">
-                    {% trans %}Add a cover for your book{% endtrans %}
+                <a class="icon icon-bracket2" href="{{ url_for('books.cover_add', book_id=book.id) }}"
+                >{{ _("Add a cover for your book") }}
                 </a>
             {% endif %}
         </div>
-        <div class="col w40 bookactions">
+        <div class="col w20 bookactions">
             <ul>
                 <li class="row">
                     <a class="icon icon-bracket2" href="{{ url_for('books.edit', book_id=book.id) }}"
-                    >{% trans %}Edit your book{% endtrans %}
+                    >{{ _("Edit your book") }}
                     </a>
                 </li>
                 <li class="row">
                     <a class="icon icon-bracket2" href="{{ url_for('books.parts_list', book_id=book.id) }}"
-                    >{% trans %}Parts of your book{% endtrans %}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}"
-                    >{% trans %}Export Epub{% endtrans %}
+                    >{{ _("Parts of your book") }}
                     </a>
                 </li>
                 <li class="row">
                     <a class="icon icon-bracket2" href="{{ url_for('books.delete', book_id=book.id) }}"
-                    >{% trans %}Delete{% endtrans %}
+                    >{{ _("Delete") }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col w20 bookexports">
+            <ul>
+                <li class="row">
+                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}"
+                    >{{ _("Export Epub") }}
                     </a>
                 </li>
             </ul>
@@ -58,16 +62,16 @@
         </div>
     </div>
     {% endfor %}
-<p>
-    <a href="{{ url_for('books.add') }}">
-        {% trans %}Create another book ?{% endtrans %}
-    </a>
-</p>
+    <p class="txtcenter">
+        <a href="{{ url_for('books.add') }}">
+            {% trans %}Create another book ?{% endtrans %}
+        </a>
+    </p>
 {% else %}
-    <p>
+    <p class="txtcenter">
         {% trans %}Oops ! Seems you haven't wrote anything yet !{% endtrans %}
     </p>
-    <p>
+    <p class="txtcenter">
         <a href="{{ url_for('books.add') }}">
             {% trans %}Create a book now !{% endtrans %}
         </a>

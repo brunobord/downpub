@@ -11,7 +11,7 @@ body {
 }
 
 a {
-    color:purple;
+    color:chocolate;
 }
 
 a:hover {
@@ -20,7 +20,7 @@ a:hover {
 
 h1,h2,h3,h4,h5,h6 {
     margin:0.5em;
-    color:purple;
+    color:chocolate;
 }
 
 p {
@@ -35,7 +35,7 @@ p {
     display:block;
     background: #777;
     padding:0.7em;
-    border: 1px solid orange;
+    border: 1px solid chocolate;
     color: white;
 }
 
@@ -141,8 +141,23 @@ p {
 */
 
 .bookelement{
-    margin: 0.5em auto;
+    margin: 0.6em 1em;
+    padding:0.4em;
     border:1px solid #999;
+    background: #ddd;
+    color: #993D00;
+}
+
+.bookelement ul, .bookelement li, .bookelement ul li {
+    color: #993D00;
+}
+
+.bookelement a,
+.bookelement h1,
+.bookelement h2,
+.bookelement h3,
+.bookelement h4{
+    color: #993D00;
 }
 
 /*
