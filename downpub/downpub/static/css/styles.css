@@ -3,15 +3,15 @@
 */
 
 html {
-    background: #222;
+    background: #ddd;
 }
 
 body {
-    background: #222;
+    background: #ddd;
 }
 
 a {
-    color:orange;
+    color:purple;
 }
 
 a:hover {
@@ -20,7 +20,11 @@ a:hover {
 
 h1,h2,h3,h4,h5,h6 {
     margin:0.5em;
-    color:orange;
+    color:purple;
+}
+
+p {
+    margin:0.5em;
 }
 
 /*
@@ -29,17 +33,17 @@ h1,h2,h3,h4,h5,h6 {
 
 .message {
     display:block;
-    background: #999;
+    background: #777;
     padding:0.7em;
     border: 1px solid orange;
-    color: black:
+    color: white;
 }
 
 .error {
     display:block;
-    background: #999;
+    background: #888;
     padding:0.7em;
-    border: 1px solid orange;
+    border: 1px solid red;
     color: black:
 }
 
@@ -53,19 +57,18 @@ h1,h2,h3,h4,h5,h6 {
 */
 
 #main {
-    background: #777;
+    background: #eee;
     min-height:550px;
 }
 
 .aside {
-    background: #333;
-    color: white;
+    background: #eee;
+    color: black;
     width:15%;
 }
 
 #navigation {
-    background: #333;
-    color:white
+    color:white;
 }
 
 #navigation ul {
@@ -81,24 +84,40 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .content {
-    background: #777;
-    color: white;
+    background: #eee;
+    color: black;
 }
 
 #header {
-    background: #222;
-    color: white;
-    height:120px;
+    background: #333;
+    color: black;
 }
 
 #header h1 {
-    text-align:center;
+    color:orange;
+    margin: 0.4em;
+    font-size:1.2em;
+}
+
+#header a {
+    color:orange;
+}
+
+#header a:hover {
+    font-weight:bold;
 }
 
 #footer {
-    background: #222;
+    background: #333;
     color: white;
-    height:70px;
+}
+
+#footer a {
+    color:orange;
+}
+
+#footer a:hover {
+    font-weight:bold;
 }
 
 /*
@@ -110,12 +129,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .form {
-    background:#333;
+    background:#ccc;
     border:1px solid darkgray;
     padding:0.7em;
 }
 
 .form.label {}
+
+/*
+    GUI layouts
+*/
+
+.bookelement{
+    margin: 0.5em auto;
+    border:1px solid #999;
+}
 
 /*
     EpicEditor editor and previewer

@@ -1,7 +1,8 @@
     <header id="header" role="banner" class="line pam txtcenter">
-        <h1>Downpub - {{ site_title }}</h1>
         <nav id="navigation" role="navigation" class="txtcenter">
+
             <ul class="pam">
+                <li><h1>Downpub - {{ site_title }}</h1></li>
                 <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{% trans %}Home{% endtrans %}</a></li>
                 {% if user.name %}
                     <li class="pam">
@@ -15,9 +16,7 @@
                        href="http://github.com/segle/downpub/">{% trans %}Download DownPub{% endtrans %}
                     </a>
                 </li>
-            </ul>
-
-            <ul class="pam">
+                <li class="pam">||</li>
                 {% if not user.name %}
                 <li class="pam">
                     <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{% trans %}Sign in{% endtrans %}</a>

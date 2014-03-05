@@ -1,27 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    <h2>{{ book.title }}</h2>
+<h2>{{ book.title }}</h2>
+<div class="row">
     {% if book.cover %}
-        <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
-        - <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>
+        <div class="col w20 txtcenter">
+            <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
+            <br />
+            <a href="{{ url_for('books.cover_delete', book_id=book.id) }}">{% trans %}Delete the cover for this book{% endtrans %}</a>
+        </div>
     {% endif %}
-    <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a>
+    <a class="col w20" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a>
 </div>
 
 {% if parts %}
 <h4>{% trans %}Parts list :{% endtrans %}</h4>
-<ul>
-  {% for part in parts %}
-    <li>{{ part.title }} - {{ part.content|truncate(30) }} -
-        <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
-            {% trans %}Edit{% endtrans %}
-        </a> -
-        <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}">{% trans %}Export Epub{% endtrans %}</a> -
-        <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
-    </li>
-  {% endfor %}
-</ul>
+
+{% for part in parts %}
+<div class="row bookelement">
+    <h4 class="col w20">{{ part.title }}</h4>
+    <div class="col w40 txtcenter cover">
+        {{ part.content|truncate(60) }}
+    </div>
+    <div class="col w20">
+        <ul>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}"
+                >{% trans %}Edit{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}"
+                >{% trans %}Export Epub{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}"
+                >{% trans %}Delete{% endtrans %}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
+
 <h4>{% trans %}Not enough parts ? Are you sad ? {% endtrans %}</h4>
 <p class="bigger">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
@@ -32,7 +53,7 @@
 <h4>{% trans %}No parts ? Are you sad ? {% endtrans %}</h4>
 <p class="bigger">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
-        {% trans%}Then add somme parts !{% endtrans%}
+        {% trans%}Then add some parts !{% endtrans%}
     </a>
 </p>
 {% endif %}
