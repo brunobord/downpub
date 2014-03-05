@@ -100,7 +100,9 @@ def edit(book_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Edit the book %(book_title)s', book_title=book.title)
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+    site_title = gettext('Edit the book %(book_title)s',
+        book_title=book_title)
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
@@ -172,7 +174,9 @@ def cover_add(book_id):
         return redirect(url_for('books.list'))
 
     # now we set the page's title
-    site_title = gettext('Add a cover to your book %(book_title)s', book_title=book.title)
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+    site_title = gettext('Add a cover to your book %(book_title)s',
+        book_title=book_title)
 
     if form.validate_on_submit() and 'cover' in request.files:
 
@@ -380,12 +384,15 @@ def parts_list(book_id):
     parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
     book = Book.query.get(book_id)
 
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Parts of your book %(book_title)s', book_title=book.title)
+    site_title = gettext('Parts of your book %(book_title)s',
+        book_title=book_title)
 
     return render_template("books/parts_list.html",
         parts=parts, session=session, user=g.user,
@@ -407,7 +414,9 @@ def add_part(book_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
-    site_title = gettext('Add a part to your book %(book_title)s', book_title=book.title)
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+    site_title = gettext('Add a part to your book %(book_title)s',
+        book_title=book_title)
 
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
@@ -446,9 +455,12 @@ def edit_part(book_id, part_id):
         flash(gettext("This isn't yours !"))
         return redirect(url_for('books.list'))
 
+    part_title = (part.title[:25] + '...') if len(part.title) > 25 else part.title
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+
     site_title = gettext(
         'Edit the part %(part_title)s of your book %(book_title)s',
-        part_title=part.title, book_title=book.title
+        part_title=part_title, book_title=book_title
     )
 
     if not form.validate_on_submit():
@@ -529,6 +541,9 @@ def export_part(book_id, part_id, export_format):
     book = Book.query.get(book_id)
     part = Part.query.get(part_id)
 
+    part_title = (part.title[:25] + '...') if len(part.title) > 25 else part.title
+    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
+
     # if the current user isn't the author of that book, we redirect to homepage
     if book.user_id != g.user_id:
         flash(gettext("This isn't yours !"))
@@ -537,7 +552,7 @@ def export_part(book_id, part_id, export_format):
     user = User.query.get(book.user_id)
     site_title = gettext(
         'Export of the part %(part_title)s of the book %(book_title)s',
-        part_title=part.title, book_title=book.title
+        part_title=part_title, book_title=book_title
     )
 
     # Now we check if all needed directories exists
