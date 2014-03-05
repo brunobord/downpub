@@ -1968,11 +1968,6 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
     src : url('./fonts/Esteban-Regular.ttf');
 }
 
-@font-face{
-    font-family : "ConcertOne";
-    src : url('./fonts/ConcertOne-Regular.ttf');
-}
-
 /*
     Style des éléments HTML de base
 */
@@ -2160,7 +2155,7 @@ code, pre, blockquote {
 div#epiceditor-preview, div#epiceditor-preview * {
     margin:0;
     padding:0;
-    font-family:"Georgia", "Times New Roman", serif;
+    font-family:"Esteban", "Georgia", "Times New Roman", serif;
     background-color:white;
     color:black;
     font-style:normal;
