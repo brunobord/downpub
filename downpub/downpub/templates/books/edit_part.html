@@ -1,6 +1,9 @@
 {% extends "base.html" %}
-{% include 'editor.html' %}
 {% block content %}
+{% include 'editor.html' %}
+
+    <h2 class="txtcenter">{{ site_title }}</h2>
+
     {% from "forms/macros.html" import render_field %}
     {% if parts %}
         <h4>{% trans %}Parts list :{% endtrans %}</h4>
