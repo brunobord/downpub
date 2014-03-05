@@ -1963,6 +1963,16 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 
 /* ----------------------------- */
 
+@font-face{
+    font-family : "Esteban";
+    src : url('./fonts/Esteban-Regular.ttf');
+}
+
+@font-face{
+    font-family : "ConcertOne";
+    src : url('./fonts/ConcertOne-Regular.ttf');
+}
+
 /*
     Style des éléments HTML de base
 */
@@ -1972,7 +1982,7 @@ html {
 }
 
 body {
-    font-family:"Georgia", "Times New Roman", serif;
+    font-family:"Esteban", "Times New Roman", serif;
     background: #ddd;
 }
 
