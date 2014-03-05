@@ -23,8 +23,9 @@ def before_request():
     g.user = None
     if 'user_id' in session:
         g.user = User.query.get(session['user_id'])
-        g.user_id = session['user_id']
-        g.locale = g.user.locale
+        if not g.user is None:
+            g.user_id = session['user_id']
+            g.locale = g.user.locale
 
 
 @mod.route('/me/', methods=['GET', 'POST'])
