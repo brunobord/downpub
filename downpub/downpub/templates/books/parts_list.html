@@ -20,7 +20,32 @@
         <ul>
             <li class="row">
                 <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}"
-                >{{ _("Export Epub") }}
+                >{{ _("Export Epub2") }}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub3') }}"
+                >{{ _("Export Epub3") }}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='markdown') }}"
+                >{{ _("Export Markdown") }}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='docx') }}"
+                >{{ _("Export Word") }}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='odt') }}"
+                >{{ _("Export LibreOffice") }}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='html') }}"
+                >{{ _("Export HTML") }}
                 </a>
             </li>
         </ul>
@@ -67,6 +92,31 @@
             <li class="row">
                 <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}"
                 >{% trans %}Export Epub{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub3') }}"
+                >{% trans %}Export Epub3{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='markdown') }}"
+                >{% trans %}Export Markdown{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='docx') }}"
+                >{% trans %}Export Word{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='odt') }}"
+                >{% trans %}Export LibreOffice{% endtrans %}
+                </a>
+            </li>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='html') }}"
+                >{% trans %}Export HTML{% endtrans %}
                 </a>
             </li>
         </ul>

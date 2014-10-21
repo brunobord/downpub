@@ -347,7 +347,7 @@ def export(book_id, export_format):
             '-s', '--toc',
             '-f', 'markdown',
             '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
             ]
     else:
         # Set up the pandoc command and run it
@@ -358,7 +358,7 @@ def export(book_id, export_format):
             '-s', '--toc',
             '-f', 'markdown',
             '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + ".epub",
+            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
             ]
     p1 = subprocess.call(args)
 
