@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2014-10-21 16:01+0200\n"
-"PO-Revision-Date: 2014-10-21 16:06+0100\n"
+"PO-Revision-Date: 2014-10-21 16:29+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -525,37 +525,32 @@ msgstr "Parties de votre livre"
 #: downpub/templates/books/list.html:51
 #: downpub/templates/books/parts_list.html:28
 #: downpub/templates/books/parts_list.html:99
-#, fuzzy
 msgid "Export Epub3"
-msgstr "Exportez un livre"
+msgstr "Export Epub3"
 
 #: downpub/templates/books/list.html:56
 #: downpub/templates/books/parts_list.html:33
 #: downpub/templates/books/parts_list.html:104
-#, fuzzy
 msgid "Export Markdown"
-msgstr "Vous écrivez des trucs en Markdown."
+msgstr "Export Markdown"
 
 #: downpub/templates/books/list.html:61
 #: downpub/templates/books/parts_list.html:38
 #: downpub/templates/books/parts_list.html:109
-#, fuzzy
 msgid "Export Word"
-msgstr "Exportez un livre"
+msgstr "Export Word"
 
 #: downpub/templates/books/list.html:66
 #: downpub/templates/books/parts_list.html:43
 #: downpub/templates/books/parts_list.html:114
-#, fuzzy
 msgid "Export LibreOffice"
-msgstr "Exportez un livre"
+msgstr "Export LibreOffice"
 
 #: downpub/templates/books/list.html:71
 #: downpub/templates/books/parts_list.html:48
 #: downpub/templates/books/parts_list.html:119
-#, fuzzy
 msgid "Export HTML"
-msgstr "Exportez un livre"
+msgstr "Export HTML"
 
 #: downpub/templates/books/list.html:79
 #: downpub/templates/books/parts_list.html:56
