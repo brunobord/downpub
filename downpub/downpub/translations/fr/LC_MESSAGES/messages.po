@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-21 12:01+0200\n"
-"PO-Revision-Date: 2014-10-21 12:46+0100\n"
+"POT-Creation-Date: 2014-10-21 16:01+0200\n"
+"PO-Revision-Date: 2014-10-21 16:06+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -17,42 +17,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 "Language: fr\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: downpub/__init__.py:90 downpub/templates/404.html:5
 #: downpub/templates/500.html:5 downpub/templates/header.html:6
+#, fuzzy
 msgid "Home"
 msgstr "Accueil"
 
 #: downpub/books/decorators.py:13 downpub/users/decorators.py:13
+#, fuzzy
 msgid "You need to be signed in for this page."
 msgstr "Vous devez être connecté pour consulter cette page."
 
 #: downpub/books/forms.py:12 downpub/books/forms.py:21
+#, fuzzy
 msgid "Book title"
 msgstr "Titre du livre"
 
 #: downpub/books/forms.py:16 downpub/books/forms.py:23
+#, fuzzy
 msgid "Image File"
 msgstr "Fichier image"
 
 #: downpub/books/forms.py:17 downpub/books/forms.py:24
+#, fuzzy
 msgid "Images only!"
 msgstr "Images uniquement !"
 
 #: downpub/books/forms.py:28 downpub/books/forms.py:35
+#, fuzzy
 msgid "Part title"
 msgstr "Titre de la partie"
 
 #: downpub/books/forms.py:28
+#, fuzzy
 msgid "Title for that part is required."
 msgstr "Un titre est requis pour cette partie."
 
 #: downpub/books/forms.py:29 downpub/books/forms.py:36
+#, fuzzy
 msgid "Content"
 msgstr "Contenu"
 
 #: downpub/books/forms.py:30
+#, fuzzy
 msgid ""
 "#This is a default part title\n"
 "\n"
@@ -63,19 +72,23 @@ msgstr ""
 "Voici le contenu incroyable de cette partie du livre."
 
 #: downpub/books/forms.py:31 downpub/books/forms.py:37
+#, fuzzy
 msgid "Order"
 msgstr "Ordre"
 
 #: downpub/books/views.py:50 downpub/templates/413.html:5
 #: downpub/templates/header.html:10
+#, fuzzy
 msgid "Your books"
 msgstr "Vos livres"
 
 #: downpub/books/views.py:64
+#, fuzzy
 msgid "Add a book"
 msgstr "Ajoutez un livre"
 
 #: downpub/books/views.py:80
+#, fuzzy
 msgid "That book has been created !"
 msgstr "Ce livre a été créé !"
 
@@ -86,106 +99,118 @@ msgstr "Ce livre a été créé !"
 #: downpub/books/views.py:455 downpub/books/views.py:511
 #: downpub/books/views.py:549 downpub/books/views.py:634
 #: downpub/books/views.py:666
+#, fuzzy
 msgid "This isn't yours !"
 msgstr "Ceci n'est pas à vous !"
 
 #: downpub/books/views.py:104
-#, python-format
+#, fuzzy, python-format
 msgid "Edit the book %(book_title)s"
 msgstr "Éditez le livre %(book_title)s"
 
 #: downpub/books/views.py:123
+#, fuzzy
 msgid "That book has been edited !"
 msgstr "Ce livre a été édité !"
 
 #: downpub/books/views.py:153
+#, fuzzy
 msgid "That book has been deleted !"
 msgstr "Ce livre a été effacé !"
 
 #: downpub/books/views.py:178
-#, python-format
+#, fuzzy, python-format
 msgid "Add a cover to your book %(book_title)s"
 msgstr "Ajoutez une couverture à votre livre %(book_title)s"
 
 #: downpub/books/views.py:211
+#, fuzzy
 msgid "That book's cover has been added !"
 msgstr "La couverture de ce livre a été ajoutée !"
 
 #: downpub/books/views.py:220
-#, python-format
+#, fuzzy, python-format
 msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
 msgstr ""
 "La taille de l'image est trop grandes, la taille maximale autorisée est de "
 "%(size)s MB"
 
 #: downpub/books/views.py:228
+#, fuzzy
 msgid "That filetype is not allowed !"
 msgstr "Ce type de fichier n'est pas autorisé !"
 
 #: downpub/books/views.py:239
+#, fuzzy
 msgid "That book already has a cover, delete it first to upload a new one !"
 msgstr ""
 "Ce livre a déjà une couverture, effacez-la d'abord pour en envoyer une "
 "nouvelle !"
 
 #: downpub/books/views.py:272
+#, fuzzy
 msgid "That book's cover has been deleted !"
 msgstr "La couverture de ce livre a été effacée !"
 
 #: downpub/books/views.py:278
+#, fuzzy
 msgid "That book has no cover already !"
 msgstr "Ce livre n'a déjà pas de couverture !"
 
 #: downpub/books/views.py:308
+#, fuzzy
 msgid "Export a book"
 msgstr "Exportez un livre"
 
 #: downpub/books/views.py:369 downpub/books/views.py:615
+#, fuzzy
 msgid "That book has been exported !"
 msgstr "Ce livre a été exporté !"
 
 #: downpub/books/views.py:394
-#, python-format
+#, fuzzy, python-format
 msgid "Parts of your book %(book_title)s"
 msgstr "Parties de votre livre %(book_title)s"
 
 #: downpub/books/views.py:418
-#, python-format
+#, fuzzy, python-format
 msgid "Add a part to your book %(book_title)s"
 msgstr "Ajoutez une partie à votre livre %(book_title)s"
 
 #: downpub/books/views.py:430
-#, python-format
+#, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been added !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été ajoutée !"
 
 #: downpub/books/views.py:461
-#, python-format
+#, fuzzy, python-format
 msgid "Edit the part %(part_title)s of your book %(book_title)s"
 msgstr "Éditez la partie %(part_title)s de votre livre %(book_title)s"
 
 #: downpub/books/views.py:485
-#, python-format
+#, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été éditée !"
 
 #: downpub/books/views.py:521
-#, python-format
+#, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été effacée !"
 
 #: downpub/books/views.py:553
-#, python-format
+#, fuzzy, python-format
 msgid "Export of the part %(part_title)s of the book %(book_title)s"
 msgstr "Export de la partie %(part_title)s de votre livre %(book_title)s"
 
 #: downpub/books/views.py:646
+#, fuzzy
 msgid ""
 "That book has not been exported in that format, we can't send it to you !"
 msgstr ""
 "Ce livre n'a pas été exporté dans ce format, nous ne pouvons vous l'envoyer !"
 
 #: downpub/books/views.py:679
+#, fuzzy
 msgid ""
 "That part of the book has not been exported in that format, we can't send it "
 "to you !"
@@ -194,20 +219,24 @@ msgstr ""
 "vous l'envoyer !"
 
 #: downpub/templates/404.html:3
+#, fuzzy
 msgid "Oops, what you wanted to see isn't here."
 msgstr "Oops, ce que vous vouliez voir n'est pas ici."
 
 #: downpub/templates/404.html:4
+#, fuzzy
 msgid "Maybe you should return at the homepage and search from there ?"
 msgstr ""
 "Peut-être devriez-vous revenir à la page d'accueil et chercher depuis là-"
 "bas ?"
 
 #: downpub/templates/413.html:3
+#, fuzzy
 msgid "The file you tried to upload is too big !"
 msgstr "Le fichier que vous tentiez d'envoyer est trop grand !"
 
 #: downpub/templates/413.html:4
+#, fuzzy
 msgid ""
 "Maybe you should return at the book's page and try again with a smaller "
 "file ?"
@@ -216,15 +245,18 @@ msgstr ""
 "fichier plus petit ?"
 
 #: downpub/templates/500.html:3
+#, fuzzy
 msgid "Oops, something broke."
 msgstr "Oops, c'est cassé."
 
 #: downpub/templates/500.html:4
+#, fuzzy
 msgid "Maybe you should return at the homepage and restart from there ?"
 msgstr ""
 "Peut-être devriez-vous revenir à la page d'accueil et repartir de là-bas ?"
 
 #: downpub/templates/footer.html:3
+#, fuzzy
 msgid ""
 "Made with the moral support of a cat named Poko by <a href=\"http://segle.org"
 "\">Segle</a> - © 2014."
@@ -233,6 +265,7 @@ msgstr ""
 "segle.org\">Segle</a> - © 2014."
 
 #: downpub/templates/footer.html:4
+#, fuzzy
 msgid ""
 "Grab the source on <a href=\"http://github.com/segle/downpub/\">Github</a>,"
 msgstr ""
@@ -240,6 +273,7 @@ msgstr ""
 "\">Github</a>,"
 
 #: downpub/templates/footer.html:5
+#, fuzzy
 msgid ""
 "inspired by the fantastic concept of <a href=\"http://editorially.com"
 "\">Editorially</a>."
@@ -248,10 +282,12 @@ msgstr ""
 "\">Editorially</a>."
 
 #: downpub/templates/header.html:16
+#, fuzzy
 msgid "Download DownPub"
 msgstr "Téléchargez DownPub"
 
 #: downpub/templates/header.html:22
+#, fuzzy
 msgid "Sign in"
 msgstr "Se connecter"
 
@@ -260,30 +296,37 @@ msgid "or"
 msgstr "ou"
 
 #: downpub/templates/header.html:23
+#, fuzzy
 msgid "Sign up"
 msgstr "S'enregistrer"
 
 #: downpub/templates/header.html:28
+#, fuzzy
 msgid "Hi, "
 msgstr "Salut, "
 
 #: downpub/templates/header.html:33
+#, fuzzy
 msgid "Log out"
 msgstr "Se déconnecter"
 
 #: downpub/templates/index.html:5
+#, fuzzy
 msgid "The purpose of Downpub is simple :"
 msgstr "Le but de Downpub est simple :"
 
 #: downpub/templates/index.html:7
+#, fuzzy
 msgid "You write stuff in Markdown."
 msgstr "Vous écrivez des trucs en Markdown."
 
 #: downpub/templates/index.html:8
+#, fuzzy
 msgid "You choose to write it in one part or many. "
 msgstr "Vous choisissez de les écrire en une ou plusieurs parties."
 
 #: downpub/templates/index.html:9
+#, fuzzy
 msgid ""
 "Splitting your work in one file per chapter allows you to edit one chapter "
 "at a time, for example."
@@ -292,6 +335,7 @@ msgstr ""
 "chapitre à la fois, par exemple."
 
 #: downpub/templates/index.html:10
+#, fuzzy
 msgid ""
 "Once you have your(s) part(s) done, get the whole book or just one part in "
 "epub, markdown, HTML or Word."
@@ -300,11 +344,12 @@ msgstr ""
 "une partie en epub, markdown, HTML ou Word."
 
 #: downpub/templates/index.html:13
+#, fuzzy
 msgid "Why would you choose DownPub ?"
 msgstr "Pourquoi vous choisiriez DownPub ?"
 
 #: downpub/templates/index.html:16
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share "
 "it, even sell it, whatever..."
@@ -313,6 +358,7 @@ msgstr ""
 "partager, même le vendre, comme vous voulez..."
 
 #: downpub/templates/index.html:19
+#, fuzzy
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
 "computer, even if the installation process is a little raw for now."
@@ -322,73 +368,84 @@ msgstr ""
 "brut pour l'instant."
 
 #: downpub/templates/index.html:21
+#, fuzzy
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 
 #: downpub/templates/index.html:23
+#, fuzzy
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"
 
 #: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:17
 #: downpub/templates/books/edit.html:7
 #: downpub/templates/books/edit_part.html:37
+#, fuzzy
 msgid "Save"
 msgstr "Enregistrer"
 
 #: downpub/templates/books/cover_add.html:4
-#, python-format
+#, fuzzy, python-format
 msgid "Upload a cover for the book %(book_title)s"
 msgstr "Envoyer une couverture pour le livre %(book_title)s"
 
 #: downpub/templates/books/cover_add.html:10
+#, fuzzy
 msgid "Upload the cover"
 msgstr "Envoyer la couverture"
 
 #: downpub/templates/books/edit_part.html:9
-#: downpub/templates/books/parts_list.html:43
+#: downpub/templates/books/parts_list.html:68
+#, fuzzy
 msgid "Parts list :"
 msgstr "Liste des parties :"
 
 #: downpub/templates/books/edit_part.html:14
-#: downpub/templates/books/parts_list.html:55
+#: downpub/templates/books/parts_list.html:80
+#, fuzzy
 msgid "Edit"
 msgstr "Éditer"
 
 #: downpub/templates/books/edit_part.html:16
 #: downpub/templates/books/list.html:46
-#: downpub/templates/books/parts_list.html:23
-#: downpub/templates/books/parts_list.html:69
+#: downpub/templates/books/parts_list.html:94
+#, fuzzy
 msgid "Export Epub"
 msgstr "Export Epub"
 
 #: downpub/templates/books/edit_part.html:17
 #: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:60
+#: downpub/templates/books/parts_list.html:85
+#, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
 #: downpub/templates/books/edit_part.html:21
-#: downpub/templates/books/parts_list.html:77
+#: downpub/templates/books/parts_list.html:127
+#, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
 #: downpub/templates/books/edit_part.html:24
-#: downpub/templates/books/parts_list.html:80
-#: downpub/templates/books/parts_list.html:87
+#: downpub/templates/books/parts_list.html:130
+#: downpub/templates/books/parts_list.html:137
+#, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
 
 #: downpub/templates/books/export.html:4
-#, python-format
+#, fuzzy, python-format
 msgid "Export %(export_format)s of your book "
 msgstr "Export %(export_format)s de votre livre "
 
 #: downpub/templates/books/export.html:10
 #: downpub/templates/books/export_part.html:11
+#, fuzzy
 msgid "Export done : "
 msgstr "Export terminé : "
 
 #: downpub/templates/books/export.html:12
+#, fuzzy
 msgid "click here to get your book !"
 msgstr "cliquez ici pour récupérer votre livre !"
 
@@ -398,213 +455,302 @@ msgid "or "
 msgstr "ou"
 
 #: downpub/templates/books/export.html:16
+#, fuzzy
 msgid "click here to get back to your books !"
 msgstr "cliquez ici pour revenir à vos livres !"
 
 #: downpub/templates/books/export.html:20
 #: downpub/templates/books/export_part.html:21
+#, fuzzy
 msgid "Oops ! Export failed : "
 msgstr "Oops ! Export raté :"
 
 #: downpub/templates/books/export.html:22
+#, fuzzy
 msgid "click here to get back to your book's page !"
 msgstr "cliquez ici pour revenir à la page de votre livre !"
 
 #: downpub/templates/books/export_part.html:4
-#, python-format
+#, fuzzy, python-format
 msgid "Export %(export_format)s of the part "
 msgstr "Export %(export_format)s de la partie "
 
 #: downpub/templates/books/export_part.html:5
+#, fuzzy
 msgid " of your book "
 msgstr "de votre livre"
 
 #: downpub/templates/books/export_part.html:13
+#, fuzzy
 msgid "click here to get your part !"
 msgstr "cliquez ici pour récupérer votre partie !"
 
 #: downpub/templates/books/export_part.html:17
+#, fuzzy
 msgid "click here to get back to the parts of your book  !"
 msgstr "cliquez ici pour revenir aux parties de votre livre !"
 
-#: downpub/templates/books/export_part.html:22
+#: downpub/templates/books/export_part.html:23
+#, fuzzy
 msgid "click here to get back to your parts' page !"
 msgstr "cliquez ici pour revenir à la page de vos parties !"
 
 #: downpub/templates/books/list.html:4
-#, python-format
+#, fuzzy, python-format
 msgid "Your Books, %(user_name)s !"
 msgstr "Vos livres, %(user_name)s !"
 
 #: downpub/templates/books/list.html:15
 #: downpub/templates/books/parts_list.html:11
+#, fuzzy
 msgid "Delete the cover for you book"
 msgstr "Effacer la couverture de votre livre"
 
 #: downpub/templates/books/list.html:19
 #: downpub/templates/books/parts_list.html:15
+#, fuzzy
 msgid "Add a cover for your book"
 msgstr "Ajouter une couverture à votre livre"
 
 #: downpub/templates/books/list.html:27
+#, fuzzy
 msgid "Edit your book"
 msgstr "Éditer votre livre"
 
 #: downpub/templates/books/list.html:32
+#, fuzzy
 msgid "Parts of your book"
 msgstr "Parties de votre livre"
 
-#: downpub/templates/books/list.html:54
-#: downpub/templates/books/parts_list.html:31
+#: downpub/templates/books/list.html:51
+#: downpub/templates/books/parts_list.html:28
+#: downpub/templates/books/parts_list.html:99
+#, fuzzy
+msgid "Export Epub3"
+msgstr "Exportez un livre"
+
+#: downpub/templates/books/list.html:56
+#: downpub/templates/books/parts_list.html:33
+#: downpub/templates/books/parts_list.html:104
+#, fuzzy
+msgid "Export Markdown"
+msgstr "Vous écrivez des trucs en Markdown."
+
+#: downpub/templates/books/list.html:61
+#: downpub/templates/books/parts_list.html:38
+#: downpub/templates/books/parts_list.html:109
+#, fuzzy
+msgid "Export Word"
+msgstr "Exportez un livre"
+
+#: downpub/templates/books/list.html:66
+#: downpub/templates/books/parts_list.html:43
+#: downpub/templates/books/parts_list.html:114
+#, fuzzy
+msgid "Export LibreOffice"
+msgstr "Exportez un livre"
+
+#: downpub/templates/books/list.html:71
+#: downpub/templates/books/parts_list.html:48
+#: downpub/templates/books/parts_list.html:119
+#, fuzzy
+msgid "Export HTML"
+msgstr "Exportez un livre"
+
+#: downpub/templates/books/list.html:79
+#: downpub/templates/books/parts_list.html:56
+#, fuzzy
 msgid "Created the "
 msgstr "Créé le "
 
-#: downpub/templates/books/list.html:58
-#: downpub/templates/books/parts_list.html:35
+#: downpub/templates/books/list.html:83
+#: downpub/templates/books/parts_list.html:60
+#, fuzzy
 msgid "Last modified at "
 msgstr "Dernière modification le "
 
-#: downpub/templates/books/list.html:67
+#: downpub/templates/books/list.html:92
+#, fuzzy
 msgid "Create another book ?"
 msgstr "Créer un autre livre ?"
 
-#: downpub/templates/books/list.html:72
+#: downpub/templates/books/list.html:97
+#, fuzzy
 msgid "Oops ! Seems you haven't wrote anything yet !"
 msgstr "Oops ! On dirait que vous n'avez encore rien écrit !"
 
-#: downpub/templates/books/list.html:76
+#: downpub/templates/books/list.html:101
+#, fuzzy
 msgid "Create a book now !"
 msgstr "Créez un livre maintenant !"
 
-#: downpub/templates/books/parts_list.html:84
+#: downpub/templates/books/parts_list.html:23
+#, fuzzy
+msgid "Export Epub2"
+msgstr "Exportez un livre"
+
+#: downpub/templates/books/parts_list.html:134
+#, fuzzy
 msgid "No parts ? Are you sad ? "
-msgstr "Pas de parties ? Vous êtes triste ?"
+msgstr "Pas assez de parties ? Vous êtes triste ?"
 
 #: downpub/templates/users/login.html:3
+#, fuzzy
 msgid "Log in"
 msgstr "Se connecter"
 
 #: downpub/templates/users/login.html:17
+#, fuzzy
 msgid "You don't have an account yet ?"
 msgstr "Vous n'avez pas encore de compte ?"
 
 #: downpub/templates/users/login.html:18
+#, fuzzy
 msgid "Register a new one !"
 msgstr "Enregistrez-en un nouveau !"
 
 #: downpub/templates/users/profile.html:4
+#, fuzzy
 msgid "Hi"
-msgstr "Salut"
+msgstr "Salut, "
 
 #: downpub/templates/users/profile.html:6
 msgid "If you want to change the language used in Downpub, here you go :"
-msgstr "Si vous voulez changer la langue utilisé dans Downpub, voilà :"
+msgstr "Si vous voulez changer la langue utilisée dans Downpub, voilà :"
+
+#: downpub/templates/users/profile.html:15
+#, fuzzy
+msgid "Save your new default language"
+msgstr "Choisissez votre nouvelle locale par défaut !"
 
 #: downpub/templates/users/register.html:3
+#, fuzzy
 msgid "Register a new account"
 msgstr "Enregistrer un nouveau compte"
 
 #: downpub/templates/users/register.html:24
+#, fuzzy
 msgid "Came here by mistake ? Already have an account ?"
 msgstr "Venu ici par erreur ? Vous avez déjà un compte ?"
 
 #: downpub/templates/users/register.html:25
+#, fuzzy
 msgid "Then click here to login !"
 msgstr "Alors cliquez ici pour vous connecter !"
 
 #: downpub/users/forms.py:21
+#, fuzzy
 msgid "Someone already uses this email adress."
 msgstr "Quelqu'un utilise déjà cette adresse mail."
 
 #: downpub/users/forms.py:29
+#, fuzzy
 msgid "Select your new default locale !"
 msgstr "Choisissez votre nouvelle locale par défaut !"
 
 #: downpub/users/forms.py:38 downpub/users/forms.py:48
+#, fuzzy
 msgid "Email address"
 msgstr "Adresse email"
 
 #: downpub/users/forms.py:38 downpub/users/forms.py:48
+#, fuzzy
 msgid "An email is required."
 msgstr "Un email est obligatoire."
 
 #: downpub/users/forms.py:39 downpub/users/forms.py:49
+#, fuzzy
 msgid "It's not a proper email adress."
 msgstr "Ce n'est pas une adresse email valide."
 
 #: downpub/users/forms.py:40 downpub/users/forms.py:51
+#, fuzzy
 msgid "Password"
 msgstr "Mot de passe"
 
 #: downpub/users/forms.py:40 downpub/users/forms.py:51
+#, fuzzy
 msgid "Enter a password."
 msgstr "Entrez un mot de passe."
 
 #: downpub/users/forms.py:47
+#, fuzzy
 msgid "NickName"
 msgstr "Pseudonyme"
 
 #: downpub/users/forms.py:47
+#, fuzzy
 msgid "Enter a nickname."
 msgstr "Entrez un pseudonyme."
 
 #: downpub/users/forms.py:52
+#, fuzzy
 msgid "Repeat Password"
 msgstr "Répétez le mot de passe"
 
 #: downpub/users/forms.py:54
+#, fuzzy
 msgid "Enter the same password."
 msgstr "Entrez le même mot de passe."
 
 #: downpub/users/forms.py:55
+#, fuzzy
 msgid "Passwords must match"
 msgstr "Les mots de passe doivent correspondre"
 
 #: downpub/users/forms.py:57
+#, fuzzy
 msgid "I promise to behave."
 msgstr "Je promets de bien me comporter."
 
 #: downpub/users/forms.py:58
+#, fuzzy
 msgid "Well, I can't accept your registration if you don't check this one."
 msgstr ""
 "Hé bien, je ne peux accepter de créer le compte si vous ne cochez pas cette "
 "case-ci."
 
 #: downpub/users/views.py:38
+#, fuzzy
 msgid "Profile page"
 msgstr "Page de profil"
 
 #: downpub/users/views.py:54
-#, python-format
+#, fuzzy, python-format
 msgid "Locale's been changed to %(locale)s"
 msgstr "La locale a été changée en %(locale)s"
 
 #: downpub/users/views.py:69
+#, fuzzy
 msgid "Login page"
 msgstr "Page de connexion"
 
 #: downpub/users/views.py:78
+#, fuzzy
 msgid "Unknown user !"
 msgstr "Utilisateur inconnu !"
 
 #: downpub/users/views.py:86
-#, python-format
+#, fuzzy, python-format
 msgid "You're logged in, %(name)s"
 msgstr "Vous êtes connecté, %(name)s"
 
 #: downpub/users/views.py:92
+#, fuzzy
 msgid "Wrong password"
 msgstr "Mot de passe incorrect"
 
 #: downpub/users/views.py:108
+#, fuzzy
 msgid "You've been logged out."
 msgstr "Vous avez été déconnecté(e)"
 
 #: downpub/users/views.py:118
+#, fuzzy
 msgid "Register page"
 msgstr "Page d'enregistrement"
 
 #: downpub/users/views.py:135
-#, python-format
+#, fuzzy, python-format
 msgid "Thanks for registering %(name)s"
 msgstr "Merci de vous être enregistré(e) %(name)s"

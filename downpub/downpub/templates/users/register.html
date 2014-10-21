@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="center txtcenter">{% trans %}Register a new account{% endtrans %}</h2>
+    <h2 class="center txtcenter">{{ _("Register a new account") }}</h2>
     {% from "forms/macros.html" import render_field %}
     <form method="POST" action="." class="form center w60">
         {{ form.csrf_token }}
@@ -21,7 +21,7 @@
     </form>
 
     <div class="center txtcenter">
-        <p>{% trans %}Came here by mistake ? Already have an account ?{% endtrans %}</p>
-        <p><a href="{{ url_for('users.login') }}">{% trans %}Then click here to login !{% endtrans %}</a><p>
+        <p>{{ _("Came here by mistake ? Already have an account ?") }}</p>
+        <p><a href="{{ url_for('users.login') }}">{{ _("Then click here to login !") }}</a><p>
     </div>
 {% endblock %}

@@ -76,11 +76,11 @@
         <div class="col w20 booksinfo">
             <ul>
                 <li class="row">
-                    <em class="icon icon-bracket2">{% trans %}Created the {% endtrans %}
+                    <em class="icon icon-bracket2">{{ _("Created the ") }}
                     {{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}
                 </em></li>
                 <li class="row">
-                    <em class="icon icon-bracket2">{% trans %}Last modified at {% endtrans %}
+                    <em class="icon icon-bracket2">{{ _("Last modified at ") }}
                     {{ book.modified_at.strftime(' %d/%m/%Y  %H:%M') }}
                 </em></li>
             <ul>
@@ -89,16 +89,16 @@
     {% endfor %}
     <p class="txtcenter">
         <a href="{{ url_for('books.add') }}">
-            {% trans %}Create another book ?{% endtrans %}
+            {{ _("Create another book ?") }}
         </a>
     </p>
 {% else %}
     <p class="txtcenter">
-        {% trans %}Oops ! Seems you haven't wrote anything yet !{% endtrans %}
+        {{ _("Oops ! Seems you haven't wrote anything yet !") }}
     </p>
     <p class="txtcenter">
         <a href="{{ url_for('books.add') }}">
-            {% trans %}Create a book now !{% endtrans %}
+            {{ _("Create a book now !") }}
         </a>
     </p>
 {% endif %}

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-21 12:04+0200\n"
-"PO-Revision-Date: 2014-10-21 12:04+0200\n"
+"POT-Creation-Date: 2014-10-21 16:01+0200\n"
+"PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -314,36 +314,35 @@ msgid "Upload the cover"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:9
-#: downpub/templates/books/parts_list.html:43
+#: downpub/templates/books/parts_list.html:68
 msgid "Parts list :"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:14
-#: downpub/templates/books/parts_list.html:55
+#: downpub/templates/books/parts_list.html:80
 msgid "Edit"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:16
 #: downpub/templates/books/list.html:46
-#: downpub/templates/books/parts_list.html:23
-#: downpub/templates/books/parts_list.html:69
+#: downpub/templates/books/parts_list.html:94
 msgid "Export Epub"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:17
 #: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:60
+#: downpub/templates/books/parts_list.html:85
 msgid "Delete"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:21
-#: downpub/templates/books/parts_list.html:77
+#: downpub/templates/books/parts_list.html:127
 msgid "Not enough parts ? Are you sad ? "
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:24
-#: downpub/templates/books/parts_list.html:80
-#: downpub/templates/books/parts_list.html:87
+#: downpub/templates/books/parts_list.html:130
+#: downpub/templates/books/parts_list.html:137
 msgid "Then add some parts !"
 msgstr ""
 
@@ -396,7 +395,7 @@ msgstr ""
 msgid "click here to get back to the parts of your book  !"
 msgstr ""
 
-#: downpub/templates/books/export_part.html:22
+#: downpub/templates/books/export_part.html:23
 msgid "click here to get back to your parts' page !"
 msgstr ""
 
@@ -423,29 +422,63 @@ msgstr ""
 msgid "Parts of your book"
 msgstr ""
 
-#: downpub/templates/books/list.html:54
-#: downpub/templates/books/parts_list.html:31
+#: downpub/templates/books/list.html:51
+#: downpub/templates/books/parts_list.html:28
+#: downpub/templates/books/parts_list.html:99
+msgid "Export Epub3"
+msgstr ""
+
+#: downpub/templates/books/list.html:56
+#: downpub/templates/books/parts_list.html:33
+#: downpub/templates/books/parts_list.html:104
+msgid "Export Markdown"
+msgstr ""
+
+#: downpub/templates/books/list.html:61
+#: downpub/templates/books/parts_list.html:38
+#: downpub/templates/books/parts_list.html:109
+msgid "Export Word"
+msgstr ""
+
+#: downpub/templates/books/list.html:66
+#: downpub/templates/books/parts_list.html:43
+#: downpub/templates/books/parts_list.html:114
+msgid "Export LibreOffice"
+msgstr ""
+
+#: downpub/templates/books/list.html:71
+#: downpub/templates/books/parts_list.html:48
+#: downpub/templates/books/parts_list.html:119
+msgid "Export HTML"
+msgstr ""
+
+#: downpub/templates/books/list.html:79
+#: downpub/templates/books/parts_list.html:56
 msgid "Created the "
 msgstr ""
 
-#: downpub/templates/books/list.html:58
-#: downpub/templates/books/parts_list.html:35
+#: downpub/templates/books/list.html:83
+#: downpub/templates/books/parts_list.html:60
 msgid "Last modified at "
 msgstr ""
 
-#: downpub/templates/books/list.html:67
+#: downpub/templates/books/list.html:92
 msgid "Create another book ?"
 msgstr ""
 
-#: downpub/templates/books/list.html:72
+#: downpub/templates/books/list.html:97
 msgid "Oops ! Seems you haven't wrote anything yet !"
 msgstr ""
 
-#: downpub/templates/books/list.html:76
+#: downpub/templates/books/list.html:101
 msgid "Create a book now !"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:84
+#: downpub/templates/books/parts_list.html:23
+msgid "Export Epub2"
+msgstr ""
+
+#: downpub/templates/books/parts_list.html:134
 msgid "No parts ? Are you sad ? "
 msgstr ""
 
@@ -467,6 +500,10 @@ msgstr ""
 
 #: downpub/templates/users/profile.html:6
 msgid "If you want to change the language used in Downpub, here you go :"
+msgstr ""
+
+#: downpub/templates/users/profile.html:15
+msgid "Save your new default language"
 msgstr ""
 
 #: downpub/templates/users/register.html:3

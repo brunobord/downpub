@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h2><img src="{{user.avatar(64)}}"></h2>
-    <h3>{% trans %}Hi{% endtrans %} {{ user.name }} !</h3>
+    <h3>{{ _("Hi") }} {{ user.name }} !</h3>
 
     <p>{{ _("If you want to change the language used in Downpub, here you go :") }}</p>
 
@@ -12,7 +12,7 @@
             {{ render_field(form.locale, class="input text") }}
         </fieldset>
         <fieldset class="txtcenter center">
-            <input type="submit" value="Save your new default language" class="button center txtcenter green">
+            <input type="submit" value="{{ _('Save your new default language') }}" class="button center txtcenter green">
         </fieldset>
     </form>
 {% endblock %}

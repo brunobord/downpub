@@ -11,4 +11,4 @@ os.system(pybabel +
     ' extract -F babel.cfg -k lazy_gettext -o messages.pot downpub')
 os.system(pybabel +
     ' update -i messages.pot -d downpub/translations')
-os.unlink('messages.pot')
+#os.unlink('messages.pot')

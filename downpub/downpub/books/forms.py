@@ -5,33 +5,33 @@ from flask.ext.wtf import Form
 from wtforms import TextField, StringField, TextAreaField
 from wtforms.validators import Required, Length
 from flask_wtf.file import FileField, FileAllowed, FileRequired
-from flask.ext.babel import gettext
+from flask.ext.babel import lazy_gettext
 
 
 class AddForm(Form):
-    title = StringField(gettext('Book title'),
+    title = StringField(lazy_gettext('Book title'),
         [Required(), Length(max=80)])
 
 class AddCoverForm(Form):
-    cover = FileField(gettext('Image File'),
-        [FileAllowed(['jpg', 'jpeg', 'gif', 'png'], gettext('Images only!'))])
+    cover = FileField(lazy_gettext('Image File'),
+        [FileAllowed(['jpg', 'jpeg', 'gif', 'png'], lazy_gettext('Images only!'))])
 
 
 class EditForm(Form):
-    title = TextField(gettext('Book title'),
+    title = TextField(lazy_gettext('Book title'),
         [Required(), Length(max=80)])
-    cover = FileField(gettext('Image File'),
-        [FileAllowed(['jpg', 'png'], gettext('Images only!'))])
+    cover = FileField(lazy_gettext('Image File'),
+        [FileAllowed(['jpg', 'png'], lazy_gettext('Images only!'))])
 
 
 class AddPartForm(Form):
-    title = TextField(gettext('Part title'), [Required(gettext('Title for that part is required.'))])
-    content = TextAreaField(gettext('Content'),
-        default=gettext("#This is a default part title\n\nHere is the awesome content of that book's part."))
-    order = TextField(gettext('Order'), [Required()])
+    title = TextField(lazy_gettext('Part title'), [Required(lazy_gettext('Title for that part is required.'))])
+    content = TextAreaField(lazy_gettext('Content'),
+        default=lazy_gettext("#This is a default part title\n\nHere is the awesome content of that book's part."))
+    order = TextField(lazy_gettext('Order'), [Required()])
 
 
 class EditPartForm(Form):
-    title = TextField(gettext('Part title'), [Required()])
-    content = TextAreaField(gettext('Content'), [Required()])
-    order = TextField(gettext('Order'), [Required()])
+    title = TextField(lazy_gettext('Part title'), [Required()])
+    content = TextAreaField(lazy_gettext('Content'), [Required()])
+    order = TextField(lazy_gettext('Order'), [Required()])
