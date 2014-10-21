@@ -76,7 +76,8 @@ def login():
         # we first test if the user was not found
         if user is None:
             flash(gettext('Unknown user !'), 'error-message')
-            return render_template("users/login.html", form=form, user=g.user, site_title=site_title)
+            return render_template("users/login.html", form=form,
+                user=g.user, site_title=site_title)
         # then we check the password
         elif check_password_hash(user.password, form.password.data):
             # the session can't be modified as it's signed,
@@ -86,10 +87,13 @@ def login():
             return redirect(request.args.get("next")
                 or url_for('users.home'))
         else:
-            # if we get here, that means the user is in the db, but the entered password was wrong
+            # if we get here, that means the user is in the db,
+            # but the entered password was wrong
             flash(gettext('Wrong password'), 'error-message')
-            return render_template("users/login.html", form=form, user=g.user, site_title=site_title)
-    return render_template("users/login.html", form=form, user=g.user, site_title=site_title)
+            return render_template("users/login.html", form=form,
+                user=g.user, site_title=site_title)
+    return render_template("users/login.html", form=form,
+        user=g.user, site_title=site_title)
 
 
 @mod.route("/logout")
@@ -132,4 +136,5 @@ def register():
         # redirect user to the 'home' method of the user module.
         return redirect(url_for('users.home'))
 
-    return render_template("users/register.html", form=form, user=g.user, site_title=site_title)
+    return render_template("users/register.html",
+        form=form, user=g.user, site_title=site_title)

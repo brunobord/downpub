@@ -3,34 +3,34 @@
 
             <ul class="pam">
                 <li><h1>Downpub</h1></li>
-                <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{% trans %}Home{% endtrans %}</a></li>
+                <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
                 {% if user.name %}
                     <li class="pam">
                         <a class="icon icon-bracket2"
-                           href="{{ url_for('books.list') }}">{% trans %}Your books{% endtrans %}
+                           href="{{ url_for('books.list') }}">{{ _("Your books") }}
                         </a>
                     </li>
                 {% endif %}
                 <li class="pam">
                     <a class="icon icon-bracket2" target="_blank"
-                       href="http://github.com/segle/downpub/">{% trans %}Download DownPub{% endtrans %}
+                       href="http://github.com/segle/downpub/">{{ _("Download DownPub") }}
                     </a>
                 </li>
                 <li class="pam">||</li>
                 {% if not user.name %}
                 <li class="pam">
-                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{% trans %}Sign in{% endtrans %}</a>
-                    {% trans %}or{% endtrans %} <a href="{{ url_for('users.register') }}">{% trans %}Sign up{% endtrans %}</a>
+                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
+                    {% trans %}or{% endtrans %} <a href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
                 </li>
                 {% else %}
                     <li class="pam">
                         <a class="icon icon-bracket2"
-                           href="{{ url_for('users.home') }}">{% trans %}Hi, {% endtrans %} {{ user.name }}
+                           href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
                         </a>
                     </li>
                     <li class="pam">
                         <a class="icon icon-bracket2"
-                           href="{{ url_for('users.logout') }}">{% trans %}Log out{% endtrans %}
+                           href="{{ url_for('users.logout') }}">{{ _("Log out") }}
                         </a>
                     </li>
                 {% endif %}
