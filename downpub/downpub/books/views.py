@@ -156,6 +156,86 @@ def delete(book_id):
     return redirect(url_for('books.list'))
 
 
+@mod.route('/<book_id>/export/<export_format>', methods=['GET', 'POST'])
+@requires_login
+def export(book_id, export_format):
+    """
+    Get the chosen book in <export_format> format.
+    """
+
+    book = Book.query.get(book_id)
+
+    # if the current user isn't the author of that book, we redirect to homepage
+    if book.user_id != g.user_id:
+        flash(gettext("This isn't yours !"))
+        return redirect(url_for('books.list'))
+
+    if os.path.exists(
+        EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format
+        ):
+        # we now send the correct file to the user
+        return send_from_directory(
+            directory=EXPORT_DIR + "/" + book_id + "/",
+            filename="book-" + book_id + "." + export_format,
+            as_attachment=True)
+    else:
+        # We get all the data we have to pass to pandoc
+        book = Book.query.get(book_id)
+        parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
+        user = User.query.get(book.user_id)
+
+        # Now we check if all needed directories exists
+        # If it doesn't we create them
+        if not os.path.isdir(EXPORT_DIR + "/" + book_id):
+            os.mkdir(EXPORT_DIR + "/" + book_id)
+
+        # we generate the files we'll pass to pandoc, starting with the book
+        # composed of the title, the author, then each part in the right order
+        # we use io to explicitly fix the encoding to utf8
+        export_file = io.open(
+            EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+            'w', encoding="utf-8"
+        )
+
+        export_file.write('% ' + book.title + '\n')
+        export_file.write('% ' + user.name + '\n\n')
+
+        for the_part in parts:
+            export_file.write(the_part.content + '\n\n')
+
+        # When we wrote everything, we close the file
+        export_file.close()
+
+        if book.cover is None:
+            # Set up the pandoc command and run it
+            args = [
+                'pandoc', '-S',
+                EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+                '-s', '--toc',
+                '-f', 'markdown',
+                '-t', export_format,
+                '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
+                ]
+        else:
+            # Set up the pandoc command and run it
+            args = [
+                'pandoc', '-S',
+                EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
+                '--epub-cover-image', book.cover,
+                '-s', '--toc',
+                '-f', 'markdown',
+                '-t', export_format,
+                '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
+                ]
+        subprocess.call(args)
+
+        # we now send the correct file to the user
+        return send_from_directory(
+            directory=EXPORT_DIR + "/" + book_id + "/",
+            filename="book-" + book_id + "." + export_format,
+            as_attachment=True)
+
+
 @mod.route('/<book_id>/cover_add', methods=['GET', 'POST'])
 @requires_login
 def cover_add(book_id):
@@ -296,82 +376,6 @@ def cover_get(book_id):
         return None
     else:
         return send_file(book.cover)
-
-
-@mod.route('/<book_id>/export/<export_format>', methods=['GET', 'POST'])
-@requires_login
-def export(book_id, export_format):
-    """
-    Export the book with book_id
-    """
-
-    site_title = gettext('Export a book')
-
-    # We get all the data we have to pass to pandoc
-    book = Book.query.get(book_id)
-    parts = Part.query.filter_by(book_id=book_id).order_by(Part.order).all()
-    user = User.query.get(book.user_id)
-
-    # if the current user isn't the author of that book, we redirect to homepage
-    if book.user_id != g.user_id:
-        flash(gettext("This isn't yours !"))
-        return redirect(url_for('books.list'))
-
-    # Now we check if all needed directories exists
-    # If it doesn't we create them
-    if not os.path.isdir(EXPORT_DIR + "/" + book_id):
-        os.makedirs(EXPORT_DIR + "/" + book_id)
-
-    # we generate the files we'll pass to pandoc, starting with the book
-    # composed of the title, the author, then each part in the right order
-    # we use io to explicitly fix the encoding to utf8
-    export_file = io.open(
-        EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
-        'w', encoding="utf-8"
-    )
-
-    export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + user.name + '\n\n')
-
-    for the_part in parts:
-        export_file.write(the_part.content + '\n\n')
-
-    # When we wrote everything, we close the file
-    export_file.close()
-
-    if book.cover is None:
-        # Set up the pandoc command and run it
-        args = [
-            'pandoc', '-S',
-            EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
-            '-s', '--toc',
-            '-f', 'markdown',
-            '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
-            ]
-    else:
-        # Set up the pandoc command and run it
-        args = [
-            'pandoc', '-S',
-            EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
-            '--epub-cover-image', book.cover,
-            '-s', '--toc',
-            '-f', 'markdown',
-            '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
-            ]
-    p1 = subprocess.call(args)
-
-    # Get the return of the pandoc command
-    output = str(p1) + ' - ' + ' '.join(args)
-
-    # flash will display a message to the user
-    flash(gettext('That book has been exported !'))
-
-    # redirect user to the result page with a link if the export was successful
-    return render_template('books/export.html', output=output, book=book,
-        user=g.user, export_format=export_format, export_done=1,
-        site_title=site_title)
 
 
 @mod.route('/<book_id>/parts/', methods=['GET', 'POST'])
@@ -532,129 +536,7 @@ def del_part(book_id, part_id):
 @mod.route('/<book_id>/export_part/<part_id>/format/<export_format>',
     methods=['GET', 'POST'])
 @requires_login
-def export_part(book_id, part_id, export_format):
-    """
-    Export the part with part_id from its book
-    """
-
-    # We get all the data we have to pass to pandoc
-    book = Book.query.get(book_id)
-    part = Part.query.get(part_id)
-
-    part_title = (part.title[:25] + '...') if len(part.title) > 25 else part.title
-    book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
-
-    # if the current user isn't the author of that book, we redirect to homepage
-    if book.user_id != g.user_id:
-        flash(gettext("This isn't yours !"))
-        return redirect(url_for('books.list'))
-
-    user = User.query.get(book.user_id)
-    site_title = gettext(
-        'Export of the part %(part_title)s of the book %(book_title)s',
-        part_title=part_title, book_title=book_title
-    )
-
-    # Now we check if all needed directories exists
-    # if it doesn't we create them
-    if not os.path.isdir(EXPORT_DIR + "/" + book_id):
-        subprocess.call(['mkdir -p ' + EXPORT_DIR + "/" + book_id])
-
-    # we generate the files we'll pass to pandoc, starting with the book
-    # composed of the title, the author, then each part in the right order
-    # we use io to explicitly fix the encoding to utf8
-    export_file = io.open(
-        EXPORT_DIR + "/" + book_id + "/book-"
-        + book_id + '-part-' + part_id + '.md',
-        'w', encoding="utf-8"
-    )
-
-    export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + user.name + '\n\n')
-
-    export_file.write(part.content + '\n\n')
-
-    # When we wrote everything, we close the file
-    export_file.close()
-
-    # If there isn't a cover
-    if book.cover is None:
-        # Set up the pandoc and run it
-        args = [
-            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
-                + book_id + '-part-' + part_id + '.md',
-            '-s', '--toc',
-            '-f', 'markdown',
-            '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-"
-                + book_id + '-part-' + part_id + "." + export_format
-            ]
-    # If there is one, we add it to the pandoc call
-    else:
-        # Set up the pandoc and run it
-        args = [
-            'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
-                + book_id + '-part-' + part_id + '.md',
-            '--epub-cover-image', book.cover,
-            '-s', '--toc',
-            '-f', 'markdown',
-            '-t', export_format,
-            '-o', EXPORT_DIR + "/" + book_id + "/book-"
-                + book_id + '-part-' + part_id + "." + export_format
-            ]
-
-    try:
-        p1 = subprocess.call(args)
-    except:
-        return redirect(url_for('500'))
-
-    # Get the return of the pandoc command
-    output = str(p1) + ' - ' + ' '.join(args)
-
-    # flash will display a message to the user
-    flash(gettext('That book has been exported !'))
-
-    # redirect user to the result page with a link if the export was successful
-    return render_template('books/export_part.html', output=output, book=book,
-        part=part, user=g.user, export_format=export_format,
-        export_done=1, site_title=site_title)
-
-
-@mod.route('/<book_id>/get/<export_format>', methods=['GET', 'POST'])
-@requires_login
-def get_book(book_id, export_format):
-    """
-    Get the chosen book in <export_format> format.
-    """
-
-    book = Book.query.get(book_id)
-
-    # if the current user isn't the author of that book, we redirect to homepage
-    if book.user_id != g.user_id:
-        flash(gettext("This isn't yours !"))
-        return redirect(url_for('books.list'))
-
-    if os.path.exists(
-        EXPORT_DIR + "/" + book_id + "/book-" + book_id + "." + export_format
-        ):
-        # we now send the correct file to the user
-        return send_from_directory(
-            directory=EXPORT_DIR + "/" + book_id + "/",
-            filename="book-" + book_id + "." + export_format,
-            as_attachment=True)
-    else:
-        flash(gettext(
-            "That book has not been exported in that format, "
-            "we can't send it to you !"
-        ))
-        # redirect user to the parts list of the book
-        return redirect(url_for('books.list'))
-
-
-@mod.route('/<book_id>/get_part/<part_id>/format/<export_format>',
-    methods=['GET', 'POST'])
-@requires_login
-def get_part(part_id, book_id, export_format):
+def export_part(part_id, book_id, export_format):
     """
     Get the chosen part of the book with book_id in <export_format> format.
     """
@@ -676,17 +558,71 @@ def get_part(part_id, book_id, export_format):
                 + part_id + "." + export_format,
             as_attachment=True)
     else:
-        flash(gettext(
-            "That part of the book has not been exported in that format"
-            ", we can't send it to you !"
-        ))
-
-        parts = Part.query.filter_by(book_id=book_id).all()
+        # We get all the data we have to pass to pandoc
         book = Book.query.get(book_id)
+        part = Part.query.get(part_id)
 
-        # redirect user to the parts list of the book
-        return redirect(url_for('books.parts_list',
-            parts=parts, session=session, user=g.user, book=book))
+        user = User.query.get(book.user_id)
+
+        # Now we check if all needed directories exists
+        # if it doesn't we create them
+        if not os.path.isdir(EXPORT_DIR + "/" + book_id):
+            os.mkdir(EXPORT_DIR + "/" + book_id)
+
+        # we generate the files we'll pass to pandoc, starting with the book
+        # composed of the title, the author, then each part in the right order
+        # we use io to explicitly fix the encoding to utf8
+        export_file = io.open(
+            EXPORT_DIR + "/" + book_id + "/book-"
+            + book_id + '-part-' + part_id + '.md',
+            'w', encoding="utf-8"
+        )
+
+        export_file.write('% ' + book.title + '\n')
+        export_file.write('% ' + user.name + '\n\n')
+
+        export_file.write(part.content + '\n\n')
+
+        # When we wrote everything, we close the file
+        export_file.close()
+
+        # If there isn't a cover
+        if book.cover is None:
+            # Set up the pandoc and run it
+            args = [
+                'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
+                    + book_id + '-part-' + part_id + '.md',
+                '-s', '--toc',
+                '-f', 'markdown',
+                '-t', export_format,
+                '-o', EXPORT_DIR + "/" + book_id + "/book-"
+                    + book_id + '-part-' + part_id + "." + export_format
+                ]
+        # If there is one, we add it to the pandoc call
+        else:
+            # Set up the pandoc and run it
+            args = [
+                'pandoc', '-S', EXPORT_DIR + "/" + book_id + "/book-"
+                    + book_id + '-part-' + part_id + '.md',
+                '--epub-cover-image', book.cover,
+                '-s', '--toc',
+                '-f', 'markdown',
+                '-t', export_format,
+                '-o', EXPORT_DIR + "/" + book_id + "/book-"
+                    + book_id + '-part-' + part_id + "." + export_format
+                ]
+
+        try:
+            subprocess.call(args)
+        except:
+            return redirect(url_for('500'))
+
+        # we now send the correct file to the user
+        return send_from_directory(
+            directory=EXPORT_DIR + "/" + book_id + "/",
+            filename="book-" + book_id + '-part-'
+                + part_id + "." + export_format,
+            as_attachment=True)
 
 
 def allowed_file(filename):
