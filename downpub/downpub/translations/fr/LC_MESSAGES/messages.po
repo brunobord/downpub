@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-21 16:01+0200\n"
-"PO-Revision-Date: 2014-10-21 16:29+0100\n"
+"POT-Creation-Date: 2014-10-22 14:29+0200\n"
+"PO-Revision-Date: 2014-10-22 14:30+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -41,7 +41,6 @@ msgid "Image File"
 msgstr "Fichier image"
 
 #: downpub/books/forms.py:17 downpub/books/forms.py:24
-#, fuzzy
 msgid "Images only!"
 msgstr "Images uniquement !"
 
@@ -344,11 +343,27 @@ msgstr ""
 "une partie en epub, markdown, HTML ou Word."
 
 #: downpub/templates/index.html:13
+msgid "Markdown seems complicated !"
+msgstr "Markdown semble compliqué !"
+
+#: downpub/templates/index.html:15
+msgid ""
+" If you need to learn Markdown, there's a lot of tutorials, in many "
+"languages !"
+msgstr ""
+"Si vous avez besoin d'apprendre Markdown, il y a des tas de tutoriels, dans "
+"plein de langues !"
+
+#: downpub/templates/index.html:16
+msgid " Just take a few seconds to do a search !"
+msgstr "Prenez juste quelques secondes pour faire une recherche !"
+
+#: downpub/templates/index.html:18
 #, fuzzy
 msgid "Why would you choose DownPub ?"
 msgstr "Pourquoi vous choisiriez DownPub ?"
 
-#: downpub/templates/index.html:16
+#: downpub/templates/index.html:21
 #, fuzzy, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share "
@@ -357,7 +372,7 @@ msgstr ""
 "Downpub est sous licence %(wtfpl_link)s donc vous pouvez le télécharger, le "
 "partager, même le vendre, comme vous voulez..."
 
-#: downpub/templates/index.html:19
+#: downpub/templates/index.html:24
 #, fuzzy
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
@@ -367,12 +382,12 @@ msgstr ""
 "n'importe quel ordinateur, même si le processus d'installation est un peu "
 "brut pour l'instant."
 
-#: downpub/templates/index.html:21
+#: downpub/templates/index.html:26
 #, fuzzy
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 
-#: downpub/templates/index.html:23
+#: downpub/templates/index.html:28
 #, fuzzy
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"

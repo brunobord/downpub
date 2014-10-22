@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-21 16:01+0200\n"
+"POT-Creation-Date: 2014-10-22 14:29+0200\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -274,27 +274,41 @@ msgid ""
 msgstr ""
 
 #: downpub/templates/index.html:13
-msgid "Why would you choose DownPub ?"
+msgid "Markdown seems complicated !"
+msgstr ""
+
+#: downpub/templates/index.html:15
+msgid ""
+" If you need to learn Markdown, there's a lot of tutorials, in many "
+"languages !"
 msgstr ""
 
 #: downpub/templates/index.html:16
+msgid " Just take a few seconds to do a search !"
+msgstr ""
+
+#: downpub/templates/index.html:18
+msgid "Why would you choose DownPub ?"
+msgstr ""
+
+#: downpub/templates/index.html:21
 #, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share"
 " it, even sell it, whatever..."
 msgstr ""
 
-#: downpub/templates/index.html:19
+#: downpub/templates/index.html:24
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
 "computer, even if the installation process is a little raw for now."
 msgstr ""
 
-#: downpub/templates/index.html:21
+#: downpub/templates/index.html:26
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr ""
 
-#: downpub/templates/index.html:23
+#: downpub/templates/index.html:28
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
