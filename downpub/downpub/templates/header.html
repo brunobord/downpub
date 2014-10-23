@@ -1,34 +1,34 @@
-    <header id="header" role="banner" class="line pam txtcenter">
+    <header id="header" role="banner" class="row pas txtcenter">
         <nav id="navigation" role="navigation" class="txtcenter">
 
-            <ul class="pam">
+            <ul class="pas">
                 <li><h1>Downpub</h1></li>
-                <li class="pam"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
+                <li class="pas"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
                 {% if user.name %}
-                    <li class="pam">
+                    <li class="pas">
                         <a class="icon icon-bracket2"
                            href="{{ url_for('books.list') }}">{{ _("Your books") }}
                         </a>
                     </li>
                 {% endif %}
-                <li class="pam">
+                <li class="pas">
                     <a class="icon icon-bracket2" target="_blank"
                        href="http://github.com/segle/downpub/">{{ _("Download DownPub") }}
                     </a>
                 </li>
-                <li class="pam">||</li>
+                <li class="pas">||</li>
                 {% if not user.name %}
-                <li class="pam">
+                <li class="pas">
                     <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
                     {% trans %}or{% endtrans %} <a href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
                 </li>
                 {% else %}
-                    <li class="pam">
+                    <li class="pas">
                         <a class="icon icon-bracket2"
                            href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
                         </a>
                     </li>
-                    <li class="pam">
+                    <li class="pas">
                         <a class="icon icon-bracket2"
                            href="{{ url_for('users.logout') }}">{{ _("Log out") }}
                         </a>

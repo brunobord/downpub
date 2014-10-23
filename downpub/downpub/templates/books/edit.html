@@ -4,6 +4,6 @@
   <form method="POST" action="{{ url_for('books.edit', book_id=book.id) }}" enctype="multipart/form-data" class="form">
     {{ form.hidden_tag() }}
     {{ render_field(form.title, class="input text") }}
-    <input type="submit" value="{% trans %}Save{% endtrans %}" class="button green">
+    <input type="submit" value="{{ _('Save') }}" class="button green">
   </form>
 {% endblock %}

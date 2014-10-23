@@ -2,7 +2,7 @@
 {% block content %}
 
 <h2>{{ book.title }}</h2>
-<div class="row w60 center bookelement">
+<div class="line w60 center bookelement">
     <div class="col w20 txtcenter cover">
         {% if book.cover %}
             <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
@@ -20,7 +20,7 @@
         <ul>
             <li class="row">
                 <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}"
-                >{{ _("Export Epub2") }}
+                >{{ _("Export Epub") }}
                 </a>
             </li>
             <li class="row">
@@ -68,9 +68,9 @@
 <h3>{{ _("Parts list :") }}</h3>
 
 {% for part in parts %}
-<div class="row bookelement">
+<div class="line bookelement">
     <h4 class="col w20">{{ part.title }}</h4>
-    <div class="col w40 txtcenter cover">
+    <div class="col w40 txtcenter">
         {{ part.content|truncate(60) }}
     </div>
     <div class="col w20">

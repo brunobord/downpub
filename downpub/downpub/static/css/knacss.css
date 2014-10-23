@@ -1979,6 +1979,7 @@ html {
 body {
     font-family:"Esteban", "Times New Roman", serif;
     background: #ddd;
+    height:100%;
 }
 
 a {
@@ -2032,12 +2033,15 @@ code, pre, blockquote {
 */
 
 #main {
-    background: #eee;
-    min-height:550px;
+    margin-top:60px;
+    margin-bottom:60px;
+    background: #ddd;
+    height:100%;
+    min-height:100%;
 }
 
 .aside {
-    background: #eee;
+    background: #ddd;
     color: black;
     width:15%;
 }
@@ -2059,13 +2063,16 @@ code, pre, blockquote {
 }
 
 .content {
-    background: #eee;
+    background: #ddd;
     color: black;
 }
 
 #header {
     background: #333;
     color: black;
+    position: fixed;
+    top:0;
+    height: 50px;
 }
 
 #header h1 {
@@ -2088,6 +2095,9 @@ code, pre, blockquote {
 #footer {
     background: #333;
     color: white;
+    position: fixed;
+    bottom:0;
+    height:40px;
 }
 
 #footer a {
@@ -2121,10 +2131,10 @@ code, pre, blockquote {
 */
 
 .bookelement{
-    margin: 0.6em 1em;
+    margin: 1em 0.4em;
     padding:0.8em;
     border:1px solid #999;
-    background: #ddd;
+    background: #eee;
     color: #993D00;
 }
 
