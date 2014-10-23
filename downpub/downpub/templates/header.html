@@ -1,39 +1,38 @@
-    <header id="header" role="banner" class="row pas txtcenter">
-        <nav id="navigation" role="navigation" class="txtcenter">
+    <header id="header" role="banner" class="row man pan txtcenter">
+        <nav id="navigation" role="navigation" class="line">
+        <div class="row">
+            <div class="col w30 pan txtleft">
+                <h1 class="pan txtleft">Downpub</h1>
+            </div>
 
-            <ul class="pas">
-                <li><h1>Downpub</h1></li>
-                <li class="pas"><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
-                {% if user.name %}
-                    <li class="pas">
-                        <a class="icon icon-bracket2"
-                           href="{{ url_for('books.list') }}">{{ _("Your books") }}
-                        </a>
-                    </li>
-                {% endif %}
-                <li class="pas">
-                    <a class="icon icon-bracket2" target="_blank"
+            <div class="col w30 pan txtcenter">
+                <ul class="pan txtcenter">
+                    <li><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
+                    <li><a class="icon icon-bracket2" target="_blank"
                        href="http://github.com/segle/downpub/">{{ _("Download DownPub") }}
-                    </a>
-                </li>
-                <li class="pas">||</li>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="col w40 pan">
+                <ul class="pan txtright">
                 {% if not user.name %}
-                <li class="pas">
-                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
-                    {% trans %}or{% endtrans %} <a href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
-                </li>
+                    <li><a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a></li>
+                    {{ _("or") }}
+                    <li><a href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a></li>
                 {% else %}
-                    <li class="pas">
-                        <a class="icon icon-bracket2"
-                           href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
-                        </a>
-                    </li>
-                    <li class="pas">
-                        <a class="icon icon-bracket2"
-                           href="{{ url_for('users.logout') }}">{{ _("Log out") }}
-                        </a>
-                    </li>
+                    <li><a class="icon icon-bracket2"
+                        href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
+                    </a></li>
+                    <li><a class="icon icon-bracket2"
+                               href="{{ url_for('books.list') }}">{{ _("Your books") }}
+                    </a></li>
+                    <li><a class="icon icon-bracket2"
+                       href="{{ url_for('users.logout') }}">{{ _("Log out") }}
+                    </a></li>
                 {% endif %}
-            </ul>
+                </ul>
+            </div>
+        </div>
         </nav>
     </header>

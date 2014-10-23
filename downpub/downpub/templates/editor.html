@@ -25,19 +25,21 @@
                     },
                     theme: {
                         base: '/themes/base/epiceditor.css',
-                        preview: '/themes/preview/preview-dark.css',
+                        preview: '/themes/preview/github-downpub.css',
                         editor: '/themes/editor/epic-dark.css'
                     },
                     button: {
                         preview: false,
-                        fullscreen: false,
+                        fullscreen: true,
                         bar: "auto"
                     },
                     focusOnLoad: false,
-                    autogrow: {
-                        minHeight: 150,
-                        maxHeight: 450,
-                    }
+                    string: {
+                        togglePreview: '{{ _("Toggle Preview Mode") }}',
+                        toggleEdit: '{{ _("Toggle Edit Mode") }}',
+                        toggleFullscreen: '{{ _("Enter Fullscreen") }}'
+                    },
+                    autogrow: true
                 }
 
 

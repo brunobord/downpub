@@ -34,9 +34,9 @@
         {{ render_field(form.title, class="input text line") }}
         {{ render_field(form.order, class="input text line") }}
         {{ render_field(form.content, class="input text invisible") }}
-        <div id="epiceditor-container" class="autogrid2">
-            <div id="epiceditor"></div>
-            <div id="epiceditor-preview"></div>
+        <div id="epiceditor-container" class="row man pan">
+            <div id="epiceditor" class="col w50 man pan"></div>
+            <div id="epiceditor-preview" class="col w50 man pan"></div>
         </div>
         <input type="submit" value="{{ _('Save') }}" class="button green">
     </form>

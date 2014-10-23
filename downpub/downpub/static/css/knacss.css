@@ -1979,7 +1979,6 @@ html {
 body {
     font-family:"Esteban", "Times New Roman", serif;
     background: #ddd;
-    height:100%;
 }
 
 a {
@@ -1991,8 +1990,32 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    margin:0.5em;
+    margin:0.4em;
     color:chocolate;
+}
+
+h1 {
+    font-size:1.5em;
+}
+
+h2 {
+    font-size:1.4em;
+}
+
+h3 {
+    font-size:1.25em;
+}
+
+h4 {
+    font-size:1.15em;
+}
+
+h5 {
+    font-size:1.1em;
+}
+
+h6 {
+    font-size:1em;
 }
 
 p {
@@ -2009,18 +2032,17 @@ code, pre, blockquote {
 
 .message {
     display:block;
-    background: #777;
-    padding:0.7em;
+    background: #aaa;
+    padding:0.6em;
     border: 1px solid chocolate;
     color: white;
 }
 
 .error {
     display:block;
-    background: #888;
-    padding:0.7em;
-    border: 1px solid red;
-    color: black:
+    padding:0.4em;
+    margin:0;
+    color: chocolate;
 }
 
 .no_error {
@@ -2033,11 +2055,10 @@ code, pre, blockquote {
 */
 
 #main {
-    margin-top:60px;
+    margin-top:5px;
     margin-bottom:60px;
     background: #ddd;
-    height:100%;
-    min-height:100%;
+    margin-top:40px;
 }
 
 .aside {
@@ -2058,32 +2079,39 @@ code, pre, blockquote {
 {
     display:inline-block;
     list-style-type: none;
-    margin:0;
-    padding:0.5em;
+    margin:0.3em;
+    padding:0.3em;
 }
 
 .content {
     background: #ddd;
     color: black;
+    height:90%;
 }
 
 #header {
     background: #333;
     color: black;
-    position: fixed;
+    height: 45px;
     top:0;
-    height: 50px;
+    position:fixed;
+}
+
+#header * {
+    font-family:"Esteban", "Georgia", "Times New Roman", serif;
 }
 
 #header h1 {
     color:orange;
     margin: 0.1em;
-    padding: 0.1em;
-    font-size:1.4em;
+    padding: 0.15em;
+    font-size:1.8em;
 }
 
 #header a {
     color:orange;
+    padding: 0.15em;
+    font-size:1.2em;
 }
 
 #header a:hover {
@@ -2095,9 +2123,9 @@ code, pre, blockquote {
 #footer {
     background: #333;
     color: white;
-    position: fixed;
-    bottom:0;
     height:40px;
+    position:fixed;
+    bottom:0;
 }
 
 #footer a {
@@ -2119,9 +2147,9 @@ code, pre, blockquote {
 }
 
 .form {
-    background:#ccc;
+    background:#eee;
     border:1px solid darkgray;
-    padding:0.7em;
+    padding:0.2em;
 }
 
 .form.label {}
@@ -2154,55 +2182,56 @@ code, pre, blockquote {
     word-wrap: break-word;
 }
 
-
 /*
     EpicEditor editor and previewer
 */
 #epiceditor-container {
-    margin:1em;
+    margin:0.5em;
+    //background-color:white;
+    width:99%;
 }
 
 div#epiceditor-preview, div#epiceditor-preview * {
     margin:0;
     padding:0;
     font-family:"Esteban", "Georgia", "Times New Roman", serif;
-    background-color:white;
+    //background-color:white;
     color:black;
     font-style:normal;
     font-weight:normal;
 }
 
 div#epiceditor-preview h1 {
-    margin:0.3em 0.2em;
-    padding:0.5em 0;
+    margin:0.2em 0.1em;
+    padding:0.4em 0;
     font-size:xx-large;
     font-weight:bold;
 }
 
 div#epiceditor-preview h2 {
-    margin:0.3em;
-    padding:0.5em 0;
+    margin:0.2em;
+    padding:0.4em 0;
     font-size:x-large;
     font-weight:bold;
 }
 
 div#epiceditor-preview h3 {
-    margin:0.3em;
-    padding:0.5em 0;
+    margin:0.2em;
+    padding:0.4em 0;
     font-size:large;
     font-weight:bold;
 }
 
 div#epiceditor-preview h4 {
-    margin:0.3em;
-    padding:0.5em 0;
+    margin:0.2em;
+    padding:0.4em 0;
     font-size:medium;
     font-weight:bold;
     font-style:italic;
 }
 
 div#epiceditor-preview p {
-    margin:0.4em;
+    margin:0.3em;
     padding:0.1em;
     font-size:normal;
 }
@@ -2224,14 +2253,14 @@ div#epiceditor-preview strong em{
 }
 
 div#epiceditor-preview ul, div#epiceditor-preview ol {
-    margin:0.4em 1.1em;
+    margin:0.3em 1.1em;
     padding:0.1em 1.1em;
     font-size:normal;
 }
 
 div#epiceditor-preview pre, div#epiceditor-preview blockquote {
-    margin:0.3em 1em;
-    padding:0.4em;
+    margin:0.2em 1em;
+    padding:0.3em;
     font-size:normal;
     border:1px solid gray;
     background:#ddd;
@@ -2241,8 +2270,8 @@ div#epiceditor-preview pre, div#epiceditor-preview blockquote {
 
 div#epiceditor-preview code {
     display:inline-block;
-    margin:0.3em;
-    padding:0.4em;
+    margin:0.2em;
+    padding:0.3em;
     background:#ddd;
     line-height:1.1em;
     font-family:"Courier New", Courier, monospace;
@@ -2255,6 +2284,6 @@ div#epiceditor-preview th {
 div#epiceditor-preview
 {
     padding:1em;
-    max-height:450px;
+    //max-height:450px;
     overflow:auto;
 }
