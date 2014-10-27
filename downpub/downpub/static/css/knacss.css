@@ -2092,7 +2092,7 @@ code, pre, blockquote {
 #header {
     background: #333;
     color: black;
-    height: 45px;
+    height: 2em;
     top:0;
     position:fixed;
 }
@@ -2103,15 +2103,15 @@ code, pre, blockquote {
 
 #header h1 {
     color:orange;
-    margin: 0.1em;
-    padding: 0.15em;
-    font-size:1.8em;
+    margin: 0.3em;
+    padding: 0.3em;
+    font-size:1.2em;
 }
 
 #header a {
     color:orange;
     padding: 0.15em;
-    font-size:1.2em;
+    font-size:1.1em;
 }
 
 #header a:hover {

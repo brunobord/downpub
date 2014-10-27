@@ -1,34 +1,30 @@
     <header id="header" role="banner" class="row man pan txtcenter">
         <nav id="navigation" role="navigation" class="line">
         <div class="row">
-            <div class="col w30 pan txtleft">
-                <h1 class="pan txtleft">Downpub</h1>
+            <div class="col w10 pan txtleft">
+                <h1 class="inbl pan txtleft">
+                    <a href="{{ url_for('index') }}">Downpub</a>
+                </h1>
             </div>
 
-            <div class="col w30 pan txtcenter">
-                <ul class="pan txtcenter">
-                    <li><a class="icon icon-bracket2" href="{{ url_for('index') }}">{{ _("Home") }}</a></li>
-                    <li><a class="icon icon-bracket2" target="_blank"
-                       href="http://github.com/segle/downpub/">{{ _("Download DownPub") }}
-                    </a></li>
-                </ul>
-            </div>
-
-            <div class="col w40 pan">
+            <div class="col w90 pan txtright">
                 <ul class="pan txtright">
                 {% if not user.name %}
                     <li><a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a></li>
                     {{ _("or") }}
-                    <li><a href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a></li>
+                    <li><a class="icon icon-bracket2" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a></li>
                 {% else %}
                     <li><a class="icon icon-bracket2"
                         href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
                     </a></li>
                     <li><a class="icon icon-bracket2"
-                               href="{{ url_for('books.list') }}">{{ _("Your books") }}
+                        href="{{ url_for('books.list') }}">{{ _("Your books") }}
                     </a></li>
                     <li><a class="icon icon-bracket2"
-                       href="{{ url_for('users.logout') }}">{{ _("Log out") }}
+                        href="{{ url_for('users.logout') }}">{{ _("Log out") }}
+                    </a></li>
+                    <li><a class="icon icon-bracket2"
+                        href="{{ url_for('help') }}">{{ _("Help")}}
                     </a></li>
                 {% endif %}
                 </ul>
@@ -36,3 +32,4 @@
         </div>
         </nav>
     </header>
+    <div class="row">&nbsp;</div>
