@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-27 17:28+0100\n"
+"POT-Creation-Date: 2014-10-28 00:38+0100\n"
 "PO-Revision-Date: 2014-10-21 12:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Images only!"
 msgstr ""
 
-#: downpub/books/forms.py:28 downpub/books/forms.py:35
+#: downpub/books/forms.py:28 downpub/books/forms.py:34
 msgid "Part title"
 msgstr ""
 
@@ -51,18 +51,11 @@ msgstr ""
 msgid "Title for that part is required."
 msgstr ""
 
-#: downpub/books/forms.py:29 downpub/books/forms.py:36
+#: downpub/books/forms.py:29 downpub/books/forms.py:35
 msgid "Content"
 msgstr ""
 
-#: downpub/books/forms.py:30
-msgid ""
-"#This is a default part title\n"
-"\n"
-"Here is the awesome content of that book's part."
-msgstr ""
-
-#: downpub/books/forms.py:31 downpub/books/forms.py:37
+#: downpub/books/forms.py:30 downpub/books/forms.py:36
 msgid "Order"
 msgstr ""
 
@@ -187,15 +180,57 @@ msgstr ""
 msgid "Maybe you should return at the homepage and restart from there ?"
 msgstr ""
 
-#: downpub/templates/editor.html:38
+#: downpub/templates/editor.html:6
+msgid "# Chapter 1 - Introducing Markdown in Downpub"
+msgstr ""
+
+#: downpub/templates/editor.html:8
+msgid ""
+"This is a demo text which contains *examples* on **how** to use "
+"***Markdown*** syntax to format your book."
+msgstr ""
+
+#: downpub/templates/editor.html:10
+msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
+msgstr ""
+
+#: downpub/templates/editor.html:12
+msgid ""
+"In this section, we'll have a look at making text bold, italic and etc. "
+"If you haven't realised by now, there is a very simple toolbar presented "
+"above the editor. Try selecting text in this editor and press any one of "
+"those buttons."
+msgstr ""
+
+#: downpub/templates/editor.html:14
+msgid "Item1"
+msgstr ""
+
+#: downpub/templates/editor.html:15
+msgid "Item2"
+msgstr ""
+
+#: downpub/templates/editor.html:16
+msgid "Item3"
+msgstr ""
+
+#: downpub/templates/editor.html:18
+msgid "### Example source code"
+msgstr ""
+
+#: downpub/templates/editor.html:24
+msgid "Take a peek at those buttons and see how they work !"
+msgstr ""
+
+#: downpub/templates/editor.html:61
 msgid "Toggle Preview Mode"
 msgstr ""
 
-#: downpub/templates/editor.html:39
+#: downpub/templates/editor.html:62
 msgid "Toggle Edit Mode"
 msgstr ""
 
-#: downpub/templates/editor.html:40
+#: downpub/templates/editor.html:63
 msgid "Enter Fullscreen"
 msgstr ""
 
@@ -374,7 +409,7 @@ msgstr ""
 
 #: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:17
 #: downpub/templates/books/edit.html:7
-#: downpub/templates/books/edit_part.html:41
+#: downpub/templates/books/edit_part.html:50
 msgid "Save"
 msgstr ""
 
@@ -387,38 +422,70 @@ msgstr ""
 msgid "Upload the cover"
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:9
+#: downpub/templates/books/edit_part.html:8
 #: downpub/templates/books/parts_list.html:68
 msgid "Parts list :"
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:14
+#: downpub/templates/books/edit_part.html:13
 #: downpub/templates/books/parts_list.html:80
 msgid "Edit"
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:17
+#: downpub/templates/books/edit_part.html:16
 #: downpub/templates/books/list.html:46
 #: downpub/templates/books/parts_list.html:23
 #: downpub/templates/books/parts_list.html:94
 msgid "Export Epub"
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:20
+#: downpub/templates/books/edit_part.html:19
 #: downpub/templates/books/list.html:37
 #: downpub/templates/books/parts_list.html:85
 msgid "Delete"
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:25
+#: downpub/templates/books/edit_part.html:24
 #: downpub/templates/books/parts_list.html:127
 msgid "Not enough parts ? Are you sad ? "
 msgstr ""
 
-#: downpub/templates/books/edit_part.html:28
+#: downpub/templates/books/edit_part.html:27
 #: downpub/templates/books/parts_list.html:130
 #: downpub/templates/books/parts_list.html:137
 msgid "Then add some parts !"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:37
+msgid "Make selection Heading 1"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:38
+msgid "Make selection Heading 2"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:39
+msgid "Make selection Heading 3"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:40
+msgid "Make selection Heading 4"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:41
+msgid "Make selection bold"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:42
+msgid "Make selection italic"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:43
+msgid "Make selection inline code block"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:44
+msgid "Make selection a list"
 msgstr ""
 
 #: downpub/templates/books/list.html:4
@@ -641,24 +708,9 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "That book has not been exported in"
-#~ " that format, we can't send it "
-#~ "to you !"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "That part of the book has not "
-#~ "been exported in that format, we "
-#~ "can't send it to you !"
 #~ msgstr ""
 
 #~ msgid "Download DownPub"
-#~ msgstr ""
-
-#~ msgid ""
-#~ " If you need to learn Markdown,"
-#~ " there's a lot of tutorials, in "
-#~ "many languages !"
 #~ msgstr ""
 
 #~ msgid " Just take a few seconds to do a search !"
@@ -701,5 +753,17 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Export Epub2"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is a demo text which contains"
+#~ " examples on how to use Markdown "
+#~ "syntax to format your book."
+#~ msgstr ""
+
+#~ msgid "### Relevant source codes"
+#~ msgstr ""
+
+#~ msgid "Take a peek at them and see how they work !"
 #~ msgstr ""
 

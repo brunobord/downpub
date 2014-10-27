@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-27 17:28+0100\n"
-"PO-Revision-Date: 2014-10-27 17:33+0100\n"
+"POT-Creation-Date: 2014-10-28 00:38+0100\n"
+"PO-Revision-Date: 2014-10-28 00:39+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -46,7 +46,7 @@ msgstr "Fichier image"
 msgid "Images only!"
 msgstr "Images uniquement !"
 
-#: downpub/books/forms.py:28 downpub/books/forms.py:35
+#: downpub/books/forms.py:28 downpub/books/forms.py:34
 #, fuzzy
 msgid "Part title"
 msgstr "Titre de la partie"
@@ -56,23 +56,12 @@ msgstr "Titre de la partie"
 msgid "Title for that part is required."
 msgstr "Un titre est requis pour cette partie."
 
-#: downpub/books/forms.py:29 downpub/books/forms.py:36
+#: downpub/books/forms.py:29 downpub/books/forms.py:35
 #, fuzzy
 msgid "Content"
 msgstr "Contenu"
 
-#: downpub/books/forms.py:30
-#, fuzzy
-msgid ""
-"#This is a default part title\n"
-"\n"
-"Here is the awesome content of that book's part."
-msgstr ""
-"#Ceci est un titre de partie par défaut\n"
-"\n"
-"Voici le contenu incroyable de cette partie du livre."
-
-#: downpub/books/forms.py:31 downpub/books/forms.py:37
+#: downpub/books/forms.py:30 downpub/books/forms.py:36
 #, fuzzy
 msgid "Order"
 msgstr "Ordre"
@@ -131,9 +120,7 @@ msgstr "La couverture de ce livre a été ajoutée !"
 #: downpub/books/views.py:300
 #, fuzzy, python-format
 msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
-msgstr ""
-"La taille de l'image est trop grandes, la taille maximale autorisée est de "
-"%(size)s MB"
+msgstr "La taille de l'image est trop grandes, la taille maximale autorisée est de %(size)s MB"
 
 #: downpub/books/views.py:308
 #, fuzzy
@@ -143,9 +130,7 @@ msgstr "Ce type de fichier n'est pas autorisé !"
 #: downpub/books/views.py:319
 #, fuzzy
 msgid "That book already has a cover, delete it first to upload a new one !"
-msgstr ""
-"Ce livre a déjà une couverture, effacez-la d'abord pour en envoyer une "
-"nouvelle !"
+msgstr "Ce livre a déjà une couverture, effacez-la d'abord pour en envoyer une nouvelle !"
 
 #: downpub/books/views.py:352
 #, fuzzy
@@ -195,9 +180,7 @@ msgstr "Oops, ce que vous vouliez voir n'est pas ici."
 #: downpub/templates/404.html:4
 #, fuzzy
 msgid "Maybe you should return at the homepage and search from there ?"
-msgstr ""
-"Peut-être devriez-vous revenir à la page d'accueil et chercher depuis là-"
-"bas ?"
+msgstr "Peut-être devriez-vous revenir à la page d'accueil et chercher depuis là-bas ?"
 
 #: downpub/templates/413.html:3
 #, fuzzy
@@ -206,12 +189,8 @@ msgstr "Le fichier que vous tentiez d'envoyer est trop grand !"
 
 #: downpub/templates/413.html:4
 #, fuzzy
-msgid ""
-"Maybe you should return at the book's page and try again with a smaller "
-"file ?"
-msgstr ""
-"Peut-être devriez-vous revenir à la page du livre et réessayer avec un "
-"fichier plus petit ?"
+msgid "Maybe you should return at the book's page and try again with a smaller file ?"
+msgstr "Peut-être devriez-vous revenir à la page du livre et réessayer avec un fichier plus petit ?"
 
 #: downpub/templates/500.html:3
 #, fuzzy
@@ -221,48 +200,74 @@ msgstr "Oops, c'est cassé."
 #: downpub/templates/500.html:4
 #, fuzzy
 msgid "Maybe you should return at the homepage and restart from there ?"
-msgstr ""
-"Peut-être devriez-vous revenir à la page d'accueil et repartir de là-bas ?"
+msgstr "Peut-être devriez-vous revenir à la page d'accueil et repartir de là-bas ?"
 
-#: downpub/templates/editor.html:38
+#: downpub/templates/editor.html:6
+msgid "# Chapter 1 - Introducing Markdown in Downpub"
+msgstr "# Chapitre 1 - Introduction de Markdown dans Downpub"
+
+#: downpub/templates/editor.html:8
+#, fuzzy
+msgid "This is a demo text which contains *examples* on **how** to use ***Markdown*** syntax to format your book."
+msgstr "Ceci est un texte de démonstration contenant des exemples d'utilisation de la syntaxe Markdown pour mettre en forme votre livre."
+
+#: downpub/templates/editor.html:10
+msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
+msgstr "## Sous-chapitre 1 - Formatage du texte, presque WYSIWYG"
+
+#: downpub/templates/editor.html:12
+msgid "In this section, we'll have a look at making text bold, italic and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons."
+msgstr "Dans cette partie, nous allons voir comment rendre le text gras, italique etc... Si vous n'avez pas encore réalisé, il y a une barre d'outils au dessus de cette zone d'édition. Essayez de sélectionner du texte ici puis appuyez sur un de ces boutons."
+
+#: downpub/templates/editor.html:14
+msgid "Item1"
+msgstr "Objet1"
+
+#: downpub/templates/editor.html:15
+msgid "Item2"
+msgstr "Objet2"
+
+#: downpub/templates/editor.html:16
+msgid "Item3"
+msgstr "Objet3"
+
+#: downpub/templates/editor.html:18
+msgid "### Example source code"
+msgstr "### Code source d'exemple"
+
+#: downpub/templates/editor.html:24
+#, fuzzy
+msgid "Take a peek at those buttons and see how they work !"
+msgstr "Jetez un coup d'oeil à ces boutons et voyez comment ils fonctionnent !"
+
+#: downpub/templates/editor.html:61
 msgid "Toggle Preview Mode"
 msgstr "Passer en mode Prévisualisation"
 
-#: downpub/templates/editor.html:39
+#: downpub/templates/editor.html:62
 #, fuzzy
 msgid "Toggle Edit Mode"
 msgstr "Éditer"
 
-#: downpub/templates/editor.html:40
+#: downpub/templates/editor.html:63
 #, fuzzy
 msgid "Enter Fullscreen"
 msgstr "Entrez un mot de passe."
 
 #: downpub/templates/footer.html:3
 #, fuzzy
-msgid ""
-"Made with the moral support of a cat named Poko by <a href=\"http://segle.org"
-"\">Segle</a> - © 2014."
-msgstr ""
-"Réalisé avec le support moral d'un chat appelé Poko par <a href=\"http://"
-"segle.org\">Segle</a> - © 2014."
+msgid "Made with the moral support of a cat named Poko by <a href=\"http://segle.org\">Segle</a> - © 2014."
+msgstr "Réalisé avec le support moral d'un chat appelé Poko par <a href=\"http://segle.org\">Segle</a> - © 2014."
 
 #: downpub/templates/footer.html:4
 #, fuzzy
-msgid ""
-"Grab the source on <a href=\"http://github.com/segle/downpub/\">Github</a>,"
-msgstr ""
-"Récupérez les sources sur <a href=\"http://github.com/segle/downpub/"
-"\">Github</a>,"
+msgid "Grab the source on <a href=\"http://github.com/segle/downpub/\">Github</a>,"
+msgstr "Récupérez les sources sur <a href=\"http://github.com/segle/downpub/\">Github</a>,"
 
 #: downpub/templates/footer.html:5
 #, fuzzy
-msgid ""
-"inspired by the fantastic concept of <a href=\"http://editorially.com"
-"\">Editorially</a>."
-msgstr ""
-"inspiré par le concept génial d'<a href=\"http://editorially.com"
-"\">Editorially</a>."
+msgid "inspired by the fantastic concept of <a href=\"http://editorially.com\">Editorially</a>."
+msgstr "inspiré par le concept génial d'<a href=\"http://editorially.com\">Editorially</a>."
 
 #: downpub/templates/header.html:13
 #, fuzzy
@@ -293,12 +298,8 @@ msgid "Learn some Markdown "
 msgstr "Apprenez Markdown"
 
 #: downpub/templates/help.html:7
-msgid ""
-"I'll put here many tutorials, sorted by language. Don't hesitate, tell me "
-"where you learned Markdown and I'll add it here."
-msgstr ""
-"Je vais lister ici plein de tutoriels, triés par langue. N'hésitez pas, "
-"dites-moi où vous avez appris Markdown et je l'ajouterai ici."
+msgid "I'll put here many tutorials, sorted by language. Don't hesitate, tell me where you learned Markdown and I'll add it here."
+msgstr "Je vais lister ici plein de tutoriels, triés par langue. N'hésitez pas, dites-moi où vous avez appris Markdown et je l'ajouterai ici."
 
 #: downpub/templates/help.html:9
 msgid "English"
@@ -309,24 +310,16 @@ msgid "An interactive tutorial to learn Markdown one step at a time."
 msgstr "Un tutoriel pour apprendre Markdown petit à petit."
 
 #: downpub/templates/help.html:18
-msgid ""
-"The basics by one of the guys who created Markdown. Worth your read I think."
-msgstr ""
-"Les bases par un des créateurs de Markdown. Cela vaut le détour à mon avis."
+msgid "The basics by one of the guys who created Markdown. Worth your read I think."
+msgstr "Les bases par un des créateurs de Markdown. Cela vaut le détour à mon avis."
 
 #: downpub/templates/help.html:23
 msgid "Github's try to make you learn Markdown. They did a good job."
-msgstr ""
-"La tentative de Github pour vous apprendre Markdown. Ils ont fait du bon "
-"boulot."
+msgstr "La tentative de Github pour vous apprendre Markdown. Ils ont fait du bon boulot."
 
 #: downpub/templates/help.html:28
-msgid ""
-"Text tutorial isn't enough, you want videos too ? That website got you "
-"covered !"
-msgstr ""
-"Un tutoriel texte ne suffit pas, vous voulez aussi des vidéos ? Ce site s'en "
-"occupe !"
+msgid "Text tutorial isn't enough, you want videos too ? That website got you covered !"
+msgstr "Un tutoriel texte ne suffit pas, vous voulez aussi des vidéos ? Ce site s'en occupe !"
 
 #: downpub/templates/help.html:33
 msgid "French"
@@ -379,21 +372,13 @@ msgstr "Vous choisissez de les écrire en une ou plusieurs parties."
 
 #: downpub/templates/index.html:9
 #, fuzzy
-msgid ""
-"Splitting your work in one file per chapter allows you to edit one chapter "
-"at a time, for example."
-msgstr ""
-"Découper votre travail en une partie par chapitre vous permet d'éditer un "
-"chapitre à la fois, par exemple."
+msgid "Splitting your work in one file per chapter allows you to edit one chapter at a time, for example."
+msgstr "Découper votre travail en une partie par chapitre vous permet d'éditer un chapitre à la fois, par exemple."
 
 #: downpub/templates/index.html:10
 #, fuzzy
-msgid ""
-"Once you have your(s) part(s) done, get the whole book or just one part in "
-"epub, markdown, HTML or Word."
-msgstr ""
-"Une fois que vos parties sont terminées, récupérez le livre complet ou juste "
-"une partie en epub, markdown, HTML ou Word."
+msgid "Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word."
+msgstr "Une fois que vos parties sont terminées, récupérez le livre complet ou juste une partie en epub, markdown, HTML ou Word."
 
 #: downpub/templates/index.html:13
 msgid "Try it for yourself !"
@@ -401,9 +386,7 @@ msgstr "Essayez-le !"
 
 #: downpub/templates/index.html:15
 msgid "You can grab the source on Github, the link is in the footer !"
-msgstr ""
-"Vous pouvez récupérer le source sur Github, le lien est dans le pied de "
-"page !"
+msgstr "Vous pouvez récupérer le source sur Github, le lien est dans le pied de page !"
 
 #: downpub/templates/index.html:17
 msgid "Markdown seems complicated !"
@@ -426,22 +409,13 @@ msgstr "Pourquoi vous choisiriez DownPub ?"
 
 #: downpub/templates/index.html:24
 #, fuzzy, python-format
-msgid ""
-"Downpub is under the %(wtfpl_link)s licence so you can download it, share "
-"it, even sell it, whatever..."
-msgstr ""
-"Downpub est sous licence %(wtfpl_link)s donc vous pouvez le télécharger, le "
-"partager, même le vendre, comme vous voulez..."
+msgid "Downpub is under the %(wtfpl_link)s licence so you can download it, share it, even sell it, whatever..."
+msgstr "Downpub est sous licence %(wtfpl_link)s donc vous pouvez le télécharger, le partager, même le vendre, comme vous voulez..."
 
 #: downpub/templates/index.html:27
 #, fuzzy
-msgid ""
-"Only your conscience will fix the limits. You can install it on any "
-"computer, even if the installation process is a little raw for now."
-msgstr ""
-"Seule votre conscience fixera les limites. Vous pouvez l'installer sur "
-"n'importe quel ordinateur, même si le processus d'installation est un peu "
-"brut pour l'instant."
+msgid "Only your conscience will fix the limits. You can install it on any computer, even if the installation process is a little raw for now."
+msgstr "Seule votre conscience fixera les limites. Vous pouvez l'installer sur n'importe quel ordinateur, même si le processus d'installation est un peu brut pour l'instant."
 
 #: downpub/templates/index.html:29
 #, fuzzy
@@ -455,7 +429,7 @@ msgstr "Plutôt chouette, non ?"
 
 #: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:17
 #: downpub/templates/books/edit.html:7
-#: downpub/templates/books/edit_part.html:41
+#: downpub/templates/books/edit_part.html:50
 #, fuzzy
 msgid "Save"
 msgstr "Enregistrer"
@@ -470,19 +444,19 @@ msgstr "Envoyer une couverture pour le livre %(book_title)s"
 msgid "Upload the cover"
 msgstr "Envoyer la couverture"
 
-#: downpub/templates/books/edit_part.html:9
+#: downpub/templates/books/edit_part.html:8
 #: downpub/templates/books/parts_list.html:68
 #, fuzzy
 msgid "Parts list :"
 msgstr "Liste des parties :"
 
-#: downpub/templates/books/edit_part.html:14
+#: downpub/templates/books/edit_part.html:13
 #: downpub/templates/books/parts_list.html:80
 #, fuzzy
 msgid "Edit"
 msgstr "Éditer"
 
-#: downpub/templates/books/edit_part.html:17
+#: downpub/templates/books/edit_part.html:16
 #: downpub/templates/books/list.html:46
 #: downpub/templates/books/parts_list.html:23
 #: downpub/templates/books/parts_list.html:94
@@ -490,25 +464,57 @@ msgstr "Éditer"
 msgid "Export Epub"
 msgstr "Export Epub"
 
-#: downpub/templates/books/edit_part.html:20
+#: downpub/templates/books/edit_part.html:19
 #: downpub/templates/books/list.html:37
 #: downpub/templates/books/parts_list.html:85
 #, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
-#: downpub/templates/books/edit_part.html:25
+#: downpub/templates/books/edit_part.html:24
 #: downpub/templates/books/parts_list.html:127
 #, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
-#: downpub/templates/books/edit_part.html:28
+#: downpub/templates/books/edit_part.html:27
 #: downpub/templates/books/parts_list.html:130
 #: downpub/templates/books/parts_list.html:137
 #, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
+
+#: downpub/templates/books/edit_part.html:37
+msgid "Make selection Heading 1"
+msgstr "Changer la sélection en Titre de niveau 1"
+
+#: downpub/templates/books/edit_part.html:38
+msgid "Make selection Heading 2"
+msgstr "Changer la sélection en Titre de niveau 2"
+
+#: downpub/templates/books/edit_part.html:39
+msgid "Make selection Heading 3"
+msgstr "Changer la sélection en Titre de niveau 3"
+
+#: downpub/templates/books/edit_part.html:40
+msgid "Make selection Heading 4"
+msgstr "Changer la sélection en Titre de niveau 4"
+
+#: downpub/templates/books/edit_part.html:41
+msgid "Make selection bold"
+msgstr "Changer la sélection en gras"
+
+#: downpub/templates/books/edit_part.html:42
+msgid "Make selection italic"
+msgstr "Changer la sélection en italique"
+
+#: downpub/templates/books/edit_part.html:43
+msgid "Make selection inline code block"
+msgstr "Changer la sélection en bloc de code en ligne"
+
+#: downpub/templates/books/edit_part.html:44
+msgid "Make selection a list"
+msgstr "Changer la sélection en liste"
 
 #: downpub/templates/books/list.html:4
 #, fuzzy, python-format
@@ -711,9 +717,7 @@ msgstr "Je promets de bien me comporter."
 #: downpub/users/forms.py:58
 #, fuzzy
 msgid "Well, I can't accept your registration if you don't check this one."
-msgstr ""
-"Hé bien, je ne peux accepter de créer le compte si vous ne cochez pas cette "
-"case-ci."
+msgstr "Hé bien, je ne peux accepter de créer le compte si vous ne cochez pas cette case-ci."
 
 #: downpub/users/views.py:38
 #, fuzzy
@@ -756,7 +760,7 @@ msgid "Register page"
 msgstr "Page d'enregistrement"
 
 #: downpub/users/views.py:135
-#, fuzzy, python-format
+#, python-format
 msgid "Thanks for registering %(name)s"
 msgstr "Merci de vous être enregistré(e) %(name)s"
 
@@ -770,27 +774,10 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 #~ msgstr "Export de la partie %(part_title)s de votre livre %(book_title)s"
 
 #~ msgid ""
-#~ "That book has not been exported in that format, we can't send it to you !"
 #~ msgstr ""
-#~ "Ce livre n'a pas été exporté dans ce format, nous ne pouvons vous "
-#~ "l'envoyer !"
-
-#~ msgid ""
-#~ "That part of the book has not been exported in that format, we can't send "
-#~ "it to you !"
-#~ msgstr ""
-#~ "Cette partie du livre n'a pas été exportée dans ce format, nous ne "
-#~ "pouvons vous l'envoyer !"
 
 #~ msgid "Download DownPub"
 #~ msgstr "Téléchargez DownPub"
-
-#~ msgid ""
-#~ " If you need to learn Markdown, there's a lot of tutorials, in many "
-#~ "languages !"
-#~ msgstr ""
-#~ "Si vous avez besoin d'apprendre Markdown, il y a des tas de tutoriels, "
-#~ "dans plein de langues !"
 
 #~ msgid " Just take a few seconds to do a search !"
 #~ msgstr "Prenez juste quelques secondes pour faire une recherche !"

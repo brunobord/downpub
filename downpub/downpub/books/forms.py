@@ -26,8 +26,7 @@ class EditForm(Form):
 
 class AddPartForm(Form):
     title = TextField(lazy_gettext('Part title'), [Required(lazy_gettext('Title for that part is required.'))])
-    content = TextAreaField(lazy_gettext('Content'),
-        default=lazy_gettext("#This is a default part title\n\nHere is the awesome content of that book's part."))
+    content = TextAreaField(lazy_gettext('Content'))
     order = TextField(lazy_gettext('Order'), [Required()])
 
 
