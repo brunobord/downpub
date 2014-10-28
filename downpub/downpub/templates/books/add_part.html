@@ -9,6 +9,16 @@
         {{ render_field(form.title, class="input text line") }}
         {{ render_field(form.order, class="input text line") }}
         {{ render_field(form.content, class="input text invisible") }}
+        <nav id="toolbar" class="pas line">
+            <button type="button" data-command="h1" title="{{ _("Make selection Heading 1") }}">H1</button>
+            <button type="button" data-command="h2" title="{{ _("Make selection Heading 2") }}">H2</button>
+            <button type="button" data-command="h3" title="{{ _("Make selection Heading 3") }}">H3</button>
+            <button type="button" data-command="h4" title="{{ _("Make selection Heading 4") }}">H4</button>
+            <button type="button" data-command="bold" title="{{ _("Make selection bold") }}">B</button>
+            <button type="button" data-command="italic" title="{{ _("Make selection italic") }}">I</button>
+            <button type="button" data-command="code" title="{{ _("Make selection inline code block") }}">&gt;</button>
+            <button type="button" data-command="list" title="{{ _("Make selection a list") }}">–</button>
+        </nav>
         <div id="epiceditor-container" class="autogrid2">
             <div id="epiceditor"></div>
             <div id="epiceditor-preview"></div>
