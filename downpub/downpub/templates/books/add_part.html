@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-{% include 'editor.html' %}
 
     <h2 class="txtcenter">{{ site_title }}</h2>
 
@@ -16,7 +15,7 @@
         </div>
         <input type="submit" value="{{ _('Save') }}" class="button green">
     </form>
-    <script type="text/javascript">
-        epicload();
-    </script>
+    <script src="{{ url_for('static', filename='js') }}/commands.js"></script>
+    <script src="{{ url_for('static', filename='js') }}/toolbar.js"></script>
+    {% include "editor.html" %}
 {% endblock %}
