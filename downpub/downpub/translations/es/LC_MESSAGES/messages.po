@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-28 00:38+0100\n"
+"POT-Creation-Date: 2014-10-28 15:06+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -307,34 +307,40 @@ msgid ""
 msgstr ""
 
 #: downpub/templates/help.html:33
+msgid ""
+"Great cheatsheet for Markdown. Print it, keep it near, and you'll be fine"
+" !"
+msgstr ""
+
+#: downpub/templates/help.html:38
 msgid "French"
 msgstr ""
 
-#: downpub/templates/help.html:37
+#: downpub/templates/help.html:42
 msgid "Great article from Urban bike to learn Markdown in 8 days !"
 msgstr ""
 
-#: downpub/templates/help.html:42
+#: downpub/templates/help.html:47
 msgid "Illustrated tutorial, with examples"
 msgstr ""
 
-#: downpub/templates/help.html:55
+#: downpub/templates/help.html:52
 msgid "German"
 msgstr ""
 
-#: downpub/templates/help.html:75
+#: downpub/templates/help.html:60
 msgid "Spanish"
 msgstr ""
 
-#: downpub/templates/help.html:95
+#: downpub/templates/help.html:68
 msgid "Portuguese"
 msgstr ""
 
-#: downpub/templates/help.html:115
+#: downpub/templates/help.html:76
 msgid "About Downpub"
 msgstr ""
 
-#: downpub/templates/help.html:117
+#: downpub/templates/help.html:78
 msgid "How to use Downpub ???"
 msgstr ""
 
@@ -407,10 +413,50 @@ msgstr ""
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
-#: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:17
+#: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:26
 #: downpub/templates/books/edit.html:7
 #: downpub/templates/books/edit_part.html:50
 msgid "Save"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:13
+#: downpub/templates/books/edit_part.html:37
+msgid "Make selection Heading 1"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:14
+#: downpub/templates/books/edit_part.html:38
+msgid "Make selection Heading 2"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:15
+#: downpub/templates/books/edit_part.html:39
+msgid "Make selection Heading 3"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:16
+#: downpub/templates/books/edit_part.html:40
+msgid "Make selection Heading 4"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:17
+#: downpub/templates/books/edit_part.html:41
+msgid "Make selection bold"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:18
+#: downpub/templates/books/edit_part.html:42
+msgid "Make selection italic"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:19
+#: downpub/templates/books/edit_part.html:43
+msgid "Make selection inline code block"
+msgstr ""
+
+#: downpub/templates/books/add_part.html:20
+#: downpub/templates/books/edit_part.html:44
+msgid "Make selection a list"
 msgstr ""
 
 #: downpub/templates/books/cover_add.html:4
@@ -454,38 +500,6 @@ msgstr ""
 #: downpub/templates/books/parts_list.html:130
 #: downpub/templates/books/parts_list.html:137
 msgid "Then add some parts !"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:37
-msgid "Make selection Heading 1"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:38
-msgid "Make selection Heading 2"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:39
-msgid "Make selection Heading 3"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:40
-msgid "Make selection Heading 4"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:41
-msgid "Make selection bold"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:42
-msgid "Make selection italic"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:43
-msgid "Make selection inline code block"
-msgstr ""
-
-#: downpub/templates/books/edit_part.html:44
-msgid "Make selection a list"
 msgstr ""
 
 #: downpub/templates/books/list.html:4
@@ -755,15 +769,15 @@ msgstr ""
 #~ msgid "Export Epub2"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "This is a demo text which contains"
-#~ " examples on how to use Markdown "
-#~ "syntax to format your book."
-#~ msgstr ""
-
 #~ msgid "### Relevant source codes"
 #~ msgstr ""
 
 #~ msgid "Take a peek at them and see how they work !"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Great cheatsheet for Markdown. Print it,"
+#~ " keep it near, and you'll be "
+#~ "fin !"
 #~ msgstr ""
 

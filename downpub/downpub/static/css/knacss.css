@@ -2055,10 +2055,19 @@ code, pre, blockquote {
 */
 
 #main {
-    margin-top:40px;
+    margin:0;
+    padding:0;
     margin-bottom:60px;
+    margin-top:100px;
     background: #ddd;
-    margin-top:40px;
+}
+
+#header h2 {
+    background: #555;
+    color: orange;
+    margin:0;
+    padding:0.2em;
+    font-size:1.1em;
 }
 
 .aside {
@@ -2092,7 +2101,7 @@ code, pre, blockquote {
 #header {
     background: #333;
     color: black;
-    height: 2em;
+    height: 42px;
     top:0;
     position:fixed;
 }

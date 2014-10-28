@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2 class="txtcenter">{{ site_title }}</h2>
-
     {% from "forms/macros.html" import render_field %}
     <form method="POST" action="{{ url_for('books.add_part', book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}

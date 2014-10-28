@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>{{ _("Upload a cover for the book %(book_title)s", book_title=book.title) }}</h2>
-
     {% from "forms/macros.html" import render_field %}
     <form method="POST" action="{{ url_for('books.cover_add', book_id=book.id) }}" enctype="multipart/form-data" class="form">
         {{ form.hidden_tag() }}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-28 00:38+0100\n"
-"PO-Revision-Date: 2014-10-28 00:39+0100\n"
+"POT-Creation-Date: 2014-10-28 15:06+0100\n"
+"PO-Revision-Date: 2014-10-28 15:07+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -322,38 +322,41 @@ msgid "Text tutorial isn't enough, you want videos too ? That website got you co
 msgstr "Un tutoriel texte ne suffit pas, vous voulez aussi des vidéos ? Ce site s'en occupe !"
 
 #: downpub/templates/help.html:33
+#, fuzzy
+msgid "Great cheatsheet for Markdown. Print it, keep it near, and you'll be fine !"
+msgstr "Superbe mémo pour Markdown. Imprimez-le, gardez-le près de vous, et tout ira bien !"
+
+#: downpub/templates/help.html:38
 msgid "French"
 msgstr "Français"
 
-#: downpub/templates/help.html:37
+#: downpub/templates/help.html:42
 msgid "Great article from Urban bike to learn Markdown in 8 days !"
 msgstr "Très bon article d'Urban Bike pour apprendre Markdown en 8 jours !"
 
-#: downpub/templates/help.html:42
+#: downpub/templates/help.html:47
 msgid "Illustrated tutorial, with examples"
 msgstr "Tutoriel illustré avec des exemples"
 
-#: downpub/templates/help.html:55
+#: downpub/templates/help.html:52
 msgid "German"
 msgstr "Allemand"
 
-#: downpub/templates/help.html:75
+#: downpub/templates/help.html:60
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: downpub/templates/help.html:95
+#: downpub/templates/help.html:68
 msgid "Portuguese"
 msgstr "Portuguais"
 
-#: downpub/templates/help.html:115
-#, fuzzy
+#: downpub/templates/help.html:76
 msgid "About Downpub"
-msgstr "Téléchargez DownPub"
+msgstr "À propos de DownPub"
 
-#: downpub/templates/help.html:117
-#, fuzzy
+#: downpub/templates/help.html:78
 msgid "How to use Downpub ???"
-msgstr "Téléchargez DownPub"
+msgstr "Comment utiliser Downpub ???"
 
 #: downpub/templates/index.html:5
 #, fuzzy
@@ -427,12 +430,52 @@ msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"
 
-#: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:17
+#: downpub/templates/books/add.html:7 downpub/templates/books/add_part.html:26
 #: downpub/templates/books/edit.html:7
 #: downpub/templates/books/edit_part.html:50
 #, fuzzy
 msgid "Save"
 msgstr "Enregistrer"
+
+#: downpub/templates/books/add_part.html:13
+#: downpub/templates/books/edit_part.html:37
+msgid "Make selection Heading 1"
+msgstr "Changer la sélection en Titre de niveau 1"
+
+#: downpub/templates/books/add_part.html:14
+#: downpub/templates/books/edit_part.html:38
+msgid "Make selection Heading 2"
+msgstr "Changer la sélection en Titre de niveau 2"
+
+#: downpub/templates/books/add_part.html:15
+#: downpub/templates/books/edit_part.html:39
+msgid "Make selection Heading 3"
+msgstr "Changer la sélection en Titre de niveau 3"
+
+#: downpub/templates/books/add_part.html:16
+#: downpub/templates/books/edit_part.html:40
+msgid "Make selection Heading 4"
+msgstr "Changer la sélection en Titre de niveau 4"
+
+#: downpub/templates/books/add_part.html:17
+#: downpub/templates/books/edit_part.html:41
+msgid "Make selection bold"
+msgstr "Changer la sélection en gras"
+
+#: downpub/templates/books/add_part.html:18
+#: downpub/templates/books/edit_part.html:42
+msgid "Make selection italic"
+msgstr "Changer la sélection en italique"
+
+#: downpub/templates/books/add_part.html:19
+#: downpub/templates/books/edit_part.html:43
+msgid "Make selection inline code block"
+msgstr "Changer la sélection en bloc de code en ligne"
+
+#: downpub/templates/books/add_part.html:20
+#: downpub/templates/books/edit_part.html:44
+msgid "Make selection a list"
+msgstr "Changer la sélection en liste"
 
 #: downpub/templates/books/cover_add.html:4
 #, fuzzy, python-format
@@ -483,38 +526,6 @@ msgstr "Pas assez de parties ? Vous êtes triste ?"
 #, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
-
-#: downpub/templates/books/edit_part.html:37
-msgid "Make selection Heading 1"
-msgstr "Changer la sélection en Titre de niveau 1"
-
-#: downpub/templates/books/edit_part.html:38
-msgid "Make selection Heading 2"
-msgstr "Changer la sélection en Titre de niveau 2"
-
-#: downpub/templates/books/edit_part.html:39
-msgid "Make selection Heading 3"
-msgstr "Changer la sélection en Titre de niveau 3"
-
-#: downpub/templates/books/edit_part.html:40
-msgid "Make selection Heading 4"
-msgstr "Changer la sélection en Titre de niveau 4"
-
-#: downpub/templates/books/edit_part.html:41
-msgid "Make selection bold"
-msgstr "Changer la sélection en gras"
-
-#: downpub/templates/books/edit_part.html:42
-msgid "Make selection italic"
-msgstr "Changer la sélection en italique"
-
-#: downpub/templates/books/edit_part.html:43
-msgid "Make selection inline code block"
-msgstr "Changer la sélection en bloc de code en ligne"
-
-#: downpub/templates/books/edit_part.html:44
-msgid "Make selection a list"
-msgstr "Changer la sélection en liste"
 
 #: downpub/templates/books/list.html:4
 #, fuzzy, python-format

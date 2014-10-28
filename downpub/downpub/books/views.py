@@ -47,7 +47,8 @@ def list():
     List the books the actual user created
     """
 
-    site_title = gettext('Your books')
+    site_title = gettext("Your Books, %(user_name)s !",
+        user_name=g.user.name)
 
     books = Book.query.filter_by(user_id=session['user_id'])\
             .order_by(Book.modified_at.desc()).all()
@@ -255,8 +256,7 @@ def cover_add(book_id):
 
     # now we set the page's title
     book_title = (book.title[:25] + '...') if len(book.title) > 25 else book.title
-    site_title = gettext('Add a cover to your book %(book_title)s',
-        book_title=book_title)
+    site_title = gettext("Upload a cover for the book %(book_title)s", book_title=book_title)
 
     if form.validate_on_submit() and 'cover' in request.files:
 

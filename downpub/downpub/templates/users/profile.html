@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2><img src="{{user.avatar(64)}}"></h2>
-    <h3>{{ _("Hi") }} {{ user.name }} !</h3>
+    <h3 class="row"><img class="left" src="{{user.avatar(64)}}"><p class="left">{{ _("Hi") }} {{ user.name }} !</p></h3>
 
     <p>{{ _("If you want to change the language used in Downpub, here you go :") }}</p>
 

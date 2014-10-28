@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="center txtcenter">{{ _("Log in") }}</h2>
     {% from "forms/macros.html" import render_field %}
     <form method="POST"
         action="{{ url_for('users.login', next=next) }}"

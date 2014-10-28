@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="txtcenter">
-    {{ _("Your Books, %(user_name)s !", user_name = user.name) }}
-</h2>
 {% if books %}
     {% for book in books %}
     <div class="line bookelement">

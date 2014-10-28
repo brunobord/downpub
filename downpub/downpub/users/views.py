@@ -35,7 +35,7 @@ def home():
     user's profile view page
     """
 
-    site_title = gettext('Profile page')
+    site_title = gettext('Your profile')
     form = LocaleForm(request.form)
 
     # form shows the current locale of the user
@@ -66,7 +66,7 @@ def login():
     """
     Login form
     """
-    site_title = gettext('Login page')
+    site_title = gettext('Log in')
 
     form = LoginForm(request.form)
 
@@ -115,7 +115,7 @@ def register():
     Registration Form
     """
 
-    site_title = gettext('Register page')
+    site_title = gettext('Register a new account')
 
     form = RegisterForm(request.form)
 
