@@ -1,0 +1,325 @@
+
+/* ----------------------------- */
+
+/* ==Downpub styles              */
+
+/* ----------------------------- */
+
+@font-face{
+    font-family : "Esteban";
+    src : url('./fonts/Esteban-Regular.ttf');
+}
+
+/*
+    Style des éléments HTML de base
+*/
+
+html {
+    background: #ddd;
+}
+
+body {
+    font-family:"Esteban", "Times New Roman", serif;
+    background: #ddd;
+}
+
+a {
+    color:chocolate;
+}
+
+a:hover {
+    font-weight:bold;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin:0.4em;
+    color:chocolate;
+}
+
+h1 {
+    font-size:1.5em;
+}
+
+h2 {
+    font-size:1.4em;
+}
+
+h3 {
+    font-size:1.25em;
+}
+
+h4 {
+    font-size:1.15em;
+    padding:0.3em 0;
+}
+
+h5 {
+    font-size:1.1em;
+}
+
+h6 {
+    font-size:1em;
+}
+
+p {
+    margin:0.5em;
+}
+
+code, pre, blockquote {
+    font-family:"Lucida Console", Monaco, monospace;
+    padding:0.2em;
+    margin:0.5em;
+}
+
+/*
+    Style des infos d'erreur
+*/
+
+.message {
+    display:block;
+    background: #aaa;
+    padding:0.6em;
+    border: 1px solid chocolate;
+    color: white;
+}
+
+.error {
+    display:block;
+    padding:0.4em;
+    margin:0;
+    color: chocolate;
+}
+
+.no_error {
+    display:inline-block;
+    padding: 0.5em;
+}
+
+/*
+    Style du layout
+*/
+
+
+#main {
+    background: #ddd;
+    margin:0;
+    padding:0;
+    margin-bottom:20px;
+    margin-top:90px;
+    color: black;
+}
+
+#header {
+    position:fixed;
+    min-height:40px;
+    top:0;
+}
+
+#header h2 {
+    background: #555;
+    color: orange;
+    margin:0;
+    padding:0.2em;
+    font-size:1em;
+}
+
+#navigation {
+    background: #333;
+    color: white;
+}
+
+#navigation *{
+    background: #333;
+    font-family:"Esteban", "Georgia", "Times New Roman", serif;
+    margin: 0;
+    padding: 0.1em;
+    list-style-type: none;
+}
+
+#navigation h1 {
+    color:orange;
+    font-size:1.15em;
+}
+
+#navigation a {
+    color:orange;
+    font-size:1.05em;
+}
+
+#navigation a:hover {
+    color:chocolate;
+    text-decoration:none;
+    font-weight:normal;
+}
+
+#footer {
+    background: #333;
+    color: white;
+    position:fixed;
+    bottom:0;
+}
+
+#footer a {
+    color:orange;
+}
+
+#footer a:hover {
+    color:chocolate;
+    text-decoration:none;
+    font-weight:normal;
+}
+
+#footer p {
+    padding:0.2em;
+}
+
+/*
+    Formulaires
+*/
+
+.invisible {
+    display:none;
+}
+
+.form {
+    background:#eee;
+    border:1px solid darkgray;
+    margin:0 auto;
+    margin-bottom:1em;
+    padding:0.4em;
+}
+
+.form.label {}
+
+/*
+    GUI layouts
+*/
+
+.bookelement{
+    margin: 1em 0.4em;
+    padding:0.8em;
+    border:1px solid #999;
+    background: #eee;
+    color: #993D00;
+}
+
+.bookelement ul, .bookelement li, .bookelement ul li {
+    color: #993D00;
+}
+
+.bookelement a,
+.bookelement h1,
+.bookelement h2,
+.bookelement h3,
+.bookelement h4{
+    color: #993D00;
+}
+
+.bookelement h4{
+    word-wrap: break-word;
+}
+
+/*
+    EpicEditor editor and previewer
+*/
+#epiceditor-container {
+    margin:0;
+    width:99%;
+}
+
+div#epiceditor-preview, div#epiceditor-preview * {
+    margin:0;
+    padding:0;
+    font-family:"Esteban", "Georgia", "Times New Roman", serif;
+    color:black;
+    font-style:normal;
+    font-weight:normal;
+}
+
+div#epiceditor-preview h1 {
+    margin:0.1em;
+    padding:0.3em 0;
+    padding-top:0;
+    font-size:xx-large;
+    font-weight:bold;
+}
+
+div#epiceditor-preview h2 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:x-large;
+    font-weight:bold;
+}
+
+div#epiceditor-preview h3 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:large;
+    font-weight:bold;
+}
+
+div#epiceditor-preview h4 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:medium;
+    font-weight:bold;
+    font-style:italic;
+}
+
+div#epiceditor-preview p {
+    margin:0.3em;
+    padding:0.1em;
+    font-size:normal;
+}
+
+div#epiceditor-preview strong {
+    font-size:normal;
+    font-weight:bold;
+}
+
+div#epiceditor-preview em {
+    font-size:normal;
+    font-style:italic;
+}
+
+div#epiceditor-preview strong em{
+    font-size:normal;
+    font-weight:bold;
+    font-style:italic;
+}
+
+div#epiceditor-preview ul, div#epiceditor-preview ol {
+    margin:0.3em 1.1em;
+    padding:0.1em 1.1em;
+    font-size:normal;
+}
+
+div#epiceditor-preview pre, div#epiceditor-preview blockquote {
+    margin:0.2em 1em;
+    padding:0.3em;
+    font-size:normal;
+    border:1px solid gray;
+    background:#ddd;
+    line-height:1.1em;
+    font-family:"Courier New", Courier, monospace;
+}
+
+div#epiceditor-preview code {
+    display:inline-block;
+    margin:0.2em;
+    padding:0.3em;
+    background:#ddd;
+    line-height:1.1em;
+    font-family:"Courier New", Courier, monospace;
+}
+
+div#epiceditor-preview th {
+    font-weight:bold;
+}
+
+div#epiceditor-preview
+{
+    padding:1em;
+    min-height:350px;
+    overflow:auto;
+}

@@ -1,42 +1,28 @@
-    <header id="header" role="banner" class="row man pan txtcenter">
-        <nav id="navigation" role="navigation" class="line">
-        <div class="row">
-            <div class="col w20 pan txtleft tiny-w100">
-                <h1 class="inbl pan txtleft">
-                    <a href="{{ url_for('index') }}">Downpub</a>
-                </h1>
-                <ul class="inbl pan txtright">
-                <li>
-                    <a class="icon icon-bracket2"
-                        href="{{ url_for('about') }}">{{ _("About")}}
-                    </a>
+<header id="header" class="line w100 pan man center txtcenter tiny-w100">
+    <nav id="navigation" role="navigation" class="row txtleft man w100 tiny-w100">
+        <h1 class="inbl man pan col w20 txtleft"><a href="{{ url_for('index') }}">Downpub</a></h1>
+        <ul class="pan col w80 txtright">
+            <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('about') }}">{{ _("About")}}</a></li>
+            <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
+            {% if not user.name %}
+                <li class="inbl pas">
+                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
                 </li>
-                </ul>
-            </div>
-
-            <div class="col w80 pan txtright tiny-w100">
-                <ul class="pan txtright">
-                {% if not user.name %}
-                    <li><a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a></li>
-                    {{ _("or") }}
-                    <li><a class="icon icon-bracket2" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a></li>
-                {% else %}
-                    <li><a class="icon icon-bracket2"
-                        href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}
-                    </a></li>
-                    <li><a class="icon icon-bracket2"
-                        href="{{ url_for('books.list') }}">{{ _("Your books") }}
-                    </a></li>
-                    <li><a class="icon icon-bracket2"
-                        href="{{ url_for('users.logout') }}">{{ _("Log out") }}
-                    </a></li>
-                    <li><a class="icon icon-bracket2"
-                        href="{{ url_for('help') }}">{{ _("Help")}}
-                    </a></li>
-                {% endif %}
-                </ul>
-            </div>
-        </div>
-        <h2 class="row man pan txtcenter tiny-w100">{{ site_title }}</h2>
-        </nav>
-    </header>
+                {{ _("or") }}
+                <li class="inbl pas">
+                    <a class="icon icon-bracket2" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
+                </li>
+            {% else %}
+                <li class="inbl pas">
+                    <a
+                    class="icon icon-bracket2" href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}</a>
+                </li>
+                <li class="inbl pas">
+                    <a class="icon icon-bracket2" href="{{ url_for('books.list') }}">{{ _("Your books") }}</a>
+                </li>
+                <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('users.logout') }}">{{ _("Log out") }}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <h2 class="row man pan txtcenter w100 tiny-w100">{{ site_title }}</h2>
+</header>
