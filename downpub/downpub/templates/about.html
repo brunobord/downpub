@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>{{ _("About DownPub") }}</h3>
+    <p>{{ _("Free and opensource clone of Editorially, who will soon be deceased.") }}
+       {{ _("It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)") }}
+       {{ _("but all I wrote myself is under What The Fuck Public Licence") }}
+    </p>
+
+    <h3>{{ _("Installation") }}</h3>
+
+    <p>
+    {{ _("You must install python3, because Downpub will not work well on python2.") }}
+    {{ _("You must install setuptools too, then - it's optional - virtualenv.") }}
+    {{ _("Then, in the virtualenv (or not), enter this :") }}
+    </p>
+
+    <code>pip install Flask Flask-WTF Flask-sqlalchemy Flask-Migrate Flask-Babel</code>
+
+    <p>{{ _("or you can use the provided requirements.pip file :") }}</p>
+
+    <code>pip install -r requirements.pip</code>
+
+    <p>{{ _("Go to the directory where manage.py is, and type :") }}</p>
+
+    <code>python manage.py db upgrade</code>
+
+    <p>{{ _("This creates and initializes the database") }}</p>
+
+    <p>{{ _("Then, in the folder where run.py is, start the webapp :") }}</p>
+
+    <code>python run.py</code>
+
+    <p>{{ _("Now open your browser and go to http://localhost:5000.") }}
+    {{ _("I'm not yet at ease with web servers and stuff for python (I'm a php dev mostly),") }}
+    {{ _("but I will try to put a little help around here. Stay tuned.") }}
+
+    <h3>{{ _("But it's broken !") }}</h3>
+
+    <p>{{ _("That's normal. Someone told me one day \"Release early, release often\".") }}</p>
+
+    <p>{{ _("So be it. Besides, even if it's wrong, i'm using git like a sync tool between
+    my home computer and the office one, without any use of branches.
+    Boooh, it's bad, make me bad. Or not.") }}
+    </p>
+
+    <p>{{ _("Just give me some time : I'm learning Python, I'm learning Flask,
+    and I'm learning git. One day it will work. I promise.") }}
+    </p>
+
+    <h3>{{ _("The End") }}</h3>
+
+    <p>{{ _("Voilà.") }}</p>
+
+{% endblock %}

@@ -18,7 +18,7 @@ def unique_email_check(form, field):
     existing_email = User.query.filter_by(email=field.data).all()
 
     if existing_email:
-        raise ValidationError(lazy_gettext('Someone already uses this email adress.'))
+        raise ValidationError(lazy_gettext('Someone already uses this email address.'))
 
 
 class LocaleForm(Form):
@@ -27,7 +27,7 @@ class LocaleForm(Form):
     """
     locale = SelectField(
         lazy_gettext('Select your new default locale !'),
-        choices=[(languague, languague) for languague in LANGUAGES]
+        choices=[(short, languague) for short, languague in list(LANGUAGES.items())]
         )
 
 

@@ -1,4 +1,4 @@
-      <div id="messages" class="txtcenter">
+      <div id="messages" class="txtcenter center">
         {% for category, msg in get_flashed_messages(with_categories=true) %}
           <p class="message flash-{{ category }}">{{ msg }}</p>
         {% endfor %}

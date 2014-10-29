@@ -10,9 +10,11 @@ SECRET_KEY = 'lacharogne'
 
 # available languages
 LANGUAGES = {
+    'de': 'Deutsh',
     'en': 'English',
+    'es': 'Español',
     'fr': 'Français',
-    'es': 'Español'
+    'pt': 'Portuguese'
 }
 # Default locale and timezone
 BABEL_DEFAULT_LOCALE = 'fr'

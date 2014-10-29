@@ -96,6 +96,12 @@ def help():
         user=g.user, site_title=gettext("Help"))
 
 
+@downpub.route('/about')
+def about():
+    return render_template("about.html",
+        user=g.user, site_title=gettext("About"))
+
+
 from downpub.users.views import mod as usersModule
 from downpub.books.views import mod as booksModule
 downpub.register_blueprint(usersModule)

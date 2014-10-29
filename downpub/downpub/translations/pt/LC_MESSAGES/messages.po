@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-10-28 20:29+0100\n"
+"POT-Creation-Date: 2014-10-29 11:54+0100\n"
 "PO-Revision-Date: 2014-10-21 12:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -25,6 +25,10 @@ msgstr ""
 
 #: downpub/__init__.py:96 downpub/templates/header.html:27
 msgid "Help"
+msgstr ""
+
+#: downpub/__init__.py:102
+msgid "About"
 msgstr ""
 
 #: downpub/books/decorators.py:13 downpub/users/decorators.py:13
@@ -173,6 +177,7 @@ msgid ""
 msgstr ""
 
 #: downpub/templates/413.html:5 downpub/templates/header.html:21
+#: downpub/templates/index.html:14
 msgid "Your books"
 msgstr ""
 
@@ -182,6 +187,98 @@ msgstr ""
 
 #: downpub/templates/500.html:4
 msgid "Maybe you should return at the homepage and restart from there ?"
+msgstr ""
+
+#: downpub/templates/about.html:3
+msgid "About DownPub"
+msgstr ""
+
+#: downpub/templates/about.html:4
+msgid "Free and opensource clone of Editorially, who will soon be deceased."
+msgstr ""
+
+#: downpub/templates/about.html:5
+msgid "It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)"
+msgstr ""
+
+#: downpub/templates/about.html:6
+msgid "but all I wrote myself is under What The Fuck Public Licence"
+msgstr ""
+
+#: downpub/templates/about.html:9
+msgid "Installation"
+msgstr ""
+
+#: downpub/templates/about.html:12
+msgid "You must install python3, because Downpub will not work well on python2."
+msgstr ""
+
+#: downpub/templates/about.html:13
+msgid "You must install setuptools too, then - it's optional - virtualenv."
+msgstr ""
+
+#: downpub/templates/about.html:14
+msgid "Then, in the virtualenv (or not), enter this :"
+msgstr ""
+
+#: downpub/templates/about.html:19
+msgid "or you can use the provided requirements.pip file :"
+msgstr ""
+
+#: downpub/templates/about.html:23
+msgid "Go to the directory where manage.py is, and type :"
+msgstr ""
+
+#: downpub/templates/about.html:27
+msgid "This creates and initializes the database"
+msgstr ""
+
+#: downpub/templates/about.html:29
+msgid "Then, in the folder where run.py is, start the webapp :"
+msgstr ""
+
+#: downpub/templates/about.html:33
+msgid "Now open your browser and go to http://localhost:5000."
+msgstr ""
+
+#: downpub/templates/about.html:34
+msgid ""
+"I'm not yet at ease with web servers and stuff for python (I'm a php dev "
+"mostly),"
+msgstr ""
+
+#: downpub/templates/about.html:35
+msgid "but I will try to put a little help around here. Stay tuned."
+msgstr ""
+
+#: downpub/templates/about.html:37
+msgid "But it's broken !"
+msgstr ""
+
+#: downpub/templates/about.html:39
+msgid "That's normal. Someone told me one day \"Release early, release often\"."
+msgstr ""
+
+#: downpub/templates/about.html:41
+msgid ""
+"So be it. Besides, even if it's wrong, i'm using git like a sync tool "
+"between\n"
+"    my home computer and the office one, without any use of branches.\n"
+"    Boooh, it's bad, make me bad. Or not."
+msgstr ""
+
+#: downpub/templates/about.html:46
+msgid ""
+"Just give me some time : I'm learning Python, I'm learning Flask,\n"
+"    and I'm learning git. One day it will work. I promise."
+msgstr ""
+
+#: downpub/templates/about.html:50
+msgid "The End"
+msgstr ""
+
+#: downpub/templates/about.html:52
+msgid "Voilà."
 msgstr ""
 
 #: downpub/templates/editor.html:6
@@ -340,20 +437,12 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: downpub/templates/help.html:74
-msgid "About Downpub"
-msgstr ""
-
-#: downpub/templates/help.html:76
-msgid "How to use Downpub ???"
-msgstr ""
-
 #: downpub/templates/index.html:3
 msgid "The purpose of Downpub is simple :"
 msgstr ""
 
 #: downpub/templates/index.html:5
-msgid "You write stuff in Markdown."
+msgid "You write books, in Markdown."
 msgstr ""
 
 #: downpub/templates/index.html:6
@@ -372,48 +461,73 @@ msgid ""
 "in epub, markdown, HTML or Word."
 msgstr ""
 
-#: downpub/templates/index.html:11
-msgid "Try it for yourself !"
+#: downpub/templates/index.html:12
+#, python-format
+msgid ""
+"To do so, you first need to %(register)s, then you'll create a book in "
+"the \"%(your_books)s\" page. Finally, you'll create at least one part, or"
+" many, depending on how you want to work !"
 msgstr ""
 
 #: downpub/templates/index.html:13
-msgid "You can grab the source on Github, the link is in the footer !"
+msgid "register"
 msgstr ""
 
-#: downpub/templates/index.html:15
-msgid "Markdown seems complicated !"
+#: downpub/templates/index.html:18
+msgid ""
+"The next step is to put content. For that particular matter, the Markdown"
+" syntax, as the live preview in every editing part's page, are there to "
+"help you."
 msgstr ""
 
-#: downpub/templates/index.html:17
-msgid "You just need help ! "
-msgstr ""
-
-#: downpub/templates/index.html:17
-msgid "There you go !"
-msgstr ""
-
-#: downpub/templates/index.html:19
-msgid "Why would you choose DownPub ?"
+#: downpub/templates/index.html:20
+msgid ""
+"When you're done you just have to export the book using the links "
+"provided, in the format you want."
 msgstr ""
 
 #: downpub/templates/index.html:22
+msgid "Try it for yourself !"
+msgstr ""
+
+#: downpub/templates/index.html:24
+msgid "You can grab the source on Github, the link is in the footer !"
+msgstr ""
+
+#: downpub/templates/index.html:26
+msgid "Markdown seems complicated !"
+msgstr ""
+
+#: downpub/templates/index.html:28
+msgid "You just need help ! "
+msgstr ""
+
+#: downpub/templates/index.html:28
+msgid "There you go !"
+msgstr ""
+
+#: downpub/templates/index.html:30
+msgid "Why would you choose DownPub ?"
+msgstr ""
+
+#: downpub/templates/index.html:33
 #, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share"
 " it, even sell it, whatever..."
 msgstr ""
 
-#: downpub/templates/index.html:25
+#: downpub/templates/index.html:36
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
 "computer, even if the installation process is a little raw for now."
 msgstr ""
 
-#: downpub/templates/index.html:27
+#: downpub/templates/index.html:38
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr ""
 
-#: downpub/templates/index.html:29
+#: downpub/templates/index.html:40
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
@@ -604,7 +718,7 @@ msgid "Then click here to login !"
 msgstr ""
 
 #: downpub/users/forms.py:21
-msgid "Someone already uses this email adress."
+msgid "Someone already uses this email address."
 msgstr ""
 
 #: downpub/users/forms.py:29
@@ -771,5 +885,17 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Register page"
+#~ msgstr ""
+
+#~ msgid "You write stuff in Markdown."
+#~ msgstr ""
+
+#~ msgid "Someone already uses this email adress."
+#~ msgstr ""
+
+#~ msgid "About Downpub"
+#~ msgstr ""
+
+#~ msgid "How to use Downpub ???"
 #~ msgstr ""
 

@@ -2,11 +2,22 @@
 {% block content %}
     <h3>{{ _("The purpose of Downpub is simple :") }}</h3>
     <ul>
-        <li>{{ _("You write stuff in Markdown.") }}</li>
+        <li>{{ _("You write books, in Markdown.") }}</li>
         <li>{{ _("You choose to write it in one part or many. ") }}</li>
         <li>{{ _("Splitting your work in one file per chapter allows you to edit one chapter at a time, for example.") }}</li>
         <li>{{ _("Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word.") }}</li>
     </ul>
+
+    {% autoescape false %}
+    <p>{{ _("To do so, you first need to %(register)s, then you'll create a book in the \"%(your_books)s\" page. Finally, you'll create at least one part, or many, depending on how you want to work !",
+        register='<a href="%s">%s</a>' % (url_for('users.register'), _("register")),
+        your_books='<a href="%s">%s</a>' % (url_for('books.list'), _("Your books"))
+    ) }}</p>
+    {% endautoescape %}
+
+    <p>{{ _("The next step is to put content. For that particular matter, the Markdown syntax, as the live preview in every editing part's page, are there to help you.") }}</p>
+
+    <p>{{ _("When you're done you just have to export the book using the links provided, in the format you want.") }}</p>
 
     <h3>{{ _("Try it for yourself !") }}</h3>
 
