@@ -37,11 +37,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size:1.5em;
+    font-size:1.35em;
 }
 
 h2 {
-    font-size:1.4em;
+    font-size:1.3em;
 }
 
 h3 {
@@ -49,7 +49,7 @@ h3 {
 }
 
 h4 {
-    font-size:1.15em;
+    font-size:1.2em;
     padding:0.3em 0;
 }
 
@@ -62,11 +62,13 @@ h6 {
 }
 
 p {
+    font-size:1em;
     margin:0.5em;
 }
 
 code, pre, blockquote {
     font-family:"Lucida Console", Monaco, monospace;
+    font-size:0.95em;
     padding:0.2em;
     margin:0.5em;
 }
@@ -78,7 +80,8 @@ code, pre, blockquote {
 .message {
     display:block;
     background: #aaa;
-    padding:0.6em;
+    padding:0.4em;
+    margin:0.2em;
     border: 1px solid chocolate;
     color: white;
 }
@@ -86,7 +89,7 @@ code, pre, blockquote {
 .error {
     display:block;
     padding:0.4em;
-    margin:0;
+    margin:0.2em;
     color: chocolate;
 }
 
@@ -104,14 +107,12 @@ code, pre, blockquote {
     background: #ddd;
     margin:0;
     padding:0;
-    margin-bottom:20px;
-    margin-top:90px;
+    margin-bottom:50px;
+    margin-top:10px;
     color: black;
 }
 
 #header {
-    position:fixed;
-    min-height:40px;
     top:0;
 }
 
@@ -143,7 +144,7 @@ code, pre, blockquote {
 
 #navigation a {
     color:orange;
-    font-size:1.05em;
+    font-size:1em;
 }
 
 #navigation a:hover {
@@ -184,7 +185,7 @@ code, pre, blockquote {
 .form {
     background:#eee;
     border:1px solid darkgray;
-    margin:0 auto;
+    margin:0 0.4em;
     margin-bottom:1em;
     padding:0.4em;
 }

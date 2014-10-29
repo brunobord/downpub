@@ -119,6 +119,12 @@
             debugger;
             var list = prefixLines(getLines(selection), '\t - ');
             replaceWithLines(editor.editorIframeDocument, selection, list);
+        },
+
+        olist: function (editor, selection) {
+            debugger;
+            var list = prefixLines(getLines(selection), '\t 1. ');
+            replaceWithLines(editor.editorIframeDocument, selection, list);
         }
     };
 

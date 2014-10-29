@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
-    <form method="POST" action="." class="form center w600p">
-        {{ form.csrf_token }}
-        <fieldset>
-            {{ render_field(form.name, class="input text w70") }}
-            {{ render_field(form.email, class="input text w70") }}
-            {{ render_field(form.password, class="input text w70") }}
-            {{ render_field(form.confirm, class="input text w70") }}
-            {{ render_field(form.accept_tos, class="input checkbox w70") }}
-        </fieldset>
-        <fieldset>
-        <label>ReCaptcha</label>
-        {{ form.recaptcha }}
-        </fieldset>
-        <fieldset class="txtcenter center">
-            <input type="submit" value="Register" class="button center txtcenter green">
-        </fieldset>
-    </form>
+    <div class="center txtcenter w600p">
+        <form method="POST" action="." class="form">
+            {{ form.csrf_token }}
+            <fieldset>
+                {{ render_field(form.name, class="input text w70") }}
+                {{ render_field(form.email, class="input text w70") }}
+                {{ render_field(form.password, class="input text w70") }}
+                {{ render_field(form.confirm, class="input text w70") }}
+                {{ render_field(form.accept_tos, class="input checkbox w70") }}
+            </fieldset>
+            <fieldset>
+            <label>ReCaptcha</label>
+            {{ form.recaptcha }}
+            </fieldset>
+            <fieldset class="txtcenter center">
+                <input type="submit" value="Register" class="button center txtcenter green">
+            </fieldset>
+        </form>
 
-    <div class="center txtcenter">
+
         <p>{{ _("Came here by mistake ? Already have an account ?") }}</p>
         <p><a href="{{ url_for('users.login') }}">{{ _("Then click here to login !") }}</a><p>
     </div>
