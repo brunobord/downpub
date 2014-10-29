@@ -28,16 +28,18 @@ class LocaleForm(Form):
     locale = SelectField(
         lazy_gettext('Select your new default locale !'),
         choices=[(short, languague) for short, languague in list(LANGUAGES.items())]
-        )
+    )
 
 
 class LoginForm(Form):
     """
     Login form
     """
-    email = TextField(lazy_gettext('Email address'), [Required(lazy_gettext('An email is required.')),
+    email = TextField(lazy_gettext('Email address'),
+        [Required(lazy_gettext('An email is required.')),
         Email(lazy_gettext("It's not a proper email adress."))])
-    password = PasswordField(lazy_gettext('Password'), [Required(lazy_gettext('Enter a password.'))])
+    password = PasswordField(lazy_gettext('Password'),
+        [Required(lazy_gettext('Enter a password.'))])
 
 
 class RegisterForm(Form):
@@ -45,10 +47,12 @@ class RegisterForm(Form):
     Registration Form
     """
     name = TextField(lazy_gettext('NickName'), [Required(lazy_gettext('Enter a nickname.'))])
-    email = TextField(lazy_gettext('Email address'), [Required(lazy_gettext('An email is required.')),
+    email = TextField(lazy_gettext('Email address'),
+        [Required(lazy_gettext('An email is required.')),
         Email(lazy_gettext("It's not a proper email adress.")),
         unique_email_check])
-    password = PasswordField(lazy_gettext('Password'), [Required(lazy_gettext('Enter a password.'))])
+    password = PasswordField(lazy_gettext('Password'),
+        [Required(lazy_gettext('Enter a password.'))])
     confirm = PasswordField(lazy_gettext('Repeat Password'),
     [
         Required(lazy_gettext('Enter the same password.')),

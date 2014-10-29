@@ -22,6 +22,8 @@ BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 # books export directory
 EXPORT_DIR = os.path.join(_basedir, 'downpub', 'files', 'exports')
+# books templates directory
+TEMPLATE_DIR = os.path.join(_basedir, 'downpub', 'static', 'ebook_templates')
 # Allowed cover image types
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # Maximum size for each image

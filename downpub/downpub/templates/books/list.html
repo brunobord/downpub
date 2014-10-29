@@ -3,7 +3,10 @@
 {% if books %}
     {% for book in books %}
     <div class="line bookelement">
-        <h4 class="col w10">{{ book.title }}</h4>
+        <div class="col w10">
+            <h4>{{ book.title }}</h4>
+            <p></br>{{ _("Template : ") }}{{ book.style }}</p>
+        </div>
         <div class="col w30 txtcenter cover">
             {% if book.cover %}
                 <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />

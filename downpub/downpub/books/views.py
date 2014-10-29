@@ -68,10 +68,11 @@ def add():
     if form.validate_on_submit():
 
         title = form.title.data
+        style = form.style.data
 
         # create an user instance not yet stored in the database
         book = Book(title=title, user_id=session['user_id'],
-            cover=None, creation_date=None, modified_at=None)
+            cover=None, creation_date=None, style=style, modified_at=None)
 
         # Insert the record in our database and commit it
         db.session.add(book)
@@ -108,6 +109,7 @@ def edit(book_id):
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
         form.title.data = book.title
+        form.style.data = book.style
 
     if form.validate_on_submit():
         # get an user instance not yet stored in the database
@@ -115,6 +117,7 @@ def edit(book_id):
 
         # set the new values
         book.title = form.title.data
+        book.style = form.style.data
         book.modified_at = datetime.utcnow()
 
         # commit
@@ -207,6 +210,10 @@ def export(book_id, export_format):
         # When we wrote everything, we close the file
         export_file.close()
 
+        if book.style is None:
+            book.style = 'default'
+            print(os.path.join(TEMPLATE_DIR, book.style, 'styles.css'))
+
         if book.cover is None:
             # Set up the pandoc command and run it
             args = [
@@ -214,6 +221,7 @@ def export(book_id, export_format):
                 EXPORT_DIR + "/" + book_id + "/book" + book_id + '.md',
                 '-s', '--toc',
                 '-f', 'markdown',
+                '--epub-stylesheet', os.path.join(TEMPLATE_DIR, book.style, 'styles.css'),
                 '-t', export_format,
                 '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
                 ]
@@ -225,6 +233,7 @@ def export(book_id, export_format):
                 '--epub-cover-image', book.cover,
                 '-s', '--toc',
                 '-f', 'markdown',
+                '--epub-stylesheet', os.path.join(TEMPLATE_DIR, book.style, 'styles.css'),
                 '-t', export_format,
                 '-o', EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
                 ]
@@ -232,8 +241,8 @@ def export(book_id, export_format):
 
         # we now send the correct file to the user
         return send_from_directory(
-            directory=EXPORT_DIR + "/" + book_id + "/",
-            filename="book-" + book_id + "." + export_format,
+            directory=os.path.joint(EXPORT_DIR, book_id),
+            filename= "book-" + book_id + "." + export_format,
             as_attachment=True)
 
 

@@ -41,19 +41,21 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
     cover = db.Column(db.String(255))
+    style = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author = db.relationship('User',
         backref=db.backref('books', lazy='dynamic'))
     creation_date = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
-    def __init__(self, title, user_id, cover, creation_date, modified_at):
+    def __init__(self, title, user_id, cover, style, creation_date, modified_at):
         """
         Init function of the Book model
         """
         self.title = title
         self.user_id = user_id
         self.cover = cover
+        self.style = style
 
         if creation_date is None:
             creation_date = datetime.utcnow()
