@@ -179,8 +179,8 @@ def export(book_id, export_format):
         ):
         # we now send the correct file to the user
         return send_from_directory(
-            directory=EXPORT_DIR + "/" + book_id + "/",
-            filename="book-" + book_id + "." + export_format,
+            directory=os.path.join(EXPORT_DIR, book_id),
+            filename= "book-" + book_id + "." + export_format,
             as_attachment=True)
     else:
         # We get all the data we have to pass to pandoc
@@ -241,7 +241,7 @@ def export(book_id, export_format):
 
         # we now send the correct file to the user
         return send_from_directory(
-            directory=os.path.joint(EXPORT_DIR, book_id),
+            directory=os.path.join(EXPORT_DIR, book_id),
             filename= "book-" + book_id + "." + export_format,
             as_attachment=True)
 
