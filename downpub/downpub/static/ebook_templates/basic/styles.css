@@ -1,0 +1,123 @@
+/* Below is the Guido Henkel Method to reset everything in an eReader device */
+
+html, body, div, h1, h2, h3, h4, h5, h6, ol, dl, ul, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td, tr { margin: 0; padding: 0.01em; }
+
+/* MOBI Does Not Recognize the @page style */
+@page { margin-bottom: 5.0pt; margin-top: 5.0pt; }
+
+body.epub_margins /* Force left/right page margins on EPUB */
+{
+    margin-left: 5.0pt;
+    margin-right: 5.0pt;
+    text-align: justify;
+}
+
+body.mobi_margins /* Force 0 page margins on MOBI, you should delete the @page from the stylesheet for MOBI too */
+{
+    margin-left: 0pt;
+    margin-right: 0pt;
+    text-align: justify;
+}
+
+p  /* First Line Indent type, good for fiction */
+{
+    text-indent: 1.25em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+p.notes /* Block Indent type, good for non-fiction, author's notes, about the author, front matter not centered, etc. */
+{
+    text-indent: 0em;
+    margin-top: 0em;
+    margin-bottom: 1.0em;
+}
+
+p.front /* For Front Matter Material */
+{
+    text-indent: 0em;
+    margin-top: 0em;
+    margin-bottom: 1.0em;
+    text-align: center;
+}
+
+p.title /*Use for the title on the first page*/
+{
+    text-indent: 0em;
+    font-size: 2.0em;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 1.0em;
+    text-align: center;
+    page-break-before: always;
+}
+
+p.headline /*Use for Author's Notes, Excerpts, etc. headings*/
+{
+    text-indent: 0em;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1.0em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    page-break-before: always;
+}
+
+p.chapter /*Use for Chapter headings*/
+{
+    text-indent: 0em;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1.0em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    page-break-before: always;
+}
+
+p.centered /* Use for section breaks */
+{
+    text-indent: 0em;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+    text-align: center;
+}
+
+p.centeredimg /* Use for images */
+{
+    text-indent: 0em;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+    text-align: center;
+}
+
+/* Span tags are for when you want to change a few words within a paragraph rather than the entire paragraph */
+span.i
+{
+    font-style: italic;
+}
+
+span.b
+{
+    font-weight: bold;
+}
+
+span.u
+{
+    text-decoration: underline;
+}
+
+ul /* Defines an unordered list (bullet points) */
+{
+    text-align: left;
+    margin-left: 3.0em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+ol /* defines an ordered list (1,2,3,etc.) */
+{
+    text-align: left;
+    margin-left: 3.0em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
