@@ -41,6 +41,7 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
     cover = db.Column(db.String(255))
+    displayed_name = db.Column(db.String(255))
     style = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author = db.relationship('User',
@@ -48,13 +49,14 @@ class Book(db.Model):
     creation_date = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
-    def __init__(self, title, user_id, cover, style, creation_date, modified_at):
+    def __init__(self, title, user_id, cover, style, displayed_name, creation_date, modified_at):
         """
         Init function of the Book model
         """
         self.title = title
         self.user_id = user_id
         self.cover = cover
+        self.displayed_name = displayed_name
         self.style = style
 
         if creation_date is None:
