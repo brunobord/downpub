@@ -17,7 +17,7 @@ class AddForm(Form):
     title = StringField(lazy_gettext('Book title'),
         [Required(), Length(max=80)])
     displayed_name = TextField(lazy_gettext('Displayed author name'),
-        [Required(), Length(max=255)])
+        [Length(max=255)])
     style = SelectField(
         lazy_gettext('Select your css template !'),
         choices=[(template, template) for template in os.listdir(TEMPLATE_DIR) if os.path.isdir(os.path.join(TEMPLATE_DIR, template))]
@@ -35,7 +35,7 @@ class EditForm(Form):
         [Required(), Length(max=80)])
 
     displayed_name = TextField(lazy_gettext('Displayed author name'),
-        [Required(), Length(max=255)])
+        [Length(max=255)])
 
     style = SelectField(
         lazy_gettext('Select your css template !'),

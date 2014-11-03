@@ -197,7 +197,10 @@ def export(book_id, export_format):
     )
 
     export_file.write('% ' + book.title + '\n')
-    export_file.write('% ' + book.displayed_name + '\n\n')
+    if book.displayed_name is None or book.displayed_name.strip() is '':
+        export_file.write('% ' + user.name + '\n\n')
+    else:
+        export_file.write('% ' + book.displayed_name + '\n\n')
 
     for the_part in parts:
         export_file.write(the_part.content + '\n\n')
@@ -586,7 +589,10 @@ def export_part(part_id, book_id, export_format):
         )
 
         export_file.write('% ' + book.title + '\n')
-        export_file.write('% ' + book.displayed_name + '\n\n')
+        if book.displayed_name is None or book.displayed_name.strip() is '':
+            export_file.write('% ' + user.name + '\n\n')
+        else:
+            export_file.write('% ' + book.displayed_name + '\n\n')
 
         export_file.write(part.content + '\n\n')
 
