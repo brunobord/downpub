@@ -6,6 +6,8 @@ _basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
+VERSION = "0.0.0.1"
+
 SECRET_KEY = 'lacharogne'
 
 # available languages
