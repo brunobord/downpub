@@ -6,6 +6,7 @@ import subprocess
 import os
 import sys
 import io
+import locale
 from datetime import datetime
 
 from flask import Blueprint, request, render_template, \
@@ -13,7 +14,7 @@ from flask import Blueprint, request, render_template, \
 from flask.ext.babel import gettext, Babel
 from werkzeug.utils import secure_filename
 
-from downpub import downpub, db, babel
+from downpub import downpub, db, babel, get_locale
 from downpub.books.forms import AddForm, AddCoverForm, EditForm, \
     AddPartForm, EditPartForm
 from downpub.books.models import Book, Part
@@ -23,6 +24,9 @@ from downpub.users.models import User
 from config import *
 
 mod = Blueprint('books', __name__, url_prefix='/books')
+
+def generate_xml_metadata(book_id):
+    pass
 
 
 @mod.before_request
@@ -65,15 +69,27 @@ def add():
     site_title = gettext('Add a book')
 
     form = AddForm(request.form)
+
+    if not form.validate_on_submit():
+        # form initializing when we first show the edit page
+        if book.language is None:
+            form.language.data = get_locale()
+        else:
+            form.language.data = book.language
+        form.rights.data = book.rights
+
     if form.validate_on_submit():
 
         title = form.title.data
         displayed_name = form.displayed_name.data
         style = form.style.data
+        language = form.language.data
+        rights = form.rights.data
 
         # create an user instance not yet stored in the database
         book = Book(title=title, user_id=session['user_id'],
             cover=None, creation_date=None, style=style,
+            language=language, rights=rights,
             displayed_name=displayed_name,modified_at=None)
 
         # Insert the record in our database and commit it
@@ -113,6 +129,11 @@ def edit(book_id):
         form.title.data = book.title
         form.displayed_name.data = book.displayed_name
         form.style.data = book.style
+        if book.language is None:
+            form.language.data = get_locale()
+        else:
+            form.language.data = book.language
+        form.rights.data = book.rights
 
     if form.validate_on_submit():
         # get an user instance not yet stored in the database
@@ -123,6 +144,8 @@ def edit(book_id):
         book.style = form.style.data
         book.displayed_name = form.displayed_name.data
         book.modified_at = datetime.utcnow()
+        book.language = form.language.data
+        book.rights = form.rights.data
 
         # commit
         db.session.commit()

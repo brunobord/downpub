@@ -10,7 +10,7 @@ from wtforms.validators import Required, Length
 from flask_wtf.file import FileField, FileAllowed
 from flask.ext.babel import lazy_gettext
 
-from config import TEMPLATE_DIR
+from config import TEMPLATE_DIR, LANGUAGES
 
 
 class AddForm(Form):
@@ -22,6 +22,12 @@ class AddForm(Form):
         lazy_gettext('Select your css template !'),
         choices=[(template, template) for template in os.listdir(TEMPLATE_DIR) if os.path.isdir(os.path.join(TEMPLATE_DIR, template))]
         )
+    language = SelectField(
+        lazy_gettext('Select your language !'),
+        choices=sorted([(short, name) for short,name in list(LANGUAGES.items())])
+        )
+    rights = TextField(lazy_gettext('Displayed Copyright'),
+        [Length(max=255)])
 
 
 class AddCoverForm(Form):
@@ -33,15 +39,18 @@ class AddCoverForm(Form):
 class EditForm(Form):
     title = TextField(lazy_gettext('Book title'),
         [Required(), Length(max=80)])
-
     displayed_name = TextField(lazy_gettext('Displayed author name'),
         [Length(max=255)])
-
     style = SelectField(
         lazy_gettext('Select your css template !'),
         choices=[(template, template) for template in os.listdir(TEMPLATE_DIR) if os.path.isdir(os.path.join(TEMPLATE_DIR, template))]
         )
-
+    language = SelectField(
+        lazy_gettext('Select your language !'),
+        choices=sorted([(short, name) for short, name in list(LANGUAGES.items())])
+        )
+    rights = TextField(lazy_gettext('Displayed Copyright'),
+        [Length(max=255)])
     cover = FileField(lazy_gettext('Image File'),
         [FileAllowed(['jpg', 'png'], lazy_gettext('Images only!'))])
 

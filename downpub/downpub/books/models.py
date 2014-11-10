@@ -43,13 +43,15 @@ class Book(db.Model):
     cover = db.Column(db.String(255))
     displayed_name = db.Column(db.String(255))
     style = db.Column(db.String(255))
+    language = db.Column(db.String(5))
+    rights = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author = db.relationship('User',
         backref=db.backref('books', lazy='dynamic'))
     creation_date = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
-    def __init__(self, title, user_id, cover, style, displayed_name, creation_date, modified_at):
+    def __init__(self, title, user_id, cover, style, language, rights, displayed_name, creation_date, modified_at):
         """
         Init function of the Book model
         """
@@ -58,6 +60,8 @@ class Book(db.Model):
         self.cover = cover
         self.displayed_name = displayed_name
         self.style = style
+        self.language = language
+        self.rights = rights
 
         if creation_date is None:
             creation_date = datetime.utcnow()

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-03 13:53+0100\n"
+"POT-Creation-Date: 2014-11-10 17:20+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -35,133 +35,141 @@ msgstr ""
 msgid "You need to be signed in for this page."
 msgstr ""
 
-#: downpub/books/forms.py:17 downpub/books/forms.py:34
+#: downpub/books/forms.py:17 downpub/books/forms.py:40
 msgid "Book title"
 msgstr ""
 
-#: downpub/books/forms.py:19 downpub/books/forms.py:37
+#: downpub/books/forms.py:19 downpub/books/forms.py:42
 msgid "Displayed author name"
 msgstr ""
 
-#: downpub/books/forms.py:22 downpub/books/forms.py:41
+#: downpub/books/forms.py:22 downpub/books/forms.py:45
 msgid "Select your css template !"
 msgstr ""
 
-#: downpub/books/forms.py:28 downpub/books/forms.py:45
+#: downpub/books/forms.py:26 downpub/books/forms.py:49
+msgid "Select your language !"
+msgstr ""
+
+#: downpub/books/forms.py:29 downpub/books/forms.py:52
+msgid "Displayed Copyright"
+msgstr ""
+
+#: downpub/books/forms.py:34 downpub/books/forms.py:54
 msgid "Image File"
 msgstr ""
 
-#: downpub/books/forms.py:30 downpub/books/forms.py:46
+#: downpub/books/forms.py:36 downpub/books/forms.py:55
 msgid "Images only!"
 msgstr ""
 
-#: downpub/books/forms.py:50 downpub/books/forms.py:57
+#: downpub/books/forms.py:59 downpub/books/forms.py:66
 msgid "Part title"
 msgstr ""
 
-#: downpub/books/forms.py:51
+#: downpub/books/forms.py:60
 msgid "Title for that part is required."
 msgstr ""
 
-#: downpub/books/forms.py:52 downpub/books/forms.py:58
+#: downpub/books/forms.py:61 downpub/books/forms.py:67
 msgid "Content"
 msgstr ""
 
-#: downpub/books/forms.py:53 downpub/books/forms.py:59
+#: downpub/books/forms.py:62 downpub/books/forms.py:68
 msgid "Order"
 msgstr ""
 
-#: downpub/books/views.py:50
+#: downpub/books/views.py:54
 #, python-format
 msgid "Your Books, %(user_name)s !"
 msgstr ""
 
-#: downpub/books/views.py:65
+#: downpub/books/views.py:69
 msgid "Add a book"
 msgstr ""
 
-#: downpub/books/views.py:84
+#: downpub/books/views.py:100
 msgid "That book has been created !"
 msgstr ""
 
-#: downpub/books/views.py:104 downpub/books/views.py:152
-#: downpub/books/views.py:178 downpub/books/views.py:264
-#: downpub/books/views.py:348 downpub/books/views.py:382
-#: downpub/books/views.py:405 downpub/books/views.py:428
-#: downpub/books/views.py:469 downpub/books/views.py:525
-#: downpub/books/views.py:558
+#: downpub/books/views.py:120 downpub/books/views.py:175
+#: downpub/books/views.py:201 downpub/books/views.py:287
+#: downpub/books/views.py:371 downpub/books/views.py:405
+#: downpub/books/views.py:428 downpub/books/views.py:451
+#: downpub/books/views.py:492 downpub/books/views.py:548
+#: downpub/books/views.py:581
 msgid "This isn't yours !"
 msgstr ""
 
-#: downpub/books/views.py:108
+#: downpub/books/views.py:124
 #, python-format
 msgid "Edit the book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:131
+#: downpub/books/views.py:154
 msgid "That book has been edited !"
 msgstr ""
 
-#: downpub/books/views.py:161
+#: downpub/books/views.py:184
 msgid "That book has been deleted !"
 msgstr ""
 
-#: downpub/books/views.py:269
+#: downpub/books/views.py:292
 #, python-format
 msgid "Upload a cover for the book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:301
+#: downpub/books/views.py:324
 msgid "That book's cover has been added !"
 msgstr ""
 
-#: downpub/books/views.py:310
+#: downpub/books/views.py:333
 #, python-format
 msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
 msgstr ""
 
-#: downpub/books/views.py:318
+#: downpub/books/views.py:341
 msgid "That filetype is not allowed !"
 msgstr ""
 
-#: downpub/books/views.py:329
+#: downpub/books/views.py:352
 msgid "That book already has a cover, delete it first to upload a new one !"
 msgstr ""
 
-#: downpub/books/views.py:362
+#: downpub/books/views.py:385
 msgid "That book's cover has been deleted !"
 msgstr ""
 
-#: downpub/books/views.py:368
+#: downpub/books/views.py:391
 msgid "That book has no cover already !"
 msgstr ""
 
-#: downpub/books/views.py:408
+#: downpub/books/views.py:431
 #, python-format
 msgid "Parts of your book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:432
+#: downpub/books/views.py:455
 #, python-format
 msgid "Add a part to your book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:444
+#: downpub/books/views.py:467
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been added !"
 msgstr ""
 
-#: downpub/books/views.py:475
+#: downpub/books/views.py:498
 #, python-format
 msgid "Edit the part %(part_title)s of your book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:499
+#: downpub/books/views.py:522
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
 msgstr ""
 
-#: downpub/books/views.py:535
+#: downpub/books/views.py:558
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
 msgstr ""
@@ -361,6 +369,10 @@ msgid ""
 "href=\"http://editorially.com\">Editorially</a>."
 msgstr ""
 
+#: downpub/templates/footer.html:6
+msgid "Version "
+msgstr ""
+
 #: downpub/templates/header.html:9
 msgid "Sign in"
 msgstr ""
@@ -539,8 +551,8 @@ msgstr ""
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
-#: downpub/templates/books/add.html:9 downpub/templates/books/add_part.html:24
-#: downpub/templates/books/edit.html:10
+#: downpub/templates/books/add.html:11 downpub/templates/books/add_part.html:24
+#: downpub/templates/books/edit.html:12
 #: downpub/templates/books/edit_part.html:49
 msgid "Save"
 msgstr ""
