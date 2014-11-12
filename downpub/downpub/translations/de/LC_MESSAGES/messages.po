@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-10 17:20+0100\n"
+"POT-Creation-Date: 2014-11-12 23:39+0100\n"
 "PO-Revision-Date: 2014-10-21 12:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -298,13 +298,13 @@ msgid "Voilà."
 msgstr ""
 
 #: downpub/templates/editor.html:6
-msgid "# Chapter 1 - Introducing Markdown in Downpub"
+msgid "# Chapter 1 - Introducing Downpub"
 msgstr ""
 
 #: downpub/templates/editor.html:8
 msgid ""
-"This is a demo text which contains *examples* on **how** to use "
-"***Markdown*** syntax to format your book."
+"This is a demo text which contains _examples_ on __how__ to use "
+"___Markdown___ syntax to format your book."
 msgstr ""
 
 #: downpub/templates/editor.html:10
@@ -313,41 +313,63 @@ msgstr ""
 
 #: downpub/templates/editor.html:12
 msgid ""
-"In this section, we'll have a look at making text bold, italic and etc. "
-"If you haven't realised by now, there is a very simple toolbar presented "
-"above the editor. Try selecting text in this editor and press any one of "
-"those buttons."
+"In this section, we'll have a look at making text **bold**, *italic* and "
+"etc. If you haven't realised by now, there is a very simple toolbar "
+"presented above the editor. Try selecting text in this editor and press "
+"any one of those buttons."
 msgstr ""
 
 #: downpub/templates/editor.html:14
-msgid "Item1"
+msgid "1. Item1"
 msgstr ""
 
 #: downpub/templates/editor.html:15
-msgid "Item2"
+msgid "1. Item2"
 msgstr ""
 
 #: downpub/templates/editor.html:16
-msgid "Item3"
+msgid "1. Item3"
 msgstr ""
 
 #: downpub/templates/editor.html:18
-msgid "### Example source code"
+msgid "Even my cat can be in your epub !"
+msgstr ""
+
+#: downpub/templates/editor.html:20
+msgid "- Item1"
+msgstr ""
+
+#: downpub/templates/editor.html:21
+msgid "- Item2"
+msgstr ""
+
+#: downpub/templates/editor.html:22
+msgid "- Item3"
 msgstr ""
 
 #: downpub/templates/editor.html:24
+msgid "### Example source code"
+msgstr ""
+
+#: downpub/templates/editor.html:31
 msgid "Take a peek at those buttons and see how they work !"
 msgstr ""
 
-#: downpub/templates/editor.html:61
+#: downpub/templates/editor.html:33
+msgid ""
+"Don't hesitate to export the book in epub or watch the preview to see "
+"what you wrote looks like."
+msgstr ""
+
+#: downpub/templates/editor.html:70
 msgid "Toggle Preview Mode"
 msgstr ""
 
-#: downpub/templates/editor.html:62
+#: downpub/templates/editor.html:71
 msgid "Toggle Edit Mode"
 msgstr ""
 
-#: downpub/templates/editor.html:63
+#: downpub/templates/editor.html:72
 msgid "Enter Fullscreen"
 msgstr ""
 
@@ -971,5 +993,23 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "How to use Downpub ???"
+#~ msgstr ""
+
+#~ msgid "# Chapter 1 - Introducing Markdown in Downpub"
+#~ msgstr ""
+
+#~ msgid "Item1"
+#~ msgstr ""
+
+#~ msgid "Item2"
+#~ msgstr ""
+
+#~ msgid "Item3"
+#~ msgstr ""
+
+#~ msgid "Même les chats peuvent être dans les epub"
+#~ msgstr ""
+
+#~ msgid "Même mon chat peut être dans vos epubs"
 #~ msgstr ""
 

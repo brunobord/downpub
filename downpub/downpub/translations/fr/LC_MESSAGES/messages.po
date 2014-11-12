@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-10 17:20+0100\n"
-"PO-Revision-Date: 2014-11-10 17:23+0100\n"
+"POT-Creation-Date: 2014-11-12 23:39+0100\n"
+"PO-Revision-Date: 2014-11-12 23:39+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -323,56 +323,73 @@ msgid "Voilà."
 msgstr "Voilà."
 
 #: downpub/templates/editor.html:6
-msgid "# Chapter 1 - Introducing Markdown in Downpub"
-msgstr "# Chapitre 1 - Introduction de Markdown dans Downpub"
+msgid "# Chapter 1 - Introducing Downpub"
+msgstr "# Chapitre 1 - Présentation de Downpub"
 
 #: downpub/templates/editor.html:8
-#, fuzzy
-msgid "This is a demo text which contains *examples* on **how** to use ***Markdown*** syntax to format your book."
-msgstr "Ceci est un texte de démonstration contenant des exemples d'utilisation de la syntaxe Markdown pour mettre en forme votre livre."
+msgid "This is a demo text which contains _examples_ on __how__ to use ___Markdown___ syntax to format your book."
+msgstr "Ceci est un texte de démonstration contenant des _exemples_ __d'utilisation__ de la syntaxe ___Markdown___ pour mettre en forme votre livre."
 
 #: downpub/templates/editor.html:10
 msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
 msgstr "## Sous-chapitre 1 - Formatage du texte, presque WYSIWYG"
 
 #: downpub/templates/editor.html:12
-msgid "In this section, we'll have a look at making text bold, italic and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons."
-msgstr "Dans cette partie, nous allons voir comment rendre le text gras, italique etc... Si vous n'avez pas encore réalisé, il y a une barre d'outils au dessus de cette zone d'édition. Essayez de sélectionner du texte ici puis appuyez sur un de ces boutons."
+msgid "In this section, we'll have a look at making text **bold**, *italic* and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons."
+msgstr "Dans cette partie, nous allons voir comment rendre le text **gras**, *italique* etc... Si vous n'avez pas encore réalisé, il y a une barre d'outils au dessus de cette zone d'édition. Essayez de sélectionner du texte ici puis appuyez sur un de ces boutons."
 
 #: downpub/templates/editor.html:14
-msgid "Item1"
-msgstr "Objet1"
+msgid "1. Item1"
+msgstr "1. Objet1"
 
 #: downpub/templates/editor.html:15
-msgid "Item2"
-msgstr "Objet2"
+msgid "1. Item2"
+msgstr "1. Objet2"
 
 #: downpub/templates/editor.html:16
-msgid "Item3"
-msgstr "Objet3"
+msgid "1. Item3"
+msgstr "1. Objet3"
 
 #: downpub/templates/editor.html:18
+msgid "Even my cat can be in your epub !"
+msgstr "Même mon chat peut être dans vos epubs !"
+
+#: downpub/templates/editor.html:20
+msgid "- Item1"
+msgstr "- Objet1"
+
+#: downpub/templates/editor.html:21
+msgid "- Item2"
+msgstr "- Objet2"
+
+#: downpub/templates/editor.html:22
+msgid "- Item3"
+msgstr "- Objet3"
+
+#: downpub/templates/editor.html:24
 msgid "### Example source code"
 msgstr "### Code source d'exemple"
 
-#: downpub/templates/editor.html:24
+#: downpub/templates/editor.html:31
 #, fuzzy
 msgid "Take a peek at those buttons and see how they work !"
 msgstr "Jetez un coup d'oeil à ces boutons et voyez comment ils fonctionnent !"
 
-#: downpub/templates/editor.html:61
+#: downpub/templates/editor.html:33
+msgid "Don't hesitate to export the book in epub or watch the preview to see what you wrote looks like."
+msgstr "N'hésitez pas à exporter le livre en epub ou à regarder la prévisualisation pour voir à quoi vos écrits ressemblent."
+
+#: downpub/templates/editor.html:70
 msgid "Toggle Preview Mode"
 msgstr "Passer en mode Prévisualisation"
 
-#: downpub/templates/editor.html:62
-#, fuzzy
+#: downpub/templates/editor.html:71
 msgid "Toggle Edit Mode"
-msgstr "Éditer"
+msgstr "Passer en mode Édition"
 
-#: downpub/templates/editor.html:63
-#, fuzzy
+#: downpub/templates/editor.html:72
 msgid "Enter Fullscreen"
-msgstr "Entrez un mot de passe."
+msgstr "Entrez en mode Plein Écran"
 
 #: downpub/templates/footer.html:3
 #, fuzzy
@@ -611,7 +628,7 @@ msgstr "Titre 4"
 #: downpub/templates/books/add_part.html:14
 #: downpub/templates/books/edit_part.html:39
 msgid "Make selection bold"
-msgstr "Changer la sélection en gras"
+msgstr "Faire de la sélection du gras"
 
 #: downpub/templates/books/add_part.html:14
 #: downpub/templates/books/edit_part.html:39
@@ -621,7 +638,7 @@ msgstr "Gras"
 #: downpub/templates/books/add_part.html:15
 #: downpub/templates/books/edit_part.html:40
 msgid "Make selection italic"
-msgstr "Changer la sélection en italique"
+msgstr "Faire de la sélection de l'italique"
 
 #: downpub/templates/books/add_part.html:15
 #: downpub/templates/books/edit_part.html:40
@@ -631,7 +648,7 @@ msgstr "Italique"
 #: downpub/templates/books/add_part.html:16
 #: downpub/templates/books/edit_part.html:41
 msgid "Make selection inline code block"
-msgstr "Changer la sélection en bloc de code en ligne"
+msgstr "Faire de la sélection un bloc de code en ligne"
 
 #: downpub/templates/books/add_part.html:16
 #: downpub/templates/books/edit_part.html:41
@@ -641,7 +658,7 @@ msgstr "Code"
 #: downpub/templates/books/add_part.html:17
 #: downpub/templates/books/edit_part.html:42
 msgid "Make selection a list"
-msgstr "Changer la sélection en liste"
+msgstr "Faire de la sélection une liste"
 
 #: downpub/templates/books/add_part.html:17
 #: downpub/templates/books/edit_part.html:42
@@ -650,9 +667,8 @@ msgstr "Liste"
 
 #: downpub/templates/books/add_part.html:18
 #: downpub/templates/books/edit_part.html:43
-#, fuzzy
 msgid "Make selection a ordered list"
-msgstr "Changer la sélection en liste"
+msgstr "Faire de la sélection une liste numérotée"
 
 #: downpub/templates/books/add_part.html:18
 #: downpub/templates/books/edit_part.html:43
@@ -1010,3 +1026,9 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "How to use Downpub ???"
 #~ msgstr "Comment utiliser Downpub ???"
+
+#~ msgid "Même les chats peuvent être dans les epub"
+#~ msgstr ""
+
+#~ msgid "Même mon chat peut être dans vos epubs"
+#~ msgstr ""

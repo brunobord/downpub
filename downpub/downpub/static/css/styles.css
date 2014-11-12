@@ -269,7 +269,7 @@ div#epiceditor-preview h4 {
 
 div#epiceditor-preview p {
     margin:0.3em;
-    padding:0.1em;
+    padding:0.3em 0;
     font-size:normal;
 }
 
@@ -296,8 +296,8 @@ div#epiceditor-preview ul, div#epiceditor-preview ol {
 }
 
 div#epiceditor-preview pre, div#epiceditor-preview blockquote {
-    margin:0.2em 1em;
-    padding:0.3em;
+    margin:0.4em 1em;
+    padding:0.5em;
     font-size:normal;
     border:1px solid gray;
     background:#ddd;
@@ -307,8 +307,8 @@ div#epiceditor-preview pre, div#epiceditor-preview blockquote {
 
 div#epiceditor-preview code {
     display:inline-block;
-    margin:0.2em;
-    padding:0.3em;
+    margin:0.4em 1em;
+    padding:0.5em;
     background:#ddd;
     line-height:1.1em;
     font-family:"Courier New", Courier, monospace;
