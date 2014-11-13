@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-13 11:34+0100\n"
-"PO-Revision-Date: 2014-11-13 11:34+0100\n"
+"POT-Creation-Date: 2014-11-13 14:01+0100\n"
+"PO-Revision-Date: 2014-11-13 14:02+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -104,9 +104,9 @@ msgstr "Ce livre a été créé !"
 #: downpub/books/views.py:120 downpub/books/views.py:175
 #: downpub/books/views.py:201 downpub/books/views.py:287
 #: downpub/books/views.py:371 downpub/books/views.py:405
-#: downpub/books/views.py:428 downpub/books/views.py:451
-#: downpub/books/views.py:492 downpub/books/views.py:548
-#: downpub/books/views.py:581
+#: downpub/books/views.py:428 downpub/books/views.py:492
+#: downpub/books/views.py:533 downpub/books/views.py:589
+#: downpub/books/views.py:622
 #, fuzzy
 msgid "This isn't yours !"
 msgstr "Ceci n'est pas à vous !"
@@ -166,27 +166,37 @@ msgstr "Ce livre n'a déjà pas de couverture !"
 msgid "Parts of your book %(book_title)s"
 msgstr "Parties de votre livre %(book_title)s"
 
-#: downpub/books/views.py:455
+#: downpub/books/views.py:468
+#, python-format
+msgid "Order of the part %(part_title)s of your book %(book_title)s has been updated !"
+msgstr "L'ordre de la partie %(part_title)s de votre livre %(book_title)s a été mis à jour !"
+
+#: downpub/books/views.py:475
+#, python-format
+msgid "Order of the part %(part_title)s of your book %(book_title)s has no need to be updated !"
+msgstr "L'ordre de la partie %(part_title)s de votre livre %(book_title)s n'a pas besoin d'être mis à jour !"
+
+#: downpub/books/views.py:496
 #, fuzzy, python-format
 msgid "Add a part to your book %(book_title)s"
 msgstr "Ajoutez une partie à votre livre %(book_title)s"
 
-#: downpub/books/views.py:467
+#: downpub/books/views.py:508
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been added !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été ajoutée !"
 
-#: downpub/books/views.py:498
+#: downpub/books/views.py:539
 #, fuzzy, python-format
 msgid "Edit the part %(part_title)s of your book %(book_title)s"
 msgstr "Éditez la partie %(part_title)s de votre livre %(book_title)s"
 
-#: downpub/books/views.py:522
+#: downpub/books/views.py:563
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été éditée !"
 
-#: downpub/books/views.py:558
+#: downpub/books/views.py:599
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été effacée !"
@@ -697,7 +707,7 @@ msgid "Parts list :"
 msgstr "Liste des parties :"
 
 #: downpub/templates/books/edit_part.html:11
-#: downpub/templates/books/parts_list.html:79
+#: downpub/templates/books/parts_list.html:95
 #, fuzzy
 msgid "Edit"
 msgstr "Éditer"
@@ -705,27 +715,27 @@ msgstr "Éditer"
 #: downpub/templates/books/edit_part.html:14
 #: downpub/templates/books/list.html:46
 #: downpub/templates/books/parts_list.html:22
-#: downpub/templates/books/parts_list.html:93
+#: downpub/templates/books/parts_list.html:110
 #, fuzzy
 msgid "Export Epub"
 msgstr "Export Epub"
 
 #: downpub/templates/books/edit_part.html:17
 #: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:84
+#: downpub/templates/books/parts_list.html:100
 #, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
 #: downpub/templates/books/edit_part.html:22
-#: downpub/templates/books/parts_list.html:126
+#: downpub/templates/books/parts_list.html:144
 #, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
 #: downpub/templates/books/edit_part.html:25
-#: downpub/templates/books/parts_list.html:129
-#: downpub/templates/books/parts_list.html:136
+#: downpub/templates/books/parts_list.html:147
+#: downpub/templates/books/parts_list.html:154
 #, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
@@ -758,31 +768,31 @@ msgstr "Parties de votre livre"
 
 #: downpub/templates/books/list.html:51
 #: downpub/templates/books/parts_list.html:27
-#: downpub/templates/books/parts_list.html:98
+#: downpub/templates/books/parts_list.html:115
 msgid "Export Epub3"
 msgstr "Export Epub3"
 
 #: downpub/templates/books/list.html:56
 #: downpub/templates/books/parts_list.html:32
-#: downpub/templates/books/parts_list.html:103
+#: downpub/templates/books/parts_list.html:120
 msgid "Export Markdown"
 msgstr "Export Markdown"
 
 #: downpub/templates/books/list.html:61
 #: downpub/templates/books/parts_list.html:37
-#: downpub/templates/books/parts_list.html:108
+#: downpub/templates/books/parts_list.html:125
 msgid "Export Word"
 msgstr "Export Word"
 
 #: downpub/templates/books/list.html:66
 #: downpub/templates/books/parts_list.html:42
-#: downpub/templates/books/parts_list.html:113
+#: downpub/templates/books/parts_list.html:130
 msgid "Export LibreOffice"
 msgstr "Export LibreOffice"
 
 #: downpub/templates/books/list.html:71
 #: downpub/templates/books/parts_list.html:47
-#: downpub/templates/books/parts_list.html:118
+#: downpub/templates/books/parts_list.html:135
 msgid "Export HTML"
 msgstr "Export HTML"
 
@@ -813,7 +823,15 @@ msgstr "Oops ! On dirait que vous n'avez encore rien écrit !"
 msgid "Create a book now !"
 msgstr "Créez un livre maintenant !"
 
-#: downpub/templates/books/parts_list.html:133
+#: downpub/templates/books/parts_list.html:76
+msgid "Up"
+msgstr "Monter"
+
+#: downpub/templates/books/parts_list.html:81
+msgid "Down"
+msgstr "Descendre"
+
+#: downpub/templates/books/parts_list.html:151
 #, fuzzy
 msgid "No parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"

@@ -436,6 +436,47 @@ def parts_list(book_id):
         book=book, site_title=site_title)
 
 
+@mod.route('/<book_id>/order_part/<part_id>/order/<order_value>', methods=['GET', 'POST'])
+@requires_login
+def order_part(book_id, part_id, order_value):
+    """
+    Change the order the part from the book with book_id
+    """
+
+    book = Book.query.get(book_id)
+    part = Part.query.get(part_id)
+
+    # we get both orders
+    previous_order = part.order
+    new_order = order_value
+
+    # if we can find an existing part of this book with which to switch, we do
+    if Part.query.filter_by(book_id=book_id, order=new_order).count() >= 1:
+        # we get the actual order of the part we're editing
+        # we switch the order of the part we're editing
+        # with the one in that position
+        part.order = new_order
+        part_to_replace = Part.query.filter_by(book_id=book_id, order=new_order).first()
+        part_to_replace.order = previous_order
+
+        # then we commit
+        db.session.commit()
+
+
+        # we redirect to the parts list with a message
+        flash(
+            gettext('Order of the part %(part_title)s of your book %(book_title)s has been updated !',
+            book_title=book.title, part_title=part.title))
+        return redirect(url_for('books.parts_list', book_id=book_id))
+    else:
+        # if we can't find any part to switch with, this either means we
+        # try to put a part which is already the first/last one
+        flash(
+            gettext('Order of the part %(part_title)s of your book %(book_title)s has no need to be updated !',
+            book_title=book.title, part_title=part.title))
+        return redirect(url_for('books.parts_list', book_id=book_id))
+
+
 @mod.route('/<book_id>/add_part/', methods=['GET', 'POST'])
 @requires_login
 def add_part(book_id):
