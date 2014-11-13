@@ -4,7 +4,6 @@
     <form method="POST" action="{{ url_for('books.add_part', book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}
         {{ render_field(form.title, class="input text line w70") }}
-        {{ render_field(form.order, class="input text line w70") }}
         {{ render_field(form.content, class="input text invisible") }}
         <nav id="toolbar" class="pas line">
             <button type="button" data-command="h1" title="{{ _('Make selection Heading 1') }}">{{ _("Heading 1") }}</button>

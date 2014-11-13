@@ -498,8 +498,16 @@ def add_part(book_id):
 
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
+        # we init order with the max order for this book plus one
+        # or 1 if we can't find any
+        max_order = Part.query.filter_by(book_id=book_id).order_by(Part.order.desc()).first()
+        if max_order is not None:
+            order = max_order.order + 1
+        else:
+            order = 1
+
         part = Part(book_id=book_id, title=form.title.data,
-        content=form.content.data, order=form.order.data)
+        content=form.content.data, order=order)
         # Insert the record in our database and commit it
         db.session.add(part)
         db.session.commit()
@@ -545,7 +553,6 @@ def edit_part(book_id, part_id):
         # form initializing when we first show the edit page
         form.title.data = part.title
         form.content.data = part.content
-        form.order.data = part.order
 
     if form.validate_on_submit():
         # get an user instance not yet stored in the database
@@ -554,7 +561,6 @@ def edit_part(book_id, part_id):
         # set the new values
         part.title = form.title.data
         part.content = form.content.data
-        part.order = form.order.data
 
         # commit
         db.session.commit()

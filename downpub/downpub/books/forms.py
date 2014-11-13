@@ -59,10 +59,8 @@ class AddPartForm(Form):
     title = TextField(lazy_gettext('Part title'),
         [Required(lazy_gettext('Title for that part is required.'))])
     content = TextAreaField(lazy_gettext('Content'))
-    order = TextField(lazy_gettext('Order'), [Required()])
 
 
 class EditPartForm(Form):
     title = TextField(lazy_gettext('Part title'), [Required()])
     content = TextAreaField(lazy_gettext('Content'), [Required()])
-    order = TextField(lazy_gettext('Order'), [Required()])
