@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-12 23:39+0100\n"
-"PO-Revision-Date: 2014-11-12 23:39+0100\n"
+"POT-Creation-Date: 2014-11-13 11:34+0100\n"
+"PO-Revision-Date: 2014-11-13 11:34+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -212,7 +212,7 @@ msgid "Maybe you should return at the book's page and try again with a smaller f
 msgstr "Peut-être devriez-vous revenir à la page du livre et réessayer avec un fichier plus petit ?"
 
 #: downpub/templates/413.html:5 downpub/templates/header.html:21
-#: downpub/templates/index.html:14
+#: downpub/templates/index.html:17
 #, fuzzy
 msgid "Your books"
 msgstr "Vos livres"
@@ -497,14 +497,12 @@ msgid "The purpose of Downpub is simple :"
 msgstr "Le but de Downpub est simple :"
 
 #: downpub/templates/index.html:5
-#, fuzzy
 msgid "You write books, in Markdown."
 msgstr "Vous écrivez des trucs en Markdown."
 
 #: downpub/templates/index.html:6
-#, fuzzy
 msgid "You choose to write it in one part or many. "
-msgstr "Vous choisissez de les écrire en une ou plusieurs parties."
+msgstr "Vous choissisez si vous l'écrivez en une ou plusieurs parties."
 
 #: downpub/templates/index.html:7
 #, fuzzy
@@ -516,64 +514,76 @@ msgstr "Découper votre travail en une partie par chapitre vous permet d'éditer
 msgid "Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word."
 msgstr "Une fois que vos parties sont terminées, récupérez le livre complet ou juste une partie en epub, markdown, HTML ou Word."
 
-#: downpub/templates/index.html:12
-#, python-format
-msgid "To do so, you first need to %(register)s, then you'll create a book in the \"%(your_books)s\" page. Finally, you'll create at least one part, or many, depending on how you want to work !"
-msgstr "Pour ce faire, vous devez d'abord vous %(register)s, puis vous créerez un livre dans la page \"%(your_books)s\". Enfin, vous créerez au moins une partie, ou plusieurs, selon la façon dont vous souhaitez travailler."
+#: downpub/templates/index.html:11
+msgid "How do I do ?"
+msgstr "Comment dois-je faire ?"
 
-#: downpub/templates/index.html:13
+#: downpub/templates/index.html:15
+#, python-format
+msgid "You first need to %(register)s, then create a book in the \"%(your_books)s\" page."
+msgstr "Vous devez tout d'abord vous %(register)s, puis créer un livre dans la page \"%(your_books)s\"."
+
+#: downpub/templates/index.html:16
 msgid "register"
 msgstr "enregistrer"
 
-#: downpub/templates/index.html:18
-msgid "The next step is to put content. For that particular matter, the Markdown syntax, as the live preview in every editing part's page, are there to help you."
-msgstr "L'étape suivante est d'écrire le contenu. Pour ce point précis, la syntaxe Markdown, tout comme la prévisualisation en direct dans chaque page d'édition de partie, sont là pour vous aider."
+#: downpub/templates/index.html:21
+msgid "Next, add at least one part, or many, depending on how you want to work !"
+msgstr "Ensuite, ajoutez au moins une partie, ou plusieurs, selon votre façon de travailler !"
 
-#: downpub/templates/index.html:20
+#: downpub/templates/index.html:22
+msgid "You can order parts with the order number, which is not very practical for now, but it will be fixed."
+msgstr "Vous pouvez triez les parties avec le numéro d'ordre, ce qui n'est pas très pratique pour l'instant, mais cela sera corrigé."
+
+#: downpub/templates/index.html:23
+msgid "There is default content to show you how markdown works, and buttons to help you with the syntax !"
+msgstr "Il y a un contenu par défaut pour vous montrer comment marche Markdown, et des boutons pour vous aider avec la syntaxe !"
+
+#: downpub/templates/index.html:24
+msgid "Heading 1 creates a chapter title in the epub export, so use it accordingly."
+msgstr "Titre 1 crée un titre de chapitre dans l'export epub, donc utilisez-le de cette façon."
+
+#: downpub/templates/index.html:25
+msgid "Part title is NOT included in the export, so you must add an heading 1 title yourself. That is to be able to customize the book's chapter title whatever the part's name."
+msgstr "Le titre de la partie n'est PAS inclu dans l'export, donc vous devrez ajouter un titre 1 vous-même. Ceci permet de personnaliser le titre du chapitre du livre peu importe le nom de la partie."
+
+#: downpub/templates/index.html:26
 msgid "When you're done you just have to export the book using the links provided, in the format you want."
 msgstr "Quand vous avez terminé vous n'avez plus qu'à exporter le livre en utilisant les liens fournis, dans le format que vous voulez."
 
-#: downpub/templates/index.html:22
-msgid "Try it for yourself !"
-msgstr "Essayez-le !"
-
-#: downpub/templates/index.html:24
-msgid "You can grab the source on Github, the link is in the footer !"
-msgstr "Vous pouvez récupérer le source sur Github, le lien est dans le pied de page !"
-
-#: downpub/templates/index.html:26
+#: downpub/templates/index.html:30
 msgid "Markdown seems complicated !"
 msgstr "Markdown semble compliqué !"
 
-#: downpub/templates/index.html:28
+#: downpub/templates/index.html:32
 msgid "You just need help ! "
 msgstr "Vous avez juste besoin d'aide ! "
 
-#: downpub/templates/index.html:28
+#: downpub/templates/index.html:32
 msgid "There you go !"
 msgstr "Et voilà !"
 
-#: downpub/templates/index.html:30
+#: downpub/templates/index.html:34
 #, fuzzy
 msgid "Why would you choose DownPub ?"
 msgstr "Pourquoi vous choisiriez DownPub ?"
 
-#: downpub/templates/index.html:33
+#: downpub/templates/index.html:37
 #, fuzzy, python-format
 msgid "Downpub is under the %(wtfpl_link)s licence so you can download it, share it, even sell it, whatever..."
 msgstr "Downpub est sous licence %(wtfpl_link)s donc vous pouvez le télécharger, le partager, même le vendre, comme vous voulez..."
 
-#: downpub/templates/index.html:36
+#: downpub/templates/index.html:40
 #, fuzzy
 msgid "Only your conscience will fix the limits. You can install it on any computer, even if the installation process is a little raw for now."
 msgstr "Seule votre conscience fixera les limites. Vous pouvez l'installer sur n'importe quel ordinateur, même si le processus d'installation est un peu brut pour l'instant."
 
-#: downpub/templates/index.html:38
+#: downpub/templates/index.html:42
 #, fuzzy
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 
-#: downpub/templates/index.html:40
+#: downpub/templates/index.html:44
 #, fuzzy
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"
@@ -1031,4 +1041,13 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 #~ msgstr ""
 
 #~ msgid "Même mon chat peut être dans vos epubs"
+#~ msgstr ""
+
+#~ msgid "You choose to write it in one part or many. "
+#~ msgstr "Vous choisissez de les écrire en une ou plusieurs parties."
+
+#~ msgid "Try it for yourself !"
+#~ msgstr "Essayez-le !"
+
+#~ msgid "You can grab the source on Github, the link is in the footer !"
 #~ msgstr ""

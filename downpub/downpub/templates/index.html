@@ -8,20 +8,24 @@
         <li>{{ _("Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word.") }}</li>
     </ul>
 
-    {% autoescape false %}
-    <p>{{ _("To do so, you first need to %(register)s, then you'll create a book in the \"%(your_books)s\" page. Finally, you'll create at least one part, or many, depending on how you want to work !",
-        register='<a href="%s">%s</a>' % (url_for('users.register'), _("register")),
-        your_books='<a href="%s">%s</a>' % (url_for('books.list'), _("Your books"))
-    ) }}</p>
-    {% endautoescape %}
+    <h3>{{ _("How do I do ?") }}</h3>
+    <ul>
+        <li>
+            {% autoescape false %}
+            {{ _("You first need to %(register)s, then create a book in the \"%(your_books)s\" page.",
+                register='<a href="%s">%s</a>' % (url_for('users.register'), _("register")),
+                your_books='<a href="%s">%s</a>' % (url_for('books.list'), _("Your books"))
+            ) }}
+            {% endautoescape %}
+        </li>
+        <li>{{ _("Next, add at least one part, or many, depending on how you want to work !") }}</li>
+        <li>{{ _("You can order parts with the order number, which is not very practical for now, but it will be fixed.") }}</li>
+        <li>{{ _("There is default content to show you how markdown works, and buttons to help you with the syntax !") }}</li>
+        <li>{{ _("Heading 1 creates a chapter title in the epub export, so use it accordingly.") }}</li>
+        <li>{{ _("Part title is NOT included in the export, so you must add an heading 1 title yourself. That is to be able to customize the book's chapter title whatever the part's name.") }}</li>
+        <li>{{ _("When you're done you just have to export the book using the links provided, in the format you want.") }}</li>
 
-    <p>{{ _("The next step is to put content. For that particular matter, the Markdown syntax, as the live preview in every editing part's page, are there to help you.") }}</p>
-
-    <p>{{ _("When you're done you just have to export the book using the links provided, in the format you want.") }}</p>
-
-    <h3>{{ _("Try it for yourself !") }}</h3>
-
-    <p>{{ _("You can grab the source on Github, the link is in the footer !") }}
+    </ul>
 
     <h3>{{ _("Markdown seems complicated !") }}</h3>
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-12 23:39+0100\n"
+"POT-Creation-Date: 2014-11-13 11:34+0100\n"
 "PO-Revision-Date: 2014-10-21 12:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -193,7 +193,7 @@ msgid ""
 msgstr ""
 
 #: downpub/templates/413.html:5 downpub/templates/header.html:21
-#: downpub/templates/index.html:14
+#: downpub/templates/index.html:17
 msgid "Your books"
 msgstr ""
 
@@ -503,73 +503,90 @@ msgid ""
 "in epub, markdown, HTML or Word."
 msgstr ""
 
-#: downpub/templates/index.html:12
-#, python-format
-msgid ""
-"To do so, you first need to %(register)s, then you'll create a book in "
-"the \"%(your_books)s\" page. Finally, you'll create at least one part, or"
-" many, depending on how you want to work !"
+#: downpub/templates/index.html:11
+msgid "How do I do ?"
 msgstr ""
 
-#: downpub/templates/index.html:13
+#: downpub/templates/index.html:15
+#, python-format
+msgid ""
+"You first need to %(register)s, then create a book in the "
+"\"%(your_books)s\" page."
+msgstr ""
+
+#: downpub/templates/index.html:16
 msgid "register"
 msgstr ""
 
-#: downpub/templates/index.html:18
-msgid ""
-"The next step is to put content. For that particular matter, the Markdown"
-" syntax, as the live preview in every editing part's page, are there to "
-"help you."
+#: downpub/templates/index.html:21
+msgid "Next, add at least one part, or many, depending on how you want to work !"
 msgstr ""
 
-#: downpub/templates/index.html:20
+#: downpub/templates/index.html:22
+msgid ""
+"You can order parts with the order number, which is not very practical "
+"for now, but it will be fixed."
+msgstr ""
+
+#: downpub/templates/index.html:23
+msgid ""
+"There is default content to show you how markdown works, and buttons to "
+"help you with the syntax !"
+msgstr ""
+
+#: downpub/templates/index.html:24
+msgid ""
+"Heading 1 creates a chapter title in the epub export, so use it "
+"accordingly."
+msgstr ""
+
+#: downpub/templates/index.html:25
+msgid ""
+"Part title is NOT included in the export, so you must add an heading 1 "
+"title yourself. That is to be able to customize the book's chapter title "
+"whatever the part's name."
+msgstr ""
+
+#: downpub/templates/index.html:26
 msgid ""
 "When you're done you just have to export the book using the links "
 "provided, in the format you want."
 msgstr ""
 
-#: downpub/templates/index.html:22
-msgid "Try it for yourself !"
-msgstr ""
-
-#: downpub/templates/index.html:24
-msgid "You can grab the source on Github, the link is in the footer !"
-msgstr ""
-
-#: downpub/templates/index.html:26
+#: downpub/templates/index.html:30
 msgid "Markdown seems complicated !"
 msgstr ""
 
-#: downpub/templates/index.html:28
+#: downpub/templates/index.html:32
 msgid "You just need help ! "
 msgstr ""
 
-#: downpub/templates/index.html:28
+#: downpub/templates/index.html:32
 msgid "There you go !"
 msgstr ""
 
-#: downpub/templates/index.html:30
+#: downpub/templates/index.html:34
 msgid "Why would you choose DownPub ?"
 msgstr ""
 
-#: downpub/templates/index.html:33
+#: downpub/templates/index.html:37
 #, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share"
 " it, even sell it, whatever..."
 msgstr ""
 
-#: downpub/templates/index.html:36
+#: downpub/templates/index.html:40
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
 "computer, even if the installation process is a little raw for now."
 msgstr ""
 
-#: downpub/templates/index.html:38
+#: downpub/templates/index.html:42
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr ""
 
-#: downpub/templates/index.html:40
+#: downpub/templates/index.html:44
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
@@ -1011,5 +1028,26 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Même mon chat peut être dans vos epubs"
+#~ msgstr ""
+
+#~ msgid "You write books, in Markdown."
+#~ msgstr ""
+
+#~ msgid "You choose to write it in one part or many. "
+#~ msgstr ""
+
+#~ msgid "You write books in Markdown in one part or many. "
+#~ msgstr ""
+
+#~ msgid "You write books in Markdown, in one part or many. "
+#~ msgstr ""
+
+#~ msgid "Try it for yourself !"
+#~ msgstr ""
+
+#~ msgid "You can grab the source on Github, the link is in the footer !"
+#~ msgstr ""
+
+#~ msgid "Heading 1 is a chapter title in the epub export, so use it accordingly."
 #~ msgstr ""
 
