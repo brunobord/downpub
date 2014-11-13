@@ -70,7 +70,7 @@
 <div id="parts_list">
     {% for part in parts %}
     <div class="line bookelement">
-        <div class="col w20 txtleft">
+        <div class="col w20 txtleft pan man">
             <ul class="col w10 txtleft pan man">
                 <li class="row">
                     <a class="icon icon-up" href="{{ url_for('books.order_part', part_id=part.id, book_id=book.id, order_value=(part.order-1)) }}"
@@ -83,10 +83,10 @@
                     </a>
                 </li>
             </ul>
-            <h4 class="col w60 txtleft">{{ part.title }}</h4>
+            <h4 class="col w60 txtleft pas">{{ part.title }}</h4>
         </div>
 
-        <div class="col w40 txtleft">
+        <div class="col w40 txtleft pas">
             {{ part.content|truncate(60) }}
         </div>
         <div class="col w20">
