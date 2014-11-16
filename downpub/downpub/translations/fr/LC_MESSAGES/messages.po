@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2014-11-13 14:01+0100\n"
-"PO-Revision-Date: 2014-11-13 14:02+0100\n"
+"PO-Revision-Date: 2014-11-16 22:29+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -543,7 +543,7 @@ msgstr "Ensuite, ajoutez au moins une partie, ou plusieurs, selon votre façon d
 
 #: downpub/templates/index.html:22
 msgid "You can order parts with the order number, which is not very practical for now, but it will be fixed."
-msgstr "Vous pouvez triez les parties avec le numéro d'ordre, ce qui n'est pas très pratique pour l'instant, mais cela sera corrigé."
+msgstr "Vous pouvez trier les parties avec le numéro d'ordre, ce qui n'est pas très pratique pour l'instant, mais cela sera corrigé."
 
 #: downpub/templates/index.html:23
 msgid "There is default content to show you how markdown works, and buttons to help you with the syntax !"
