@@ -81,14 +81,19 @@ def add():
     if form.validate_on_submit():
 
         title = form.title.data
+        subtitle = form.subtitle.data
+        editor = form.editor.data
+        publisher = form.publisher.data
         displayed_name = form.displayed_name.data
         style = form.style.data
         language = form.language.data
         rights = form.rights.data
 
         # create an user instance not yet stored in the database
-        book = Book(title=title, user_id=session['user_id'],
+        book = Book(title=title, subtitle=subtitle,
+            user_id=session['user_id'],
             cover=None, creation_date=None, style=style,
+            editor=editor, publisher=publisher,
             language=language, rights=rights,
             displayed_name=displayed_name,modified_at=None)
 
@@ -127,6 +132,9 @@ def edit(book_id):
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
         form.title.data = book.title
+        form.subtitle.data = book.subtitle
+        form.editor.data = book.editor
+        form.publisher.data = book.publisher
         form.displayed_name.data = book.displayed_name
         form.style.data = book.style
         if book.language is None:
@@ -141,6 +149,9 @@ def edit(book_id):
 
         # set the new values
         book.title = form.title.data
+        book.subtitle = form.subtitle.data
+        book.editor = form.editor.data
+        book.publisher = form.publisher.data
         book.style = form.style.data
         book.displayed_name = form.displayed_name.data
         book.modified_at = datetime.utcnow()
@@ -219,12 +230,27 @@ def export(book_id, export_format):
         'w', encoding="utf-8"
     )
 
-    export_file.write('% ' + book.title + '\n')
+    # we write the metadata in YAML according to the pandoc documentation
+    export_file.write('---\n')
+    export_file.write('title:\n')
+    export_file.write('- type: main\n')
+    export_file.write('  text: "' + book.title + '"\n')
+    export_file.write('- type: subtitle\n')
+    export_file.write('  text: "' + book.subtitle + '"\n')
+    export_file.write('creator:\n')
+    export_file.write('- role: author\n')
     if book.displayed_name is None or book.displayed_name.strip() is '':
-        export_file.write('% ' + user.name + '\n\n')
+        export_file.write('  text: "' + user.name + '"\n')
     else:
-        export_file.write('% ' + book.displayed_name + '\n\n')
+        export_file.write('  text: "' + book.displayed_name + '"\n')
+    export_file.write('- role: editor\n')
+    export_file.write('  text: "' + book.editor + '"\n')
+    export_file.write('publisher:  "' + book.publisher + '"\n')
+    export_file.write('rights:  "' + book.rights + '"\n')
+    # those dots mark the end of the yaml metadata block
+    export_file.write('...\n\n')
 
+    # then, we wrote all the content
     for the_part in parts:
         export_file.write(the_part.content + '\n\n')
 
@@ -245,7 +271,8 @@ def export(book_id, export_format):
                 os.path.join(TEMPLATE_DIR, book.style, 'styles.css'),
             '-t', export_format,
             '-o',
-                EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
+                EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '.' + export_format,
             ]
     else:
         # Set up the pandoc command and run it
@@ -259,7 +286,8 @@ def export(book_id, export_format):
                 os.path.join(TEMPLATE_DIR, book.style, 'styles.css'),
             '-t', export_format,
             '-o',
-                EXPORT_DIR + "/" + book_id + "/book-" + book_id + '.' + export_format,
+                EXPORT_DIR + "/" + book_id + "/book-"
+                + book_id + '.' + export_format,
             ]
     subprocess.call(args)
 
@@ -658,11 +686,25 @@ def export_part(part_id, book_id, export_format):
             'w', encoding="utf-8"
         )
 
-        export_file.write('% ' + book.title + '\n')
+        # we write the metadata in YAML according to the pandoc documentation
+        export_file.write('---\n')
+        export_file.write('title:\n')
+        export_file.write('- type: main\n')
+        export_file.write('  text: "' + book.title + '"\n')
+        export_file.write('- type: subtitle\n')
+        export_file.write('  text: "' + book.subtitle + '"\n')
+        export_file.write('creator:\n')
+        export_file.write('- role: author\n')
         if book.displayed_name is None or book.displayed_name.strip() is '':
-            export_file.write('% ' + user.name + '\n\n')
+            export_file.write('  text: "' + user.name + '"\n')
         else:
-            export_file.write('% ' + book.displayed_name + '\n\n')
+            export_file.write('  text: "' + book.displayed_name + '"\n')
+        export_file.write('- role: editor\n')
+        export_file.write('  text: "' + book.editor + '"\n')
+        export_file.write('publisher:  "' + book.publisher + '"\n')
+        export_file.write('rights:  "' + book.rights + '"\n')
+        # those dots mark the end of the yaml metadata block
+        export_file.write('...\n\n')
 
         export_file.write(part.content + '\n\n')
 

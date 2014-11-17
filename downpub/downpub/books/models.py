@@ -40,28 +40,35 @@ class Book(db.Model):
     __tablename__ = 'books'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
+    subtitle = db.Column(db.String(255))
     cover = db.Column(db.String(255))
     displayed_name = db.Column(db.String(255))
     style = db.Column(db.String(255))
     language = db.Column(db.String(5))
     rights = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    editor = db.Column(db.String(255))
+    publisher = db.Column(db.String(255))
     author = db.relationship('User',
         backref=db.backref('books', lazy='dynamic'))
     creation_date = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
 
-    def __init__(self, title, user_id, cover, style, language, rights, displayed_name, creation_date, modified_at):
+    def __init__(self, title, subtitle, user_id, cover, style, language, rights,
+        displayed_name, editor, publisher, creation_date, modified_at):
         """
         Init function of the Book model
         """
         self.title = title
+        self.subtitle = subtitle
         self.user_id = user_id
         self.cover = cover
         self.displayed_name = displayed_name
         self.style = style
         self.language = language
         self.rights = rights
+        self.editor = editor
+        self.publisher = publisher
 
         if creation_date is None:
             creation_date = datetime.utcnow()
