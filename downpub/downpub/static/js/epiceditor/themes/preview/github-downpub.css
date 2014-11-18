@@ -1,10 +1,52 @@
+@font-face{
+    font-family : "Aleo";
+    src : url('./fonts/Aleo-Light.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-style:italic;
+    src : url('./fonts/Aleo-LightItalic.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-weight:bold;
+    src : url('./fonts/Aleo-Regular.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-style:italic;
+    font-weight:bold;
+    src : url('./fonts/Aleo-RegularItalic.otf');
+}
+
+@font-face{
+    font-family : "Lekton";
+    src : url('/static/css/fonts/Lekton-Regular.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    src : url('/static/css/fonts/Lekton-Italic.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-weight:bold;
+    src : url('/static/css/fonts/Lekton-Bold.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    font-weight:bold;
+    src : url('/static/css/fonts/Lekton-BoldItalic.ttf');
+}
+
 html { padding:0 10px; }
 
 body {
   margin:0;
   padding:0;
   background:#fff;
-  font-family:"Esteban", "Georgia", "Times New Roman", serif;
+  font-family:"Aleo", "Georgia", "Times New Roman", serif;
 }
 
 #epiceditor-wrapper{
@@ -14,7 +56,7 @@ body {
 #epiceditor-preview, #epiceditor-preview *{
 	padding-top:10px;
 	padding-bottom:10px;
-	font-family:"Esteban", "Georgia", "Times New Roman", serif;
+	font-family:"Aleo", "Georgia", "Times New Roman", serif;
 	font-size:13px;
 	line-height:1.6;
 }

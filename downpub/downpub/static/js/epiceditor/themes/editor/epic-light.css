@@ -1,9 +1,51 @@
+@font-face{
+    font-family : "Aleo";
+    src : url('/static/css/fonts/Aleo-Regular.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-style:italic;
+    src : url('/static/css/fonts/Aleo-Italic.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-weight:bold;
+    src : url('/static/css/fonts/Aleo-Bold.otf');
+}
+@font-face{
+    font-family : "Aleo";
+    font-style:italic;
+    font-weight:bold;
+    src : url('/static/css/fonts/Aleo-BoldItalic.otf');
+}
+
+@font-face{
+    font-family : "Lekton";
+    src : url('/static/css/fonts/Lekton-Regular.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    src : url('/static/css/fonts/Lekton-Italic.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-weight:bold;
+    src : url('/static/css/fonts/Lekton-Bold.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    font-weight:bold;
+    src : url('/static/css/fonts/Lekton-BoldItalic.ttf');
+}
+
 html { padding:10px; }
 
 body {
   border:0;
   background:#fcfcfc;
-  font-family:monospace;
+  font-family:'Lekton',monospace;
   font-size:14px;
   padding:10px;
   line-height:1.35em;

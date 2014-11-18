@@ -6,32 +6,45 @@
 /* ----------------------------- */
 
 @font-face{
-    font-family : "Esteban";
-    src : url('./fonts/Esteban-Regular.ttf');
+    font-family : "Aleo";
+    src : url('./fonts/Aleo-Light.otf');
 }
-
 @font-face{
-    font-family : "Roboto";
-    src : url('./fonts/Roboto-Light.ttf');
-}
-
-@font-face{
-    font-family : "Roboto";
+    font-family : "Aleo";
     font-style:italic;
-    src : url('./fonts/Roboto-LightItalic.ttf');
+    src : url('./fonts/Aleo-LightItalic.otf');
 }
-
 @font-face{
-    font-family : "Roboto";
+    font-family : "Aleo";
     font-weight:bold;
-    src : url('./fonts/Roboto-Medium.ttf');
+    src : url('./fonts/Aleo-Regular.otf');
 }
-
 @font-face{
-    font-family : "Roboto";
+    font-family : "Aleo";
     font-style:italic;
     font-weight:bold;
-    src : url('./fonts/Roboto-MediumItalic.ttf');
+    src : url('./fonts/Aleo-RegularItalic.otf');
+}
+
+@font-face{
+    font-family : "Lekton";
+    src : url('./fonts/Lekton-Regular.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    src : url('./fonts/Lekton-Italic.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-weight:bold;
+    src : url('./fonts/Lekton-Bold.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    font-weight:bold;
+    src : url('./fonts/Lekton-BoldItalic.ttf');
 }
 
 /*
@@ -43,7 +56,7 @@ html {
 }
 
 body {
-    font-family:"Roboto", "Times New Roman", serif;
+    font-family:"Aleo", "Times New Roman", serif;
     background: #ddd;
 }
 
@@ -91,7 +104,7 @@ p {
 }
 
 code, pre, blockquote {
-    font-family:"Lucida Console", Monaco, monospace;
+    font-family:"Lekton";
     font-size:0.95em;
     padding:0.2em;
     margin:0.5em;
@@ -155,7 +168,7 @@ code, pre, blockquote {
 
 #navigation *{
     background: #333;
-    font-family:"Roboto", "Georgia", "Times New Roman", serif;
+    font-family:"Aleo", "Georgia", "Times New Roman", serif;
     margin: 0;
     padding: 0.1em;
     list-style-type: none;
@@ -255,7 +268,7 @@ code, pre, blockquote {
 div#epiceditor-preview, div#epiceditor-preview * {
     margin:0;
     padding:0;
-    font-family:"Esteban", "Georgia", "Times New Roman", serif;
+    font-family:"Aleo", "Georgia", "Times New Roman", serif;
     color:black;
     font-style:normal;
     font-weight:normal;
@@ -326,7 +339,7 @@ div#epiceditor-preview pre, div#epiceditor-preview blockquote {
     border:1px solid gray;
     background:#ddd;
     line-height:1.1em;
-    font-family:"Courier New", Courier, monospace;
+    font-family:"Lekton", Courier, monospace;
 }
 
 div#epiceditor-preview code {
@@ -335,7 +348,7 @@ div#epiceditor-preview code {
     padding:0.5em;
     background:#ddd;
     line-height:1.1em;
-    font-family:"Courier New", Courier, monospace;
+    font-family:"Lekton", Courier, monospace;
 }
 
 div#epiceditor-preview th {
