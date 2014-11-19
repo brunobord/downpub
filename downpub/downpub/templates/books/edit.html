@@ -4,7 +4,6 @@
   <div class="center w600p">
       <form method="POST" action="{{ url_for('books.edit', book_id=book.id) }}" enctype="multipart/form-data" class="form">
         {{ form.hidden_tag() }}
-        {{ render_field(form.title, class="input text w70") }}
         {{ render_field(form.subtitle, class="input text w70") }}
         {{ render_field(form.displayed_name, class="input text w70") }}
         {{ render_field(form.style, class="input text w70") }}

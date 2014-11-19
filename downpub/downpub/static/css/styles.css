@@ -23,7 +23,7 @@
     font-family : "Aleo";
     font-style:italic;
     font-weight:bold;
-    src : url('./fonts/Aleo-RegularItalic.otf');
+    src : url('./fonts/Aleo-Italic.otf');
 }
 
 @font-face{
@@ -105,7 +105,7 @@ p {
 
 code, pre, blockquote {
     font-family:"Lekton";
-    font-size:0.95em;
+    font-size:0.9em;
     padding:0.2em;
     margin:0.5em;
 }
@@ -265,7 +265,7 @@ code, pre, blockquote {
     width:99%;
 }
 
-div#epiceditor-preview, div#epiceditor-preview * {
+div.uk-htmleditor-preview * {
     margin:0;
     padding:0;
     font-family:"Aleo", "Georgia", "Times New Roman", serif;
@@ -274,7 +274,7 @@ div#epiceditor-preview, div#epiceditor-preview * {
     font-weight:normal;
 }
 
-div#epiceditor-preview h1 {
+div.uk-htmleditor-preview h1 {
     margin:0.1em;
     padding:0.3em 0;
     padding-top:0;
@@ -282,21 +282,21 @@ div#epiceditor-preview h1 {
     font-weight:bold;
 }
 
-div#epiceditor-preview h2 {
+div.uk-htmleditor-preview h2 {
     margin:0.2em;
     padding:0.3em 0;
     font-size:x-large;
     font-weight:bold;
 }
 
-div#epiceditor-preview h3 {
+div.uk-htmleditor-preview h3 {
     margin:0.2em;
     padding:0.3em 0;
     font-size:large;
     font-weight:bold;
 }
 
-div#epiceditor-preview h4 {
+div.uk-htmleditor-preview h4 {
     margin:0.2em;
     padding:0.3em 0;
     font-size:medium;
@@ -304,60 +304,65 @@ div#epiceditor-preview h4 {
     font-style:italic;
 }
 
-div#epiceditor-preview p {
+div.uk-htmleditor-preview p {
     margin:0.3em;
     padding:0.3em 0;
     font-size:normal;
 }
 
-div#epiceditor-preview strong {
+div.uk-htmleditor-preview strong {
     font-size:normal;
     font-weight:bold;
 }
 
-div#epiceditor-preview em {
+div.uk-htmleditor-preview em {
     font-size:normal;
     font-style:italic;
 }
 
-div#epiceditor-preview strong em{
+div.uk-htmleditor-preview strong em{
     font-size:normal;
     font-weight:bold;
     font-style:italic;
 }
 
-div#epiceditor-preview ul, div#epiceditor-preview ol {
+div.uk-htmleditor-preview ul, div.uk-htmleditor-preview ol {
     margin:0.3em 1.1em;
     padding:0.1em 1.1em;
     font-size:normal;
 }
 
-div#epiceditor-preview pre, div#epiceditor-preview blockquote {
+div.uk-htmleditor-preview pre, div.uk-htmleditor-preview blockquote {
     margin:0.4em 1em;
     padding:0.5em;
     font-size:normal;
     border:1px solid gray;
     background:#ddd;
     line-height:1.1em;
-    font-family:"Lekton", Courier, monospace;
+    font-family:"Lekton", monospace;
 }
 
-div#epiceditor-preview code {
+div.uk-htmleditor-preview code {
     display:inline-block;
     margin:0.4em 1em;
     padding:0.5em;
     background:#ddd;
     line-height:1.1em;
-    font-family:"Lekton", Courier, monospace;
+    font-family:"Lekton", monospace;
 }
 
-div#epiceditor-preview th {
+div.uk-htmleditor-preview th {
     font-weight:bold;
 }
 
-div#epiceditor-preview
+div.uk-htmleditor-preview
 {
     padding:1em;
-    min-height:350px;
-    overflow:auto;
+    //min-height:450px;
+}
+
+.CodeMirror *,.CodeMirror-code *
+{
+    font-family: "Lekton", monospace;
+    font-size:1em;
 }

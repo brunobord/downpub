@@ -248,7 +248,7 @@ def export(book_id, export_format):
     export_file.write('publisher:  "' + book.publisher + '"\n')
     export_file.write('rights:  "' + book.rights + '"\n')
     # those dots mark the end of the yaml metadata block
-    export_file.write('...\n\n')
+    export_file.write('...\n\n\n')
 
     # then, we wrote all the content
     for the_part in parts:
@@ -524,6 +524,9 @@ def add_part(book_id):
     site_title = gettext('Add a part to your book %(book_title)s',
         book_title=book_title)
 
+    # we initialize the default content
+    part_content = DEFAULT_PART_CONTENT
+
     if form.validate_on_submit():
         # create an user instance not yet stored in the database
         # we init order with the max order for this book plus one
@@ -551,7 +554,7 @@ def add_part(book_id):
 
     return render_template("books/add_part.html",
         form=form, session=session, book=book, user=g.user,
-        part=None, site_title=site_title)
+        part=None, site_title=site_title, part_content=part_content)
 
 
 @mod.route('/<book_id>/edit_part/<part_id>/', methods=['GET', 'POST'])
@@ -604,7 +607,7 @@ def edit_part(book_id, part_id):
 
     return render_template("books/edit_part.html",
         form=form, part=part, book=book, session=session,
-        user=g.user, site_title=site_title)
+        user=g.user, site_title=site_title, part_content=part.content)
 
 
 @mod.route('/<book_id>/del_part/<part_id>/', methods=['GET', 'POST'])
@@ -704,7 +707,7 @@ def export_part(part_id, book_id, export_format):
         export_file.write('publisher:  "' + book.publisher + '"\n')
         export_file.write('rights:  "' + book.rights + '"\n')
         # those dots mark the end of the yaml metadata block
-        export_file.write('...\n\n')
+        export_file.write('...\n\n\n')
 
         export_file.write(part.content + '\n\n')
 

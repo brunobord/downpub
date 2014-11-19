@@ -1,28 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
+
+    {% block script %}
+    <!-- Jquery and UIkit base -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit/js/uikit.min.js') }}"></script>
+
+    <!-- Codemirror and marked dependencies -->
+    <script src="{{ url_for('static', filename='js/codemirror/lib/codemirror.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/codemirror/mode/markdown/markdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/codemirror/addon/mode/overlay.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/codemirror/mode/xml/xml.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/codemirror/mode/gfm/gfm.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/marked.js') }}"></script>
+
+    <!-- HTML editor JavaScript -->
+    <script src="{{ url_for('static', filename='js/uikit/js/components/htmleditor.js') }}"></script>
+    {% endblock %}
+
     {% from "forms/macros.html" import render_field %}
     <form method="POST" action="{{ url_for('books.add_part', book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}
-        {{ render_field(form.title, class="input text line w70") }}
+        {{ render_field(form.title, class="input text w70") }}
         {{ render_field(form.content, class="input text invisible") }}
-        <nav id="toolbar" class="pas line">
-            <button type="button" data-command="h1" title="{{ _('Make selection Heading 1') }}">{{ _("Heading 1") }}</button>
-            <button type="button" data-command="h2" title="{{ _('Make selection Heading 2') }}">{{ _("Heading 2") }}</button>
-            <button type="button" data-command="h3" title="{{ _('Make selection Heading 3') }}">{{ _("Heading 3") }}</button>
-            <button type="button" data-command="h4" title="{{ _('Make selection Heading 4') }}">{{ _("Heading 4") }}</button>
-            <button type="button" data-command="bold" title="{{ _('Make selection bold') }}">{{ _("Bold") }}</button>
-            <button type="button" data-command="italic" title="{{ _('Make selection italic') }}">{{ _("Italic") }}</button>
-            <button type="button" data-command="code" title="{{ _('Make selection inline code block') }}">{{ _("Code") }}</button>
-            <button type="button" data-command="list" title="{{ _('Make selection a list') }}">{{ _("List") }}</button>
-            <button type="button" data-command="olist" title="{{ _('Make selection a ordered list') }}">{{ _("Ordered List") }}</button>
-        </nav>
-        <div id="epiceditor-container" class="autogrid2">
-            <div id="epiceditor"></div>
-            <div id="epiceditor-preview"></div>
-        </div>
+        <textarea data-uk-htmleditor='{markdown:true}'>{{ part_content }}</textarea>
         <input type="submit" value="{{ _('Save') }}" class="button green">
     </form>
-    <script src="{{ url_for('static', filename='js') }}/commands.js"></script>
-    <script src="{{ url_for('static', filename='js') }}/toolbar.js"></script>
-    {% include "editor.html" %}
 {% endblock %}
