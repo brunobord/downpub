@@ -75,11 +75,13 @@
 
 html {
     background: #ddd;
+    height: 100%;
 }
 
 body {
-    font-family:"Andada", "Times New Roman", serif;
     background: #ddd;
+    font-family:"Andada", "Times New Roman", serif;
+    min-height:100%;
 }
 
 a {
@@ -164,10 +166,9 @@ code, pre, blockquote {
 
 #main {
     background: #ddd;
+    padding:0.8em 0;
+    padding-bottom:5em;
     margin:0;
-    padding:0;
-    margin-bottom:50px;
-    margin-top:10px;
     color: black;
 }
 
@@ -214,17 +215,17 @@ code, pre, blockquote {
 }
 
 #footer {
-    background: #333;
-    color: white;
-    position:fixed;
+    position:absolute;
     bottom:0;
-    z-index:1000;
-    margin-top:1em;
+    border-top: 1px solid #333;
+    background: #333;
+    color:white;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
 }
 
 #footer a {
-    color:orange;
+    color:chocolate;
+    text-decoration:underline;
 }
 
 #footer a:hover {
