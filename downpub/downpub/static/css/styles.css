@@ -62,12 +62,7 @@
     font-weight:bold;
     src : url('./fonts/Lekton-Bold.ttf');
 }
-@font-face{
-    font-family : "Lekton";
-    font-style:italic;
-    font-weight:bold;
-    src : url('./fonts/Lekton-Bold.ttf');
-}
+
 
 /*
     Style des éléments HTML de base
