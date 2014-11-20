@@ -85,6 +85,7 @@ a {
 }
 
 a:hover {
+    color:chocolate;
     font-weight:bold;
 }
 
@@ -250,19 +251,42 @@ code, pre, blockquote {
 .form {
     background:#eee;
     border:1px solid darkgray;
-    padding:0.4em;
+    padding:0.6em;
+}
+
+label {
+    width:100%;
+    padding: .2em 0;
+    margin: .3em 0;
+}
+
+select {
+    padding: .2em 0;
+    margin: .3em 0;
+    border: 1px solid #ccc;
+    background:#ddd;
+    width:100%;
+}
+
+input[type="text"] {
+    padding: .1em .3em;
+    margin: .3em 0;
+    border: 1px solid darkgray;
+    background:#f2f2f2;
+    width:100%;
 }
 
 input[type="submit"] {
     padding: .5em 1em;
-    margin: .5em auto;
-    border: 1px solid #ccc;
+    margin: .3em 0;
+    border: 1px solid darkgray;
+    background:#ccc;
     width:100%;
 }
 
 input[type="submit"]:hover {
-    border: 1px solid darkgray;
-    background:#ccc;
+    border: 1px solid #888;
+    background:#ddd;
 }
 
 
