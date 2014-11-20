@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
   {% from "forms/macros.html" import render_field %}
-  <form method="POST" action="{{ url_for('books.add') }}" enctype="multipart/form-data" class="form">
-    {{ form.hidden_tag() }}
-    {{ render_field(form.title, class="input text w70") }}
-    {{ render_field(form.subtitle, class="input text w70") }}
-    {{ render_field(form.displayed_name, class="input text w70") }}
-    {{ render_field(form.style, class="input text w70") }}
-    {{ render_field(form.language, class="input text w70") }}
-    {{ render_field(form.rights, class="input text w70") }}
-    {{ render_field(form.editor, class="input text w70") }}
-    {{ render_field(form.publisher, class="input text w70") }}
-    <input type="submit" value="{{ _('Save') }}" class="button green">
-  </form>
+  <div class="center w600p">
+      <form method="POST" action="{{ url_for('books.add') }}" enctype="multipart/form-data" class="form">
+        {{ form.hidden_tag() }}
+        {{ render_field(form.title, class="input text w70") }}
+        {{ render_field(form.subtitle, class="input text w70") }}
+        {{ render_field(form.displayed_name, class="input text w70") }}
+        {{ render_field(form.style, class="input text w70") }}
+        {{ render_field(form.language, class="input text w70") }}
+        {{ render_field(form.rights, class="input text w70") }}
+        {{ render_field(form.editor, class="input text w70") }}
+        {{ render_field(form.publisher, class="input text w70") }}
+        <input type="submit" value="{{ _('Save') }}" class="button green">
+      </form>
+  </div>
 {% endblock %}

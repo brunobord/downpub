@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2014-11-20 09:50+0100\n"
-"PO-Revision-Date: 2014-11-20 09:50+0100\n"
+"PO-Revision-Date: 2014-11-20 14:09+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -42,9 +42,8 @@ msgid "Book title"
 msgstr "Titre du livre"
 
 #: downpub/books/forms.py:19 downpub/books/forms.py:48
-#, fuzzy
 msgid "Book subtitle"
-msgstr "Titre du livre"
+msgstr "Sous-titre du livre"
 
 #: downpub/books/forms.py:21 downpub/books/forms.py:50
 msgid "Displayed author name"

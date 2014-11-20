@@ -73,11 +73,7 @@ def add():
 
     if not form.validate_on_submit():
         # form initializing when we first show the edit page
-        if book.language is None:
-            form.language.data = get_locale()
-        else:
-            form.language.data = book.language
-        form.rights.data = book.rights
+        form.language.data = get_locale()
 
     if form.validate_on_submit():
 
