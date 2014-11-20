@@ -80,6 +80,7 @@ body {
 }
 
 a {
+    font-family:"Andada", "Times New Roman", serif;
     color:chocolate;
 }
 
@@ -88,6 +89,7 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
+    font-family:"Andada", "Times New Roman", serif;
     margin:0.4em;
     color:chocolate;
 }
@@ -134,6 +136,7 @@ code, pre, blockquote {
 */
 
 .message {
+    font-family:"Andada", "Times New Roman", serif;
     display:block;
     background: #aaa;
     padding:0.4em;
@@ -143,6 +146,7 @@ code, pre, blockquote {
 }
 
 .error {
+    font-family:"Andada", "Times New Roman", serif;
     display:block;
     padding:0.4em;
     margin:0.2em;
@@ -150,6 +154,7 @@ code, pre, blockquote {
 }
 
 .no_error {
+    font-family:"Andada", "Times New Roman", serif;
     display:inline-block;
     padding: 0.5em;
 }
@@ -160,6 +165,7 @@ code, pre, blockquote {
 
 
 #main {
+    font-family:"Andada", "Times New Roman", serif;
     background: #ddd;
     padding:0.8em 0;
     padding-bottom:5em;
@@ -210,7 +216,7 @@ code, pre, blockquote {
 }
 
 #footer {
-    position:absolute;
+    position:fixed;
     bottom:0;
     border-top: 1px solid #333;
     background: #333;
@@ -244,9 +250,21 @@ code, pre, blockquote {
 .form {
     background:#eee;
     border:1px solid darkgray;
-    margin-bottom:1em;
     padding:0.4em;
 }
+
+input[type="submit"] {
+    padding: .5em 1em;
+    margin: .5em auto;
+    border: 1px solid #ccc;
+    width:100%;
+}
+
+input[type="submit"]:hover {
+    border: 1px solid darkgray;
+    background:#ccc;
+}
+
 
 .form.label {}
 

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="line w60 center bookelement">
+<div class="w90 center form">
     <h3 class="col w20 txtleft">{{ book.title }}</h3>
-    <div class="col w30 txtcenter cover">
+    <div class="col w20 txtcenter cover">
         {% if book.cover %}
             <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
             <br />
@@ -15,6 +15,15 @@
             >{{ _("Add a cover for your book") }}
             </a>
         {% endif %}
+    </div>
+    <div class="col w20 bookactions">
+        <ul>
+            <li class="row">
+                <a class="icon icon-bracket2" href="{{ url_for('books.edit', book_id=book.id) }}"
+                >{{ _("Edit your book") }}
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="col w20 bookexports">
         <ul>
@@ -50,7 +59,7 @@
             </li>
         </ul>
     </div>
-    <div class="col w20 booksinfo">
+    <div class="col w30 booksinfo">
         <ul>
             <li class="row">
                 <em class="icon icon-bracket2">{{ _("Created the ") }}

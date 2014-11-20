@@ -24,6 +24,6 @@
         {{ render_field(form.title, class="input text w70") }}
         {{ render_field(form.content, class="input text invisible") }}
         <textarea name="content" id="content" data-uk-htmleditor='{markdown:true}'>{{ part_content }}</textarea>
-        <input type="submit" value="{{ _('Save') }}" class="button green">
+        <input type="submit" class="center txtcenter" value="{{ _('Save') }}" class="button green">
     </form>
 {% endblock %}
