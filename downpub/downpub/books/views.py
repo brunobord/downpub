@@ -25,6 +25,7 @@ from config import *
 
 mod = Blueprint('books', __name__, url_prefix='/books')
 
+
 def generate_xml_metadata(book_id):
     pass
 
@@ -524,7 +525,36 @@ def add_part(book_id):
     site_title = gettext('Add a part to your book %(book_title)s',
         book_title=book_title)
 
-    # we initialize the default content
+    # we define in a constant the default content for parts
+    DEFAULT_PART_CONTENT = gettext("""# Chapter 1 - Introducing Downpub
+
+This is a demo text which contains _examples_ on __how__ to use ___Markdown___ syntax to format your book.
+
+## SubChapter 1 - Text Formatting, almost WYSIWYG
+
+In this section, we'll have a look at making text **bold**, *italic* and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons.
+
+1. Item1
+1. Item2
+1. Item3
+
+![Even my cat can be in your epub !](https://farm3.staticflickr.com/2756/4290352584_9d92fedfe2_z_d.jpg)
+
+
+- Item1
+- Item2
+- Item3
+
+### Example source code
+
+```
+print('Holy code of doom and destruction')
+```
+
+
+Take a peek at those buttons and see how they work !
+
+Don't hesitate to export the book in epub or watch the preview to see what you wrote looks like.""")
     part_content = DEFAULT_PART_CONTENT
 
     if form.validate_on_submit():

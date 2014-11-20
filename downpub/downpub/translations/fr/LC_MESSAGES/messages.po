@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-13 14:01+0100\n"
-"PO-Revision-Date: 2014-11-16 22:29+0100\n"
+"POT-Creation-Date: 2014-11-20 09:50+0100\n"
+"PO-Revision-Date: 2014-11-20 09:50+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -36,167 +36,238 @@ msgstr "À propos"
 msgid "You need to be signed in for this page."
 msgstr "Vous devez être connecté pour consulter cette page."
 
-#: downpub/books/forms.py:17 downpub/books/forms.py:40
+#: downpub/books/forms.py:17 downpub/books/forms.py:46
 #, fuzzy
 msgid "Book title"
 msgstr "Titre du livre"
 
-#: downpub/books/forms.py:19 downpub/books/forms.py:42
+#: downpub/books/forms.py:19 downpub/books/forms.py:48
+#, fuzzy
+msgid "Book subtitle"
+msgstr "Titre du livre"
+
+#: downpub/books/forms.py:21 downpub/books/forms.py:50
 msgid "Displayed author name"
 msgstr "Nom d'auteur affiché"
 
-#: downpub/books/forms.py:22 downpub/books/forms.py:45
+#: downpub/books/forms.py:23 downpub/books/forms.py:52
+msgid "Book editor"
+msgstr "Editeur du livre"
+
+#: downpub/books/forms.py:25 downpub/books/forms.py:54
+msgid "Book publisher"
+msgstr "Distributeur du livre"
+
+#: downpub/books/forms.py:28 downpub/books/forms.py:57
 msgid "Select your css template !"
 msgstr "Choisissez votre gabarit css !"
 
-#: downpub/books/forms.py:26 downpub/books/forms.py:49
+#: downpub/books/forms.py:32 downpub/books/forms.py:61
 msgid "Select your language !"
 msgstr "Sélectionnez votre langue !"
 
-#: downpub/books/forms.py:29 downpub/books/forms.py:52
+#: downpub/books/forms.py:35 downpub/books/forms.py:64
 msgid "Displayed Copyright"
 msgstr "Copyright affiché"
 
-#: downpub/books/forms.py:34 downpub/books/forms.py:54
+#: downpub/books/forms.py:40 downpub/books/forms.py:66
 #, fuzzy
 msgid "Image File"
 msgstr "Fichier image"
 
-#: downpub/books/forms.py:36 downpub/books/forms.py:55
+#: downpub/books/forms.py:42 downpub/books/forms.py:67
 msgid "Images only!"
 msgstr "Images uniquement !"
 
-#: downpub/books/forms.py:59 downpub/books/forms.py:66
+#: downpub/books/forms.py:71 downpub/books/forms.py:77
 #, fuzzy
 msgid "Part title"
 msgstr "Titre de la partie"
 
-#: downpub/books/forms.py:60
+#: downpub/books/forms.py:72
 #, fuzzy
 msgid "Title for that part is required."
 msgstr "Un titre est requis pour cette partie."
 
-#: downpub/books/forms.py:61 downpub/books/forms.py:67
+#: downpub/books/forms.py:73 downpub/books/forms.py:78
 #, fuzzy
 msgid "Content"
 msgstr "Contenu"
 
-#: downpub/books/forms.py:62 downpub/books/forms.py:68
+#: downpub/books/views.py:29
 #, fuzzy
-msgid "Order"
-msgstr "Ordre"
+msgid ""
+"# Chapter 1 - Introducing Downpub\n"
+"\n"
+"This is a demo text which contains _examples_ on __how__ to use ___Markdown___ syntax to format your book.\n"
+"\n"
+"## SubChapter 1 - Text Formatting, almost WYSIWYG\n"
+"\n"
+"In this section, we'll have a look at making text **bold**, *italic* and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons.\n"
+"\n"
+"1. Item1\n"
+"1. Item2\n"
+"1. Item3\n"
+"\n"
+"![Even my cat can be in your epub !](https://farm3.staticflickr.com/2756/4290352584_9d92fedfe2_z_d.jpg)\n"
+"\n"
+"\n"
+"- Item1\n"
+"- Item2\n"
+"- Item3\n"
+"\n"
+"### Example source code\n"
+"\n"
+"```\n"
+"print('Holy code of doom and destruction')\n"
+"```\n"
+"\n"
+"\n"
+"Take a peek at those buttons and see how they work !\n"
+"\n"
+"Don't hesitate to export the book in epub or watch the preview to see what you wrote looks like."
+msgstr ""
+"# Chapitre 1 - Présentation de Downpub\n"
+"\n"
+"Ceci est un texte de démonstration contenant des _exemples_ sur __la façon__ d'utiliser la syntaxe ___Markdown___ pour formater votre livre.\n"
+"\n"
+"## SousChapitre 1 - Formatage de texte, presque WYSIWYG\n"
+"\n"
+"Dans cette partie, nous allons voir comment mettre le texte en **gras**, *italique*, etc... Si vous n'avez pas encore remarqué, il y a une barre d'outils au dessus de l'éditeur. Essayez de sélectionner du texte dans cet éditeur et d'appuyer sur n'importe lequel de ces boutons.\n"
+"\n"
+"1. Objet1\n"
+"1. Objet2\n"
+"1. Objet3\n"
+"\n"
+"![Même mon chat peut être dans vos epub !](https://farm3.staticflickr.com/2756/4290352584_9d92fedfe2_z_d.jpg)\n"
+"\n"
+"\n"
+"- Objet1\n"
+"- Objet2\n"
+"- Objet3\n"
+"\n"
+"### Exemple de code source\n"
+"\n"
+"```\n"
+"print('Holy code of doom and destruction')\n"
+"```\n"
+"\n"
+"\n"
+"Jetez un coup d'oeil aux boutons et regardez comment ils fonctionnent !\n"
+"\n"
+"N'hésitez pas à exporter le livre en epub ou à regarder la prévisualisation pour voir à quoi ressemble ce que vous avez écrit."
 
-#: downpub/books/views.py:54
+#: downpub/books/views.py:87
 #, fuzzy, python-format
 msgid "Your Books, %(user_name)s !"
 msgstr "Vos livres, %(user_name)s !"
 
-#: downpub/books/views.py:69
+#: downpub/books/views.py:102
 #, fuzzy
 msgid "Add a book"
 msgstr "Ajoutez un livre"
 
-#: downpub/books/views.py:100
+#: downpub/books/views.py:138
 #, fuzzy
 msgid "That book has been created !"
 msgstr "Ce livre a été créé !"
 
-#: downpub/books/views.py:120 downpub/books/views.py:175
-#: downpub/books/views.py:201 downpub/books/views.py:287
-#: downpub/books/views.py:371 downpub/books/views.py:405
-#: downpub/books/views.py:428 downpub/books/views.py:492
-#: downpub/books/views.py:533 downpub/books/views.py:589
-#: downpub/books/views.py:622
+#: downpub/books/views.py:158 downpub/books/views.py:219
+#: downpub/books/views.py:245 downpub/books/views.py:348
+#: downpub/books/views.py:432 downpub/books/views.py:466
+#: downpub/books/views.py:489 downpub/books/views.py:553
+#: downpub/books/views.py:605 downpub/books/views.py:659
+#: downpub/books/views.py:692
 #, fuzzy
 msgid "This isn't yours !"
 msgstr "Ceci n'est pas à vous !"
 
-#: downpub/books/views.py:124
+#: downpub/books/views.py:162
 #, fuzzy, python-format
 msgid "Edit the book %(book_title)s"
 msgstr "Éditez le livre %(book_title)s"
 
-#: downpub/books/views.py:154
+#: downpub/books/views.py:198
 #, fuzzy
 msgid "That book has been edited !"
 msgstr "Ce livre a été édité !"
 
-#: downpub/books/views.py:184
+#: downpub/books/views.py:228
 #, fuzzy
 msgid "That book has been deleted !"
 msgstr "Ce livre a été effacé !"
 
-#: downpub/books/views.py:292
+#: downpub/books/views.py:353
 #, fuzzy, python-format
 msgid "Upload a cover for the book %(book_title)s"
 msgstr "Envoyer une couverture pour le livre %(book_title)s"
 
-#: downpub/books/views.py:324
+#: downpub/books/views.py:385
 #, fuzzy
 msgid "That book's cover has been added !"
 msgstr "La couverture de ce livre a été ajoutée !"
 
-#: downpub/books/views.py:333
+#: downpub/books/views.py:394
 #, fuzzy, python-format
 msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
 msgstr "La taille de l'image est trop grandes, la taille maximale autorisée est de %(size)s MB"
 
-#: downpub/books/views.py:341
+#: downpub/books/views.py:402
 #, fuzzy
 msgid "That filetype is not allowed !"
 msgstr "Ce type de fichier n'est pas autorisé !"
 
-#: downpub/books/views.py:352
+#: downpub/books/views.py:413
 #, fuzzy
 msgid "That book already has a cover, delete it first to upload a new one !"
 msgstr "Ce livre a déjà une couverture, effacez-la d'abord pour en envoyer une nouvelle !"
 
-#: downpub/books/views.py:385
+#: downpub/books/views.py:446
 #, fuzzy
 msgid "That book's cover has been deleted !"
 msgstr "La couverture de ce livre a été effacée !"
 
-#: downpub/books/views.py:391
+#: downpub/books/views.py:452
 #, fuzzy
 msgid "That book has no cover already !"
 msgstr "Ce livre n'a déjà pas de couverture !"
 
-#: downpub/books/views.py:431
+#: downpub/books/views.py:492
 #, fuzzy, python-format
 msgid "Parts of your book %(book_title)s"
 msgstr "Parties de votre livre %(book_title)s"
 
-#: downpub/books/views.py:468
+#: downpub/books/views.py:529
 #, python-format
 msgid "Order of the part %(part_title)s of your book %(book_title)s has been updated !"
 msgstr "L'ordre de la partie %(part_title)s de votre livre %(book_title)s a été mis à jour !"
 
-#: downpub/books/views.py:475
+#: downpub/books/views.py:536
 #, python-format
 msgid "Order of the part %(part_title)s of your book %(book_title)s has no need to be updated !"
 msgstr "L'ordre de la partie %(part_title)s de votre livre %(book_title)s n'a pas besoin d'être mis à jour !"
 
-#: downpub/books/views.py:496
+#: downpub/books/views.py:557
 #, fuzzy, python-format
 msgid "Add a part to your book %(book_title)s"
 msgstr "Ajoutez une partie à votre livre %(book_title)s"
 
-#: downpub/books/views.py:508
+#: downpub/books/views.py:580
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been added !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été ajoutée !"
 
-#: downpub/books/views.py:539
+#: downpub/books/views.py:611
 #, fuzzy, python-format
 msgid "Edit the part %(part_title)s of your book %(book_title)s"
 msgstr "Éditez la partie %(part_title)s de votre livre %(book_title)s"
 
-#: downpub/books/views.py:563
+#: downpub/books/views.py:633
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été éditée !"
 
-#: downpub/books/views.py:599
+#: downpub/books/views.py:669
 #, fuzzy, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
 msgstr "La partie %(part_title)s de votre livre %(book_title)s a été effacée !"
@@ -331,75 +402,6 @@ msgstr "Fin"
 #: downpub/templates/about.html:52
 msgid "Voilà."
 msgstr "Voilà."
-
-#: downpub/templates/editor.html:6
-msgid "# Chapter 1 - Introducing Downpub"
-msgstr "# Chapitre 1 - Présentation de Downpub"
-
-#: downpub/templates/editor.html:8
-msgid "This is a demo text which contains _examples_ on __how__ to use ___Markdown___ syntax to format your book."
-msgstr "Ceci est un texte de démonstration contenant des _exemples_ __d'utilisation__ de la syntaxe ___Markdown___ pour mettre en forme votre livre."
-
-#: downpub/templates/editor.html:10
-msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
-msgstr "## Sous-chapitre 1 - Formatage du texte, presque WYSIWYG"
-
-#: downpub/templates/editor.html:12
-msgid "In this section, we'll have a look at making text **bold**, *italic* and etc. If you haven't realised by now, there is a very simple toolbar presented above the editor. Try selecting text in this editor and press any one of those buttons."
-msgstr "Dans cette partie, nous allons voir comment rendre le text **gras**, *italique* etc... Si vous n'avez pas encore réalisé, il y a une barre d'outils au dessus de cette zone d'édition. Essayez de sélectionner du texte ici puis appuyez sur un de ces boutons."
-
-#: downpub/templates/editor.html:14
-msgid "1. Item1"
-msgstr "1. Objet1"
-
-#: downpub/templates/editor.html:15
-msgid "1. Item2"
-msgstr "1. Objet2"
-
-#: downpub/templates/editor.html:16
-msgid "1. Item3"
-msgstr "1. Objet3"
-
-#: downpub/templates/editor.html:18
-msgid "Even my cat can be in your epub !"
-msgstr "Même mon chat peut être dans vos epubs !"
-
-#: downpub/templates/editor.html:20
-msgid "- Item1"
-msgstr "- Objet1"
-
-#: downpub/templates/editor.html:21
-msgid "- Item2"
-msgstr "- Objet2"
-
-#: downpub/templates/editor.html:22
-msgid "- Item3"
-msgstr "- Objet3"
-
-#: downpub/templates/editor.html:24
-msgid "### Example source code"
-msgstr "### Code source d'exemple"
-
-#: downpub/templates/editor.html:31
-#, fuzzy
-msgid "Take a peek at those buttons and see how they work !"
-msgstr "Jetez un coup d'oeil à ces boutons et voyez comment ils fonctionnent !"
-
-#: downpub/templates/editor.html:33
-msgid "Don't hesitate to export the book in epub or watch the preview to see what you wrote looks like."
-msgstr "N'hésitez pas à exporter le livre en epub ou à regarder la prévisualisation pour voir à quoi vos écrits ressemblent."
-
-#: downpub/templates/editor.html:70
-msgid "Toggle Preview Mode"
-msgstr "Passer en mode Prévisualisation"
-
-#: downpub/templates/editor.html:71
-msgid "Toggle Edit Mode"
-msgstr "Passer en mode Édition"
-
-#: downpub/templates/editor.html:72
-msgid "Enter Fullscreen"
-msgstr "Entrez en mode Plein Écran"
 
 #: downpub/templates/footer.html:3
 #, fuzzy
@@ -598,144 +600,54 @@ msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"
 
-#: downpub/templates/books/add.html:11 downpub/templates/books/add_part.html:24
-#: downpub/templates/books/edit.html:12
-#: downpub/templates/books/edit_part.html:49
+#: downpub/templates/books/add.html:14 downpub/templates/books/add_part.html:27
+#: downpub/templates/books/edit.html:14
+#: downpub/templates/books/edit_part.html:51
 #, fuzzy
 msgid "Save"
 msgstr "Enregistrer"
-
-#: downpub/templates/books/add_part.html:10
-#: downpub/templates/books/edit_part.html:35
-msgid "Make selection Heading 1"
-msgstr "Changer la sélection en Titre de niveau 1"
-
-#: downpub/templates/books/add_part.html:10
-#: downpub/templates/books/edit_part.html:35
-msgid "Heading 1"
-msgstr "Titre 1"
-
-#: downpub/templates/books/add_part.html:11
-#: downpub/templates/books/edit_part.html:36
-msgid "Make selection Heading 2"
-msgstr "Changer la sélection en Titre de niveau 2"
-
-#: downpub/templates/books/add_part.html:11
-#: downpub/templates/books/edit_part.html:36
-msgid "Heading 2"
-msgstr "Titre 2"
-
-#: downpub/templates/books/add_part.html:12
-#: downpub/templates/books/edit_part.html:37
-msgid "Make selection Heading 3"
-msgstr "Changer la sélection en Titre de niveau 3"
-
-#: downpub/templates/books/add_part.html:12
-#: downpub/templates/books/edit_part.html:37
-msgid "Heading 3"
-msgstr "Titre 3"
-
-#: downpub/templates/books/add_part.html:13
-#: downpub/templates/books/edit_part.html:38
-msgid "Make selection Heading 4"
-msgstr "Changer la sélection en Titre de niveau 4"
-
-#: downpub/templates/books/add_part.html:13
-#: downpub/templates/books/edit_part.html:38
-msgid "Heading 4"
-msgstr "Titre 4"
-
-#: downpub/templates/books/add_part.html:14
-#: downpub/templates/books/edit_part.html:39
-msgid "Make selection bold"
-msgstr "Faire de la sélection du gras"
-
-#: downpub/templates/books/add_part.html:14
-#: downpub/templates/books/edit_part.html:39
-msgid "Bold"
-msgstr "Gras"
-
-#: downpub/templates/books/add_part.html:15
-#: downpub/templates/books/edit_part.html:40
-msgid "Make selection italic"
-msgstr "Faire de la sélection de l'italique"
-
-#: downpub/templates/books/add_part.html:15
-#: downpub/templates/books/edit_part.html:40
-msgid "Italic"
-msgstr "Italique"
-
-#: downpub/templates/books/add_part.html:16
-#: downpub/templates/books/edit_part.html:41
-msgid "Make selection inline code block"
-msgstr "Faire de la sélection un bloc de code en ligne"
-
-#: downpub/templates/books/add_part.html:16
-#: downpub/templates/books/edit_part.html:41
-msgid "Code"
-msgstr "Code"
-
-#: downpub/templates/books/add_part.html:17
-#: downpub/templates/books/edit_part.html:42
-msgid "Make selection a list"
-msgstr "Faire de la sélection une liste"
-
-#: downpub/templates/books/add_part.html:17
-#: downpub/templates/books/edit_part.html:42
-msgid "List"
-msgstr "Liste"
-
-#: downpub/templates/books/add_part.html:18
-#: downpub/templates/books/edit_part.html:43
-msgid "Make selection a ordered list"
-msgstr "Faire de la sélection une liste numérotée"
-
-#: downpub/templates/books/add_part.html:18
-#: downpub/templates/books/edit_part.html:43
-msgid "Ordered List"
-msgstr "Liste numérotée"
 
 #: downpub/templates/books/cover_add.html:8
 #, fuzzy
 msgid "Upload the cover"
 msgstr "Envoyer la couverture"
 
-#: downpub/templates/books/edit_part.html:6
-#: downpub/templates/books/parts_list.html:67
+#: downpub/templates/books/edit_part.html:23
+#: downpub/templates/books/parts_list.html:68
 #, fuzzy
 msgid "Parts list :"
 msgstr "Liste des parties :"
 
-#: downpub/templates/books/edit_part.html:11
-#: downpub/templates/books/parts_list.html:95
+#: downpub/templates/books/edit_part.html:28
+#: downpub/templates/books/parts_list.html:96
 #, fuzzy
 msgid "Edit"
 msgstr "Éditer"
 
-#: downpub/templates/books/edit_part.html:14
+#: downpub/templates/books/edit_part.html:31
 #: downpub/templates/books/list.html:46
-#: downpub/templates/books/parts_list.html:22
-#: downpub/templates/books/parts_list.html:110
+#: downpub/templates/books/parts_list.html:23
+#: downpub/templates/books/parts_list.html:111
 #, fuzzy
 msgid "Export Epub"
 msgstr "Export Epub"
 
-#: downpub/templates/books/edit_part.html:17
+#: downpub/templates/books/edit_part.html:34
 #: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:100
+#: downpub/templates/books/parts_list.html:101
 #, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
-#: downpub/templates/books/edit_part.html:22
-#: downpub/templates/books/parts_list.html:144
+#: downpub/templates/books/edit_part.html:39
+#: downpub/templates/books/parts_list.html:145
 #, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
-#: downpub/templates/books/edit_part.html:25
-#: downpub/templates/books/parts_list.html:147
-#: downpub/templates/books/parts_list.html:154
+#: downpub/templates/books/edit_part.html:42
+#: downpub/templates/books/parts_list.html:148
+#: downpub/templates/books/parts_list.html:155
 #, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
@@ -745,13 +657,13 @@ msgid "Template : "
 msgstr "Gabarit : "
 
 #: downpub/templates/books/list.html:15
-#: downpub/templates/books/parts_list.html:10
+#: downpub/templates/books/parts_list.html:11
 #, fuzzy
 msgid "Delete the cover for you book"
 msgstr "Effacer la couverture de votre livre"
 
 #: downpub/templates/books/list.html:19
-#: downpub/templates/books/parts_list.html:14
+#: downpub/templates/books/parts_list.html:15
 #, fuzzy
 msgid "Add a cover for your book"
 msgstr "Ajouter une couverture à votre livre"
@@ -767,43 +679,43 @@ msgid "Parts of your book"
 msgstr "Parties de votre livre"
 
 #: downpub/templates/books/list.html:51
-#: downpub/templates/books/parts_list.html:27
-#: downpub/templates/books/parts_list.html:115
+#: downpub/templates/books/parts_list.html:28
+#: downpub/templates/books/parts_list.html:116
 msgid "Export Epub3"
 msgstr "Export Epub3"
 
 #: downpub/templates/books/list.html:56
-#: downpub/templates/books/parts_list.html:32
-#: downpub/templates/books/parts_list.html:120
+#: downpub/templates/books/parts_list.html:33
+#: downpub/templates/books/parts_list.html:121
 msgid "Export Markdown"
 msgstr "Export Markdown"
 
 #: downpub/templates/books/list.html:61
-#: downpub/templates/books/parts_list.html:37
-#: downpub/templates/books/parts_list.html:125
+#: downpub/templates/books/parts_list.html:38
+#: downpub/templates/books/parts_list.html:126
 msgid "Export Word"
 msgstr "Export Word"
 
 #: downpub/templates/books/list.html:66
-#: downpub/templates/books/parts_list.html:42
-#: downpub/templates/books/parts_list.html:130
+#: downpub/templates/books/parts_list.html:43
+#: downpub/templates/books/parts_list.html:131
 msgid "Export LibreOffice"
 msgstr "Export LibreOffice"
 
 #: downpub/templates/books/list.html:71
-#: downpub/templates/books/parts_list.html:47
-#: downpub/templates/books/parts_list.html:135
+#: downpub/templates/books/parts_list.html:48
+#: downpub/templates/books/parts_list.html:136
 msgid "Export HTML"
 msgstr "Export HTML"
 
 #: downpub/templates/books/list.html:79
-#: downpub/templates/books/parts_list.html:55
+#: downpub/templates/books/parts_list.html:56
 #, fuzzy
 msgid "Created the "
 msgstr "Créé le "
 
 #: downpub/templates/books/list.html:83
-#: downpub/templates/books/parts_list.html:59
+#: downpub/templates/books/parts_list.html:60
 #, fuzzy
 msgid "Last modified at "
 msgstr "Dernière modification le "
@@ -823,15 +735,15 @@ msgstr "Oops ! On dirait que vous n'avez encore rien écrit !"
 msgid "Create a book now !"
 msgstr "Créez un livre maintenant !"
 
-#: downpub/templates/books/parts_list.html:76
+#: downpub/templates/books/parts_list.html:77
 msgid "Up"
 msgstr "Monter"
 
-#: downpub/templates/books/parts_list.html:81
+#: downpub/templates/books/parts_list.html:82
 msgid "Down"
 msgstr "Descendre"
 
-#: downpub/templates/books/parts_list.html:151
+#: downpub/templates/books/parts_list.html:152
 #, fuzzy
 msgid "No parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
@@ -1069,3 +981,102 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "You can grab the source on Github, the link is in the footer !"
 #~ msgstr ""
+
+#~ msgid "Order"
+#~ msgstr "Ordre"
+
+#~ msgid "# Chapter 1 - Introducing Downpub"
+#~ msgstr "# Chapitre 1 - Présentation de Downpub"
+
+#~ msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
+#~ msgstr "## Souschapitre 1 - Formatage de texte, presque du WYSIWYG"
+
+#~ msgid "1. Item1"
+#~ msgstr "1. Objet1"
+
+#~ msgid "1. Item2"
+#~ msgstr "1. Objet2"
+
+#~ msgid "1. Item3"
+#~ msgstr "1. Objet3"
+
+#~ msgid "Even my cat can be in your epub !"
+#~ msgstr "Même mon chat peut être dans vos epub !"
+
+#~ msgid "- Item1"
+#~ msgstr "- Objet1"
+
+#~ msgid "- Item2"
+#~ msgstr "- Objet2"
+
+#~ msgid "- Item3"
+#~ msgstr "- Objet3"
+
+#~ msgid "### Example source code"
+#~ msgstr "### Exemple de code source"
+
+#~ msgid "Take a peek at those buttons and see how they work !"
+#~ msgstr "Jetez un coup d'oeil à ces boutons et voyez comment ils fonctionnent !"
+
+#~ msgid "Toggle Preview Mode"
+#~ msgstr "Passer en mode Prévisualisation"
+
+#~ msgid "Toggle Edit Mode"
+#~ msgstr "Passer en mode Édition"
+
+#~ msgid "Enter Fullscreen"
+#~ msgstr "Entrez en mode Plein Écran"
+
+#~ msgid "Make selection Heading 1"
+#~ msgstr "Changer la sélection en Titre de niveau 1"
+
+#~ msgid "Heading 1"
+#~ msgstr "Titre 1"
+
+#~ msgid "Make selection Heading 2"
+#~ msgstr "Changer la sélection en Titre de niveau 2"
+
+#~ msgid "Heading 2"
+#~ msgstr "Titre 2"
+
+#~ msgid "Make selection Heading 3"
+#~ msgstr "Changer la sélection en Titre de niveau 3"
+
+#~ msgid "Heading 3"
+#~ msgstr "Titre 3"
+
+#~ msgid "Make selection Heading 4"
+#~ msgstr "Changer la sélection en Titre de niveau 4"
+
+#~ msgid "Heading 4"
+#~ msgstr "Titre 4"
+
+#~ msgid "Make selection bold"
+#~ msgstr "Faire de la sélection du gras"
+
+#~ msgid "Bold"
+#~ msgstr "Gras"
+
+#~ msgid "Make selection italic"
+#~ msgstr "Faire de la sélection de l'italique"
+
+#~ msgid "Italic"
+#~ msgstr "Italique"
+
+#~ msgid "Make selection inline code block"
+#~ msgstr "Faire de la sélection un bloc de code en ligne"
+
+#~ msgid "Code"
+#~ msgstr "Code"
+
+#~ msgid "Make selection a list"
+#~ msgstr "Faire de la sélection une liste"
+
+#~ msgid "List"
+#~ msgstr "Liste"
+
+#~ msgid "Make selection a ordered list"
+#~ msgstr "Faire de la sélection une liste numérotée"
+
+#~ msgid "Ordered List"
+#~ msgstr "Liste numérotée"
