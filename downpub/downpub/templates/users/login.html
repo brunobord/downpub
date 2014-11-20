@@ -6,7 +6,7 @@
         <form method="POST"
             action="{{ url_for('users.login', next=next) }}"
             class="form">
-            <fieldset>
+            <fieldset class="txtleft">
                 {{ form.csrf_token }}
                 {{ render_field(form.email, class="input text w80") }}
                 {{ render_field(form.password, class="input text w80") }}
