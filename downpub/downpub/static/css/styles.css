@@ -5,25 +5,47 @@
 
 /* ----------------------------- */
 
+
 @font-face{
-    font-family : "Aleo";
-    src : url('./fonts/Aleo-Light.otf');
+    font-family : "AndadaSC";
+    src : url('./fonts/AndadaSC-Regular.otf');
 }
 @font-face{
-    font-family : "Aleo";
+    font-family : "AndadaSC";
     font-style:italic;
-    src : url('./fonts/Aleo-LightItalic.otf');
+    src : url('./fonts/AndadaSC-Italic.otf');
 }
 @font-face{
-    font-family : "Aleo";
+    font-family : "AndadaSC";
     font-weight:bold;
-    src : url('./fonts/Aleo-Regular.otf');
+    src : url('./fonts/AndadaSC-Bold.otf');
 }
 @font-face{
-    font-family : "Aleo";
+    font-family : "AndadaSC";
     font-style:italic;
     font-weight:bold;
-    src : url('./fonts/Aleo-Italic.otf');
+    src : url('./fonts/AndadaSC-BoldItalic.otf');
+}
+
+@font-face{
+    font-family : "Andada";
+    src : url('./fonts/Andada-Regular.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-style:italic;
+    src : url('./fonts/Andada-Italic.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-weight:bold;
+    src : url('./fonts/Andada-Bold.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-style:italic;
+    font-weight:bold;
+    src : url('./fonts/Andada-BoldItalic.otf');
 }
 
 @font-face{
@@ -44,7 +66,7 @@
     font-family : "Lekton";
     font-style:italic;
     font-weight:bold;
-    src : url('./fonts/Lekton-BoldItalic.ttf');
+    src : url('./fonts/Lekton-Bold.ttf');
 }
 
 /*
@@ -56,7 +78,7 @@ html {
 }
 
 body {
-    font-family:"Aleo", "Times New Roman", serif;
+    font-family:"Andada", "Times New Roman", serif;
     background: #ddd;
 }
 
@@ -154,6 +176,7 @@ code, pre, blockquote {
 }
 
 #header h2 {
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     background: #555;
     color: orange;
     margin:0;
@@ -168,7 +191,7 @@ code, pre, blockquote {
 
 #navigation *{
     background: #333;
-    font-family:"Aleo", "Georgia", "Times New Roman", serif;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     margin: 0;
     padding: 0.1em;
     list-style-type: none;
@@ -195,6 +218,9 @@ code, pre, blockquote {
     color: white;
     position:fixed;
     bottom:0;
+    z-index:1000;
+    margin-top:1em;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
 }
 
 #footer a {
@@ -208,7 +234,7 @@ code, pre, blockquote {
 }
 
 #footer p {
-    padding:0.2em;
+    padding:0.1em 0;
 }
 
 /*
@@ -222,7 +248,6 @@ code, pre, blockquote {
 .form {
     background:#eee;
     border:1px solid darkgray;
-    margin:0 0.4em;
     margin-bottom:1em;
     padding:0.4em;
 }

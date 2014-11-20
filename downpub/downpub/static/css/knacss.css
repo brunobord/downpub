@@ -11,50 +11,6 @@
 
 /* switching box model for all elements */
 
-
-@font-face{
-    font-family : "Aleo";
-    src : url('./fonts/Aleo-Regular.otf');
-}
-@font-face{
-    font-family : "Aleo";
-    font-style:italic;
-    src : url('./fonts/Aleo-Italic.otf');
-}
-@font-face{
-    font-family : "Aleo";
-    font-weight:bold;
-    src : url('./fonts/Aleo-Bold.otf');
-}
-@font-face{
-    font-family : "Aleo";
-    font-style:italic;
-    font-weight:bold;
-    src : url('./fonts/Aleo-BoldItalic.otf');
-}
-
-@font-face{
-    font-family : "Lekton";
-    src : url('./fonts/Lekton-Regular.ttf');
-}
-@font-face{
-    font-family : "Lekton";
-    font-style:italic;
-    src : url('./fonts/Lekton-Italic.ttf');
-}
-@font-face{
-    font-family : "Lekton";
-    font-weight:bold;
-    src : url('./fonts/Lekton-Bold.ttf');
-}
-@font-face{
-    font-family : "Lekton";
-    font-style:italic;
-    font-weight:bold;
-    src : url('./fonts/Lekton-BoldItalic.ttf');
-}
-
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -219,7 +175,7 @@ kbd {
   white-space: pre-line;
   /* IE fix */
   white-space: pre-wrap;
-  font-family: 'Lekton', 'DejaVu Sans Mono', Courier, monospace;
+  font-family: monospace;
   line-height: 1;
 }
 
