@@ -91,7 +91,7 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family:"Andada", "Times New Roman", serif;
+    font-family:"AndadaSC", "Times New Roman", serif;
     margin:0.4em;
     color:chocolate;
 }
@@ -180,13 +180,10 @@ code, pre, blockquote {
 
 #main>h2 {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    background: #555;
-    color: orange;
-    margin:0;
-    margin-bottom:.2em;
-    padding:0.2em;
+    background: #ddd;
+    color: chocolate;
     font-size:1.15em;
-    height:35px;
+    border-bottom: 1px solid darkgray;
 }
 
 aside {
@@ -204,10 +201,10 @@ aside {
 #navigation ul {
     padding:0;
     margin:0;
-    }
+}
 
 #navigation li a {
-    padding:0.3em 1em;
+    padding:0.5em 1em;
 }
 
 #navigation li:hover, #navigation li a:hover {
@@ -218,7 +215,7 @@ aside {
 aside h1 {
     background-color: #333;
     color:orange;
-    font-size:1.4em;
+    font-size:1.5em;
 }
 
 aside a {
@@ -234,15 +231,16 @@ aside a:hover {
 aside h1 {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     margin:0;
-    padding:0.2em;
-    height:35px;
+    padding:0;
+    height:55px;
 }
 
 aside h1 a {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     background-color: #333;
     color:orange;
-    font-size:1em;
+    padding:.4em;
+    font-size:1.3em;
 }
 
 aside h1 a:hover {
