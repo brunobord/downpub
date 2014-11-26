@@ -69,15 +69,12 @@
 */
 
 html {
-    background: #ddd;
-    height: 100%;
+    background: #f6f6f6;
 }
 
 body {
-    background: #ddd;
+    background: #f6f6f6;
     font-family:"Andada", "Times New Roman", serif;
-    height: 100%;
-    min-height:100%;
 }
 
 a {
@@ -172,7 +169,6 @@ code, pre, blockquote {
 
 #main {
     font-family:"Andada", "Times New Roman", serif;
-    background: #ddd;
     padding:0;
     margin:0;
     color: black;
@@ -180,7 +176,6 @@ code, pre, blockquote {
 
 #main>h2 {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    background: #ddd;
     color: chocolate;
     font-size:1.15em;
     border-bottom: 1px solid darkgray;
@@ -190,15 +185,12 @@ code, pre, blockquote {
     width:100%;
 }
 
-aside {
-    background: #ddd;
+#header {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    list-style-type: none;
 }
 
 #navigation ul, #navigation li, #navigation li a {
     list-style-type:none;
-    background-color: #333;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
 }
 
@@ -207,47 +199,43 @@ aside {
     margin:0;
 }
 
+#navigation ul li {
+    padding:0;
+    margin:0;
+}
+
 #navigation li a {
-    padding:0.5em 1em;
+    padding:.2em .5em;
+    margin:0;
 }
 
-#navigation li:hover, #navigation li a:hover {
-    background-color: #444;
-    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-}
-
-aside h1 {
-    background-color: #333;
-    color:orange;
-    font-size:1.6em;
-}
-
-aside a {
+#header li a {
     white-space: nowrap;
-    color:chocolate;
+    text-decoration:none;
     font-size:1em;
 }
 
-aside a:hover {
-    text-decoration:none;
+#header a:hover, #header li>a:hover {
+    color:orange;
     font-weight:normal;
 }
 
-aside h1 {
+#header h1 {
+    color:orange;
+    font-size:1.85em;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     margin:0;
     padding:0;
+    margin-bottom:.6em;
 }
 
-aside h1 a {
+#header h1 a {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    background-color: #333;
     color:orange;
-    padding:.4em;
-    font-size:1.3em;
+    padding:.3em;
 }
 
-aside h1 a:hover {
+#header h1 a:hover {
     color:chocolate;
     text-decoration:none;
     font-weight:normal;
@@ -259,8 +247,7 @@ footer {
 
 footer *{
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    background-color: #ddd;
-    padding:.3em;
+
     margin-top:.5em;
 }
 

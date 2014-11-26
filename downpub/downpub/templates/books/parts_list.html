@@ -152,14 +152,14 @@
 </div>
 
 <h4>{{ _("Not enough parts ? Are you sad ? ") }}</h4>
-<p class="bigger">
+<p class="">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
         {{ _("Then add some parts !") }}
     </a>
 </p>
 {% else %}
 <h4>{{ _("No parts ? Are you sad ? ") }}</h4>
-<p class="bigger">
+<p class="">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
         {{ _("Then add some parts !") }}
     </a>
