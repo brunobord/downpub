@@ -69,11 +69,11 @@
 */
 
 html {
-    background: #f6f6f6;
+    background: #f9f9f9;
 }
 
 body {
-    background: #f6f6f6;
+    background: #f9f9f9;
     font-family:"Andada", "Times New Roman", serif;
 }
 
@@ -84,7 +84,6 @@ a {
 
 a:hover {
     color:chocolate;
-    font-weight:bold;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -140,26 +139,27 @@ code, pre, blockquote {
 
 .message {
     font-family:"Andada", "Times New Roman", serif;
-    display:block;
-    background: #aaa;
+    display:inline-block;
     padding:0.4em;
     margin:0.2em;
-    border: 1px solid chocolate;
-    color: white;
+    color: black;
+    border-bottom:1px dotted chocolate;
 }
 
 .error {
     font-family:"Andada", "Times New Roman", serif;
-    display:block;
+    display:inline-block;
     padding:0.4em;
     margin:0.2em;
     color: chocolate;
+    border-bottom:1px dotted red;
 }
 
 .no_error {
     font-family:"Andada", "Times New Roman", serif;
     display:inline-block;
     padding: 0.5em;
+    border-bottom:1px dotted green;
 }
 
 /*
@@ -211,7 +211,6 @@ code, pre, blockquote {
 
 #header li a {
     white-space: nowrap;
-    text-decoration:none;
     font-size:1em;
 }
 
@@ -237,7 +236,6 @@ code, pre, blockquote {
 
 #header h1 a:hover {
     color:chocolate;
-    text-decoration:none;
     font-weight:normal;
 }
 
@@ -247,7 +245,6 @@ footer {
 
 footer *{
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-
     margin-top:.5em;
 }
 
@@ -260,9 +257,8 @@ footer *{
 }
 
 .form {
-    background:#eee;
-    border:1px solid darkgray;
-    padding:0.6em;
+    margin:0;
+    padding:0;
 }
 
 label {
@@ -275,7 +271,7 @@ select {
     padding: .2em 0;
     margin: .3em 0;
     border: 1px solid #ccc;
-    background:#ddd;
+    background:#eee;
     width:100%;
 }
 
@@ -283,7 +279,7 @@ input[type="text"], input[type="password"] {
     padding: .1em .3em;
     margin: .3em 0;
     border: 1px solid darkgray;
-    background:#f2f2f2;
+    background:#f9f9f9;
     width:100%;
 }
 
@@ -291,12 +287,12 @@ input[type="submit"] {
     padding: .5em 1em;
     margin: .3em 0;
     border: 1px solid darkgray;
-    background:#ccc;
+    background:#ddd;
     width:100%;
 }
 
 input[type="submit"]:hover {
-    border: 1px solid #888;
+    border: 1px solid #999;
     background:#ddd;
 }
 
@@ -315,7 +311,7 @@ input[type="submit"]:hover {
     margin: 1em 0.4em;
     padding:0.8em;
     border:1px solid #999;
-    background: #eee;
+    background: #f3f3f3;
     color: #993D00;
 }
 

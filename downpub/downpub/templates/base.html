@@ -32,6 +32,29 @@
             {% include 'footer.html' %}
         </div>
 
+        {% block script %}
+        <!-- Jquery and UIkit base -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/uikit/js/uikit.min.js') }}"></script>
+
+        <!-- Codemirror and marked dependencies -->
+        <script src="{{ url_for('static', filename='js/codemirror/lib/codemirror.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/markdown/markdown.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/addon/mode/overlay.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/xml/xml.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/gfm/gfm.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/marked.js') }}"></script>
+
+        <!-- HTML editor JavaScript -->
+        <script src="{{ url_for('static', filename='js/uikit/js/components/htmleditor.js') }}"></script>
+
+        <!-- Flashing messages -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('.message').delay(2500).fadeToggle({duration:2500});
+            });
+        </script>
+        {% endblock %}
 
     </body>
 </html>
