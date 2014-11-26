@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-20 09:50+0100\n"
+"POT-Creation-Date: 2014-11-26 14:05+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -23,11 +23,11 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: downpub/__init__.py:96 downpub/templates/header.html:6
+#: downpub/__init__.py:96 downpub/templates/header.html:8
 msgid "Help"
 msgstr ""
 
-#: downpub/__init__.py:102 downpub/templates/header.html:5
+#: downpub/__init__.py:102 downpub/templates/header.html:7
 msgid "About"
 msgstr ""
 
@@ -87,7 +87,96 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: downpub/books/views.py:29
+#: downpub/books/views.py:55
+#, python-format
+msgid "Your Books, %(user_name)s !"
+msgstr ""
+
+#: downpub/books/views.py:70
+msgid "Add a book"
+msgstr ""
+
+#: downpub/books/views.py:102
+msgid "That book has been created !"
+msgstr ""
+
+#: downpub/books/views.py:122 downpub/books/views.py:183
+#: downpub/books/views.py:209 downpub/books/views.py:312
+#: downpub/books/views.py:396 downpub/books/views.py:430
+#: downpub/books/views.py:453 downpub/books/views.py:517
+#: downpub/books/views.py:598 downpub/books/views.py:652
+#: downpub/books/views.py:685
+msgid "This isn't yours !"
+msgstr ""
+
+#: downpub/books/views.py:126
+#, python-format
+msgid "Edit the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:162
+msgid "That book has been edited !"
+msgstr ""
+
+#: downpub/books/views.py:192
+msgid "That book has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:317
+#, python-format
+msgid "Upload a cover for the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:349
+msgid "That book's cover has been added !"
+msgstr ""
+
+#: downpub/books/views.py:358
+#, python-format
+msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
+msgstr ""
+
+#: downpub/books/views.py:366
+msgid "That filetype is not allowed !"
+msgstr ""
+
+#: downpub/books/views.py:377
+msgid "That book already has a cover, delete it first to upload a new one !"
+msgstr ""
+
+#: downpub/books/views.py:410
+msgid "That book's cover has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:416
+msgid "That book has no cover already !"
+msgstr ""
+
+#: downpub/books/views.py:456
+#, python-format
+msgid "Parts of your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:493
+#, python-format
+msgid ""
+"Order of the part %(part_title)s of your book %(book_title)s has been "
+"updated !"
+msgstr ""
+
+#: downpub/books/views.py:500
+#, python-format
+msgid ""
+"Order of the part %(part_title)s of your book %(book_title)s has no need "
+"to be updated !"
+msgstr ""
+
+#: downpub/books/views.py:521
+#, python-format
+msgid "Add a part to your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:525
 msgid ""
 "# Chapter 1 - Introducing Downpub\n"
 "\n"
@@ -126,111 +215,22 @@ msgid ""
 "what you wrote looks like."
 msgstr ""
 
-#: downpub/books/views.py:87
-#, python-format
-msgid "Your Books, %(user_name)s !"
-msgstr ""
-
-#: downpub/books/views.py:102
-msgid "Add a book"
-msgstr ""
-
-#: downpub/books/views.py:138
-msgid "That book has been created !"
-msgstr ""
-
-#: downpub/books/views.py:158 downpub/books/views.py:219
-#: downpub/books/views.py:245 downpub/books/views.py:348
-#: downpub/books/views.py:432 downpub/books/views.py:466
-#: downpub/books/views.py:489 downpub/books/views.py:553
-#: downpub/books/views.py:605 downpub/books/views.py:659
-#: downpub/books/views.py:692
-msgid "This isn't yours !"
-msgstr ""
-
-#: downpub/books/views.py:162
-#, python-format
-msgid "Edit the book %(book_title)s"
-msgstr ""
-
-#: downpub/books/views.py:198
-msgid "That book has been edited !"
-msgstr ""
-
-#: downpub/books/views.py:228
-msgid "That book has been deleted !"
-msgstr ""
-
-#: downpub/books/views.py:353
-#, python-format
-msgid "Upload a cover for the book %(book_title)s"
-msgstr ""
-
-#: downpub/books/views.py:385
-msgid "That book's cover has been added !"
-msgstr ""
-
-#: downpub/books/views.py:394
-#, python-format
-msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
-msgstr ""
-
-#: downpub/books/views.py:402
-msgid "That filetype is not allowed !"
-msgstr ""
-
-#: downpub/books/views.py:413
-msgid "That book already has a cover, delete it first to upload a new one !"
-msgstr ""
-
-#: downpub/books/views.py:446
-msgid "That book's cover has been deleted !"
-msgstr ""
-
-#: downpub/books/views.py:452
-msgid "That book has no cover already !"
-msgstr ""
-
-#: downpub/books/views.py:492
-#, python-format
-msgid "Parts of your book %(book_title)s"
-msgstr ""
-
-#: downpub/books/views.py:529
-#, python-format
-msgid ""
-"Order of the part %(part_title)s of your book %(book_title)s has been "
-"updated !"
-msgstr ""
-
-#: downpub/books/views.py:536
-#, python-format
-msgid ""
-"Order of the part %(part_title)s of your book %(book_title)s has no need "
-"to be updated !"
-msgstr ""
-
-#: downpub/books/views.py:557
-#, python-format
-msgid "Add a part to your book %(book_title)s"
-msgstr ""
-
-#: downpub/books/views.py:580
+#: downpub/books/views.py:573
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been added !"
 msgstr ""
 
-#: downpub/books/views.py:611
+#: downpub/books/views.py:604
 #, python-format
 msgid "Edit the part %(part_title)s of your book %(book_title)s"
 msgstr ""
 
-#: downpub/books/views.py:633
+#: downpub/books/views.py:626
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
 msgstr ""
 
-#: downpub/books/views.py:669
+#: downpub/books/views.py:662
 #, python-format
 msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
 msgstr ""
@@ -253,8 +253,8 @@ msgid ""
 "file ?"
 msgstr ""
 
-#: downpub/templates/413.html:5 downpub/templates/header.html:21
-#: downpub/templates/index.html:17
+#: downpub/templates/413.html:5 downpub/templates/header.html:22
+#: downpub/templates/index.html:34
 msgid "Your books"
 msgstr ""
 
@@ -380,23 +380,23 @@ msgstr ""
 msgid "Version "
 msgstr ""
 
-#: downpub/templates/header.html:9
+#: downpub/templates/header.html:11
 msgid "Sign in"
 msgstr ""
 
-#: downpub/templates/header.html:11
+#: downpub/templates/header.html:13
 msgid "or"
 msgstr ""
 
-#: downpub/templates/header.html:13
+#: downpub/templates/header.html:15
 msgid "Sign up"
 msgstr ""
 
-#: downpub/templates/header.html:18
+#: downpub/templates/header.html:19
 msgid "Hi, "
 msgstr ""
 
-#: downpub/templates/header.html:23
+#: downpub/templates/header.html:24
 msgid "Log out"
 msgstr ""
 
@@ -468,115 +468,115 @@ msgstr ""
 msgid "The purpose of Downpub is simple :"
 msgstr ""
 
-#: downpub/templates/index.html:5
+#: downpub/templates/index.html:7
 msgid "You write books, in Markdown."
 msgstr ""
 
-#: downpub/templates/index.html:6
+#: downpub/templates/index.html:12
 msgid "You choose to write it in one part or many. "
 msgstr ""
 
-#: downpub/templates/index.html:7
+#: downpub/templates/index.html:17
 msgid ""
 "Splitting your work in one file per chapter allows you to edit one "
 "chapter at a time, for example."
 msgstr ""
 
-#: downpub/templates/index.html:8
+#: downpub/templates/index.html:22
 msgid ""
 "Once you have your(s) part(s) done, get the whole book or just one part "
 "in epub, markdown, HTML or Word."
 msgstr ""
 
-#: downpub/templates/index.html:11
+#: downpub/templates/index.html:27
 msgid "How do I do ?"
 msgstr ""
 
-#: downpub/templates/index.html:15
+#: downpub/templates/index.html:32
 #, python-format
 msgid ""
 "You first need to %(register)s, then create a book in the "
 "\"%(your_books)s\" page."
 msgstr ""
 
-#: downpub/templates/index.html:16
+#: downpub/templates/index.html:33
 msgid "register"
 msgstr ""
 
-#: downpub/templates/index.html:21
+#: downpub/templates/index.html:41
 msgid "Next, add at least one part, or many, depending on how you want to work !"
 msgstr ""
 
-#: downpub/templates/index.html:22
+#: downpub/templates/index.html:46
 msgid ""
 "You can order parts with the order number, which is not very practical "
 "for now, but it will be fixed."
 msgstr ""
 
-#: downpub/templates/index.html:23
+#: downpub/templates/index.html:51
 msgid ""
 "There is default content to show you how markdown works, and buttons to "
 "help you with the syntax !"
 msgstr ""
 
-#: downpub/templates/index.html:24
+#: downpub/templates/index.html:56
 msgid ""
 "Heading 1 creates a chapter title in the epub export, so use it "
 "accordingly."
 msgstr ""
 
-#: downpub/templates/index.html:25
+#: downpub/templates/index.html:61
 msgid ""
 "Part title is NOT included in the export, so you must add an heading 1 "
 "title yourself. That is to be able to customize the book's chapter title "
 "whatever the part's name."
 msgstr ""
 
-#: downpub/templates/index.html:26
+#: downpub/templates/index.html:66
 msgid ""
 "When you're done you just have to export the book using the links "
 "provided, in the format you want."
 msgstr ""
 
-#: downpub/templates/index.html:30
+#: downpub/templates/index.html:71
 msgid "Markdown seems complicated !"
 msgstr ""
 
-#: downpub/templates/index.html:32
+#: downpub/templates/index.html:73
 msgid "You just need help ! "
 msgstr ""
 
-#: downpub/templates/index.html:32
+#: downpub/templates/index.html:73
 msgid "There you go !"
 msgstr ""
 
-#: downpub/templates/index.html:34
+#: downpub/templates/index.html:75
 msgid "Why would you choose DownPub ?"
 msgstr ""
 
-#: downpub/templates/index.html:37
+#: downpub/templates/index.html:78
 #, python-format
 msgid ""
 "Downpub is under the %(wtfpl_link)s licence so you can download it, share"
 " it, even sell it, whatever..."
 msgstr ""
 
-#: downpub/templates/index.html:40
+#: downpub/templates/index.html:81
 msgid ""
 "Only your conscience will fix the limits. You can install it on any "
 "computer, even if the installation process is a little raw for now."
 msgstr ""
 
-#: downpub/templates/index.html:42
+#: downpub/templates/index.html:83
 msgid "That's the beauty of it : do what the fuck you want with it."
 msgstr ""
 
-#: downpub/templates/index.html:44
+#: downpub/templates/index.html:85
 msgid "Kinda nice, isn't it ?"
 msgstr ""
 
-#: downpub/templates/books/add.html:14 downpub/templates/books/add_part.html:27
-#: downpub/templates/books/edit.html:14
+#: downpub/templates/books/add.html:15 downpub/templates/books/add_part.html:27
+#: downpub/templates/books/edit.html:15
 #: downpub/templates/books/edit_part.html:51
 msgid "Save"
 msgstr ""
@@ -586,36 +586,36 @@ msgid "Upload the cover"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:23
-#: downpub/templates/books/parts_list.html:68
+#: downpub/templates/books/parts_list.html:77
 msgid "Parts list :"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:28
-#: downpub/templates/books/parts_list.html:96
+#: downpub/templates/books/parts_list.html:105
 msgid "Edit"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:31
 #: downpub/templates/books/list.html:46
-#: downpub/templates/books/parts_list.html:23
-#: downpub/templates/books/parts_list.html:111
+#: downpub/templates/books/parts_list.html:32
+#: downpub/templates/books/parts_list.html:120
 msgid "Export Epub"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:34
 #: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:101
+#: downpub/templates/books/parts_list.html:110
 msgid "Delete"
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:39
-#: downpub/templates/books/parts_list.html:145
+#: downpub/templates/books/parts_list.html:154
 msgid "Not enough parts ? Are you sad ? "
 msgstr ""
 
 #: downpub/templates/books/edit_part.html:42
-#: downpub/templates/books/parts_list.html:148
-#: downpub/templates/books/parts_list.html:155
+#: downpub/templates/books/parts_list.html:157
+#: downpub/templates/books/parts_list.html:164
 msgid "Then add some parts !"
 msgstr ""
 
@@ -634,6 +634,7 @@ msgid "Add a cover for your book"
 msgstr ""
 
 #: downpub/templates/books/list.html:27
+#: downpub/templates/books/parts_list.html:23
 msgid "Edit your book"
 msgstr ""
 
@@ -642,42 +643,42 @@ msgid "Parts of your book"
 msgstr ""
 
 #: downpub/templates/books/list.html:51
-#: downpub/templates/books/parts_list.html:28
-#: downpub/templates/books/parts_list.html:116
+#: downpub/templates/books/parts_list.html:37
+#: downpub/templates/books/parts_list.html:125
 msgid "Export Epub3"
 msgstr ""
 
 #: downpub/templates/books/list.html:56
-#: downpub/templates/books/parts_list.html:33
-#: downpub/templates/books/parts_list.html:121
+#: downpub/templates/books/parts_list.html:42
+#: downpub/templates/books/parts_list.html:130
 msgid "Export Markdown"
 msgstr ""
 
 #: downpub/templates/books/list.html:61
-#: downpub/templates/books/parts_list.html:38
-#: downpub/templates/books/parts_list.html:126
+#: downpub/templates/books/parts_list.html:47
+#: downpub/templates/books/parts_list.html:135
 msgid "Export Word"
 msgstr ""
 
 #: downpub/templates/books/list.html:66
-#: downpub/templates/books/parts_list.html:43
-#: downpub/templates/books/parts_list.html:131
+#: downpub/templates/books/parts_list.html:52
+#: downpub/templates/books/parts_list.html:140
 msgid "Export LibreOffice"
 msgstr ""
 
 #: downpub/templates/books/list.html:71
-#: downpub/templates/books/parts_list.html:48
-#: downpub/templates/books/parts_list.html:136
+#: downpub/templates/books/parts_list.html:57
+#: downpub/templates/books/parts_list.html:145
 msgid "Export HTML"
 msgstr ""
 
 #: downpub/templates/books/list.html:79
-#: downpub/templates/books/parts_list.html:56
+#: downpub/templates/books/parts_list.html:65
 msgid "Created the "
 msgstr ""
 
 #: downpub/templates/books/list.html:83
-#: downpub/templates/books/parts_list.html:60
+#: downpub/templates/books/parts_list.html:69
 msgid "Last modified at "
 msgstr ""
 
@@ -693,16 +694,20 @@ msgstr ""
 msgid "Create a book now !"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:77
+#: downpub/templates/books/parts_list.html:86
 msgid "Up"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:82
+#: downpub/templates/books/parts_list.html:91
 msgid "Down"
 msgstr ""
 
-#: downpub/templates/books/parts_list.html:152
+#: downpub/templates/books/parts_list.html:161
 msgid "No parts ? Are you sad ? "
+msgstr ""
+
+#: downpub/templates/users/login.html:13
+msgid "Login"
 msgstr ""
 
 #: downpub/templates/users/login.html:17
@@ -713,16 +718,20 @@ msgstr ""
 msgid "Register a new one !"
 msgstr ""
 
-#: downpub/templates/users/profile.html:3
+#: downpub/templates/users/profile.html:6
 msgid "Hi"
 msgstr ""
 
-#: downpub/templates/users/profile.html:5
+#: downpub/templates/users/profile.html:9
 msgid "If you want to change the language used in Downpub, here you go :"
 msgstr ""
 
-#: downpub/templates/users/profile.html:14
+#: downpub/templates/users/profile.html:15
 msgid "Save your new default language"
+msgstr ""
+
+#: downpub/templates/users/register.html:19
+msgid "Register"
 msgstr ""
 
 #: downpub/templates/users/register.html:24
@@ -1051,52 +1060,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Ordered List"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "# Chapter 1 - Introducing Downpub\n"
-#~ "\n"
-#~ "This is a demo text which contains"
-#~ " _examples_ on __how__ to use "
-#~ "___Markdown___ syntax to format your "
-#~ "book.\n"
-#~ "\n"
-#~ "## SubChapter 1 - Text Formatting, almost WYSIWYG\")\n"
-#~ "\n"
-#~ "In this section, we'll have a look"
-#~ " at making text **bold**, *italic* "
-#~ "and etc. If you haven't realised "
-#~ "by now, there is a very simple "
-#~ "toolbar presented above the editor. Try"
-#~ " selecting text in this editor and"
-#~ " press any one of those buttons.\n"
-#~ ""
-#~ "\n"
-#~ "1. Item1\n"
-#~ "1. Item2\n"
-#~ "1. Item3\n"
-#~ "\n"
-#~ "![Even my cat can be in your "
-#~ "epub "
-#~ "!](https://farm3.staticflickr.com/2756/4290352584_9d92fedfe2_z_d.jpg)"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "- Item1\n"
-#~ "- Item2\n"
-#~ "- Item3\n"
-#~ "\n"
-#~ "### Example source code\n"
-#~ "\n"
-#~ "```\n"
-#~ "print('Holy code of doom and destruction')\n"
-#~ "```\n"
-#~ "\n"
-#~ "\n"
-#~ "Take a peek at those buttons and see how they work !\n"
-#~ "\n"
-#~ "Don't hesitate to export the book "
-#~ "in epub or watch the preview to"
-#~ " see what you wrote looks like."
 #~ msgstr ""
 
