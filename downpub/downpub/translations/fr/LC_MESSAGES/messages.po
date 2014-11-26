@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-26 14:05+0100\n"
-"PO-Revision-Date: 2014-11-26 14:05+0100\n"
+"POT-Creation-Date: 2014-11-26 14:43+0100\n"
+"PO-Revision-Date: 2014-11-26 14:44+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -403,9 +403,8 @@ msgid "Voilà."
 msgstr "Voilà."
 
 #: downpub/templates/footer.html:3
-#, fuzzy
-msgid "Made with the moral support of a cat named Poko by <a href=\"http://segle.org\">Segle</a> - © 2014."
-msgstr "Réalisé avec le support moral d'un chat appelé Poko par <a href=\"http://segle.org\">Segle</a> - © 2014."
+msgid "Made with the moral support of a cat named Poko by <a href=\"http://segle.org\">Segle</a>."
+msgstr "Réalisé avec le support moral d'un chat appelé Poko par <a href=\"http://segle.org\">Segle</a>."
 
 #: downpub/templates/footer.html:4
 #, fuzzy

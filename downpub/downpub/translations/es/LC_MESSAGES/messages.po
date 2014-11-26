@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-26 14:05+0100\n"
+"POT-Creation-Date: 2014-11-26 14:43+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -361,7 +361,7 @@ msgstr ""
 #: downpub/templates/footer.html:3
 msgid ""
 "Made with the moral support of a cat named Poko by <a "
-"href=\"http://segle.org\">Segle</a> - © 2014."
+"href=\"http://segle.org\">Segle</a>."
 msgstr ""
 
 #: downpub/templates/footer.html:4
@@ -1060,5 +1060,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Ordered List"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Made with the moral support of a"
+#~ " cat named Poko by <a "
+#~ "href=\"http://segle.org\">Segle</a> - © 2014."
 #~ msgstr ""
 

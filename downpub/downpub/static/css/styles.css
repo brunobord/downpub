@@ -138,9 +138,7 @@ code, pre, blockquote {
 */
 
 #messages {
-    margin:0;
-    padding:0;
-    margin-bottom:1em;
+    padding:0.5em;
 }
 
 .message {
@@ -148,7 +146,7 @@ code, pre, blockquote {
     display:block;
     background: #aaa;
     padding:0.4em;
-    margin:0.2em 0;
+    margin:0.2em;
     border: 1px solid chocolate;
     color: white;
 }
@@ -185,10 +183,10 @@ code, pre, blockquote {
     background: #555;
     color: orange;
     margin:0;
-    margin-bottom:.5em;
+    margin-bottom:.2em;
     padding:0.2em;
-    font-size:1em;
-    height:30px;
+    font-size:1.15em;
+    height:35px;
 }
 
 aside {
@@ -220,7 +218,7 @@ aside {
 aside h1 {
     background-color: #333;
     color:orange;
-    font-size:1.15em;
+    font-size:1.4em;
 }
 
 aside a {
@@ -237,7 +235,7 @@ aside h1 {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     margin:0;
     padding:0.2em;
-    height:30px;
+    height:35px;
 }
 
 aside h1 a {
@@ -251,6 +249,10 @@ aside h1 a:hover {
     color:chocolate;
     text-decoration:none;
     font-weight:normal;
+}
+
+footer {
+    border-top: 1px solid darkgray;
 }
 
 footer *{
