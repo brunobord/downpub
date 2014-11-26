@@ -1,28 +1,32 @@
-<header id="header" class="line w100 pan man center txtcenter">
-    <nav id="navigation" role="navigation" class="row txtleft man w100 tiny-w100">
-        <h1 class="inbl man pan col w20 txtleft"><a href="{{ url_for('index') }}">Downpub</a></h1>
-        <ul class="pan col w80 txtright">
-            <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('about') }}">{{ _("About")}}</a></li>
-            <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
-            {% if not user.name %}
-                <li class="inbl pas">
-                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
-                </li>
-                {{ _("or") }}
-                <li class="inbl pas">
-                    <a class="icon icon-bracket2" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
-                </li>
-            {% else %}
-                <li class="inbl pas">
-                    <a
-                    class="icon icon-bracket2" href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}</a>
-                </li>
-                <li class="inbl pas">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.list') }}">{{ _("Your books") }}</a>
-                </li>
-                <li class="inbl pas"><a class="icon icon-bracket2" href="{{ url_for('users.logout') }}">{{ _("Log out") }}</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    <h2 class="row man pan txtcenter w100 tiny-w100">{{ site_title }}</h2>
-</header>
+<aside class="col w200p pan man center txtcenter">
+    <header id="header" class="man pan">
+        <nav id="navigation" role="navigation" class="line txtleft man pan">
+            <h1 class="line man pan w100 txtcenter"><a href="{{ url_for('index') }}">Downpub</a></h1>
+
+            <ul class="line man pan w100 txtleft">
+                <li class="pan"><a class="man w100 inbl" href="{{ url_for('about') }}">{{ _("About")}}</a></li>
+                <li class="pan"><a class="man w100 inbl" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
+                {% if not user.name %}
+                    <li class="pan">
+                        <a class="man w100 inbl" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
+                    </li>
+                    <!-- <li class="pan">{{ _("or") }}</li>-->
+                    <li class="pan">
+                        <a class="man w100 inbl" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
+                    </li>
+                {% else %}
+                    <li class="pan">
+                        <a class="man w100 inbl" href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}</a>
+                    </li>
+                    <li class="pan">
+                        <a class="man w100 inbl" href="{{ url_for('books.list') }}">{{ _("Your books") }}</a>
+                    <li class="pan">
+                        <a class="man w100 inbl" href="{{ url_for('users.logout') }}">{{ _("Log out") }}</a>
+                    </li>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% include 'footer.html' %}
+</aside>

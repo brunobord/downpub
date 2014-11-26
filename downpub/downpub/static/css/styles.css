@@ -76,6 +76,7 @@ html {
 body {
     background: #ddd;
     font-family:"Andada", "Times New Roman", serif;
+    height: 100%;
     min-height:100%;
 }
 
@@ -136,12 +137,18 @@ code, pre, blockquote {
     Style des infos d'erreur
 */
 
+#messages {
+    margin:0;
+    padding:0;
+    margin-bottom:1em;
+}
+
 .message {
     font-family:"Andada", "Times New Roman", serif;
     display:block;
     background: #aaa;
     padding:0.4em;
-    margin:0.2em;
+    margin:0.2em 0;
     border: 1px solid chocolate;
     color: white;
 }
@@ -168,76 +175,89 @@ code, pre, blockquote {
 #main {
     font-family:"Andada", "Times New Roman", serif;
     background: #ddd;
-    padding:0.8em 0;
-    padding-bottom:5em;
+    padding:0;
     margin:0;
     color: black;
 }
 
-#header {
-    top:0;
-}
-
-#header h2 {
+#main>h2 {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     background: #555;
     color: orange;
     margin:0;
+    margin-bottom:.5em;
     padding:0.2em;
     font-size:1em;
+    height:30px;
 }
 
-#navigation {
-    background: #333;
-    color: white;
-}
-
-#navigation *{
-    background: #333;
+aside {
+    background: #ddd;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    margin: 0;
-    padding: 0.1em;
     list-style-type: none;
 }
 
-#navigation h1 {
+#navigation ul, #navigation li, #navigation li a {
+    list-style-type:none;
+    background-color: #333;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+}
+
+#navigation ul {
+    padding:0;
+    margin:0;
+    }
+
+#navigation li a {
+    padding:0.3em 1em;
+}
+
+#navigation li:hover, #navigation li a:hover {
+    background-color: #444;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+}
+
+aside h1 {
+    background-color: #333;
     color:orange;
     font-size:1.15em;
 }
 
-#navigation a {
+aside a {
+    color:chocolate;
+    font-size:1em;
+}
+
+aside a:hover {
+    text-decoration:none;
+    font-weight:normal;
+}
+
+aside h1 {
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    margin:0;
+    padding:0.2em;
+    height:30px;
+}
+
+aside h1 a {
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    background-color: #333;
     color:orange;
     font-size:1em;
 }
 
-#navigation a:hover {
+aside h1 a:hover {
     color:chocolate;
     text-decoration:none;
     font-weight:normal;
 }
 
-#footer {
-    position:fixed;
-    bottom:0;
-    border-top: 1px solid #333;
-    background: #333;
-    color:white;
+footer *{
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-}
-
-#footer a {
-    color:chocolate;
-    text-decoration:underline;
-}
-
-#footer a:hover {
-    color:chocolate;
-    text-decoration:none;
-    font-weight:normal;
-}
-
-#footer p {
-    padding:0.1em 0;
+    background-color: #ddd;
+    padding:.3em;
+    margin-top:.5em;
 }
 
 /*
@@ -322,14 +342,6 @@ input[type="submit"]:hover {
 
 .bookelement h4{
     word-wrap: break-word;
-}
-
-/*
-    EpicEditor editor and previewer
-*/
-#epiceditor-container {
-    margin:0;
-    width:99%;
 }
 
 div.uk-htmleditor-preview * {

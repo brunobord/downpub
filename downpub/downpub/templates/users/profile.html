@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="w60 center">
-        <h3 class="row"><img class="left" src="{{user.avatar(64)}}"><p class="left">{{ _("Hi") }} {{ user.name }} !</p></h3>
+    <div class="w50 left">
+        <h3 class="row">
+            <img class="left" src="{{user.avatar(64)}}">
+            <p class="left">{{ _("Hi") }} {{ user.name }} !</p>
+        </h3>
 
         <p >{{ _("If you want to change the language used in Downpub, here you go :") }}</p>
 
         {% from "forms/macros.html" import render_field %}
-        <form method="POST" action="." class="form pan man center">
+        <form method="POST" action="." class="form pan man txtleft">
             {{ form.csrf_token }}
             {{ render_field(form.locale, class="input text w60") }}
             <input type="submit" value="{{ _('Save your new default language') }}" class="button green">
