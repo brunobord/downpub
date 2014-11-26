@@ -186,6 +186,10 @@ code, pre, blockquote {
     border-bottom: 1px solid darkgray;
 }
 
+#content {
+    width:100%;
+}
+
 aside {
     background: #ddd;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
