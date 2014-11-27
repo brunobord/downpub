@@ -92,7 +92,7 @@ def add():
             cover=None, creation_date=None, style=style,
             editor=editor, publisher=publisher,
             language=language, rights=rights,
-            displayed_name=displayed_name,modified_at=None)
+            displayed_name=displayed_name, modified_at=None)
 
         # Insert the record in our database and commit it
         db.session.add(book)

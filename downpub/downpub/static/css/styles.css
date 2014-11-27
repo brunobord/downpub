@@ -376,6 +376,11 @@ div.uk-htmleditor-preview p {
     font-size:normal;
 }
 
+div.uk-htmleditor-preview a {
+    color:chocolate;
+    text-decoration:underline;
+}
+
 div.uk-htmleditor-preview strong {
     font-size:normal;
     font-weight:bold;
