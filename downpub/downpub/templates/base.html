@@ -23,8 +23,13 @@
     <body>
 
         {% include 'header.html' %}
-        <div id="main" role="content" class="col w100 pam">
-            <h2 class="mas pas center txtcenter">{{ site_title }}</h2>
+        <div id="main" role="content" class="col w100 mas pan">
+            <div id="banner" class="row man pas center">
+                <span class="no-small-screen col w5 mas pas">
+                    <img id="title" src="{{ url_for('static', filename='img/menu-2x.png') }}">
+                </span>
+                <h2 class="col mas pas center txtcenter">{{ site_title }}</h2>
+            </div>
             {% include 'messages.html' %}
             <div id="content" class="pas">
                 {% block content %}{% endblock %}
@@ -52,6 +57,14 @@
         <script type="text/javascript">
             jQuery(document).ready(function($){
                 $('.message').delay(2500).fadeToggle({duration:2500});
+            });
+        </script>
+
+        <!-- Menu toggle -->
+        <script type="text/javascript">
+            $( "#title" ).click(function() {
+                $( "#header" ).toggle();
+                $( "#main" ).toggleClass( "col" );
             });
         </script>
         {% endblock %}
