@@ -205,11 +205,6 @@ code, pre, blockquote {
     margin:0;
 }
 
-#navigation ul li {
-    padding:0;
-    margin:0;
-}
-
 #navigation li a {
     padding:.2em .5em;
     margin:0;
@@ -227,10 +222,8 @@ code, pre, blockquote {
 
 #header h1 {
     color:orange;
-    font-size:1.9em;
+    font-size:1.75em;
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
-    margin:0;
-    padding:0;
     margin-bottom:.6em;
 }
 
