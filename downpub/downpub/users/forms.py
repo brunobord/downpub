@@ -27,7 +27,7 @@ class LocaleForm(Form):
     """
     locale = SelectField(
         lazy_gettext('Select your new default locale !'),
-        choices=[(short, languague) for short, languague in list(LANGUAGES.items())]
+        choices=[(short, language) for short, language in list(LANGUAGES.items())]
     )
 
 
