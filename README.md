@@ -1,7 +1,7 @@
 DownPub
 ===========
 
-Free and opensource clone of Editorially, who will soon be deceased. It uses a lot of existing tools ([Epic Editor](http://www.epiceditor.com), [Flask](http://flask.pocoo.org/), [KNACSS](http://www.knacss.com), ...) but all I wrote myself is under [What The Fuck Public Licence](http://www.wtfpl.net/about/)
+Free and opensource clone of Editorially, which died a few months ago. It uses a lot of existing tools ([UIkit's editor](http://getuikit.com/docs/addons_htmleditor.html), [Flask](http://flask.pocoo.org/), [KNACSS](http://www.knacss.com), Jquery, and so on...) but all I wrote myself is under [What The Fuck Public Licence](http://www.wtfpl.net/about/)
 
 ##Installation
 

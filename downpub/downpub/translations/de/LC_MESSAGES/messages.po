@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 11:43+0100\n"
+"POT-Creation-Date: 2014-12-02 12:33+0100\n"
 "PO-Revision-Date: 2014-10-21 12:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -271,11 +271,11 @@ msgid "About DownPub"
 msgstr ""
 
 #: downpub/templates/about.html:4
-msgid "Free and opensource clone of Editorially, who will soon be deceased."
+msgid "Free and opensource clone of Editorially, which died a few months ago."
 msgstr ""
 
 #: downpub/templates/about.html:5
-msgid "It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)"
+msgid "It uses a lot of existing tools (Uikit's editor, Flask, KNACSS, ...)"
 msgstr ""
 
 #: downpub/templates/about.html:6
@@ -1057,9 +1057,9 @@ msgstr ""
 #~ msgid "Sign up"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "You can order parts with the order"
-#~ " number, which is not very practical"
-#~ " for now, but it will be fixed."
+#~ msgid "Free and opensource clone of Editorially, who will soon be deceased."
+#~ msgstr ""
+
+#~ msgid "It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)"
 #~ msgstr ""
 

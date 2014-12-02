@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 11:43+0100\n"
-"PO-Revision-Date: 2014-12-02 11:44+0100\n"
+"POT-Creation-Date: 2014-12-02 12:33+0100\n"
+"PO-Revision-Date: 2014-12-02 12:35+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -313,12 +313,12 @@ msgid "About DownPub"
 msgstr "À propos de DownPub"
 
 #: downpub/templates/about.html:4
-msgid "Free and opensource clone of Editorially, who will soon be deceased."
-msgstr "Clone libre et gratuit d'Editorially, qui va décéder bientôt."
+msgid "Free and opensource clone of Editorially, which died a few months ago."
+msgstr "Clone libre et gratuit d'Editorially, qui est mort il y a quelques mois."
 
 #: downpub/templates/about.html:5
-msgid "It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)"
-msgstr "Sont utilisés des tas d'outils existants (Epic Editor, Flask, KNACSS, ...)"
+msgid "It uses a lot of existing tools (Uikit's editor, Flask, KNACSS, ...)"
+msgstr "Sont utilisés des tas d'outils existants (L'éditeur d'Uikit, Flask, KNACSS, ...)"
 
 #: downpub/templates/about.html:6
 msgid "but all I wrote myself is under What The Fuck Public Licence"
@@ -1083,13 +1083,3 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "Sign up"
 #~ msgstr "S'enregistrer"
-
-#~ msgid ""
-#~ "You can order parts with the order"
-#~ " number, which is not very practical"
-#~ " for now, but it will be fixed."
-#~ msgstr ""
-#~ "Vous pouvez trier les parties avec "
-#~ "le numéro d'ordre, ce qui n'est "
-#~ "pas très pratique pour l'instant, mais"
-#~ " cela sera corrigé."
