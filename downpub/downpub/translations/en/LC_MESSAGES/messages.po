@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 11:13+0100\n"
+"POT-Creation-Date: 2014-12-02 11:43+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -504,9 +504,7 @@ msgid "Next, add at least one part, or many, depending on how you want to work !
 msgstr ""
 
 #: downpub/templates/index.html:46
-msgid ""
-"You can order parts with the order number, which is not very practical "
-"for now, but it will be fixed."
+msgid "You can order parts with the arrows in the listing parts page."
 msgstr ""
 
 #: downpub/templates/index.html:51
@@ -1057,5 +1055,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Sign up"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can order parts with the order"
+#~ " number, which is not very practical"
+#~ " for now, but it will be fixed."
 #~ msgstr ""
 

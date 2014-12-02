@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 11:13+0100\n"
-"PO-Revision-Date: 2014-12-02 11:14+0100\n"
+"POT-Creation-Date: 2014-12-02 11:43+0100\n"
+"PO-Revision-Date: 2014-12-02 11:44+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -537,8 +537,8 @@ msgid "Next, add at least one part, or many, depending on how you want to work !
 msgstr "Ensuite, ajoutez au moins une partie, ou plusieurs, selon votre façon de travailler !"
 
 #: downpub/templates/index.html:46
-msgid "You can order parts with the order number, which is not very practical for now, but it will be fixed."
-msgstr "Vous pouvez trier les parties avec le numéro d'ordre, ce qui n'est pas très pratique pour l'instant, mais cela sera corrigé."
+msgid "You can order parts with the arrows in the listing parts page."
+msgstr "Vous pouvez ordonner les parties avec les flèches dans la page de liste des parties."
 
 #: downpub/templates/index.html:51
 msgid "There is default content to show you how markdown works, and buttons to help you with the syntax !"
@@ -1083,3 +1083,13 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "Sign up"
 #~ msgstr "S'enregistrer"
+
+#~ msgid ""
+#~ "You can order parts with the order"
+#~ " number, which is not very practical"
+#~ " for now, but it will be fixed."
+#~ msgstr ""
+#~ "Vous pouvez trier les parties avec "
+#~ "le numéro d'ordre, ce qui n'est "
+#~ "pas très pratique pour l'instant, mais"
+#~ " cela sera corrigé."
