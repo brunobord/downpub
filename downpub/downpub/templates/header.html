@@ -11,11 +11,10 @@
                 <li class="pan man"><a class="inbl pas man w100" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
                 {% if not user.name %}
                     <li class="pan man">
-                        <a class="inbl pas man w100" href="{{ url_for('users.login') }}">{{ _("Sign in") }}</a>
+                        <a class="inbl pas man w100" href="{{ url_for('users.login') }}">{{ _("Log in") }}</a>
                     </li>
-                    <!-- <li class="pan">{{ _("or") }}</li>-->
                     <li class="pan man">
-                        <a class="inbl pas man w100" href="{{ url_for('users.register') }}">{{ _("Sign up") }}</a>
+                        <a class="inbl pas man w100" href="{{ url_for('users.register') }}">{{ _("Register") }}</a>
                     </li>
                 {% else %}
                     <li class="pan man">

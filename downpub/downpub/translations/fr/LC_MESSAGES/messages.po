@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-26 14:43+0100\n"
-"PO-Revision-Date: 2014-11-26 14:44+0100\n"
+"POT-Creation-Date: 2014-12-02 11:13+0100\n"
+"PO-Revision-Date: 2014-12-02 11:14+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Home"
 msgstr "Accueil"
 
-#: downpub/__init__.py:96 downpub/templates/header.html:8
+#: downpub/__init__.py:96 downpub/templates/header.html:11
 msgid "Help"
 msgstr "Aide"
 
-#: downpub/__init__.py:102 downpub/templates/header.html:7
+#: downpub/__init__.py:102 downpub/templates/header.html:10
 msgid "About"
 msgstr "À propos"
 
@@ -291,7 +291,7 @@ msgstr "Le fichier que vous tentiez d'envoyer est trop grand !"
 msgid "Maybe you should return at the book's page and try again with a smaller file ?"
 msgstr "Peut-être devriez-vous revenir à la page du livre et réessayer avec un fichier plus petit ?"
 
-#: downpub/templates/413.html:5 downpub/templates/header.html:22
+#: downpub/templates/413.html:5 downpub/templates/header.html:24
 #: downpub/templates/index.html:34
 #, fuzzy
 msgid "Your books"
@@ -420,26 +420,21 @@ msgstr "inspiré par le concept génial d'<a href=\"http://editorially.com\">Edi
 msgid "Version "
 msgstr "Version "
 
-#: downpub/templates/header.html:11
+#: downpub/templates/header.html:14 downpub/users/views.py:69
 #, fuzzy
-msgid "Sign in"
+msgid "Log in"
 msgstr "Se connecter"
 
-#: downpub/templates/header.html:13
-msgid "or"
-msgstr "ou"
-
-#: downpub/templates/header.html:15
-#, fuzzy
-msgid "Sign up"
+#: downpub/templates/header.html:17 downpub/templates/users/register.html:19
+msgid "Register"
 msgstr "S'enregistrer"
 
-#: downpub/templates/header.html:19
+#: downpub/templates/header.html:21
 #, fuzzy
 msgid "Hi, "
 msgstr "Salut, "
 
-#: downpub/templates/header.html:24
+#: downpub/templates/header.html:27
 #, fuzzy
 msgid "Log out"
 msgstr "Se déconnecter"
@@ -598,9 +593,9 @@ msgstr "C'est ça qu'est beau : faites ce que vous voulez avec."
 msgid "Kinda nice, isn't it ?"
 msgstr "Plutôt chouette, non ?"
 
-#: downpub/templates/books/add.html:15 downpub/templates/books/add_part.html:27
+#: downpub/templates/books/add.html:15 downpub/templates/books/add_part.html:8
 #: downpub/templates/books/edit.html:15
-#: downpub/templates/books/edit_part.html:51
+#: downpub/templates/books/edit_part.html:33
 #, fuzzy
 msgid "Save"
 msgstr "Enregistrer"
@@ -610,19 +605,19 @@ msgstr "Enregistrer"
 msgid "Upload the cover"
 msgstr "Envoyer la couverture"
 
-#: downpub/templates/books/edit_part.html:23
+#: downpub/templates/books/edit_part.html:5
 #: downpub/templates/books/parts_list.html:77
 #, fuzzy
 msgid "Parts list :"
 msgstr "Liste des parties :"
 
-#: downpub/templates/books/edit_part.html:28
+#: downpub/templates/books/edit_part.html:10
 #: downpub/templates/books/parts_list.html:105
 #, fuzzy
 msgid "Edit"
 msgstr "Éditer"
 
-#: downpub/templates/books/edit_part.html:31
+#: downpub/templates/books/edit_part.html:13
 #: downpub/templates/books/list.html:46
 #: downpub/templates/books/parts_list.html:32
 #: downpub/templates/books/parts_list.html:120
@@ -630,20 +625,20 @@ msgstr "Éditer"
 msgid "Export Epub"
 msgstr "Export Epub"
 
-#: downpub/templates/books/edit_part.html:34
+#: downpub/templates/books/edit_part.html:16
 #: downpub/templates/books/list.html:37
 #: downpub/templates/books/parts_list.html:110
 #, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
-#: downpub/templates/books/edit_part.html:39
+#: downpub/templates/books/edit_part.html:21
 #: downpub/templates/books/parts_list.html:154
 #, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
-#: downpub/templates/books/edit_part.html:42
+#: downpub/templates/books/edit_part.html:24
 #: downpub/templates/books/parts_list.html:157
 #: downpub/templates/books/parts_list.html:164
 #, fuzzy
@@ -775,10 +770,6 @@ msgstr "Si vous voulez changer la langue utilisée dans Downpub, voilà :"
 msgid "Save your new default language"
 msgstr "Choisissez votre nouvelle langue par défaut !"
 
-#: downpub/templates/users/register.html:19
-msgid "Register"
-msgstr "S'enregistrer"
-
 #: downpub/templates/users/register.html:24
 #, fuzzy
 msgid "Came here by mistake ? Already have an account ?"
@@ -867,11 +858,6 @@ msgstr "Votre profil"
 #, fuzzy, python-format
 msgid "Locale's been changed to %(locale)s"
 msgstr "La locale a été changée en %(locale)s"
-
-#: downpub/users/views.py:69
-#, fuzzy
-msgid "Log in"
-msgstr "Se connecter"
 
 #: downpub/users/views.py:78
 #, fuzzy
@@ -1088,3 +1074,12 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "Ordered List"
 #~ msgstr "Liste numérotée"
+
+#~ msgid "Sign in"
+#~ msgstr "Se connecter"
+
+#~ msgid "or"
+#~ msgstr "ou"
+
+#~ msgid "Sign up"
+#~ msgstr "S'enregistrer"

@@ -25,10 +25,12 @@
         {% include 'header.html' %}
         <div id="main" role="content" class="col w100 mas pan">
             <div id="banner" class="row man pas center">
-                <span class="no-small-screen no-tiny-screen col w5 mas pan">
+                <span class="no-small-screen no-tiny-screen left man pan">
                     <img id="title" src="{{ url_for('static', filename='img/menu-2x.png') }}">
                 </span>
-                <h2 class="col mas pas center txtcenter">{{ site_title }}</h2>
+                <h2 class="row mas pas center txtcenter">
+                   {{ site_title }}
+                </h2>
             </div>
             {% include 'messages.html' %}
             <div id="content" class="pas">
