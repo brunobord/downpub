@@ -6,7 +6,7 @@
         <div class="line">
             <div class="col w30">
                 {% if book.cover %}
-                    <img class="row pas cover" src="{{ url_for('books.cover_get', book_id=book.id) }}" " alt="{{ book.title }}" />
+                    <img class="row pas cover" src="{{ url_for('books.cover_get', book_id=book.id) }}" alt="{{ book.title }}" />
                     <a class="row txtleft icon icon-bracket2" href="{{ url_for('books.cover_delete', book_id=book.id) }}">
                         {{ _("Delete the cover") }}
                     </a>
