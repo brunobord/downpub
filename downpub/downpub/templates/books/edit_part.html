@@ -1,15 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
+    {% if parts %}
+        <h4>{{ _("Parts list :") }}</h4>
+        <ul>
+          {% for part in parts %}
+            <li>{{ part.title }} - {{ part.content|truncate(30) }} -
+                <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
+                    {{ _("Edit") }}
+                </a> -
+                <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}">
+                    {{ _("Export Epub") }}
+                </a> -
+                <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">
+                    {{ _("Delete") }}
+                </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <h4>{{ _("Not enough parts ? Are you sad ? ") }}</h4>
+        <p class="bigger">
+            <a href="{{ url_for('books.add_part', book_id=book.id) }}">
+                {{ _("Then add some parts !") }}
+            </a>
+        </p>
+    {% endif %}
     <form method="POST" action="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}" class="form">
         {{ form.hidden_tag() }}
-        {{ render_field(form.title, class="input text") }}
-        {{ render_field(form.content, class="input text invisible") }}
-        <div id="epiceditor"></div>
-        {{ render_field(form.order, class="input text") }}
-        <input type="submit" value="{% trans %}Save{% endtrans %}" onsubmit="update_textarea()" class="button green">
+        {{ render_field(form.title, class="input text line w70") }}
+        <textarea name="content" id="content" data-uk-htmleditor="{markdown:true}">{{ part_content }}</textarea>
+        <div class="w100 center txtcenter">
+            <input type="submit" value="{{ _('Save') }}" class="butto">
+        </div>
     </form>
-    <script type="text/javascript">
-        epicload();
-    </script>
 {% endblock %}

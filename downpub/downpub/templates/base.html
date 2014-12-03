@@ -2,31 +2,74 @@
 <!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
 <!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
-<!--[if gt IE 9]> <!--><html class="no-js" lang="fr"> <!--<![endif]-->
-<head>
-    <meta charset="UTF-8">
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <title>Downpub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/knacss.css') }}" media="all">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="all">
-    {% block script %}
-    <script src="{{ url_for('static', filename='js/epiceditor/js/epiceditor.min.js') }}" type="text/javascript"></script>
-    {% endblock %}
-</head>
-<body>
-    {% include 'header.html' %}
-    <div id="main" role="main" class="line">
-        <div class="line pam content">
-            {% include 'messages.html' %}
-            {% include 'editor.html' %}
-            {% block content %}{% endblock %}
-        </div>
-    </div>
+<!--[if gt IE 9]> <!--><html class="no-js" lang="{{ g.locale }}"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <title>Downpub - {{ site_title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/open-book.png') }}">
 
-    {% include 'footer.html' %}
-</body>
+        <link rel="stylesheet" href="{{ url_for('static', filename='js/codemirror/lib/codemirror.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='js/uikit/css/uikit.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='js/uikit/css/components/htmleditor.css') }}" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/knacss.css') }}" media="all">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="all">
+    </head>
+    <body class="center">
+
+        {% include 'header.html' %}
+        <div id="main" role="content" class="col w100 mas pan">
+            <div id="banner" class="row man pas center">
+                <span class="no-small-screen no-tiny-screen left man pan">
+                    <img id="title" src="{{ url_for('static', filename='img/menu-2x.png') }}">
+                </span>
+                <h2 class="row mas pas center txtcenter">
+                   {{ site_title }}
+                </h2>
+            </div>
+            {% include 'messages.html' %}
+            <div id="content" class="pas">
+                {% block content %}{% endblock %}
+            </div>
+            {% include 'footer.html' %}
+        </div>
+
+        {% block script %}
+        <!-- Jquery and UIkit base -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/uikit/js/uikit.min.js') }}"></script>
+
+        <!-- Codemirror and marked dependencies -->
+        <script src="{{ url_for('static', filename='js/codemirror/lib/codemirror.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/markdown/markdown.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/addon/mode/overlay.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/xml/xml.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/codemirror/mode/gfm/gfm.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/marked.js') }}"></script>
+
+        <!-- HTML editor JavaScript -->
+        <script src="{{ url_for('static', filename='js/uikit/js/components/htmleditor.js') }}"></script>
+
+        <!-- Flashing messages -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('.message').delay(2500).fadeToggle({duration:2500});
+            });
+        </script>
+
+        <!-- Menu toggle -->
+        <script type="text/javascript">
+            $( "#title" ).click(function() {
+                $( "#header" ).toggle();
+                $( "#main" ).toggleClass( "col" );
+            });
+        </script>
+        {% endblock %}
+
+    </body>
 </html>

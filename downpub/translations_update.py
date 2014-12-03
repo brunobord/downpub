@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import os
 import sys
@@ -10,5 +10,5 @@ else:
 os.system(pybabel +
     ' extract -F babel.cfg -k lazy_gettext -o messages.pot downpub')
 os.system(pybabel +
-    ' update -i messages.pot -d downpub/locales')
-os.unlink('messages.pot')
+    ' update -i messages.pot -d downpub/translations')
+#os.unlink('messages.pot')

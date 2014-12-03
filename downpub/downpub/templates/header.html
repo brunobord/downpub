@@ -1,38 +1,35 @@
-    <header id="header" role="banner" class="line pam txtcenter">
-        <h1>Downpub - {{ page }}</h1>
-        <nav id="navigation" role="navigation" class="txtcenter">
-            <ul class="pam">
-                <li class="pam"><a class="icon icon-bracket2" href="#">{% trans %}Home{% endtrans %}</a></li>
-                {% if user.name %}
-                    <li class="pam">
-                        <a class="icon icon-bracket2"
-                           href="{{ url_for('books.list') }}">{% trans %}Your books{% endtrans %}
-                        </a>
-                    </li>
-                {% endif %}
-                <li class="pam">
-                    <a class="icon icon-bracket2" target="_blank"
-                       href="http://github.com/segle/pythoneries/">{% trans %}DownLoad DownPub{% endtrans %}
+
+    <header id="header" class="col pan man center">
+        <h1 class="man pan txtleft center">
+            <a class="col man pan w100 inbl" href="{{ url_for('index') }}">
+                Downpub
+            </a>
+        </h1>
+        <nav id="navigation" role="navigation" class="txtcenter center man pan">
+            <ul class="man pan w100 txtleft">
+                <li class="pan man"><a class="inbl pas man w100" href="{{ url_for('about') }}">{{ _("About")}}</a></li>
+                <li class="pan man"><a class="inbl pas man w100" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
+                <li class="pan man">
+                    <a class="inbl pas man w100" href="https://github.com/segle/downpub/archive/master.zip">
+                    {{ _("Download") }}
                     </a>
                 </li>
-            </ul>
-
-            <ul class="pam">
                 {% if not user.name %}
-                <li class="pam">
-                    <a class="icon icon-bracket2" href="{{ url_for('users.login') }}">{% trans %}Sign in{% endtrans %}</a>
-                    {% trans %}ou{% endtrans %} <a href="{{ url_for('users.register') }}">{% trans %}Sign up{% endtrans %}</a>
-                </li>
-                {% else %}
-                    <li class="pam">
-                        <span class="icon icon-bracket2">
-                            {% trans %}Hi, {% endtrans %} {{ user.name }}
-                        </span>
+                    <li class="pan man">
+                        <a class="inbl pas man w100" href="{{ url_for('users.login') }}">{{ _("Log in") }}</a>
                     </li>
-                    <li class="pam">
-                        <a class="icon icon-bracket2"
-                           href="{{ url_for('users.logout') }}">{% trans %}Log out{% endtrans %}
-                        </a>
+                    <li class="pan man">
+                        <a class="inbl pas man w100" href="{{ url_for('users.register') }}">{{ _("Register") }}</a>
+                    </li>
+                {% else %}
+                    <li class="pan man">
+                        <a class="inbl pas man w100" href="{{ url_for('users.home') }}">{{ _("Hi, ") }} {{ user.name }}</a>
+                    </li>
+                    <li class="pan man">
+                        <a class="inbl pas man w100" href="{{ url_for('books.list') }}">{{ _("Your books") }}</a>
+                    </li>
+                    <li class="pan man">
+                        <a class="inbl pas man w100" href="{{ url_for('users.logout') }}">{{ _("Log out") }}</a>
                     </li>
                 {% endif %}
             </ul>

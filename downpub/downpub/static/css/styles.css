@@ -1,98 +1,256 @@
+
+/* ----------------------------- */
+
+/* ==Downpub styles              */
+
+/* ----------------------------- */
+
+
+@font-face{
+    font-family : "AndadaSC";
+    src : url('./fonts/AndadaSC-Regular.otf');
+}
+@font-face{
+    font-family : "AndadaSC";
+    font-style:italic;
+    src : url('./fonts/AndadaSC-Italic.otf');
+}
+@font-face{
+    font-family : "AndadaSC";
+    font-weight:bold;
+    src : url('./fonts/AndadaSC-Bold.otf');
+}
+@font-face{
+    font-family : "AndadaSC";
+    font-style:italic;
+    font-weight:bold;
+    src : url('./fonts/AndadaSC-BoldItalic.otf');
+}
+
+@font-face{
+    font-family : "Andada";
+    src : url('./fonts/Andada-Regular.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-style:italic;
+    src : url('./fonts/Andada-Italic.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-weight:bold;
+    src : url('./fonts/Andada-Bold.otf');
+}
+@font-face{
+    font-family : "Andada";
+    font-style:italic;
+    font-weight:bold;
+    src : url('./fonts/Andada-BoldItalic.otf');
+}
+
+@font-face{
+    font-family : "Lekton";
+    src : url('./fonts/Lekton-Regular.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-style:italic;
+    src : url('./fonts/Lekton-Italic.ttf');
+}
+@font-face{
+    font-family : "Lekton";
+    font-weight:bold;
+    src : url('./fonts/Lekton-Bold.ttf');
+}
+
+
 /*
     Style des éléments HTML de base
 */
 
 html {
-    background: #222;
+    background: #f9f9f9;
+}
+
+body {
+    background: #f9f9f9;
+    font-family:"Andada", "Times New Roman", serif;
+    max-width:55em;
 }
 
 a {
-    color:orange;
+    font-family:"Andada", "Times New Roman", serif;
+    color:chocolate;
 }
 
 a:hover {
-    font-weight:bold;
+    color:chocolate;
 }
 
 h1,h2,h3,h4,h5,h6 {
+    font-family:"AndadaSC", "Times New Roman", serif;
+    margin:0.4em;
+    color:chocolate;
+}
+
+h1 {
+    font-size:1.35em;
+}
+
+h2 {
+    font-size:1.3em;
+}
+
+h3 {
+    font-size:1.25em;
+}
+
+h4 {
+    font-size:1.2em;
+    padding:0.3em 0;
+}
+
+h5 {
+    font-size:1.1em;
+}
+
+h6 {
+    font-size:1em;
+}
+
+p {
+    font-size:1em;
     margin:0.5em;
-    color:orange;
+}
+
+code, pre, blockquote {
+    font-family:"Lekton";
+    font-size:0.9em;
+    padding:0.2em;
+    margin:0.5em;
 }
 
 /*
     Style des infos d'erreur
 */
 
+#messages {
+    padding:0.5em;
+}
+
 .message {
-    display:block;
-    background: #999;
-    padding:0.7em;
-    border: 1px solid orange;
-    color: black:
+    font-family:"Andada", "Times New Roman", serif;
+    display:inline-block;
+    padding:0.4em;
+    margin:0.2em;
+    color: black;
+    border-bottom:1px dotted chocolate;
 }
 
 .error {
-    display:block;
-    background: #999;
-    padding:0.7em;
-    border: 1px solid orange;
-    color: black:
+    font-family:"Andada", "Times New Roman", serif;
+    display:inline-block;
+    padding:0.4em;
+    margin:0.2em;
+    color: chocolate;
+    border-bottom:1px dotted red;
 }
 
 .no_error {
+    font-family:"Andada", "Times New Roman", serif;
     display:inline-block;
     padding: 0.5em;
+    border-bottom:1px dotted green;
 }
 
 /*
     Style du layout
 */
 
+
 #main {
-    min-height:600px;
-    background: #777;
-}
-
-.aside {
-    background: #333;
-    color: white;
-    width:15%;
-}
-
-#navigation {
-    background: #333;
-    color:white
-}
-
-#navigation ul {
-    display:inline;
-}
-
-#navigation ul li
-{
-    display:inline-block;
-    list-style-type: none;
+    font-family:"Andada", "Times New Roman", serif;
+    padding:0;
     margin:0;
-    padding:0.5em;
+    color: black;
 }
 
-.content {
-    background: #777;
-    color: white;
+#banner>h2 {
+    padding-top:.1em;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    color: chocolate;
+    font-size:1.15em;
+    border-bottom: 1px solid #bbb;
+}
+
+#banner span {
+    position:absolute;
+    padding-top:.1em;
+}
+
+#content {
+    width:100%;
+}
+
+#content>a {
+    text-decoration:underline;
 }
 
 #header {
-    background: #222;
-    color: white;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    border-right: 1px dashed #ddd;
+}
+
+#navigation ul, #navigation li, #navigation li a {
+    list-style-type:none;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+}
+
+#navigation ul {
+    padding:0;
+    margin:0;
+}
+
+#navigation li a {
+    padding:.2em .5em;
+    margin:0;
+}
+
+#header li a {
+    white-space: nowrap;
+    font-size:1em;
+}
+
+#header a:hover, #header li>a:hover {
+    color:orange;
+    font-weight:normal;
 }
 
 #header h1 {
-    text-align:center;
+    color:orange;
+    font-size:1.75em;
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    margin-bottom:.6em;
 }
 
-#footer {
-    background: #222;
-    color: white;
+#header h1 a {
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    color:orange;
+    padding:.3em;
+}
+
+#header h1 a:hover {
+    color:chocolate;
+    font-weight:normal;
+}
+
+footer {
+    border-top: 1px solid #bbb;
+}
+
+footer *{
+    font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    margin-top:.5em;
 }
 
 /*
@@ -104,9 +262,209 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .form {
-    background:#333;
-    border:1px solid darkgray;
-    padding:0.7em;
+    margin:0;
+    padding:0;
+}
+
+label {
+    width:100%;
+    padding: .2em 0;
+    margin: .3em 0;
+}
+
+select {
+    padding: .2em 0;
+    margin: .3em 0;
+    border: 1px solid #ccc;
+    background:#eee;
+    width:100%;
+}
+
+input[type="text"], input[type="password"] {
+    padding: .1em .3em;
+    margin: .3em 0;
+    border: 1px solid darkgray;
+    background:#f9f9f9;
+    width:100%;
+}
+
+input[type="submit"] {
+    padding: .5em 1em;
+    margin: .3em 0;
+    border: 1px solid darkgray;
+    background:#ddd;
+    width:100%;
+}
+
+input[type="submit"]:hover {
+    border: 1px solid #999;
+    background:#ddd;
+}
+
+#recaptcha_table
+{
+    margin:1em auto;
 }
 
 .form.label {}
+
+/*
+    GUI layouts
+*/
+
+.bookelement{
+    margin: 1em 0.4em;
+    padding:0.8em;
+    border:1px solid #ccc;
+    background: #f3f3f3;
+    color: #993D00;
+}
+
+.bookelement ul, .bookelement li, .bookelement ul li {
+    color: #993D00;
+}
+
+.bookelement a,
+.bookelement h1,
+.bookelement h2,
+.bookelement h3,
+.bookelement h4{
+    margin:0;
+    padding:0;
+    color: #993D00;
+}
+
+.bookelement h4{
+    word-wrap: break-word;
+}
+
+.bookelement ul, .bookelement li {
+    padding:0;
+    margin:0;
+    font-size:small;
+    list-style-type:none;
+}
+
+.bookelement ul li em {
+    color:black;
+}
+
+.bookelement ul li a {
+    margin: .1em;
+}
+
+
+.avatar p, .avatar h3 {
+    margin:.4em 0;
+}
+
+/*
+    Editor styling
+*/
+
+div.uk-htmleditor-preview * {
+    margin:0;
+    padding:0;
+    font-family:"Lekton", "Times New Roman", serif;
+    color:black;
+    font-style:normal;
+    font-weight:normal;
+}
+
+div.uk-htmleditor-preview h1 {
+    margin:0.1em;
+    padding:0.3em 0;
+    padding-top:0;
+    font-size:xx-large;
+    font-weight:bold;
+}
+
+div.uk-htmleditor-preview h2 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:x-large;
+    font-weight:bold;
+}
+
+div.uk-htmleditor-preview h3 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:large;
+    font-weight:bold;
+}
+
+div.uk-htmleditor-preview h4 {
+    margin:0.2em;
+    padding:0.3em 0;
+    font-size:medium;
+    font-weight:bold;
+    font-style:italic;
+}
+
+div.uk-htmleditor-preview p {
+    margin:0.3em;
+    padding:0.3em 0;
+    font-size:normal;
+}
+
+div.uk-htmleditor-preview a {
+    color:chocolate;
+    text-decoration:underline;
+}
+
+div.uk-htmleditor-preview strong {
+    font-size:normal;
+    font-weight:bold;
+}
+
+div.uk-htmleditor-preview em {
+    font-size:normal;
+    font-style:italic;
+}
+
+div.uk-htmleditor-preview strong em{
+    font-size:normal;
+    font-weight:bold;
+    font-style:italic;
+}
+
+div.uk-htmleditor-preview ul, div.uk-htmleditor-preview ol {
+    margin:0.3em 1.1em;
+    padding:0.1em 1.1em;
+    font-size:normal;
+}
+
+div.uk-htmleditor-preview pre, div.uk-htmleditor-preview blockquote {
+    margin:0.4em 1em;
+    padding:0.5em;
+    font-size:normal;
+    border:1px solid gray;
+    background:#ddd;
+    line-height:1.1em;
+    font-family:"Lekton", monospace;
+}
+
+div.uk-htmleditor-preview code {
+    display:inline-block;
+    margin:0.4em 1em;
+    padding:0.5em;
+    background:#ddd;
+    line-height:1.1em;
+    font-family:"Lekton", monospace;
+}
+
+div.uk-htmleditor-preview th {
+    font-weight:bold;
+}
+
+div.uk-htmleditor-preview
+{
+    padding:1em;
+    //min-height:450px;
+}
+
+.CodeMirror *,.CodeMirror-code *
+{
+    font-family: "Lekton", monospace;
+    font-size:1em;
+}

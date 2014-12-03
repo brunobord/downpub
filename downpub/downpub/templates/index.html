@@ -1,14 +1,86 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>{% trans %}Bienvenue sur Downpub !{% endtrans %}</h2>
+    <h3>{{ _("The purpose of Downpub is simple :") }}</h3>
+    <ul class="man pas" style="list-style-type:none;">
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("You write books, in Markdown.") }}
+            </p>
+        </li>
+        <li>
+            <p class="pan icon icon-bracket2">
+                {{ _("You choose to write it in one part or many. ") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("Splitting your work in one file per chapter allows you to edit one chapter at a time, for example.") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("Once you have your(s) part(s) done, get the whole book or just one part in epub, markdown, HTML or Word.") }}
+            </p>
+        </li>
+    </ul>
 
-  <p>{% trans %}Le principe est simple, c'est un outil où vous écrirez vos livres, en une ou plusieurs parties.
+    <h3>{{ _("How do I do ?") }}</h3>
+    <ul class="man pas" style="list-style-type:none;">
+        <li>
+            <p class="icon icon-bracket2">
+                {% autoescape false %}
+                {{ _("You first need to %(register)s, then create a book in the \"%(your_books)s\" page.",
+                    register='<a href="%s">%s</a>' % (url_for('users.register'), _("register")),
+                    your_books='<a href="%s">%s</a>' % (url_for('books.list'), _("Your books"))
+                ) }}
+                {% endautoescape %}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("Next, add at least one part, or many, depending on how you want to work !") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("You can order parts with the arrows in the listing parts page.") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("There is default content to show you how markdown works, and buttons to help you with the syntax !") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("Heading 1 creates a chapter title in the epub export, so use it accordingly.") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("Part title is NOT included in the export, so you must add an heading 1 title yourself. That is to be able to customize the book's chapter title whatever the part's name.") }}
+            </p>
+        </li>
+        <li>
+            <p class="icon icon-bracket2">
+                {{ _("When you're done you just have to export the book using the links provided, in the format you want.") }}
+            </p>
+        </li>
+    </ul>
 
-  Une fois que vous avez tous vos fichiers, vous pouvez exporter chaque partie en epub, markdown, HTML ou Word pour la relire ailleurs (et la récupérer chez vous).{% endtrans %}</p>
+    <h3>{{ _("Markdown seems complicated !") }}</h3>
 
-  <p>{% trans %}Pourquoi utiliser DownPub ? Car il est libre : et si je fournis ce service, vous pouvez très bien récupérer les sources (en langage python) et installer une copie où vous le souhaitez.{% endtrans %}</p>
+    <p>{{ _("You just need help ! ") }}<a href="{{ url_for('help') }}">{{ _("There you go !") }}</a></p>
 
-  <p>{% trans %}Ainsi, vous ne dépendez pas de mon service, si un jour j'arrête cet hébergement ici vous pourrez très bien installer cette appli web sur votre ordinateur (par défaut).{% endtrans %}</p>
+    <h3>{{ _("Why would you choose DownPub ?") }} </h3>
 
-  <p>{% trans %}Plutôt chouette non ?{% endtrans %}</p>
+    {% autoescape false %}
+    <p>{{ _("Downpub is under the %(wtfpl_link)s licence so you can download it, share it, even sell it, whatever...", wtfpl_link='<a href="http://www.wtfpl.net/about/">WTFPL</a>') }}</p>
+    {% endautoescape %}
+
+    <p>{{ _("Only your conscience will fix the limits. You can install it on any computer, even if the installation process is a little raw for now.") }}</p>
+
+    <p>{{ _("That's the beauty of it : do what the fuck you want with it.") }}</p>
+
+    <p>{{ _("Kinda nice, isn't it ?") }}</p>
 {% endblock %}

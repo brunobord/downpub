@@ -1,0 +1,1100 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-12-03 17:12+0100\n"
+"PO-Revision-Date: 2014-10-21 16:01+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: downpub/__init__.py:90 downpub/templates/404.html:5
+#: downpub/templates/500.html:5
+msgid "Home"
+msgstr ""
+
+#: downpub/__init__.py:96 downpub/templates/header.html:11
+msgid "Help"
+msgstr ""
+
+#: downpub/__init__.py:102 downpub/templates/header.html:10
+msgid "About"
+msgstr ""
+
+#: downpub/books/decorators.py:13 downpub/users/decorators.py:13
+msgid "You need to be signed in for this page."
+msgstr ""
+
+#: downpub/books/forms.py:17 downpub/books/forms.py:46
+msgid "Book title"
+msgstr ""
+
+#: downpub/books/forms.py:19 downpub/books/forms.py:48
+msgid "Book subtitle"
+msgstr ""
+
+#: downpub/books/forms.py:21 downpub/books/forms.py:50
+msgid "Displayed author name"
+msgstr ""
+
+#: downpub/books/forms.py:23 downpub/books/forms.py:52
+msgid "Book editor"
+msgstr ""
+
+#: downpub/books/forms.py:25 downpub/books/forms.py:54
+msgid "Book publisher"
+msgstr ""
+
+#: downpub/books/forms.py:28 downpub/books/forms.py:57
+msgid "Select your css template !"
+msgstr ""
+
+#: downpub/books/forms.py:32 downpub/books/forms.py:61
+msgid "Select your language !"
+msgstr ""
+
+#: downpub/books/forms.py:35 downpub/books/forms.py:64
+msgid "Displayed Copyright"
+msgstr ""
+
+#: downpub/books/forms.py:40 downpub/books/forms.py:66
+msgid "Image File"
+msgstr ""
+
+#: downpub/books/forms.py:42 downpub/books/forms.py:67
+msgid "Images only!"
+msgstr ""
+
+#: downpub/books/forms.py:71 downpub/books/forms.py:77
+msgid "Part title"
+msgstr ""
+
+#: downpub/books/forms.py:72
+msgid "Title for that part is required."
+msgstr ""
+
+#: downpub/books/forms.py:73 downpub/books/forms.py:78
+msgid "Content"
+msgstr ""
+
+#: downpub/books/views.py:55
+#, python-format
+msgid "Your Books, %(user_name)s !"
+msgstr ""
+
+#: downpub/books/views.py:70
+msgid "Add a book"
+msgstr ""
+
+#: downpub/books/views.py:102
+msgid "That book has been created !"
+msgstr ""
+
+#: downpub/books/views.py:122 downpub/books/views.py:183
+#: downpub/books/views.py:209 downpub/books/views.py:312
+#: downpub/books/views.py:396 downpub/books/views.py:430
+#: downpub/books/views.py:453 downpub/books/views.py:517
+#: downpub/books/views.py:598 downpub/books/views.py:652
+#: downpub/books/views.py:685
+msgid "This isn't yours !"
+msgstr ""
+
+#: downpub/books/views.py:126
+#, python-format
+msgid "Edit the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:162
+msgid "That book has been edited !"
+msgstr ""
+
+#: downpub/books/views.py:192
+msgid "That book has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:317
+#, python-format
+msgid "Upload a cover for the book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:349
+msgid "That book's cover has been added !"
+msgstr ""
+
+#: downpub/books/views.py:358
+#, python-format
+msgid "That picture's filesize is too big, max allowed size is %(size)s MB"
+msgstr ""
+
+#: downpub/books/views.py:366
+msgid "That filetype is not allowed !"
+msgstr ""
+
+#: downpub/books/views.py:377
+msgid "That book already has a cover, delete it first to upload a new one !"
+msgstr ""
+
+#: downpub/books/views.py:410
+msgid "That book's cover has been deleted !"
+msgstr ""
+
+#: downpub/books/views.py:416
+msgid "That book has no cover already !"
+msgstr ""
+
+#: downpub/books/views.py:456
+#, python-format
+msgid "Parts of your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:493
+#, python-format
+msgid ""
+"Order of the part %(part_title)s of your book %(book_title)s has been "
+"updated !"
+msgstr ""
+
+#: downpub/books/views.py:500
+#, python-format
+msgid ""
+"Order of the part %(part_title)s of your book %(book_title)s has no need "
+"to be updated !"
+msgstr ""
+
+#: downpub/books/views.py:521
+#, python-format
+msgid "Add a part to your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:525
+msgid ""
+"# Chapter 1 - Introducing Downpub\n"
+"\n"
+"This is a demo text which contains _examples_ on __how__ to use "
+"___Markdown___ syntax to format your book.\n"
+"\n"
+"## SubChapter 1 - Text Formatting, almost WYSIWYG\n"
+"\n"
+"In this section, we'll have a look at making text **bold**, *italic* and "
+"etc. If you haven't realised by now, there is a very simple toolbar "
+"presented above the editor. Try selecting text in this editor and press "
+"any one of those buttons.\n"
+"\n"
+"1. Item1\n"
+"1. Item2\n"
+"1. Item3\n"
+"\n"
+"![Even my cat can be in your epub "
+"!](https://farm3.staticflickr.com/2756/4290352584_9d92fedfe2_z_d.jpg)\n"
+"\n"
+"\n"
+"- Item1\n"
+"- Item2\n"
+"- Item3\n"
+"\n"
+"### Example source code\n"
+"\n"
+"```\n"
+"print('Holy code of doom and destruction')\n"
+"```\n"
+"\n"
+"\n"
+"Take a peek at those buttons and see how they work !\n"
+"\n"
+"Don't hesitate to export the book in epub or watch the preview to see "
+"what you wrote looks like."
+msgstr ""
+
+#: downpub/books/views.py:573
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been added !"
+msgstr ""
+
+#: downpub/books/views.py:604
+#, python-format
+msgid "Edit the part %(part_title)s of your book %(book_title)s"
+msgstr ""
+
+#: downpub/books/views.py:626
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been edited !"
+msgstr ""
+
+#: downpub/books/views.py:662
+#, python-format
+msgid "The part %(part_title)s of your book %(book_title)s has been deleted !"
+msgstr ""
+
+#: downpub/templates/404.html:3
+msgid "Oops, what you wanted to see isn't here."
+msgstr ""
+
+#: downpub/templates/404.html:4
+msgid "Maybe you should return at the homepage and search from there ?"
+msgstr ""
+
+#: downpub/templates/413.html:3
+msgid "The file you tried to upload is too big !"
+msgstr ""
+
+#: downpub/templates/413.html:4
+msgid ""
+"Maybe you should return at the book's page and try again with a smaller "
+"file ?"
+msgstr ""
+
+#: downpub/templates/413.html:5 downpub/templates/header.html:29
+#: downpub/templates/index.html:34
+msgid "Your books"
+msgstr ""
+
+#: downpub/templates/500.html:3
+msgid "Oops, something broke."
+msgstr ""
+
+#: downpub/templates/500.html:4
+msgid "Maybe you should return at the homepage and restart from there ?"
+msgstr ""
+
+#: downpub/templates/about.html:3
+msgid "About DownPub"
+msgstr ""
+
+#: downpub/templates/about.html:4
+msgid "Free and opensource clone of Editorially, which died a few months ago."
+msgstr ""
+
+#: downpub/templates/about.html:5
+msgid "It uses a lot of existing tools (Uikit's editor, Flask, KNACSS, ...)"
+msgstr ""
+
+#: downpub/templates/about.html:6
+msgid "but all I wrote myself is under What The Fuck Public Licence"
+msgstr ""
+
+#: downpub/templates/about.html:9
+msgid "Installation"
+msgstr ""
+
+#: downpub/templates/about.html:12
+msgid "You must install python3, because Downpub will not work well on python2."
+msgstr ""
+
+#: downpub/templates/about.html:13
+msgid "You must install setuptools too, then - it's optional - virtualenv."
+msgstr ""
+
+#: downpub/templates/about.html:14
+msgid "Then, in the virtualenv (or not), enter this :"
+msgstr ""
+
+#: downpub/templates/about.html:19
+msgid "or you can use the provided requirements.pip file :"
+msgstr ""
+
+#: downpub/templates/about.html:23
+msgid "Go to the directory where manage.py is, and type :"
+msgstr ""
+
+#: downpub/templates/about.html:27
+msgid "This creates and initializes the database"
+msgstr ""
+
+#: downpub/templates/about.html:29
+msgid "Then, in the folder where run.py is, start the webapp :"
+msgstr ""
+
+#: downpub/templates/about.html:33
+msgid "Now open your browser and go to http://localhost:5000."
+msgstr ""
+
+#: downpub/templates/about.html:34
+msgid ""
+"I'm not yet at ease with web servers and stuff for python (I'm a php dev "
+"mostly),"
+msgstr ""
+
+#: downpub/templates/about.html:35
+msgid "but I will try to put a little help around here. Stay tuned."
+msgstr ""
+
+#: downpub/templates/about.html:37
+msgid "But it's broken !"
+msgstr ""
+
+#: downpub/templates/about.html:39
+msgid "That's normal. Someone told me one day \"Release early, release often\"."
+msgstr ""
+
+#: downpub/templates/about.html:41
+msgid ""
+"So be it. Besides, even if it's wrong, i'm using git like a sync tool "
+"between\n"
+"    my home computer and the office one, without any use of branches.\n"
+"    Boooh, it's bad, make me bad. Or not."
+msgstr ""
+
+#: downpub/templates/about.html:46
+msgid ""
+"Just give me some time : I'm learning Python, I'm learning Flask,\n"
+"    and I'm learning git. One day it will work. I promise."
+msgstr ""
+
+#: downpub/templates/about.html:50
+msgid "The End"
+msgstr ""
+
+#: downpub/templates/about.html:52
+msgid "Voilà."
+msgstr ""
+
+#: downpub/templates/footer.html:3
+msgid ""
+"Made with the moral support of a cat named Poko by <a "
+"href=\"http://segle.org\">Segle</a>."
+msgstr ""
+
+#: downpub/templates/footer.html:4
+msgid ""
+"Grab the source on <a "
+"href=\"http://github.com/segle/downpub/\">Github</a>,"
+msgstr ""
+
+#: downpub/templates/footer.html:5
+msgid ""
+"inspired by the fantastic concept of <a "
+"href=\"http://editorially.com\">Editorially</a>."
+msgstr ""
+
+#: downpub/templates/footer.html:6
+msgid "Version "
+msgstr ""
+
+#: downpub/templates/header.html:14
+msgid "Download"
+msgstr ""
+
+#: downpub/templates/header.html:19 downpub/users/views.py:69
+msgid "Log in"
+msgstr ""
+
+#: downpub/templates/header.html:22 downpub/templates/users/register.html:19
+msgid "Register"
+msgstr ""
+
+#: downpub/templates/header.html:26
+msgid "Hi, "
+msgstr ""
+
+#: downpub/templates/header.html:32
+msgid "Log out"
+msgstr ""
+
+#: downpub/templates/help.html:3
+msgid "Learn some Markdown "
+msgstr ""
+
+#: downpub/templates/help.html:5
+msgid ""
+"I'll put here many tutorials, sorted by language. Don't hesitate, tell me"
+" where you learned Markdown and I'll add it here."
+msgstr ""
+
+#: downpub/templates/help.html:7
+msgid "English"
+msgstr ""
+
+#: downpub/templates/help.html:11
+msgid "An interactive tutorial to learn Markdown one step at a time."
+msgstr ""
+
+#: downpub/templates/help.html:16
+msgid ""
+"The basics by one of the guys who created Markdown. Worth your read I "
+"think."
+msgstr ""
+
+#: downpub/templates/help.html:21
+msgid "Github's try to make you learn Markdown. They did a good job."
+msgstr ""
+
+#: downpub/templates/help.html:26
+msgid ""
+"Text tutorial isn't enough, you want videos too ? That website got you "
+"covered !"
+msgstr ""
+
+#: downpub/templates/help.html:31
+msgid ""
+"Great cheatsheet for Markdown. Print it, keep it near, and you'll be fine"
+" !"
+msgstr ""
+
+#: downpub/templates/help.html:36
+msgid "French"
+msgstr ""
+
+#: downpub/templates/help.html:40
+msgid "Great article from Urban bike to learn Markdown in 8 days !"
+msgstr ""
+
+#: downpub/templates/help.html:45
+msgid "Illustrated tutorial, with examples"
+msgstr ""
+
+#: downpub/templates/help.html:50
+msgid "German"
+msgstr ""
+
+#: downpub/templates/help.html:58
+msgid "Spanish"
+msgstr ""
+
+#: downpub/templates/help.html:66
+msgid "Portuguese"
+msgstr ""
+
+#: downpub/templates/index.html:3
+msgid "The purpose of Downpub is simple :"
+msgstr ""
+
+#: downpub/templates/index.html:7
+msgid "You write books, in Markdown."
+msgstr ""
+
+#: downpub/templates/index.html:12
+msgid "You choose to write it in one part or many. "
+msgstr ""
+
+#: downpub/templates/index.html:17
+msgid ""
+"Splitting your work in one file per chapter allows you to edit one "
+"chapter at a time, for example."
+msgstr ""
+
+#: downpub/templates/index.html:22
+msgid ""
+"Once you have your(s) part(s) done, get the whole book or just one part "
+"in epub, markdown, HTML or Word."
+msgstr ""
+
+#: downpub/templates/index.html:27
+msgid "How do I do ?"
+msgstr ""
+
+#: downpub/templates/index.html:32
+#, python-format
+msgid ""
+"You first need to %(register)s, then create a book in the "
+"\"%(your_books)s\" page."
+msgstr ""
+
+#: downpub/templates/index.html:33
+msgid "register"
+msgstr ""
+
+#: downpub/templates/index.html:41
+msgid "Next, add at least one part, or many, depending on how you want to work !"
+msgstr ""
+
+#: downpub/templates/index.html:46
+msgid "You can order parts with the arrows in the listing parts page."
+msgstr ""
+
+#: downpub/templates/index.html:51
+msgid ""
+"There is default content to show you how markdown works, and buttons to "
+"help you with the syntax !"
+msgstr ""
+
+#: downpub/templates/index.html:56
+msgid ""
+"Heading 1 creates a chapter title in the epub export, so use it "
+"accordingly."
+msgstr ""
+
+#: downpub/templates/index.html:61
+msgid ""
+"Part title is NOT included in the export, so you must add an heading 1 "
+"title yourself. That is to be able to customize the book's chapter title "
+"whatever the part's name."
+msgstr ""
+
+#: downpub/templates/index.html:66
+msgid ""
+"When you're done you just have to export the book using the links "
+"provided, in the format you want."
+msgstr ""
+
+#: downpub/templates/index.html:71
+msgid "Markdown seems complicated !"
+msgstr ""
+
+#: downpub/templates/index.html:73
+msgid "You just need help ! "
+msgstr ""
+
+#: downpub/templates/index.html:73
+msgid "There you go !"
+msgstr ""
+
+#: downpub/templates/index.html:75
+msgid "Why would you choose DownPub ?"
+msgstr ""
+
+#: downpub/templates/index.html:78
+#, python-format
+msgid ""
+"Downpub is under the %(wtfpl_link)s licence so you can download it, share"
+" it, even sell it, whatever..."
+msgstr ""
+
+#: downpub/templates/index.html:81
+msgid ""
+"Only your conscience will fix the limits. You can install it on any "
+"computer, even if the installation process is a little raw for now."
+msgstr ""
+
+#: downpub/templates/index.html:83
+msgid "That's the beauty of it : do what the fuck you want with it."
+msgstr ""
+
+#: downpub/templates/index.html:85
+msgid "Kinda nice, isn't it ?"
+msgstr ""
+
+#: downpub/templates/books/add.html:15 downpub/templates/books/add_part.html:8
+#: downpub/templates/books/edit.html:15
+#: downpub/templates/books/edit_part.html:33
+msgid "Save"
+msgstr ""
+
+#: downpub/templates/books/cover_add.html:8
+msgid "Upload the cover"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:5
+#: downpub/templates/books/parts_list.html:68
+msgid "Parts list :"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:10
+#: downpub/templates/books/parts_list.html:92
+msgid "Edit"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:13
+msgid "Export Epub"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:16
+#: downpub/templates/books/list.html:34
+#: downpub/templates/books/parts_list.html:97
+msgid "Delete"
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:21
+#: downpub/templates/books/parts_list.html:141
+msgid "Not enough parts ? Are you sad ? "
+msgstr ""
+
+#: downpub/templates/books/edit_part.html:24
+#: downpub/templates/books/parts_list.html:144
+#: downpub/templates/books/parts_list.html:151
+msgid "Then add some parts !"
+msgstr ""
+
+#: downpub/templates/books/list.html:11
+#: downpub/templates/books/parts_list.html:11
+msgid "Delete the cover"
+msgstr ""
+
+#: downpub/templates/books/list.html:15
+#: downpub/templates/books/parts_list.html:15
+msgid "Add a cover"
+msgstr ""
+
+#: downpub/templates/books/list.html:24
+#: downpub/templates/books/parts_list.html:24
+msgid "Edit your book"
+msgstr ""
+
+#: downpub/templates/books/list.html:29
+msgid "Parts of your book"
+msgstr ""
+
+#: downpub/templates/books/list.html:40
+#: downpub/templates/books/parts_list.html:30
+#: downpub/templates/books/parts_list.html:103
+msgid "Exports"
+msgstr ""
+
+#: downpub/templates/books/list.html:44
+#: downpub/templates/books/parts_list.html:34
+#: downpub/templates/books/parts_list.html:107
+msgid "Epub"
+msgstr ""
+
+#: downpub/templates/books/list.html:49
+#: downpub/templates/books/parts_list.html:39
+#: downpub/templates/books/parts_list.html:112
+msgid "Epub3"
+msgstr ""
+
+#: downpub/templates/books/list.html:54
+#: downpub/templates/books/parts_list.html:44
+#: downpub/templates/books/parts_list.html:117
+msgid "Markdown"
+msgstr ""
+
+#: downpub/templates/books/list.html:59
+#: downpub/templates/books/parts_list.html:49
+#: downpub/templates/books/parts_list.html:122
+msgid "Word"
+msgstr ""
+
+#: downpub/templates/books/list.html:64
+#: downpub/templates/books/parts_list.html:54
+#: downpub/templates/books/parts_list.html:127
+msgid "LibreOffice"
+msgstr ""
+
+#: downpub/templates/books/list.html:69
+#: downpub/templates/books/parts_list.html:59
+#: downpub/templates/books/parts_list.html:132
+msgid "HTML"
+msgstr ""
+
+#: downpub/templates/books/list.html:78
+msgid "Created the "
+msgstr ""
+
+#: downpub/templates/books/list.html:82
+msgid "Last modified at "
+msgstr ""
+
+#: downpub/templates/books/list.html:91
+msgid "Create another book ?"
+msgstr ""
+
+#: downpub/templates/books/list.html:96
+msgid "Oops ! Seems you haven't wrote anything yet !"
+msgstr ""
+
+#: downpub/templates/books/list.html:100
+msgid "Create a book now !"
+msgstr ""
+
+#: downpub/templates/books/parts_list.html:4
+msgid "Return to the list of your books"
+msgstr ""
+
+#: downpub/templates/books/parts_list.html:77
+msgid "Up"
+msgstr ""
+
+#: downpub/templates/books/parts_list.html:82
+msgid "Down"
+msgstr ""
+
+#: downpub/templates/books/parts_list.html:148
+msgid "No parts ? Are you sad ? "
+msgstr ""
+
+#: downpub/templates/users/login.html:13
+msgid "Login"
+msgstr ""
+
+#: downpub/templates/users/login.html:17
+msgid "You don't have an account yet ?"
+msgstr ""
+
+#: downpub/templates/users/login.html:18
+msgid "Register a new one !"
+msgstr ""
+
+#: downpub/templates/users/profile.html:6
+msgid "Hi"
+msgstr ""
+
+#: downpub/templates/users/profile.html:9
+msgid "If you want to change the language used in Downpub, here you go :"
+msgstr ""
+
+#: downpub/templates/users/profile.html:15
+msgid "Save your new default language"
+msgstr ""
+
+#: downpub/templates/users/register.html:24
+msgid "Came here by mistake ? Already have an account ?"
+msgstr ""
+
+#: downpub/templates/users/register.html:25
+msgid "Then click here to login !"
+msgstr ""
+
+#: downpub/users/forms.py:21
+msgid "Someone already uses this email address."
+msgstr ""
+
+#: downpub/users/forms.py:29
+msgid "Select your new default locale !"
+msgstr ""
+
+#: downpub/users/forms.py:38 downpub/users/forms.py:50
+msgid "Email address"
+msgstr ""
+
+#: downpub/users/forms.py:39 downpub/users/forms.py:51
+msgid "An email is required."
+msgstr ""
+
+#: downpub/users/forms.py:40 downpub/users/forms.py:52
+msgid "It's not a proper email adress."
+msgstr ""
+
+#: downpub/users/forms.py:41 downpub/users/forms.py:54
+msgid "Password"
+msgstr ""
+
+#: downpub/users/forms.py:42 downpub/users/forms.py:55
+msgid "Enter a password."
+msgstr ""
+
+#: downpub/users/forms.py:49
+msgid "NickName"
+msgstr ""
+
+#: downpub/users/forms.py:49
+msgid "Enter a nickname."
+msgstr ""
+
+#: downpub/users/forms.py:56
+msgid "Repeat Password"
+msgstr ""
+
+#: downpub/users/forms.py:58
+msgid "Enter the same password."
+msgstr ""
+
+#: downpub/users/forms.py:59
+msgid "Passwords must match"
+msgstr ""
+
+#: downpub/users/forms.py:61
+msgid "I promise to behave."
+msgstr ""
+
+#: downpub/users/forms.py:62
+msgid "Well, I can't accept your registration if you don't check this one."
+msgstr ""
+
+#: downpub/users/views.py:38
+msgid "Your profile"
+msgstr ""
+
+#: downpub/users/views.py:54
+#, python-format
+msgid "Locale's been changed to %(locale)s"
+msgstr ""
+
+#: downpub/users/views.py:78
+msgid "Unknown user !"
+msgstr ""
+
+#: downpub/users/views.py:86
+#, python-format
+msgid "You're logged in, %(name)s"
+msgstr ""
+
+#: downpub/users/views.py:92
+msgid "Wrong password"
+msgstr ""
+
+#: downpub/users/views.py:108
+msgid "You've been logged out."
+msgstr ""
+
+#: downpub/users/views.py:118
+msgid "Register a new account"
+msgstr ""
+
+#: downpub/users/views.py:135
+#, python-format
+msgid "Thanks for registering %(name)s"
+msgstr ""
+
+#~ msgid "Export a book"
+#~ msgstr ""
+
+#~ msgid "That book has been exported !"
+#~ msgstr ""
+
+#~ msgid "Export of the part %(part_title)s of the book %(book_title)s"
+#~ msgstr ""
+
+#~ msgid ""
+#~ msgstr ""
+
+#~ msgid "Download DownPub"
+#~ msgstr ""
+
+#~ msgid " Just take a few seconds to do a search !"
+#~ msgstr ""
+
+#~ msgid "Export %(export_format)s of your book "
+#~ msgstr ""
+
+#~ msgid "Export done : "
+#~ msgstr ""
+
+#~ msgid "click here to get your book !"
+#~ msgstr ""
+
+#~ msgid "or "
+#~ msgstr ""
+
+#~ msgid "click here to get back to your books !"
+#~ msgstr ""
+
+#~ msgid "Oops ! Export failed : "
+#~ msgstr ""
+
+#~ msgid "click here to get back to your book's page !"
+#~ msgstr ""
+
+#~ msgid "Export %(export_format)s of the part "
+#~ msgstr ""
+
+#~ msgid " of your book "
+#~ msgstr ""
+
+#~ msgid "click here to get your part !"
+#~ msgstr ""
+
+#~ msgid "click here to get back to the parts of your book  !"
+#~ msgstr ""
+
+#~ msgid "click here to get back to your parts' page !"
+#~ msgstr ""
+
+#~ msgid "Export Epub2"
+#~ msgstr ""
+
+#~ msgid "### Relevant source codes"
+#~ msgstr ""
+
+#~ msgid "Take a peek at them and see how they work !"
+#~ msgstr ""
+
+#~ msgid "Add a cover to your book %(book_title)s"
+#~ msgstr ""
+
+#~ msgid "Profile page"
+#~ msgstr ""
+
+#~ msgid "Login page"
+#~ msgstr ""
+
+#~ msgid "Register page"
+#~ msgstr ""
+
+#~ msgid "You write stuff in Markdown."
+#~ msgstr ""
+
+#~ msgid "Someone already uses this email adress."
+#~ msgstr ""
+
+#~ msgid "About Downpub"
+#~ msgstr ""
+
+#~ msgid "How to use Downpub ???"
+#~ msgstr ""
+
+#~ msgid "# Chapter 1 - Introducing Markdown in Downpub"
+#~ msgstr ""
+
+#~ msgid "Item1"
+#~ msgstr ""
+
+#~ msgid "Item2"
+#~ msgstr ""
+
+#~ msgid "Item3"
+#~ msgstr ""
+
+#~ msgid "Même les chats peuvent être dans les epub"
+#~ msgstr ""
+
+#~ msgid "Même mon chat peut être dans vos epubs"
+#~ msgstr ""
+
+#~ msgid "You write books, in Markdown."
+#~ msgstr ""
+
+#~ msgid "You choose to write it in one part or many. "
+#~ msgstr ""
+
+#~ msgid "You write books in Markdown in one part or many. "
+#~ msgstr ""
+
+#~ msgid "You write books in Markdown, in one part or many. "
+#~ msgstr ""
+
+#~ msgid "Try it for yourself !"
+#~ msgstr ""
+
+#~ msgid "You can grab the source on Github, the link is in the footer !"
+#~ msgstr ""
+
+#~ msgid "Heading 1 is a chapter title in the epub export, so use it accordingly."
+#~ msgstr ""
+
+#~ msgid "Order"
+#~ msgstr ""
+
+#~ msgid "# Chapter 1 - Introducing Downpub"
+#~ msgstr ""
+
+#~ msgid "## SubChapter 1 - Text Formatting, almost WYSIWYG"
+#~ msgstr ""
+
+#~ msgid "1. Item1"
+#~ msgstr ""
+
+#~ msgid "1. Item2"
+#~ msgstr ""
+
+#~ msgid "1. Item3"
+#~ msgstr ""
+
+#~ msgid "Even my cat can be in your epub !"
+#~ msgstr ""
+
+#~ msgid "- Item1"
+#~ msgstr ""
+
+#~ msgid "- Item2"
+#~ msgstr ""
+
+#~ msgid "- Item3"
+#~ msgstr ""
+
+#~ msgid "### Example source code"
+#~ msgstr ""
+
+#~ msgid "Take a peek at those buttons and see how they work !"
+#~ msgstr ""
+
+#~ msgid "Toggle Preview Mode"
+#~ msgstr ""
+
+#~ msgid "Toggle Edit Mode"
+#~ msgstr ""
+
+#~ msgid "Enter Fullscreen"
+#~ msgstr ""
+
+#~ msgid "Make selection Heading 1"
+#~ msgstr ""
+
+#~ msgid "Heading 1"
+#~ msgstr ""
+
+#~ msgid "Make selection Heading 2"
+#~ msgstr ""
+
+#~ msgid "Heading 2"
+#~ msgstr ""
+
+#~ msgid "Make selection Heading 3"
+#~ msgstr ""
+
+#~ msgid "Heading 3"
+#~ msgstr ""
+
+#~ msgid "Make selection Heading 4"
+#~ msgstr ""
+
+#~ msgid "Heading 4"
+#~ msgstr ""
+
+#~ msgid "Make selection bold"
+#~ msgstr ""
+
+#~ msgid "Bold"
+#~ msgstr ""
+
+#~ msgid "Make selection italic"
+#~ msgstr ""
+
+#~ msgid "Italic"
+#~ msgstr ""
+
+#~ msgid "Make selection inline code block"
+#~ msgstr ""
+
+#~ msgid "Code"
+#~ msgstr ""
+
+#~ msgid "Make selection a list"
+#~ msgstr ""
+
+#~ msgid "List"
+#~ msgstr ""
+
+#~ msgid "Make selection a ordered list"
+#~ msgstr ""
+
+#~ msgid "Ordered List"
+#~ msgstr ""
+
+#~ msgid "Sign in"
+#~ msgstr ""
+
+#~ msgid "or"
+#~ msgstr ""
+
+#~ msgid "Sign up"
+#~ msgstr ""
+
+#~ msgid "Free and opensource clone of Editorially, who will soon be deceased."
+#~ msgstr ""
+
+#~ msgid "It uses a lot of existing tools (Epic Editor, Flask, KNACSS, ...)"
+#~ msgstr ""
+
+#~ msgid "Template : "
+#~ msgstr ""
+
+#~ msgid "Delete the cover for you book"
+#~ msgstr ""
+
+#~ msgid "Add a cover for your book"
+#~ msgstr ""
+
+#~ msgid "Export Epub3"
+#~ msgstr ""
+
+#~ msgid "Export Markdown"
+#~ msgstr ""
+
+#~ msgid "Export Word"
+#~ msgstr ""
+
+#~ msgid "Export LibreOffice"
+#~ msgstr ""
+
+#~ msgid "Export HTML"
+#~ msgstr ""
+

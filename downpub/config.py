@@ -1,33 +1,42 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 _basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
+VERSION = "0.0.0.1"
+
 SECRET_KEY = 'lacharogne'
 
 # available languages
 LANGUAGES = {
+    'de': 'Deutsh',
     'en': 'English',
+    'es': 'Español',
     'fr': 'Français',
-    'es': 'Español'
+    'pt': 'Portuguese'
 }
+# Default locale and timezone
+BABEL_DEFAULT_LOCALE = 'fr'
+BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 # books export directory
-EXPORT_DIR = os.path.join(_basedir, 'files')
+EXPORT_DIR = os.path.join(_basedir, 'downpub', 'files', 'exports')
+# books templates directory
+TEMPLATE_DIR = os.path.join(_basedir, 'downpub', 'static', 'ebook_templates')
 # Allowed cover image types
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # Maximum size for each image
-MAX_CONTENT_LENGTH = 1 * 1024 * 1024
+MAX_CONTENT_LENGTH = 0.5 * 1024 * 1024
+# Upload folder for covers
+UPLOAD_FOLDER = os.path.join(_basedir, 'downpub', 'files', 'covers')
 
 # Change this line to match your settings
 # For dev purposes, an example with sqlite, comes in handy :)
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'downpub.db')
 # SQLALCHEMY_DATABASE_URI = 'mysql:////downpub:downpub@localhost/downpub'
-# migration files will be stored in that directory
-SQLALCHEMY_MIGRATE_REPO = os.path.join(_basedir, 'db_repository')
 DATABASE_CONNECT_OPTIONS = {}
 SQLALCHEMY_ECHO = "True"
 

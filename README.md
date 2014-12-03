@@ -1,40 +1,39 @@
 DownPub
 ===========
 
-Projet de clone libre d'Editorially. Sera sûrement jamais fini par moi-même, utilise des librairies externes ([Epic Editor](http://www.epiceditor.com), [Flask](http://flask.pocoo.org/), [KNACSS](http://www.knacss.com), ..), mais le contenu que moi j'ai codé est en [What The Fuck Public Licence](http://www.wtfpl.net/about/)
+Free and opensource clone of Editorially, which died a few months ago. It uses a lot of existing tools ([UIkit's editor](http://getuikit.com/docs/addons_htmleditor.html), [Flask](http://flask.pocoo.org/), [KNACSS](http://www.knacss.com), Jquery, and so on...) but all I wrote myself is under [What The Fuck Public Licence](http://www.wtfpl.net/about/)
 
 ##Installation
 
-Installez python, setuptools, (éventuellement virtualenv) puis (dans le virtualenv ou pas) :
+You must install python3, because Downpub will not work well on python2. You must install setuptools too, then - it's optional -
+virtualenv. Then, in the virtualenv (or not), enter this :
 
-``pip install Flask``
+    pip install Flask Flask-WTF Flask-sqlalchemy Flask-Migrate Flask-Babel
 
-``pip install Flask-WTF``
+or you can use the provided ``requirements.pip`` file :
 
-``pip install Flask-sqlalchemy``
+    pip install -r requirements.pip
 
-``pip install Flask-Migrate``
+Go to the directory where manage.py is, and type :
 
-Ensuite, une fois dans le dossier où se trouve le script manage.py lancez :
+    python manage.py db upgrade
 
-``python manage.py db upgrade``
+This creates and initializes the db
 
-Cela initialise et crée la bdd.
+Then, start the webapp :
 
-Enfin, lancez le fichier run.py via python
+    python run.py
 
-``python run.py``
+Now open your browser and go to http://localhost:5000. I'm not yet at ease with web servers and stuff for python (I'm a php dev mostly), but I will try to put a little help around here. Stay tuned.
 
-Accédez alors à l'appli via (http://localhost:5000). Pour plus d'infos sur la façon d'installer ça derrière un serveur web, je... ne sais pas pour l'instant, mais ça peut se faire avec nginx et uwsgi, par exemple. À vous de voir, j'suis encore un peu perdu dans tout ça.
+## But it's broken !
 
-## Mais c'est tout cassé !
+That's normal. Someone told me one day "Release early, release often".
 
-Normal. Quelqu'un m'a dit "Release early, release often".
+So be it. Besides, even if it's wrong, i'm using git like a sync tool between my home computer and the office one, without any use of branches. Boooh, it's bad, make me bad. Or not.
 
-Donc je prend au pied de la lettre. De plus - et c'est mal - je me sers de git comme d'un sync entre mes pc de boulot et maison, sans me faire chier à créer des branches. Bouh c'est mal, fouettez-moi. Ou pas.
+Just give me some time : I'm learning Python, I'm learning Flask, and I'm learning git. One day it will work. I promise.
 
-Mais avec le temps, chaque chose sera corrigée, et j'espère dans les mois qui viennent avoir un truc de base qui fonctionne sans fioritures. J'espère.
-
-## Mot de la fin
+## The End
 
 Voilà.

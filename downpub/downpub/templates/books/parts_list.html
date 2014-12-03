@@ -1,30 +1,154 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>{{ book.title }}</h2>
+
+<a class="row txtcenter center" href="{{ url_for('books.list') }}">{{ _("Return to the list of your books") }}.</a>
+<div class="line bookelement">
+    <div class="line">
+        <div class="col w20">
+            {% if book.cover %}
+                <img class="row pas cover" src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
+                <a class="row txtleft" href="{{ url_for('books.cover_delete', book_id=book.id) }}">
+                    {{ _("Delete the cover") }}
+                </a>
+            {% else %}
+                <a class="row txtleft icon icon-bracket2" href="{{ url_for('books.cover_add', book_id=book.id) }}">
+                    {{ _("Add a cover") }}
+                </a>
+            {% endif %}
+        </div>
+        <div class="col w30">
+            <h5 class="man pan txtleft">{{ book.title }}</h5>
+            <ul>
+                <li class="row">
+                    <a class="icon icon-bracket2" href="{{ url_for('books.edit', book_id=book.id) }}"
+                    >{{ _("Edit your book") }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col w30 bookexports">
+            <h5 class="man pan">{{ _("Exports") }}</h5>
+            <ul class="pas mas autogrid2">
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">
+                    {{ _("Epub") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='epub3') }}">
+                    {{ _("Epub3") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='markdown') }}">
+                    {{ _("Markdown") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='docx') }}">
+                    {{ _("Word") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='odt') }}">
+                    {{ _("LibreOffice") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export', book_id=book.id, export_format='html') }}">
+                    {{ _("HTML") }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 {% if parts %}
-<h4>{% trans %}Parts list :{% endtrans %}</h4>
-<ul>
-  {% for part in parts %}
-    <li>{{ part.title }} - {{ part.content|truncate(30) }} -
-        <a href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}">
-            {% trans %}Edit{% endtrans %}
-        </a> -
-        <a href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}">{% trans %}Delete{% endtrans %}</a>
-    </li>
-  {% endfor %}
-</ul>
-<h4>{% trans %}Not enough parts ? Are you sad ? {% endtrans %}</h4>
-<p class="bigger">
+<h3>{{ _("Parts list :") }}</h3>
+
+<div id="parts_list">
+    {% for part in parts %}
+    <div class="line bookelement">
+        <div class="col w10 txtleft pan man">
+            <ul>
+                <li class="row">
+                    <a class="icon icon-up" href="{{ url_for('books.order_part', part_id=part.id, book_id=book.id, order_value=(part.order-1)) }}"
+                    alt="{{ _("Up") }}" title="{{ _("Up") }}">
+                    </a>
+                </li>
+                <li class="row">
+                    <a class="icon icon-down" href="{{ url_for('books.order_part', part_id=part.id, book_id=book.id, order_value=(part.order+1)) }}"
+                    alt="{{ _("Down") }}" title="{{ _("Down") }}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col w40">
+            <h5 class="txtleft man pan">{{ part.order ~ '. ' ~ part.title }}</h5>
+            <ul>
+                <li class="row">
+                    <a class="icon icon-bracket2" href="{{ url_for('books.edit_part', part_id=part.id, book_id=book.id) }}"
+                    >{{ _("Edit") }}
+                    </a>
+                </li>
+                <li class="row">
+                    <a class="icon icon-bracket2" href="{{ url_for('books.del_part', part_id=part.id, book_id=book.id) }}"
+                    >{{ _("Delete") }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col w30">
+            <h5>{{ _("Exports") }}</h5>
+            <ul class="pas mas autogrid2">
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub') }}">
+                    {{ _("Epub") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='epub3') }}">
+                    {{ _("Epub3") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='markdown') }}">
+                    {{ _("Markdown") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='docx') }}">
+                    {{ _("Word") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='odt') }}">
+                    {{ _("LibreOffice") }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('books.export_part', book_id=book.id, part_id=part.id, export_format='html') }}">
+                    {{ _("HTML") }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h4>{{ _("Not enough parts ? Are you sad ? ") }}</h4>
+<p class="">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
-        {% trans%}Then add some parts !{% endtrans%}
+        {{ _("Then add some parts !") }}
     </a>
 </p>
 {% else %}
-<h4>{% trans %}No parts ? Are you sad ? {% endtrans %}</h4>
-<p class="bigger">
+<h4>{{ _("No parts ? Are you sad ? ") }}</h4>
+<p class="">
     <a href="{{ url_for('books.add_part', book_id=book.id) }}">
-        {% trans%}Then add somme parts !{% endtrans%}
+        {{ _("Then add some parts !") }}
     </a>
 </p>
 {% endif %}

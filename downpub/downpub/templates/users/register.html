@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="center txtcenter">{% trans %}Register a new account{% endtrans %}</h2>
     {% from "forms/macros.html" import render_field %}
-    <form method="POST" action="." class="form center w60">
-        {{ form.csrf_token }}
-        <fieldset>
-            {{ render_field(form.name, class="input text") }}
-            {{ render_field(form.email, class="input text") }}
-            {{ render_field(form.password, class="input text") }}
-            {{ render_field(form.confirm, class="input text") }}
-            {{ render_field(form.accept_tos, class="input checkbox") }}
-        </fieldset>
-        <fieldset>
-        <label>ReCaptcha</label>
-        {{ form.recaptcha }}
-        </fieldset>
-        <fieldset class="txtcenter center">
-            <input type="submit" value="Register" class="button center txtcenter green">
-        </fieldset>
-    </form>
-
     <div class="center txtcenter">
-        <p>{% trans %}Came here by mistake ? Already have an account ?{% endtrans %}</p>
-        <p><a href="{{ url_for('users.login') }}">{% trans %}Then click here to login !{% endtrans %}</a><p>
+        <form method="POST" action="." class="form txtleft">
+            {{ form.csrf_token }}
+            <fieldset>
+                {{ render_field(form.name, class="input text w60") }}
+                {{ render_field(form.email, class="input text w60") }}
+                {{ render_field(form.password, class="input text w60") }}
+                {{ render_field(form.confirm, class="input text w60") }}
+                {{ render_field(form.accept_tos, class="input checkbox") }}
+            </fieldset>
+            <fieldset class="txtcenter center w300p">
+                <label>ReCaptcha</label>
+                {{ form.recaptcha }}
+            </fieldset>
+            <fieldset class="txtcenter center">
+                <input type="submit" value="{{ _('Register') }}" class="button green">
+            </fieldset>
+        </form>
+
+
+        <p>{{ _("Came here by mistake ? Already have an account ?") }}</p>
+        <p><a href="{{ url_for('users.login') }}">{{ _("Then click here to login !") }}</a><p>
     </div>
 {% endblock %}

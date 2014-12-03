@@ -175,7 +175,7 @@ kbd {
   white-space: pre-line;
   /* IE fix */
   white-space: pre-wrap;
-  font-family: Consolas, 'DejaVu Sans Mono', Courier, monospace;
+  font-family: monospace;
   line-height: 1;
 }
 
@@ -454,6 +454,10 @@ img.right {
 /* ----------------------------- */
 
 /* blocks widths (percentage and pixels) */
+
+.w5 {
+  width: 5%;
+}
 
 .w10 {
   width: 10%;
@@ -1952,15 +1956,3 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
     content: "";
   }
 }
-
-/* ----------------------------- */
-
-/* ==own stylesheet              */
-
-/* ----------------------------- */
-
-/* Here should go your own CSS styles */
-
-/* You can also link them with a LESS @import */
-
-/* @import "my-styles.less"; */
