@@ -3,84 +3,83 @@
 {% if books %}
     {% for book in books %}
     <div class="line bookelement">
-        <div class="col w20">
-            <h4>{{ book.title }}</h4>
-            <p></br>{{ _("Template : ") }}{{ book.style }}</p>
+        <div class="line">
+            <div class="col w30">
+                {% if book.cover %}
+                    <img class="row pas cover" src="{{ url_for('books.cover_get', book_id=book.id) }}" " alt="{{ book.title }}" />
+                    <a class="row txtleft icon icon-bracket2" href="{{ url_for('books.cover_delete', book_id=book.id) }}">
+                        {{ _("Delete the cover") }}
+                    </a>
+                {% else %}
+                    <a class="row txtleft icon icon-bracket2" href="{{ url_for('books.cover_add', book_id=book.id) }}">
+                        {{ _("Add a cover") }}
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col w30">
+                <h5 class="man pan txtleft">{{ book.title }}</h5>
+                <ul>
+                    <li>
+                        <a class="icon icon-bracket2" href="{{ url_for('books.edit', book_id=book.id) }}">
+                        {{ _("Edit your book") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon icon-bracket2" href="{{ url_for('books.parts_list', book_id=book.id) }}">
+                        {{ _("Parts of your book") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon icon-bracket2" href="{{ url_for('books.delete', book_id=book.id) }}">
+                        {{ _("Delete") }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col w30 bookexports">
+                <h5 class="man pan">{{ _("Exports") }}</h5>
+                <ul class="pas mas autogrid2">
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}">
+                        {{ _("Epub") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='epub3') }}">
+                        {{ _("Epub3") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='markdown') }}">
+                        {{ _("Markdown") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='docx') }}">
+                        {{ _("Word") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='odt') }}">
+                        {{ _("LibreOffice") }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('books.export', book_id=book.id, export_format='html') }}">
+                        {{ _("HTML") }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col w20 txtcenter cover">
-            {% if book.cover %}
-                <img src="{{ url_for('books.cover_get', book_id=book.id) }}" width="90px" alt="{{ book.title }}" />
-                <br />
-                <a class="icon icon-bracket2" href="{{ url_for('books.cover_delete', book_id=book.id) }}"
-                >{{ _("Delete the cover for you book") }}
-                </a>
-            {% else %}
-                <a class="icon icon-bracket2" href="{{ url_for('books.cover_add', book_id=book.id) }}"
-                >{{ _("Add a cover for your book") }}
-                </a>
-            {% endif %}
-        </div>
-        <div class="col w20 bookactions">
+        <div class="line man right">
             <ul>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.edit', book_id=book.id) }}"
-                    >{{ _("Edit your book") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.parts_list', book_id=book.id) }}"
-                    >{{ _("Parts of your book") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.delete', book_id=book.id) }}"
-                    >{{ _("Delete") }}
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col w20 bookexports">
-            <ul>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub') }}"
-                    >{{ _("Export Epub") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='epub3') }}"
-                    >{{ _("Export Epub3") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='markdown') }}"
-                    >{{ _("Export Markdown") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='docx') }}"
-                    >{{ _("Export Word") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='odt') }}"
-                    >{{ _("Export LibreOffice") }}
-                    </a>
-                </li>
-                <li class="row">
-                    <a class="icon icon-bracket2" href="{{ url_for('books.export', book_id=book.id, export_format='html') }}"
-                    >{{ _("Export HTML") }}
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col w20 booksinfo">
-            <ul>
-                <li class="row">
-                    <em class="icon icon-bracket2">{{ _("Created the ") }}
+                <li>
+                    <em>{{ _("Created the ") }}
                     {{ book.creation_date.strftime(' %d/%m/%Y  %H:%M') }}
                 </em></li>
-                <li class="row">
-                    <em class="icon icon-bracket2">{{ _("Last modified at ") }}
+                <li>
+                    <em>{{ _("Last modified at ") }}
                     {{ book.modified_at.strftime(' %d/%m/%Y  %H:%M') }}
                 </em></li>
             <ul>

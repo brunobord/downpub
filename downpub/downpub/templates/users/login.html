@@ -2,7 +2,7 @@
 {% block content %}
     {% from "forms/macros.html" import render_field %}
 
-    <div class="center txtcenter w50">
+    <div class="center txtcenter w100">
         <form method="POST"
             action="{{ url_for('users.login', next=next) }}"
             class="form">

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     {% from "forms/macros.html" import render_field %}
-    <div class="center txtcenter w50">
+    <div class="center txtcenter">
         <form method="POST" action="." class="form txtleft">
             {{ form.csrf_token }}
             <fieldset>

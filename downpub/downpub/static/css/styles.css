@@ -75,6 +75,7 @@ html {
 body {
     background: #f9f9f9;
     font-family:"Andada", "Times New Roman", serif;
+    max-width:55em;
 }
 
 a {
@@ -179,7 +180,7 @@ code, pre, blockquote {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
     color: chocolate;
     font-size:1.15em;
-    border-bottom: 1px solid darkgray;
+    border-bottom: 1px solid #bbb;
 }
 
 #banner span {
@@ -191,8 +192,13 @@ code, pre, blockquote {
     width:100%;
 }
 
+#content>a {
+    text-decoration:underline;
+}
+
 #header {
     font-family:"AndadaSC", "Georgia", "Times New Roman", serif;
+    border-right: 1px dashed #ddd;
 }
 
 #navigation ul, #navigation li, #navigation li a {
@@ -239,7 +245,7 @@ code, pre, blockquote {
 }
 
 footer {
-    border-top: 1px solid darkgray;
+    border-top: 1px solid #bbb;
 }
 
 footer *{
@@ -309,7 +315,7 @@ input[type="submit"]:hover {
 .bookelement{
     margin: 1em 0.4em;
     padding:0.8em;
-    border:1px solid #999;
+    border:1px solid #ccc;
     background: #f3f3f3;
     color: #993D00;
 }
@@ -323,12 +329,38 @@ input[type="submit"]:hover {
 .bookelement h2,
 .bookelement h3,
 .bookelement h4{
+    margin:0;
+    padding:0;
     color: #993D00;
 }
 
 .bookelement h4{
     word-wrap: break-word;
 }
+
+.bookelement ul, .bookelement li {
+    padding:0;
+    margin:0;
+    font-size:small;
+    list-style-type:none;
+}
+
+.bookelement ul li em {
+    color:black;
+}
+
+.bookelement ul li a {
+    margin: .1em;
+}
+
+
+.avatar p, .avatar h3 {
+    margin:.4em 0;
+}
+
+/*
+    Editor styling
+*/
 
 div.uk-htmleditor-preview * {
     margin:0;

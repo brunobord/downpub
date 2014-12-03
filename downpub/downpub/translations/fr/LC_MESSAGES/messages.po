@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-03 09:31+0100\n"
-"PO-Revision-Date: 2014-12-03 09:32+0100\n"
+"POT-Creation-Date: 2014-12-03 17:12+0100\n"
+"PO-Revision-Date: 2014-12-03 17:36+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 "Language: fr\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.6.11\n"
 
 #: downpub/__init__.py:90 downpub/templates/404.html:5
 #: downpub/templates/500.html:5
@@ -610,138 +610,143 @@ msgid "Upload the cover"
 msgstr "Envoyer la couverture"
 
 #: downpub/templates/books/edit_part.html:5
-#: downpub/templates/books/parts_list.html:77
+#: downpub/templates/books/parts_list.html:68
 #, fuzzy
 msgid "Parts list :"
 msgstr "Liste des parties :"
 
 #: downpub/templates/books/edit_part.html:10
-#: downpub/templates/books/parts_list.html:105
+#: downpub/templates/books/parts_list.html:92
 #, fuzzy
 msgid "Edit"
 msgstr "Éditer"
 
 #: downpub/templates/books/edit_part.html:13
-#: downpub/templates/books/list.html:46
-#: downpub/templates/books/parts_list.html:32
-#: downpub/templates/books/parts_list.html:120
 #, fuzzy
 msgid "Export Epub"
 msgstr "Export Epub"
 
 #: downpub/templates/books/edit_part.html:16
-#: downpub/templates/books/list.html:37
-#: downpub/templates/books/parts_list.html:110
+#: downpub/templates/books/list.html:34
+#: downpub/templates/books/parts_list.html:97
 #, fuzzy
 msgid "Delete"
 msgstr "Effacer"
 
 #: downpub/templates/books/edit_part.html:21
-#: downpub/templates/books/parts_list.html:154
+#: downpub/templates/books/parts_list.html:141
 #, fuzzy
 msgid "Not enough parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
 
 #: downpub/templates/books/edit_part.html:24
-#: downpub/templates/books/parts_list.html:157
-#: downpub/templates/books/parts_list.html:164
+#: downpub/templates/books/parts_list.html:144
+#: downpub/templates/books/parts_list.html:151
 #, fuzzy
 msgid "Then add some parts !"
 msgstr "Alors ajoutez quelques parties !"
 
-#: downpub/templates/books/list.html:8
-msgid "Template : "
-msgstr "Gabarit : "
+#: downpub/templates/books/list.html:11
+#: downpub/templates/books/parts_list.html:11
+msgid "Delete the cover"
+msgstr "Efface la couverture"
 
 #: downpub/templates/books/list.html:15
-#: downpub/templates/books/parts_list.html:11
-#, fuzzy
-msgid "Delete the cover for you book"
-msgstr "Effacer la couverture de votre livre"
-
-#: downpub/templates/books/list.html:19
 #: downpub/templates/books/parts_list.html:15
-#, fuzzy
-msgid "Add a cover for your book"
-msgstr "Ajouter une couverture à votre livre"
+msgid "Add a cover"
+msgstr "Envoyer une couverture"
 
-#: downpub/templates/books/list.html:27
-#: downpub/templates/books/parts_list.html:23
+#: downpub/templates/books/list.html:24
+#: downpub/templates/books/parts_list.html:24
 #, fuzzy
 msgid "Edit your book"
 msgstr "Éditer votre livre"
 
-#: downpub/templates/books/list.html:32
+#: downpub/templates/books/list.html:29
 #, fuzzy
 msgid "Parts of your book"
 msgstr "Parties de votre livre"
 
-#: downpub/templates/books/list.html:51
-#: downpub/templates/books/parts_list.html:37
-#: downpub/templates/books/parts_list.html:125
-msgid "Export Epub3"
-msgstr "Export Epub3"
+#: downpub/templates/books/list.html:40
+#: downpub/templates/books/parts_list.html:30
+#: downpub/templates/books/parts_list.html:103
+msgid "Exports"
+msgstr "Exports"
 
-#: downpub/templates/books/list.html:56
-#: downpub/templates/books/parts_list.html:42
-#: downpub/templates/books/parts_list.html:130
-msgid "Export Markdown"
-msgstr "Export Markdown"
+#: downpub/templates/books/list.html:44
+#: downpub/templates/books/parts_list.html:34
+#: downpub/templates/books/parts_list.html:107
+msgid "Epub"
+msgstr "Epub"
 
-#: downpub/templates/books/list.html:61
-#: downpub/templates/books/parts_list.html:47
-#: downpub/templates/books/parts_list.html:135
-msgid "Export Word"
-msgstr "Export Word"
+#: downpub/templates/books/list.html:49
+#: downpub/templates/books/parts_list.html:39
+#: downpub/templates/books/parts_list.html:112
+msgid "Epub3"
+msgstr "Epub 3"
 
-#: downpub/templates/books/list.html:66
-#: downpub/templates/books/parts_list.html:52
-#: downpub/templates/books/parts_list.html:140
-msgid "Export LibreOffice"
-msgstr "Export LibreOffice"
+#: downpub/templates/books/list.html:54
+#: downpub/templates/books/parts_list.html:44
+#: downpub/templates/books/parts_list.html:117
+msgid "Markdown"
+msgstr "Markdown"
 
-#: downpub/templates/books/list.html:71
-#: downpub/templates/books/parts_list.html:57
-#: downpub/templates/books/parts_list.html:145
-msgid "Export HTML"
-msgstr "Export HTML"
+#: downpub/templates/books/list.html:59
+#: downpub/templates/books/parts_list.html:49
+#: downpub/templates/books/parts_list.html:122
+msgid "Word"
+msgstr "Word"
 
-#: downpub/templates/books/list.html:79
-#: downpub/templates/books/parts_list.html:65
+#: downpub/templates/books/list.html:64
+#: downpub/templates/books/parts_list.html:54
+#: downpub/templates/books/parts_list.html:127
+msgid "LibreOffice"
+msgstr "LibreOffice"
+
+#: downpub/templates/books/list.html:69
+#: downpub/templates/books/parts_list.html:59
+#: downpub/templates/books/parts_list.html:132
+msgid "HTML"
+msgstr "HTML"
+
+#: downpub/templates/books/list.html:78
 #, fuzzy
 msgid "Created the "
 msgstr "Créé le "
 
-#: downpub/templates/books/list.html:83
-#: downpub/templates/books/parts_list.html:69
+#: downpub/templates/books/list.html:82
 #, fuzzy
 msgid "Last modified at "
 msgstr "Dernière modification le "
 
-#: downpub/templates/books/list.html:92
+#: downpub/templates/books/list.html:91
 #, fuzzy
 msgid "Create another book ?"
 msgstr "Créer un autre livre ?"
 
-#: downpub/templates/books/list.html:97
+#: downpub/templates/books/list.html:96
 #, fuzzy
 msgid "Oops ! Seems you haven't wrote anything yet !"
 msgstr "Oops ! On dirait que vous n'avez encore rien écrit !"
 
-#: downpub/templates/books/list.html:101
+#: downpub/templates/books/list.html:100
 #, fuzzy
 msgid "Create a book now !"
 msgstr "Créez un livre maintenant !"
 
-#: downpub/templates/books/parts_list.html:86
+#: downpub/templates/books/parts_list.html:4
+msgid "Return to the list of your books"
+msgstr "Retour à la liste de vos livres"
+
+#: downpub/templates/books/parts_list.html:77
 msgid "Up"
 msgstr "Monter"
 
-#: downpub/templates/books/parts_list.html:91
+#: downpub/templates/books/parts_list.html:82
 msgid "Down"
 msgstr "Descendre"
 
-#: downpub/templates/books/parts_list.html:161
+#: downpub/templates/books/parts_list.html:148
 #, fuzzy
 msgid "No parts ? Are you sad ? "
 msgstr "Pas assez de parties ? Vous êtes triste ?"
@@ -1087,3 +1092,21 @@ msgstr "Merci de vous être enregistré(e) %(name)s"
 
 #~ msgid "Sign up"
 #~ msgstr "S'enregistrer"
+
+#~ msgid "Template : "
+#~ msgstr "Gabarit : "
+
+#~ msgid "Delete the cover for you book"
+#~ msgstr "Effacer la couverture de votre livre"
+
+#~ msgid "Add a cover for your book"
+#~ msgstr "Ajouter une couverture à votre livre"
+
+#~ msgid "Export Epub3"
+#~ msgstr "Export Epub3"
+
+#~ msgid "Export Word"
+#~ msgstr "Export Word"
+
+#~ msgid "Export HTML"
+#~ msgstr "Export HTML"
