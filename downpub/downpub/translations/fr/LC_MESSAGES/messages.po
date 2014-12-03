@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 12:33+0100\n"
-"PO-Revision-Date: 2014-12-02 12:35+0100\n"
+"POT-Creation-Date: 2014-12-03 09:31+0100\n"
+"PO-Revision-Date: 2014-12-03 09:32+0100\n"
 "Last-Translator: Pain de Segle <paindesegle@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -291,7 +291,7 @@ msgstr "Le fichier que vous tentiez d'envoyer est trop grand !"
 msgid "Maybe you should return at the book's page and try again with a smaller file ?"
 msgstr "Peut-être devriez-vous revenir à la page du livre et réessayer avec un fichier plus petit ?"
 
-#: downpub/templates/413.html:5 downpub/templates/header.html:24
+#: downpub/templates/413.html:5 downpub/templates/header.html:29
 #: downpub/templates/index.html:34
 #, fuzzy
 msgid "Your books"
@@ -420,21 +420,25 @@ msgstr "inspiré par le concept génial d'<a href=\"http://editorially.com\">Edi
 msgid "Version "
 msgstr "Version "
 
-#: downpub/templates/header.html:14 downpub/users/views.py:69
+#: downpub/templates/header.html:14
+msgid "Download"
+msgstr "Télécharger"
+
+#: downpub/templates/header.html:19 downpub/users/views.py:69
 #, fuzzy
 msgid "Log in"
 msgstr "Se connecter"
 
-#: downpub/templates/header.html:17 downpub/templates/users/register.html:19
+#: downpub/templates/header.html:22 downpub/templates/users/register.html:19
 msgid "Register"
 msgstr "S'enregistrer"
 
-#: downpub/templates/header.html:21
+#: downpub/templates/header.html:26
 #, fuzzy
 msgid "Hi, "
 msgstr "Salut, "
 
-#: downpub/templates/header.html:27
+#: downpub/templates/header.html:32
 #, fuzzy
 msgid "Log out"
 msgstr "Se déconnecter"

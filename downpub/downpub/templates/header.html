@@ -9,6 +9,11 @@
             <ul class="man pan w100 txtleft">
                 <li class="pan man"><a class="inbl pas man w100" href="{{ url_for('about') }}">{{ _("About")}}</a></li>
                 <li class="pan man"><a class="inbl pas man w100" href="{{ url_for('help') }}">{{ _("Help")}}</a></li>
+                <li class="pan man">
+                    <a class="inbl pas man w100" href="https://github.com/segle/downpub/archive/master.zip">
+                    {{ _("Download") }}
+                    </a>
+                </li>
                 {% if not user.name %}
                     <li class="pan man">
                         <a class="inbl pas man w100" href="{{ url_for('users.login') }}">{{ _("Log in") }}</a>

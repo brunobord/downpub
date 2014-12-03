@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-12-02 12:33+0100\n"
+"POT-Creation-Date: 2014-12-03 09:31+0100\n"
 "PO-Revision-Date: 2014-10-21 16:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -253,7 +253,7 @@ msgid ""
 "file ?"
 msgstr ""
 
-#: downpub/templates/413.html:5 downpub/templates/header.html:24
+#: downpub/templates/413.html:5 downpub/templates/header.html:29
 #: downpub/templates/index.html:34
 msgid "Your books"
 msgstr ""
@@ -380,19 +380,23 @@ msgstr ""
 msgid "Version "
 msgstr ""
 
-#: downpub/templates/header.html:14 downpub/users/views.py:69
+#: downpub/templates/header.html:14
+msgid "Download"
+msgstr ""
+
+#: downpub/templates/header.html:19 downpub/users/views.py:69
 msgid "Log in"
 msgstr ""
 
-#: downpub/templates/header.html:17 downpub/templates/users/register.html:19
+#: downpub/templates/header.html:22 downpub/templates/users/register.html:19
 msgid "Register"
 msgstr ""
 
-#: downpub/templates/header.html:21
+#: downpub/templates/header.html:26
 msgid "Hi, "
 msgstr ""
 
-#: downpub/templates/header.html:27
+#: downpub/templates/header.html:32
 msgid "Log out"
 msgstr ""
 
